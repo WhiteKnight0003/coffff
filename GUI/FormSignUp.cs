@@ -17,6 +17,7 @@ namespace CoffeeApp.GUI
             InitializeComponent();
         }
 
+
         #region Events
         private void cbViewSignUpPassword_CheckedChanged(object sender, EventArgs e)
         {

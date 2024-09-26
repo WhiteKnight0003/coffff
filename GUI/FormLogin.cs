@@ -1,4 +1,5 @@
-﻿using CoffeeApp.GUI;
+﻿using CoffeeApp.DAO;
+using CoffeeApp.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,11 @@ namespace CoffeeApp
         public FormLogin()
         {
             InitializeComponent();
+        }
+
+        bool Login(string username , string password)
+        {
+            return DAO.AccountDAO.Instance.Login(username, password);
         }
 
         //  	Chạy các sự kiện như click , …..
@@ -56,6 +62,26 @@ namespace CoffeeApp
             FormSignUp fsu = new FormSignUp();
             this.Hide();
             fsu.ShowDialog();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = tbLoginName.Text;
+            string password = tbLoginPassword.Text;
+
+            Console.WriteLine(username+ "   "+ password);
+            Console.WriteLine(DAO.AccountDAO.Instance.HashPassword("123"));
+
+            if (Login(username, password))
+            {
+                FormMain fm = new FormMain();
+                this.Hide();
+                fm.ShowDialog();
+            }
+            else 
+            {
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
+            }
         }
 
         #endregion
