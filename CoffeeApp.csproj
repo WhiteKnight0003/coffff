@@ -155,5 +155,14 @@
   <ItemGroup>
     <None Include="GUI\Image\th.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="GUI\Image\signup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GUI\Image\bg3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GUI\Image\bg4.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

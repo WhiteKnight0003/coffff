@@ -19,6 +19,10 @@ namespace CoffeeApp
             InitializeComponent();
         }
 
+        //  	Chạy các sự kiện như click , …..
+        #region Events  
+
+        // ẩn hiện mật khẩu ở phần đăng nhập
         private void btnViewPassword_Click(object sender, EventArgs e)
         {
             try
@@ -53,5 +57,7 @@ namespace CoffeeApp
             this.Hide();
             fsu.ShowDialog();
         }
+
+        #endregion
     }
 }

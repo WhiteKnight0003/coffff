@@ -35,7 +35,7 @@
             this.tbLoginPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnViewPassword = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.linkSignUp = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,9 +44,9 @@
             // 
             this.guna2PictureBox1.Image = global::CoffeeApp.Properties.Resources.quality_restoration_20240925110650400;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(1, 0);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(2, 3);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(823, 533);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(880, 582);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
@@ -54,22 +54,26 @@
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(548, 153);
+            this.guna2HtmlLabel2.BackgroundImage = global::CoffeeApp.Properties.Resources.bg3;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(175, 409);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(82, 22);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(123, 33);
             this.guna2HtmlLabel2.TabIndex = 7;
             this.guna2HtmlLabel2.Text = "Xin chào ! ";
             // 
             // guna2HtmlLabel3
             // 
+            this.guna2HtmlLabel3.AutoSize = false;
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(453, 181);
+            this.guna2HtmlLabel3.BackgroundImage = global::CoffeeApp.Properties.Resources.bg3;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(133, 448);
+            this.guna2HtmlLabel3.MaximumSize = new System.Drawing.Size(200, 100);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(286, 22);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(200, 53);
             this.guna2HtmlLabel3.TabIndex = 8;
             this.guna2HtmlLabel3.Text = "Hãy đăng nhập vào tài khoản của bạn !";
             // 
@@ -89,14 +93,14 @@
             this.tbLoginName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbLoginName.ForeColor = System.Drawing.Color.White;
             this.tbLoginName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbLoginName.Location = new System.Drawing.Point(430, 223);
+            this.tbLoginName.Location = new System.Drawing.Point(465, 200);
             this.tbLoginName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbLoginName.Name = "tbLoginName";
             this.tbLoginName.PasswordChar = '\0';
             this.tbLoginName.PlaceholderText = "Tên đăng nhập hoặc Email";
             this.tbLoginName.SelectedText = "";
             this.tbLoginName.Size = new System.Drawing.Size(321, 40);
-            this.tbLoginName.TabIndex = 9;
+            this.tbLoginName.TabIndex = 0;
             // 
             // tbLoginPassword
             // 
@@ -114,14 +118,14 @@
             this.tbLoginPassword.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbLoginPassword.ForeColor = System.Drawing.Color.White;
             this.tbLoginPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbLoginPassword.Location = new System.Drawing.Point(430, 270);
+            this.tbLoginPassword.Location = new System.Drawing.Point(465, 267);
             this.tbLoginPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbLoginPassword.Name = "tbLoginPassword";
             this.tbLoginPassword.PasswordChar = '●';
             this.tbLoginPassword.PlaceholderText = "Mật khẩu";
             this.tbLoginPassword.SelectedText = "";
             this.tbLoginPassword.Size = new System.Drawing.Size(281, 40);
-            this.tbLoginPassword.TabIndex = 10;
+            this.tbLoginPassword.TabIndex = 1;
             this.tbLoginPassword.UseSystemPasswordChar = true;
             // 
             // btnViewPassword
@@ -136,7 +140,7 @@
             this.btnViewPassword.ForeColor = System.Drawing.Color.White;
             this.btnViewPassword.Image = global::CoffeeApp.Properties.Resources.visibility;
             this.btnViewPassword.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnViewPassword.Location = new System.Drawing.Point(718, 270);
+            this.btnViewPassword.Location = new System.Drawing.Point(753, 267);
             this.btnViewPassword.Name = "btnViewPassword";
             this.btnViewPassword.Size = new System.Drawing.Size(33, 40);
             this.btnViewPassword.TabIndex = 11;
@@ -152,28 +156,28 @@
             this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(416, 316);
+            this.guna2Button1.Location = new System.Drawing.Point(448, 313);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(168, 36);
             this.guna2Button1.TabIndex = 12;
             this.guna2Button1.Text = "Quên mật khẩu ?";
             // 
-            // guna2Button2
+            // btnLogin
             // 
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderRadius = 20;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.White;
-            this.guna2Button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(497, 368);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button2.TabIndex = 13;
-            this.guna2Button2.Text = "Đăng Nhập";
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.BorderRadius = 20;
+            this.btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogin.FillColor = System.Drawing.Color.White;
+            this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.Black;
+            this.btnLogin.Location = new System.Drawing.Point(530, 396);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(180, 45);
+            this.btnLogin.TabIndex = 13;
+            this.btnLogin.Text = "Đăng Nhập";
             // 
             // linkSignUp
             // 
@@ -181,7 +185,7 @@
             this.linkSignUp.BackColor = System.Drawing.Color.Transparent;
             this.linkSignUp.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkSignUp.LinkColor = System.Drawing.Color.White;
-            this.linkSignUp.Location = new System.Drawing.Point(508, 452);
+            this.linkSignUp.Location = new System.Drawing.Point(541, 494);
             this.linkSignUp.Name = "linkSignUp";
             this.linkSignUp.Size = new System.Drawing.Size(169, 22);
             this.linkSignUp.TabIndex = 14;
@@ -194,9 +198,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CoffeeApp.Properties.Resources.bg2;
-            this.ClientSize = new System.Drawing.Size(826, 532);
+            this.ClientSize = new System.Drawing.Size(882, 583);
             this.Controls.Add(this.linkSignUp);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.btnViewPassword);
             this.Controls.Add(this.tbLoginPassword);
@@ -205,6 +209,7 @@
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2PictureBox1);
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -221,7 +226,7 @@
         private Guna.UI2.WinForms.Guna2TextBox tbLoginPassword;
         private Guna.UI2.WinForms.Guna2Button btnViewPassword;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnLogin;
         private System.Windows.Forms.LinkLabel linkSignUp;
     }
 }
