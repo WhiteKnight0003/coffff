@@ -92,30 +92,30 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="GUI\FormLogin.cs">
+    <Compile Include="GUI\Login\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FormLogin.Designer.cs">
+    <Compile Include="GUI\Login\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FormMain.cs">
+    <Compile Include="GUI\Main\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FormMain.Designer.cs">
+    <Compile Include="GUI\Main\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FormSignUp.cs">
+    <Compile Include="GUI\Login\FormSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FormSignUp.Designer.cs">
+    <Compile Include="GUI\Login\FormSignUp.Designer.cs">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\FormLogin.resx">
+    <EmbeddedResource Include="GUI\Login\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormSignUp.resx">
+    <EmbeddedResource Include="GUI\Login\FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

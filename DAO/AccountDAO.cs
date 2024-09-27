@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Collections;
 
 namespace CoffeeApp.DAO
 {
@@ -50,13 +52,53 @@ namespace CoffeeApp.DAO
             // Trả về chuỗi băm
             return hashStringBuilder.ToString();
         }
-        public bool Login(string username, string password)
+
+        //public bool Login(string username, string password)
+        //{
+        //    string haspass = HashPassword(password); // mã hóa pass trước
+        //    string query = " USP_Login @username , @password";
+        //    DataTable resData = DataProvider.Instance.ExcuteQuery(query, new object[] { username, haspass});
+
+
+        //    return resData.Rows.Count > 0; // số dòng trả ra
+        //}
+        public bool Login(string usernameOrPhone, string password)
         {
-            string haspass = HashPassword(password);
+            string haspass = HashPassword(password); // mã hóa pass trước
 
-            string query = "USP_Login @username , @password";
+            string phone = null;
+            string username = null;
 
-            DataTable resData = DataProvider.Instance.ExcuteQuery(query, new object[] { username, haspass });
+
+            if (usernameOrPhone.All(char.IsDigit)) // nếu đây là số điện thoại
+            {
+                phone = usernameOrPhone;
+            }
+            else
+            {
+                username = usernameOrPhone;
+            }
+            string query = "USP_Login @username , @password , @phone";
+
+            // Tạo danh sách các tham số để truyền vào
+            var parameters = new List<object>();
+
+            // Thêm username vào danh sách nếu không null
+            if (username != null)
+                parameters.Add(username);
+            else
+                parameters.Add(DBNull.Value); // Truyền giá trị null cho @username nếu username không có
+
+            // Thêm password (luôn có giá trị)
+            parameters.Add(haspass);
+
+            // Thêm phone vào danh sách nếu không null
+            if (phone != null)
+                parameters.Add(phone);
+            else
+                parameters.Add(DBNull.Value); // Truyền giá trị null cho @phone nếu phone không có
+            DataTable resData = DataProvider.Instance.ExcuteQuery(query,  parameters.ToArray());
+
 
             return resData.Rows.Count > 0; // số dòng trả ra
         }
