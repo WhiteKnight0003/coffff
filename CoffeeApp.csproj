@@ -49,6 +49,7 @@
       <HintPath>packages\System.Data.SqlClient.4.8.6\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
       <Private>True</Private>
@@ -110,6 +111,12 @@
     <Compile Include="GUI\Login\FormSignUp.Designer.cs">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Main\FormManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Main\FormManagement.Designer.cs">
+      <DependentUpon>FormManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Login\FormLogin.resx">
@@ -117,6 +124,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login\FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Main\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Main\FormManagement.resx">
+      <DependentUpon>FormManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

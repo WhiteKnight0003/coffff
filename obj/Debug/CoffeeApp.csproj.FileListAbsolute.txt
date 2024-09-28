@@ -17,3 +17,5 @@ E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.csproj.Up2Date
 E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.exe
 E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.pdb
 E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.GUI.FormSignUp.resources
+E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.GUI.FormMain.resources
+E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.GUI.Main.FormManagement.resources

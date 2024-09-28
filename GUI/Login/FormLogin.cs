@@ -69,23 +69,12 @@ namespace CoffeeApp
             string username = tbLoginName.Text;
             string password = tbLoginPassword.Text;
 
-            Console.WriteLine(username+ "   "+ password);
-            Console.WriteLine(DAO.AccountDAO.Instance.HashPassword("123"));
-
-            //if (Login(username, password))
-            //{
-            //    FormMain fm = new FormMain();
-            //    this.Hide();
-            //    fm.ShowDialog();
-            //}
-            //else 
-            //{
-            //    MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
-            //}
+           // Console.WriteLine(username+ "   "+ password);
+            //Console.WriteLine(DAO.AccountDAO.Instance.HashPassword("123"));
 
             if (DAO.AccountDAO.Instance.Login(username, password))
             {
-                FormMain fm = new FormMain();
+                FormMain fm = new FormMain(1,1);
                 this.Hide();
                 fm.ShowDialog();
             }

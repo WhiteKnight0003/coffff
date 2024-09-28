@@ -33,7 +33,7 @@ namespace CoffeeApp.DAO
             end
          */
 
-         public string HashPassword(string password)
+           private string HashPassword(string password)
         {
             //  SHA256 hoặc SHA512. Những thuật toán này không phải là "mã hóa" mà là "băm", tức là chúng chuyển đổi mật khẩu thành một chuỗi giá trị không thể đảo ngược
 
