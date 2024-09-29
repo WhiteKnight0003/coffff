@@ -12,9 +12,17 @@ namespace CoffeeApp.GUI.Main
 {
     public partial class FormManagement : Form
     {
-        public FormManagement()
+        private FormMain formmain;
+        public FormManagement(FormMain formmain)
         {
             InitializeComponent();
+            this.formmain = formmain;
+        }
+
+        private void btnBackFormManagement_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            formmain.Show();
         }
     }
 }

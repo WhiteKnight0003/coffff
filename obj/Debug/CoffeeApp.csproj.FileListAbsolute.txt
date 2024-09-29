@@ -19,3 +19,5 @@ E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.pdb
 E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.GUI.FormSignUp.resources
 E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.GUI.FormMain.resources
 E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.GUI.Main.FormManagement.resources
+E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.GUI.Usercontrol.FoodView.resources
+E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.GUI.Usercontrol.TableView.resources

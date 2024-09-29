@@ -49,20 +49,27 @@
             // 
             // msMenu
             // 
+            this.msMenu.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quảnLýCửaHàngToolStripMenuItem,
             this.thôngTinCáNhanToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
-            this.msMenu.Size = new System.Drawing.Size(906, 28);
+            this.msMenu.Padding = new System.Windows.Forms.Padding(8, 25, 0, 2);
+            this.msMenu.Size = new System.Drawing.Size(1006, 64);
             this.msMenu.TabIndex = 0;
             this.msMenu.Text = "menuStrip1";
             // 
             // quảnLýCửaHàngToolStripMenuItem
             // 
+            this.quảnLýCửaHàngToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.quảnLýCửaHàngToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quảnLýCửaHàngToolStripMenuItem.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.quảnLýCửaHàngToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.quảnLýCửaHàngToolStripMenuItem.Name = "quảnLýCửaHàngToolStripMenuItem";
-            this.quảnLýCửaHàngToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.quảnLýCửaHàngToolStripMenuItem.ShowShortcutKeys = false;
+            this.quảnLýCửaHàngToolStripMenuItem.Size = new System.Drawing.Size(171, 27);
             this.quảnLýCửaHàngToolStripMenuItem.Text = "Quản lý cửa hàng";
             this.quảnLýCửaHàngToolStripMenuItem.Click += new System.EventHandler(this.quảnLýCửaHàngToolStripMenuItem_Click);
             // 
@@ -71,34 +78,36 @@
             this.thôngTinCáNhanToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinCáNhânToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
+            this.thôngTinCáNhanToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thôngTinCáNhanToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 10);
             this.thôngTinCáNhanToolStripMenuItem.Name = "thôngTinCáNhanToolStripMenuItem";
-            this.thôngTinCáNhanToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.thôngTinCáNhanToolStripMenuItem.Size = new System.Drawing.Size(187, 27);
             this.thôngTinCáNhanToolStripMenuItem.Text = "Thông tin tài khoản";
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 42);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 67);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(503, 472);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(612, 521);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Location = new System.Drawing.Point(521, 94);
+            this.guna2Panel1.Location = new System.Drawing.Point(618, 113);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(376, 356);
+            this.guna2Panel1.Size = new System.Drawing.Size(376, 408);
             this.guna2Panel1.TabIndex = 2;
             // 
             // guna2Panel2
@@ -106,9 +115,9 @@
             this.guna2Panel2.Controls.Add(this.guna2Button1);
             this.guna2Panel2.Controls.Add(this.guna2NumericUpDown1);
             this.guna2Panel2.Controls.Add(this.guna2ComboBox2);
-            this.guna2Panel2.Location = new System.Drawing.Point(521, 42);
+            this.guna2Panel2.Location = new System.Drawing.Point(618, 67);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(376, 46);
+            this.guna2Panel2.Size = new System.Drawing.Size(379, 46);
             this.guna2Panel2.TabIndex = 3;
             // 
             // guna2Button1
@@ -154,7 +163,7 @@
             // guna2Panel3
             // 
             this.guna2Panel3.Controls.Add(this.guna2Button2);
-            this.guna2Panel3.Location = new System.Drawing.Point(521, 453);
+            this.guna2Panel3.Location = new System.Drawing.Point(618, 527);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(376, 61);
             this.guna2Panel3.TabIndex = 4;
@@ -167,7 +176,7 @@
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(257, 3);
+            this.guna2Button2.Location = new System.Drawing.Point(260, 3);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(116, 58);
             this.guna2Button2.TabIndex = 0;
@@ -177,15 +186,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(906, 526);
+            this.ClientSize = new System.Drawing.Size(1006, 600);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.msMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.msMenu;
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMaincs";
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();

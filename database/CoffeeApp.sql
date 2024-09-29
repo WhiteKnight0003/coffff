@@ -14,7 +14,7 @@ CREATE TABLE bill (
     ID INT IDENTITY PRIMARY KEY,
     DateCheckIn DATE NOT NULL DEFAULT GETDATE(),
     DateCheckOut DATE NULL,
-    status VARCHAR(50) NULL,
+    status NVARCHAR(50) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NULL,
     CustomerID INT NOT NULL,
     UserID INT NOT NULL,
     TableID INT NOT NULL,
@@ -42,8 +42,8 @@ GO
 
 CREATE TABLE category (
     ID INT IDENTITY PRIMARY KEY,
-    CategoryName VARCHAR(255) NOT NULL,
-    Description VARCHAR(255) NULL
+    CategoryName NVARCHAR(255) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NOT NULL,
+    Description NVARCHAR(255) NULL
 );
 GO
 
@@ -54,8 +54,8 @@ GO
 
 CREATE TABLE customer (
     ID INT IDENTITY PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    phone VARCHAR(50) NULL,
+    name NVARCHAR(50) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NOT NULL,
+    phone NVARCHAR(50) NULL,
 );
 GO
 
@@ -66,7 +66,7 @@ GO
 
 CREATE TABLE payment (
     ID INT IDENTITY PRIMARY KEY,
-    PaymentName VARCHAR(50) NOT NULL UNIQUE
+    PaymentName NVARCHAR(50) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NOT NULL UNIQUE
 );
 GO
 
@@ -78,9 +78,9 @@ GO
 CREATE TABLE product (
     ID INT IDENTITY PRIMARY KEY,
     Price FLOAT NOT NULL,
-    Name VARCHAR(50) NOT NULL UNIQUE,
-    Description VARCHAR(255) NULL,
-    Image VARCHAR(50) NULL,
+    Name NVARCHAR(50) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NOT NULL UNIQUE,
+    Description NVARCHAR(255) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NULL,
+    Image NVARCHAR(max) NULL,
     CategoryID INT NOT NULL
 );
 GO
@@ -92,7 +92,8 @@ GO
 
 CREATE TABLE role (
     RoleID INT IDENTITY PRIMARY KEY,
-    RoleName VARCHAR(50) NOT NULL
+    RoleName NVARCHAR(50) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NOT NULL,
+	Creator Nvarchar(50) COLLATE Latin1_General_100_CI_AS_SC_UTF8 null
 );
 GO
 
@@ -103,8 +104,8 @@ GO
 
 CREATE TABLE tablee (
     ID INT IDENTITY PRIMARY KEY,
-    TableNumber VARCHAR(255) NOT NULL,
-    Status VARCHAR(255) NULL
+    TableNumber NVARCHAR(255)  NOT NULL,
+    Status NVARCHAR(255) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NULL
 );
 GO
 
@@ -115,18 +116,18 @@ GO
 
 CREATE TABLE users (
     ID INT IDENTITY PRIMARY KEY,
-    UserName VARCHAR(50) NOT NULL,
-    phone VARCHAR(20) not NULL,
-    address VARCHAR(100) NULL,
+    UserName NVARCHAR(50) NOT NULL,
+    phone NVARCHAR(20) not NULL,
+    address NVARCHAR(100) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NULL,
     DateWork DATE NOT NULL DEFAULT GETDATE(),
     password NVARCHAR(Max) NOT NULL,
-    FullName VARCHAR(50) NULL,
+    FullName NVARCHAR(50)  COLLATE Latin1_General_100_CI_AS_SC_UTF8 Null,
     RoleID INT NOT NULL,
-    codeEmail VARCHAR(45) NULL,
-    statusEmail VARCHAR(20) NULL,
-    email VARCHAR(45) NOT NULL,
-    gender VARCHAR(50) NULL,
-    image TEXT NULL
+    codeEmail NVARCHAR(45) NULL,
+    statusEmail NVARCHAR(20) COLLATE Latin1_General_100_CI_AS_SC_UTF8  NULL,
+    email NVARCHAR(45) NOT NULL,
+    gender NVARCHAR(50) NULL,
+    image NVARCHAR(max) NULL
 );
 GO
 
@@ -169,16 +170,12 @@ GO
 -- Insert data into users table
 INSERT INTO users (UserName, FullName, Password, Phone, email,codeEmail,statusEmail, Gender, RoleID) 
 VALUES
-    ('TienChung', 'Lê Tiến Chung', '123', '0384905333','tienchung2612@gmail.com','123456','True', 'Female', 1);
+    ('TienChung', 'Lê Tiến Chung', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '0384905333','tienchung2612@gmail.com','123456','True', 'Female', 1);
 
-ALTER TABLE users
-ALTER COLUMN FullName NVARCHAR(50) COLLATE Latin1_General_CI_AS NULL;
 
-ALTER TABLE Users
-ALTER COLUMN Password NVARCHAR(255) NOT NULL;
 
-DROP PROCEDURE IF EXISTS USP_Login
-go 
+-- DROP PROCEDURE IF EXISTS USP_Login
+--go 
 
 Create proc USP_Login
 @UserName nvarchar(100), @Password nvarchar(100), @Phone nvarchar(100)
@@ -186,3 +183,5 @@ As
 Begin
 	SELECT * from Users where ( UserName = @UserName or Phone = @Phone ) and Password = @Password
 end
+
+select * from users where UserName=N'TienChung'

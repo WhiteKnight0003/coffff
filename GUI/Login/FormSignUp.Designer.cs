@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.tbSignUpUserName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbSignUpEmail = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbSignUpPhone = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSignUpUserName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSignUpEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSignUpPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.txSignUpPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -42,6 +42,7 @@
             this.txSignUpRePassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbValidatePhone = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbValidateRePassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbValidatePassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,74 +58,74 @@
             this.guna2PictureBox1.TabIndex = 2;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // tbSignUpUserName
+            // txtSignUpUserName
             // 
-            this.tbSignUpUserName.BackColor = System.Drawing.Color.Transparent;
-            this.tbSignUpUserName.BorderRadius = 10;
-            this.tbSignUpUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbSignUpUserName.DefaultText = "";
-            this.tbSignUpUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbSignUpUserName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbSignUpUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSignUpUserName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSignUpUserName.FillColor = System.Drawing.Color.Black;
-            this.tbSignUpUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSignUpUserName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSignUpUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSignUpUserName.Location = new System.Drawing.Point(461, 74);
-            this.tbSignUpUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbSignUpUserName.Name = "tbSignUpUserName";
-            this.tbSignUpUserName.PasswordChar = '\0';
-            this.tbSignUpUserName.PlaceholderText = "Tên đăng nhập ";
-            this.tbSignUpUserName.SelectedText = "";
-            this.tbSignUpUserName.Size = new System.Drawing.Size(321, 40);
-            this.tbSignUpUserName.TabIndex = 0;
+            this.txtSignUpUserName.BackColor = System.Drawing.Color.Transparent;
+            this.txtSignUpUserName.BorderRadius = 10;
+            this.txtSignUpUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSignUpUserName.DefaultText = "";
+            this.txtSignUpUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSignUpUserName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSignUpUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSignUpUserName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSignUpUserName.FillColor = System.Drawing.Color.Black;
+            this.txtSignUpUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSignUpUserName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSignUpUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSignUpUserName.Location = new System.Drawing.Point(461, 74);
+            this.txtSignUpUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSignUpUserName.Name = "txtSignUpUserName";
+            this.txtSignUpUserName.PasswordChar = '\0';
+            this.txtSignUpUserName.PlaceholderText = "Tên đăng nhập ";
+            this.txtSignUpUserName.SelectedText = "";
+            this.txtSignUpUserName.Size = new System.Drawing.Size(321, 40);
+            this.txtSignUpUserName.TabIndex = 0;
             // 
-            // tbSignUpEmail
+            // txtSignUpEmail
             // 
-            this.tbSignUpEmail.BackColor = System.Drawing.Color.Transparent;
-            this.tbSignUpEmail.BorderRadius = 10;
-            this.tbSignUpEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbSignUpEmail.DefaultText = "";
-            this.tbSignUpEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbSignUpEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbSignUpEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSignUpEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSignUpEmail.FillColor = System.Drawing.Color.Black;
-            this.tbSignUpEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSignUpEmail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSignUpEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSignUpEmail.Location = new System.Drawing.Point(461, 146);
-            this.tbSignUpEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbSignUpEmail.Name = "tbSignUpEmail";
-            this.tbSignUpEmail.PasswordChar = '\0';
-            this.tbSignUpEmail.PlaceholderText = "Email";
-            this.tbSignUpEmail.SelectedText = "";
-            this.tbSignUpEmail.Size = new System.Drawing.Size(321, 40);
-            this.tbSignUpEmail.TabIndex = 1;
+            this.txtSignUpEmail.BackColor = System.Drawing.Color.Transparent;
+            this.txtSignUpEmail.BorderRadius = 10;
+            this.txtSignUpEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSignUpEmail.DefaultText = "";
+            this.txtSignUpEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSignUpEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSignUpEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSignUpEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSignUpEmail.FillColor = System.Drawing.Color.Black;
+            this.txtSignUpEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSignUpEmail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSignUpEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSignUpEmail.Location = new System.Drawing.Point(461, 146);
+            this.txtSignUpEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSignUpEmail.Name = "txtSignUpEmail";
+            this.txtSignUpEmail.PasswordChar = '\0';
+            this.txtSignUpEmail.PlaceholderText = "Email";
+            this.txtSignUpEmail.SelectedText = "";
+            this.txtSignUpEmail.Size = new System.Drawing.Size(321, 40);
+            this.txtSignUpEmail.TabIndex = 1;
             // 
-            // tbSignUpPhone
+            // txtSignUpPhone
             // 
-            this.tbSignUpPhone.BackColor = System.Drawing.Color.Transparent;
-            this.tbSignUpPhone.BorderRadius = 10;
-            this.tbSignUpPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbSignUpPhone.DefaultText = "";
-            this.tbSignUpPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbSignUpPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbSignUpPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSignUpPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSignUpPhone.FillColor = System.Drawing.Color.Black;
-            this.tbSignUpPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSignUpPhone.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSignUpPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSignUpPhone.Location = new System.Drawing.Point(461, 218);
-            this.tbSignUpPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbSignUpPhone.Name = "tbSignUpPhone";
-            this.tbSignUpPhone.PasswordChar = '\0';
-            this.tbSignUpPhone.PlaceholderText = "Số điện thoại";
-            this.tbSignUpPhone.SelectedText = "";
-            this.tbSignUpPhone.Size = new System.Drawing.Size(317, 34);
-            this.tbSignUpPhone.TabIndex = 2;
+            this.txtSignUpPhone.BackColor = System.Drawing.Color.Transparent;
+            this.txtSignUpPhone.BorderRadius = 10;
+            this.txtSignUpPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSignUpPhone.DefaultText = "";
+            this.txtSignUpPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSignUpPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSignUpPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSignUpPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSignUpPhone.FillColor = System.Drawing.Color.Black;
+            this.txtSignUpPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSignUpPhone.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSignUpPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSignUpPhone.Location = new System.Drawing.Point(461, 218);
+            this.txtSignUpPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSignUpPhone.Name = "txtSignUpPhone";
+            this.txtSignUpPhone.PasswordChar = '\0';
+            this.txtSignUpPhone.PlaceholderText = "Số điện thoại";
+            this.txtSignUpPhone.SelectedText = "";
+            this.txtSignUpPhone.Size = new System.Drawing.Size(317, 34);
+            this.txtSignUpPhone.TabIndex = 2;
             // 
             // txSignUpPassword
             // 
@@ -211,6 +212,7 @@
             this.btnSignUp.Size = new System.Drawing.Size(180, 45);
             this.btnSignUp.TabIndex = 8;
             this.btnSignUp.Text = "Đăng Kí";
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // lbValidateUserName
             // 
@@ -220,6 +222,7 @@
             this.lbValidateUserName.Name = "lbValidateUserName";
             this.lbValidateUserName.Size = new System.Drawing.Size(3, 2);
             this.lbValidateUserName.TabIndex = 9;
+            this.lbValidateUserName.Text = null;
             // 
             // lbValidateEmail
             // 
@@ -229,6 +232,7 @@
             this.lbValidateEmail.Name = "lbValidateEmail";
             this.lbValidateEmail.Size = new System.Drawing.Size(3, 2);
             this.lbValidateEmail.TabIndex = 9;
+            this.lbValidateEmail.Text = null;
             // 
             // txSignUpRePassword
             // 
@@ -262,6 +266,7 @@
             this.lbValidatePhone.Name = "lbValidatePhone";
             this.lbValidatePhone.Size = new System.Drawing.Size(3, 2);
             this.lbValidatePhone.TabIndex = 9;
+            this.lbValidatePhone.Text = null;
             // 
             // lbValidateRePassword
             // 
@@ -271,6 +276,17 @@
             this.lbValidateRePassword.Name = "lbValidateRePassword";
             this.lbValidateRePassword.Size = new System.Drawing.Size(3, 2);
             this.lbValidateRePassword.TabIndex = 9;
+            this.lbValidateRePassword.Text = null;
+            // 
+            // lbValidatePassword
+            // 
+            this.lbValidatePassword.AutoSize = true;
+            this.lbValidatePassword.BackColor = System.Drawing.Color.Transparent;
+            this.lbValidatePassword.ForeColor = System.Drawing.Color.Red;
+            this.lbValidatePassword.Location = new System.Drawing.Point(461, 260);
+            this.lbValidatePassword.Name = "lbValidatePassword";
+            this.lbValidatePassword.Size = new System.Drawing.Size(0, 16);
+            this.lbValidatePassword.TabIndex = 10;
             // 
             // FormSignUp
             // 
@@ -280,6 +296,7 @@
             this.BackgroundImage = global::CoffeeApp.Properties.Resources.bg2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(882, 583);
+            this.Controls.Add(this.lbValidatePassword);
             this.Controls.Add(this.lbValidateRePassword);
             this.Controls.Add(this.lbValidatePhone);
             this.Controls.Add(this.lbValidateEmail);
@@ -290,9 +307,9 @@
             this.Controls.Add(this.txSignUpRePassword);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.txSignUpPassword);
-            this.Controls.Add(this.tbSignUpPhone);
-            this.Controls.Add(this.tbSignUpEmail);
-            this.Controls.Add(this.tbSignUpUserName);
+            this.Controls.Add(this.txtSignUpPhone);
+            this.Controls.Add(this.txtSignUpEmail);
+            this.Controls.Add(this.txtSignUpUserName);
             this.Controls.Add(this.guna2PictureBox1);
             this.DoubleBuffered = true;
             this.Name = "FormSignUp";
@@ -307,9 +324,9 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2TextBox tbSignUpUserName;
-        private Guna.UI2.WinForms.Guna2TextBox tbSignUpEmail;
-        private Guna.UI2.WinForms.Guna2TextBox tbSignUpPhone;
+        private Guna.UI2.WinForms.Guna2TextBox txtSignUpUserName;
+        private Guna.UI2.WinForms.Guna2TextBox txtSignUpEmail;
+        private Guna.UI2.WinForms.Guna2TextBox txtSignUpPhone;
         private Guna.UI2.WinForms.Guna2TextBox txSignUpPassword;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
@@ -320,5 +337,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txSignUpRePassword;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbValidatePhone;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbValidateRePassword;
+        private System.Windows.Forms.Label lbValidatePassword;
     }
 }

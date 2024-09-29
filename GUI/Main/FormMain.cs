@@ -25,7 +25,7 @@ namespace CoffeeApp.GUI
 
         private void quảnLýCửaHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormManagement fmg = new FormManagement();
+            FormManagement fmg = new FormManagement(this);
             this.Hide();
             fmg.ShowDialog();
 

@@ -91,8 +91,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="BUS\UserBUS.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="GUI\Login\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +119,18 @@
     <Compile Include="GUI\Main\FormManagement.Designer.cs">
       <DependentUpon>FormManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Usercontrol\FoodView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Usercontrol\FoodView.Designer.cs">
+      <DependentUpon>FoodView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Usercontrol\TableView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Usercontrol\TableView.Designer.cs">
+      <DependentUpon>TableView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Login\FormLogin.resx">
@@ -130,6 +144,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Main\FormManagement.resx">
       <DependentUpon>FormManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usercontrol\FoodView.resx">
+      <DependentUpon>FoodView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usercontrol\TableView.resx">
+      <DependentUpon>TableView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -162,10 +182,7 @@
   <ItemGroup>
     <None Include="GUI\Image\quality_restoration_20240925110650400.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BUS\" />
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="GUI\Icon\visibility.png" />
   </ItemGroup>

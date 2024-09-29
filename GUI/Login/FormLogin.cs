@@ -20,10 +20,6 @@ namespace CoffeeApp
             InitializeComponent();
         }
 
-        bool Login(string username , string password)
-        {
-            return DAO.AccountDAO.Instance.Login(username, password);
-        }
 
         //  	Chạy các sự kiện như click , …..
         #region Events  
@@ -72,7 +68,7 @@ namespace CoffeeApp
            // Console.WriteLine(username+ "   "+ password);
             //Console.WriteLine(DAO.AccountDAO.Instance.HashPassword("123"));
 
-            if (DAO.AccountDAO.Instance.Login(username, password))
+            if (BUS.UserBUS.Instance.checkLogin(username, password))
             {
                 FormMain fm = new FormMain(1,1);
                 this.Hide();

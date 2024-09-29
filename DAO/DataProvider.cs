@@ -68,7 +68,7 @@ namespace CoffeeApp.DAO
             return data;
         }
 
-        public int ExecutenonQuery(string query, object[] parameter = null) // kết quả khi bn insert, delete, update thì nó sẽ trả ra số dòng thành công
+        public int ExecuteNonQuery(string query, object[] parameter = null) // kết quả khi bn insert, delete, update thì nó sẽ trả ra số dòng thành công
         {
 
             int data = 0;
