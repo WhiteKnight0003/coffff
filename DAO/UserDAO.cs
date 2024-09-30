@@ -23,7 +23,7 @@ namespace CoffeeApp.DAO
 
         public UserDAO() { }
 
-           private string HashPassword(string password)
+           public string HashPassword(string password)
             {
             //  SHA256 hoặc SHA512. Những thuật toán này không phải là "mã hóa" mà là "băm", tức là chúng chuyển đổi mật khẩu thành một chuỗi giá trị không thể đảo ngược
 
@@ -51,13 +51,13 @@ namespace CoffeeApp.DAO
 
         public bool checkEmail(string email)
         {
-            string query = $"select * from users where UserName=N'{email}'";
+            string query = $"select * from users where Email=N'{email}'";
             return DAO.DataProvider.Instance.ExcuteQuery(query).Rows.Count > 0;
         }
 
         public bool checkPhone(string phone)
         {
-            string query = $"select * from users where UserName=N'{phone}'";
+            string query = $"select * from users where phone=N'{phone}'";
             return DAO.DataProvider.Instance.ExcuteQuery(query).Rows.Count > 0;
         }
 
@@ -102,12 +102,46 @@ namespace CoffeeApp.DAO
             return resData.Rows.Count > 0; // số dòng trả ra
         }
 
-        public bool InsertUser(string userName, string passWord,string phone , string email,string codeEmail, string statusEmail, int roleID)
+        public DataTable QueryRoleUser(string username)
+        {
+            string query = $"select * from Users where username = N'{username}'";
+            DataTable data = DAO.DataProvider.Instance.ExcuteQuery(query);
+             return data;
+        }
+        public bool InsertUser(string userName, string passWord,string phone , string email,string codeEmail, string statusEmail, int roleID, string fullName, string address, string gender, string image)
         {
             try
             {
                 DAO.DataProvider.Instance.ExecuteNonQuery($"INSERT INTO users(UserName, Password, Phone, email, codeEmail, statusEmail, RoleID) " +
                     $"VALUES (N'{userName}', N'{passWord}', N'{phone}', N'{email}', N'{codeEmail}', N'{statusEmail}', {roleID} )");
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool UpdateUser(string userName, string passWord, string phone, string email, string codeEmail, string statusEmail, int roleID, string fullName, string address, string gender, string image)
+        {
+            try
+            {
+                DAO.DataProvider.Instance.ExecuteNonQuery($"UPDATE users SET userName = N'{userName}', password = N'{passWord}',phone= N'{phone}', Email = N'{email}', codeEmail = N'{codeEmail}',statusEmail=N'{statusEmail}', roleID = {roleID}, fullname = N'{fullName}', address = N'{address}' , gender=N'{gender}', image = N'{image}' WHERE username = N'{userName}'");
+
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool UpdateCodeEmail(string userName, string codeEmail, string statusEmail)
+        {
+            try
+            {
+                DAO.DataProvider.Instance.ExecuteNonQuery($"UPDATE users SET codeEmail = N'{codeEmail}',statusEmail=N'{statusEmail}' WHERE username = N'{userName}'");
+
             }
             catch
             {

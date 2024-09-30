@@ -127,9 +127,10 @@ CREATE TABLE users (
     statusEmail NVARCHAR(20) COLLATE Latin1_General_100_CI_AS_SC_UTF8  NULL,
     email NVARCHAR(45) NOT NULL,
     gender NVARCHAR(50) NULL,
-    image NVARCHAR(max) NULL
+    image Nvarchar(max) NULL
 );
 GO
+
 
 -- Add foreign keys
 ALTER TABLE bill
@@ -185,3 +186,21 @@ Begin
 end
 
 select * from users where UserName=N'TienChung'
+
+
+insert into category (CategoryName, Description) values (N'Tôm',N'Loại thức ăn từ biển');
+insert into category (CategoryName, Description) values (N'Cá',N'Loại thức ăn từ biển');
+insert into category (CategoryName, Description) values (N'Bò',N'Loại thức ăn từ biển');
+
+insert into product (Price, Name,Description, Image,CategoryID) values (100000, N'Tôm chiên', N'dsadasdas', '',1)
+insert into product (Price, Name,Description, Image,CategoryID) values (100000, N'Cá chiên', N'dsadasdas', '',2)
+insert into product (Price, Name,Description, Image,CategoryID) values (100000, N'Bò chiên', N'dsadasdas', '',3)
+
+insert into tablee (TableNumber, Status) values (N'Bàn 1', 'Trống')
+insert into tablee (TableNumber, Status) values (N'Bàn 2', 'Trống')
+insert into tablee (TableNumber, Status) values (N'Bàn 3', 'Trống')
+insert into tablee (TableNumber, Status) values (N'Bàn 4', 'Trống')
+insert into tablee (TableNumber, Status) values (N'Bàn 5', 'Trống')
+insert into tablee (TableNumber, Status) values (N'Bàn 6', 'Trống')
+insert into tablee (TableNumber, Status) values (N'Bàn 7', 'Trống')
+insert into tablee (TableNumber, Status) values (N'Bàn 8', 'Trống')

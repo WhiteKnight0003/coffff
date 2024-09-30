@@ -1,9 +1,14 @@
-﻿using System;
+﻿using CoffeeApp.GUI.Login;
+using CoffeeApp.GUI.Main;
+using Guna.UI2.WinForms;
+using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -13,10 +18,13 @@ namespace CoffeeApp.GUI
 {
     public partial class FormSignUp : Form
     {
-        public FormSignUp()
+        private FormLogin formLogin;
+        private FormMain formMain;
+
+        public FormSignUp(FormLogin formLogin)
         {
             InitializeComponent();
-         
+            this.formLogin = formLogin;
         }
 
        
@@ -58,7 +66,7 @@ namespace CoffeeApp.GUI
             }
         }
 
-        private void btnSignUp_Click(object sender, EventArgs e)
+        private async void btnSignUp_Click(object sender, EventArgs e)
         {
             string username = txtSignUpUserName.Text;
             string email = txtSignUpEmail.Text;
@@ -66,28 +74,34 @@ namespace CoffeeApp.GUI
             string password = txSignUpPassword.Text;
             string repassword = txSignUpRePassword.Text;
 
-            //if(validateEmail(email))
-            if (BUS.UserBUS.Instance.checkUserName(username))
+            // đúng hết
+            if(!DAO.UserDAO.Instance.checkUserName(username) && !DAO.UserDAO.Instance.checkEmail(email) && validateEmail(email) && !DAO.UserDAO.Instance.checkPhone(phone) && password!="" && password == repassword)
             {
-                lbValidateUserName.Text = "Tên đăng nhập đã tồn tại";
-                if (BUS.UserBUS.Instance.checkEmail(email))
+                string verificationCode = await EmailService.SendVerificationCodeAsync(email);
+                this.Hide();
+                FormInputEmail forminputemail = new FormInputEmail(formLogin, this,username, DAO.UserDAO.Instance.HashPassword(password), phone, email,1, verificationCode); // 0 đại diện cho việc insert
+                forminputemail.ShowDialog();
+            }
+            else
+            {
+                if (DAO.UserDAO.Instance.checkUserName(username))
                 {
-                    lbValidateEmail.Text = "Email đã tồn tại";
-                    if (BUS.UserBUS.Instance.checkPhone(phone))
+                    if (DAO.UserDAO.Instance.checkEmail(email))
                     {
-                        lbValidatePhone.Text = "Số điện thoại đã tồn tại";
-                        if (password == "")
+                        if (DAO.UserDAO.Instance.checkPhone(phone))
                         {
-                            lbValidatePassword.Text = "Mật khẩu không được để trống";
-                            if (repassword == "")
-                            {
-                                lbValidateRePassword.Text = "Mật khẩu không được để trống";
-                            }
+
+                        }
+                    }
+                    else if (validateEmail(email))
+                    {
+                        if (DAO.UserDAO.Instance.checkPhone(phone))
+                        {
+
                         }
                     }
                 }
             }
-            
         }
         #endregion
 

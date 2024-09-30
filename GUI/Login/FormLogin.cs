@@ -1,23 +1,34 @@
 ﻿using CoffeeApp.DAO;
+using CoffeeApp.DTO;
 using CoffeeApp.GUI;
+using CoffeeApp.GUI.Login;
+using CoffeeApp.GUI.Main;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CoffeeApp
 {
     public partial class FormLogin : Form
     {
         int countViewPassword = 0;
+        private FormSignUp formsignup;
+        private FormMain formMain;
+
+
         public FormLogin()
         {
             InitializeComponent();
+            formsignup = new FormSignUp(this);
         }
 
 
@@ -55,29 +66,84 @@ namespace CoffeeApp
 
         private void linkSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FormSignUp fsu = new FormSignUp();
+            
             this.Hide();
-            fsu.ShowDialog();
+            formsignup.ShowDialog();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
             string username = tbLoginName.Text;
             string password = tbLoginPassword.Text;
 
-           // Console.WriteLine(username+ "   "+ password);
+            // Console.WriteLine(username+ "   "+ password);
             //Console.WriteLine(DAO.AccountDAO.Instance.HashPassword("123"));
 
-            if (BUS.UserBUS.Instance.checkLogin(username, password))
+            if (DAO.UserDAO.Instance.checkLogin(username, password))
             {
-                FormMain fm = new FormMain(1,1);
-                this.Hide();
-                fm.ShowDialog();
+                
+                DataTable data = DAO.UserDAO.Instance.QueryRoleUser(username);
+                DataRow row = data.Rows[0];
+                UserDTO user = new UserDTO(row);
+
+                formMain = new FormMain(user.UserName, user.RoleID);
+
+                if (user.CodeEmail == "")
+                {
+                    string verificationCode = await EmailService.SendVerificationCodeAsync(user.Email);
+                    this.Hide();
+                    FormInputEmail forminputemail = new FormInputEmail(this, formsignup,user.UserName, user.Password, user.Phone, user.Email,user.RoleID, verificationCode); // 0 đại diện cho việc insert
+                    forminputemail.ShowDialog();
+                }
+
+                if(user.CodeEmail != "")
+                {
+                    this.Hide();
+                    formMain.ShowDialog();
+                }
             }
-            else
-            {
-                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
-            }
+
+            //        this.Hide();
+
+            //        FormInputEmail forminputemail = new FormInputEmail(this, formsignup);
+            //        forminputemail.ShowDialog();
+
+            //        //if (forminputemail.clickCheckCode == true)
+            //        //{
+            //        //    if(verificationCode == forminputemail.CodeInputEmail())
+            //        //    {
+            //                forminputemail.Close();
+            //                string statusEmail = "Đã xác thực";
+            //                int roleID = 1;
+            //                if (DAO.UserDAO.Instance.UpdateUser(user.UserName, user.Password, user.Phone, user.Email, forminputemail.CodeInputEmail(), statusEmail, roleID, "", "", "", ""))
+            //                {
+            //                    MessageBox.Show("Xác thực tài khoản thành công - Đăng nhập thành công");
+            //                    this.Hide();
+            //                    formMain.ShowDialog();
+            //                }
+            //                else
+            //                {
+            //                    MessageBox.Show("Xác thực tài khoản thất bại - Đăng nhập thất bại");
+            //                }
+            //            }
+            //            else
+            //            {
+            //                forminputemail.clickCheckCode = false;
+            //            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        this.Hide();
+            //        MessageBox.Show("Đăng nhập thành công");
+            //        formMain = new FormMain(user.UserName, user.RoleID);
+            //        formMain.ShowDialog();
+            //    }
+            //}    
+            //else
+            //{
+            //    MessageBox.Show("Tên đăng nhập hoặc số điện thoại hoặc mật khẩu sai !");
+            //}
         }
 
         #endregion

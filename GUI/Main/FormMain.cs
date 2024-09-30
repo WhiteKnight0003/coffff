@@ -1,4 +1,6 @@
-﻿using CoffeeApp.GUI.Main;
+﻿using CoffeeApp.DTO;
+using CoffeeApp.GUI.Main;
+using CoffeeApp.GUI.Usercontrol;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +16,13 @@ namespace CoffeeApp.GUI
 
     public partial class FormMain : Form
     {
-        private int id;
+        private string username;
         private int roleID;
-        public FormMain(int id, int roleID)
+        public FormMain(string username, int roleID)
         {
             InitializeComponent();
-            this.id = id;
+            FillingFood();
+            this.username = username;
             this.roleID = roleID;
         }
 
@@ -30,5 +33,22 @@ namespace CoffeeApp.GUI
             fmg.ShowDialog();
 
         }
+
+        #region Method
+        private void FillingFood()
+        {
+            DataTable data = DAO.ProductDAO.Instance.FullFood();
+            foreach (DataRow row in data.Rows)
+            {
+                ProductDTO producDTO = new ProductDTO(row); 
+                FoodView foodView = new FoodView();
+                foodView.lbNameFood.Text = producDTO.Name;
+                foodView.lbDescriptFood.Text = producDTO.Description;
+                foodView.lbCashFood.Text = producDTO.Price.ToString();
+                flowLayoutPanel1.Controls.Add(foodView);
+            }
+        }
+
+        #endregion
     }
 }

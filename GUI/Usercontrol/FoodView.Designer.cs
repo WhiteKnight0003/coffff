@@ -32,7 +32,7 @@
             this.pbImageFood = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lbNameFood = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbDescriptFood = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbFoodFood = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbCashFood = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pbImageFood)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             this.btnChooseFood.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnChooseFood.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnChooseFood.ForeColor = System.Drawing.Color.White;
-            this.btnChooseFood.Location = new System.Drawing.Point(150, 261);
+            this.btnChooseFood.Location = new System.Drawing.Point(150, 234);
             this.btnChooseFood.Name = "btnChooseFood";
             this.btnChooseFood.Size = new System.Drawing.Size(116, 40);
             this.btnChooseFood.TabIndex = 0;
@@ -77,26 +77,26 @@
             this.lbDescriptFood.TabIndex = 2;
             this.lbDescriptFood.Text = "guna2HtmlLabel1";
             // 
-            // lbFoodFood
+            // lbCashFood
             // 
-            this.lbFoodFood.BackColor = System.Drawing.Color.Transparent;
-            this.lbFoodFood.Location = new System.Drawing.Point(3, 283);
-            this.lbFoodFood.Name = "lbFoodFood";
-            this.lbFoodFood.Size = new System.Drawing.Size(108, 18);
-            this.lbFoodFood.TabIndex = 2;
-            this.lbFoodFood.Text = "guna2HtmlLabel1";
+            this.lbCashFood.BackColor = System.Drawing.Color.Transparent;
+            this.lbCashFood.Location = new System.Drawing.Point(3, 256);
+            this.lbCashFood.Name = "lbCashFood";
+            this.lbCashFood.Size = new System.Drawing.Size(108, 18);
+            this.lbCashFood.TabIndex = 2;
+            this.lbCashFood.Text = "guna2HtmlLabel1";
             // 
             // FoodView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lbFoodFood);
+            this.Controls.Add(this.lbCashFood);
             this.Controls.Add(this.lbDescriptFood);
             this.Controls.Add(this.lbNameFood);
             this.Controls.Add(this.pbImageFood);
             this.Controls.Add(this.btnChooseFood);
             this.Name = "FoodView";
-            this.Size = new System.Drawing.Size(269, 304);
+            this.Size = new System.Drawing.Size(269, 280);
             ((System.ComponentModel.ISupportInitialize)(this.pbImageFood)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -107,8 +107,8 @@
 
         private Guna.UI2.WinForms.Guna2Button btnChooseFood;
         private Guna.UI2.WinForms.Guna2PictureBox pbImageFood;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbNameFood;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbDescriptFood;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbFoodFood;
+        protected internal Guna.UI2.WinForms.Guna2HtmlLabel lbNameFood;
+        protected internal Guna.UI2.WinForms.Guna2HtmlLabel lbDescriptFood;
+        protected internal Guna.UI2.WinForms.Guna2HtmlLabel lbCashFood;
     }
 }

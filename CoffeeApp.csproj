@@ -42,6 +42,7 @@
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -91,15 +92,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUS\UserBUS.cs" />
+    <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="DAO\TableDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DTO\ProductDTO.cs" />
+    <Compile Include="DTO\TableDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="GUI\Login\EmailService.cs" />
     <Compile Include="GUI\Login\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Login\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Login\FormInputEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Login\FormInputEmail.Designer.cs">
+      <DependentUpon>FormInputEmail.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Main\FormMain.cs">
       <SubType>Form</SubType>
@@ -138,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login\FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Login\FormInputEmail.resx">
+      <DependentUpon>FormInputEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Main\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
