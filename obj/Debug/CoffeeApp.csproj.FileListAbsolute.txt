@@ -22,3 +22,8 @@ E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.GUI.Main.FormManagement.resource
 E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.GUI.Usercontrol.FoodView.resources
 E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.GUI.Usercontrol.TableView.resources
 E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.GUI.Main.FormInputEmail.resources
+E:\C# project\app\CoffeeApp\obj\Debug\CoffeeApp.GUI.Login.FormForgetPassword.resources
+E:\C# project\app\CoffeeApp\bin\Debug\DevExpress.Data.v24.1.dll
+E:\C# project\app\CoffeeApp\bin\Debug\DevExpress.Xpo.v24.1.dll
+E:\C# project\app\CoffeeApp\bin\Debug\DevExpress.Data.v24.1.xml
+E:\C# project\app\CoffeeApp\bin\Debug\DevExpress.Xpo.v24.1.xml

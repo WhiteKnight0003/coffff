@@ -24,7 +24,6 @@ namespace CoffeeApp
         private FormSignUp formsignup;
         private FormMain formMain;
 
-
         public FormLogin()
         {
             InitializeComponent();
@@ -99,53 +98,27 @@ namespace CoffeeApp
                 if(user.CodeEmail != "")
                 {
                     this.Hide();
+                    MessageBox.Show("Đăng nhập thành công");
                     formMain.ShowDialog();
                 }
+
+            }
+            else
+            {
+                MessageBox.Show("Tên đăng nhập hoặc số điện thoại hoặc mật khẩu sai !");
             }
 
-            //        this.Hide();
-
-            //        FormInputEmail forminputemail = new FormInputEmail(this, formsignup);
-            //        forminputemail.ShowDialog();
-
-            //        //if (forminputemail.clickCheckCode == true)
-            //        //{
-            //        //    if(verificationCode == forminputemail.CodeInputEmail())
-            //        //    {
-            //                forminputemail.Close();
-            //                string statusEmail = "Đã xác thực";
-            //                int roleID = 1;
-            //                if (DAO.UserDAO.Instance.UpdateUser(user.UserName, user.Password, user.Phone, user.Email, forminputemail.CodeInputEmail(), statusEmail, roleID, "", "", "", ""))
-            //                {
-            //                    MessageBox.Show("Xác thực tài khoản thành công - Đăng nhập thành công");
-            //                    this.Hide();
-            //                    formMain.ShowDialog();
-            //                }
-            //                else
-            //                {
-            //                    MessageBox.Show("Xác thực tài khoản thất bại - Đăng nhập thất bại");
-            //                }
-            //            }
-            //            else
-            //            {
-            //                forminputemail.clickCheckCode = false;
-            //            }
-            //        }
-            //    }
-            //    else
-            //    {
-            //        this.Hide();
-            //        MessageBox.Show("Đăng nhập thành công");
-            //        formMain = new FormMain(user.UserName, user.RoleID);
-            //        formMain.ShowDialog();
-            //    }
-            //}    
-            //else
-            //{
-            //    MessageBox.Show("Tên đăng nhập hoặc số điện thoại hoặc mật khẩu sai !");
-            //}
+          
         }
 
+        private void btnForgetPassword_Click(object sender, EventArgs e)
+        {
+            FormForgetPassword formForgetPassword = new FormForgetPassword(this);
+            this.Hide();
+            formForgetPassword.ShowDialog();
+        }
         #endregion
+
+
     }
 }

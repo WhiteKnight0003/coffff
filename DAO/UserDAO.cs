@@ -55,6 +55,12 @@ namespace CoffeeApp.DAO
             return DAO.DataProvider.Instance.ExcuteQuery(query).Rows.Count > 0;
         }
 
+        public DataTable UserEmail(string email)
+        {
+            string query = $"select * from users where Email=N'{email}'";
+            return DAO.DataProvider.Instance.ExcuteQuery(query);
+        }
+
         public bool checkPhone(string phone)
         {
             string query = $"select * from users where phone=N'{phone}'";
@@ -108,12 +114,20 @@ namespace CoffeeApp.DAO
             DataTable data = DAO.DataProvider.Instance.ExcuteQuery(query);
              return data;
         }
+
+        public DataTable FullUsers()
+        {
+            string query = $"select * from Users ";
+            DataTable data = DAO.DataProvider.Instance.ExcuteQuery(query);
+            return data;
+        }
+
         public bool InsertUser(string userName, string passWord,string phone , string email,string codeEmail, string statusEmail, int roleID, string fullName, string address, string gender, string image)
         {
             try
             {
-                DAO.DataProvider.Instance.ExecuteNonQuery($"INSERT INTO users(UserName, Password, Phone, email, codeEmail, statusEmail, RoleID) " +
-                    $"VALUES (N'{userName}', N'{passWord}', N'{phone}', N'{email}', N'{codeEmail}', N'{statusEmail}', {roleID} )");
+                DAO.DataProvider.Instance.ExecuteNonQuery($"INSERT INTO users(UserName, Password, Phone, email, codeEmail, statusEmail, RoleID , fullName , address , gender , image) " +
+                    $"VALUES (N'{userName}', N'{passWord}', N'{phone}', N'{email}', N'{codeEmail}', N'{statusEmail}', {roleID} , N'{fullName}', N'{address}', N'{gender}', N'{image}' )");
             }
             catch
             {
@@ -136,18 +150,6 @@ namespace CoffeeApp.DAO
             return true;
         }
 
-        public bool UpdateCodeEmail(string userName, string codeEmail, string statusEmail)
-        {
-            try
-            {
-                DAO.DataProvider.Instance.ExecuteNonQuery($"UPDATE users SET codeEmail = N'{codeEmail}',statusEmail=N'{statusEmail}' WHERE username = N'{userName}'");
 
-            }
-            catch
-            {
-                return false;
-            }
-            return true;
-        }
     }
 }

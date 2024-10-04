@@ -104,7 +104,7 @@ GO
 
 CREATE TABLE tablee (
     ID INT IDENTITY PRIMARY KEY,
-    TableNumber NVARCHAR(255)  NOT NULL,
+    TableName NVARCHAR(255)  NOT NULL,
     Status NVARCHAR(255) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NULL
 );
 GO
@@ -160,8 +160,8 @@ GO
 -- Insert data into role table
 INSERT INTO role (RoleID, RoleName) 
 VALUES 
-    (0, 'Quản Lý'),
-    (1, 'Nhân Viên');
+    (0, N'Quản Lý'),
+    (1, N'Nhân Viên');
 SET IDENTITY_INSERT dbo.role OFF;
 
 USE coffeeApplication;
@@ -171,7 +171,7 @@ GO
 -- Insert data into users table
 INSERT INTO users (UserName, FullName, Password, Phone, email,codeEmail,statusEmail, Gender, RoleID) 
 VALUES
-    ('TienChung', 'Lê Tiến Chung', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '0384905333','tienchung2612@gmail.com','123456','True', 'Female', 1);
+    (N'TienChung', N'Lê Tiến Chung', N'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', N'0384905333',N'tienchung2612@gmail.com',N'123456',N'True', N'Female', 1);
 
 
 
@@ -185,8 +185,6 @@ Begin
 	SELECT * from Users where ( UserName = @UserName or Phone = @Phone ) and Password = @Password
 end
 
-select * from users where UserName=N'TienChung'
-
 
 insert into category (CategoryName, Description) values (N'Tôm',N'Loại thức ăn từ biển');
 insert into category (CategoryName, Description) values (N'Cá',N'Loại thức ăn từ biển');
@@ -196,11 +194,11 @@ insert into product (Price, Name,Description, Image,CategoryID) values (100000, 
 insert into product (Price, Name,Description, Image,CategoryID) values (100000, N'Cá chiên', N'dsadasdas', '',2)
 insert into product (Price, Name,Description, Image,CategoryID) values (100000, N'Bò chiên', N'dsadasdas', '',3)
 
-insert into tablee (TableNumber, Status) values (N'Bàn 1', 'Trống')
-insert into tablee (TableNumber, Status) values (N'Bàn 2', 'Trống')
-insert into tablee (TableNumber, Status) values (N'Bàn 3', 'Trống')
-insert into tablee (TableNumber, Status) values (N'Bàn 4', 'Trống')
-insert into tablee (TableNumber, Status) values (N'Bàn 5', 'Trống')
-insert into tablee (TableNumber, Status) values (N'Bàn 6', 'Trống')
-insert into tablee (TableNumber, Status) values (N'Bàn 7', 'Trống')
-insert into tablee (TableNumber, Status) values (N'Bàn 8', 'Trống')
+insert into tablee (TableName, Status) values (N'Bàn', N'Trống')
+insert into tablee (TableName, Status) values (N'Bàn', N'Trống')
+insert into tablee (TableName, Status) values (N'Bàn', N'Trống')
+insert into tablee (TableName, Status) values (N'Bàn', N'Trống')
+insert into tablee (TableName, Status) values (N'Bàn', N'Trống')
+insert into tablee (TableName, Status) values (N'Bàn', N'Trống')
+insert into tablee (TableName, Status) values (N'Bàn', N'Trống')
+insert into tablee (TableName, Status) values (N'Bàn', N'Trống')

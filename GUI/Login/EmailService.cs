@@ -15,6 +15,7 @@ namespace CoffeeApp.GUI.Login
         private static int smtpPort = 587;
         private static string smtpMyEmail = "tienchung2612@gmail.com";
         private static string smtpPassword = "zqmh baev rwnp wbha";
+
         public static async Task<string> SendVerificationCodeAsync(string recipientEmail)
         {
             // Tạo mã ngẫu nhiên
@@ -33,7 +34,7 @@ namespace CoffeeApp.GUI.Login
             var mailMessage = new MailMessage()
             {
                 From = new MailAddress(smtpMyEmail),
-                Subject = "Mã xác thực đăng ký tài khoản",
+                Subject = "Mã xác thực",
                 Body = $"Mã xác thực của bạn là : {verificationCode}",
                 IsBodyHtml = false,
             };

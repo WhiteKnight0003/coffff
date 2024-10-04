@@ -21,34 +21,53 @@ namespace CoffeeApp.GUI
         public FormMain(string username, int roleID)
         {
             InitializeComponent();
-            FillingFood();
             this.username = username;
             this.roleID = roleID;
+            LoadTable();
+            Decentralization(username, roleID);
         }
 
+        #region Method
+        private void LoadTable()
+        {
+            DataTable data = DAO.TableDAO.Instance.FullTable();
+            foreach (DataRow row in data.Rows)
+            {
+                TableDTO table = new TableDTO(row);
+                TableView tableView = new TableView();
+                tableView.btnTableView.Text = $"{table.TableName} {table.Id} \n{table.Status}";
+                fltViewTable.Controls.Add(tableView);
+            }
+        }
+
+        private void Decentralization(string username, int roleID)
+        {
+            if (roleID == 0)
+            {
+                quảnLýCửaHàngToolStripMenuItem.Visible = false;
+            }
+            else if (roleID == 1)
+            {
+                hóaĐơnToolStripMenuItem.Visible = false;
+            }
+        }
+        #endregion
+
+        #region Events
         private void quảnLýCửaHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormManagement fmg = new FormManagement(this);
+            FormManagement fmg = new FormManagement(this, username, roleID);
             this.Hide();
             fmg.ShowDialog();
 
         }
 
-        #region Method
-        private void FillingFood()
+        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataTable data = DAO.ProductDAO.Instance.FullFood();
-            foreach (DataRow row in data.Rows)
-            {
-                ProductDTO producDTO = new ProductDTO(row); 
-                FoodView foodView = new FoodView();
-                foodView.lbNameFood.Text = producDTO.Name;
-                foodView.lbDescriptFood.Text = producDTO.Description;
-                foodView.lbCashFood.Text = producDTO.Price.ToString();
-                flowLayoutPanel1.Controls.Add(foodView);
-            }
+            FormManagement fmg = new FormManagement(this, username, roleID);
+            this.Hide();
+            fmg.ShowDialog();
         }
-
         #endregion
     }
 }

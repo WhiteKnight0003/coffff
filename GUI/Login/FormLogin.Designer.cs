@@ -34,7 +34,7 @@
             this.tbLoginName = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbLoginPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnViewPassword = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnForgetPassword = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.linkSignUp = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -44,7 +44,7 @@
             // 
             this.guna2PictureBox1.Image = global::CoffeeApp.Properties.Resources.quality_restoration_20240925110650400;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(2, 3);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(2, -1);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(880, 582);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -97,7 +97,7 @@
             this.tbLoginName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbLoginName.Name = "tbLoginName";
             this.tbLoginName.PasswordChar = '\0';
-            this.tbLoginName.PlaceholderText = "Tên đăng nhập hoặc Email";
+            this.tbLoginName.PlaceholderText = "Tên đăng nhập hoặc Số điện thoại";
             this.tbLoginName.SelectedText = "";
             this.tbLoginName.Size = new System.Drawing.Size(321, 40);
             this.tbLoginName.TabIndex = 0;
@@ -146,21 +146,22 @@
             this.btnViewPassword.TabIndex = 11;
             this.btnViewPassword.Click += new System.EventHandler(this.btnViewPassword_Click);
             // 
-            // guna2Button1
+            // btnForgetPassword
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(448, 313);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(168, 36);
-            this.guna2Button1.TabIndex = 12;
-            this.guna2Button1.Text = "Quên mật khẩu ?";
+            this.btnForgetPassword.BackColor = System.Drawing.Color.Transparent;
+            this.btnForgetPassword.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnForgetPassword.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnForgetPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnForgetPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnForgetPassword.FillColor = System.Drawing.Color.Transparent;
+            this.btnForgetPassword.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForgetPassword.ForeColor = System.Drawing.Color.White;
+            this.btnForgetPassword.Location = new System.Drawing.Point(448, 313);
+            this.btnForgetPassword.Name = "btnForgetPassword";
+            this.btnForgetPassword.Size = new System.Drawing.Size(168, 36);
+            this.btnForgetPassword.TabIndex = 12;
+            this.btnForgetPassword.Text = "Quên mật khẩu ?";
+            this.btnForgetPassword.Click += new System.EventHandler(this.btnForgetPassword_Click);
             // 
             // btnLogin
             // 
@@ -202,7 +203,7 @@
             this.ClientSize = new System.Drawing.Size(882, 583);
             this.Controls.Add(this.linkSignUp);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.btnForgetPassword);
             this.Controls.Add(this.btnViewPassword);
             this.Controls.Add(this.tbLoginPassword);
             this.Controls.Add(this.tbLoginName);
@@ -226,7 +227,7 @@
         private Guna.UI2.WinForms.Guna2TextBox tbLoginName;
         private Guna.UI2.WinForms.Guna2TextBox tbLoginPassword;
         private Guna.UI2.WinForms.Guna2Button btnViewPassword;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnForgetPassword;
         private Guna.UI2.WinForms.Guna2Button btnLogin;
         private System.Windows.Forms.LinkLabel linkSignUp;
     }

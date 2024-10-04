@@ -62,16 +62,19 @@ namespace CoffeeApp.GUI.Main
                 }
                 else
                 {
-                    if(DAO.UserDAO.Instance.InsertUser(username, password, phone, email, txbCodeEmail.Text, "Đã xác thực",1, "", "", "", ""))
+                    if(DAO.UserDAO.Instance.InsertUser( username, password, phone, email, txbCodeEmail.Text, "Đã xác thực",1, "", "", "", ""))
                     {
-                        MessageBox.Show("Đăng kí tài khoản thành công");
+                        MessageBox.Show("Đăng kí tài khoản thành công - nhấn ok để về trang đăng nhập");
+                        this.Close();
+                        formLogin.Show();
                     }
                     else
                     {
                         MessageBox.Show("Đăng kí tài khoản thất bại");
+                        this.Close();
+                        formsignup.Show();
                     }
-                    this.Close();
-                    formsignup.ShowDialog();
+                   
                 }
                 
             }
@@ -83,15 +86,23 @@ namespace CoffeeApp.GUI.Main
             {
                 if (DAO.UserDAO.Instance.InsertUser(username, password, phone, email, "", "Chưa xác thực", 1, "", "", "", ""))
                 {
-                    MessageBox.Show("Tài khoản chưa được xác minh");
+                    MessageBox.Show("Tài khoản đã được đăng kí chưa được xác minh - nhấn oke để về trang đăng nhập");
+                    this.Close();
+                    formLogin.Show();
                 }
                 else
                 {
                     MessageBox.Show("Đăng kí tài khoản thất bại");
+                    this.Close();
+                    formsignup.Show();
                 }
             }
-            this.Close();
-            formLogin.Show();
+            
+        }
+
+        private async void btnReSendCodeEmail_Click(object sender, EventArgs e)
+        {
+            verificationCode = await EmailService.SendVerificationCodeAsync(email);
         }
     }
 }

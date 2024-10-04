@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtSignUpUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSignUpEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSignUpPhone = new Guna.UI2.WinForms.Guna2TextBox();
@@ -43,20 +42,10 @@
             this.lbValidatePhone = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbValidateRePassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbValidatePassword = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.linkBackFormLoginToFormSignUp = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.SpringGreen;
-            this.guna2PictureBox1.Image = global::CoffeeApp.Properties.Resources.bg4;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(3, -10);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(880, 581);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 2;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // txtSignUpUserName
             // 
@@ -156,10 +145,10 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.BackgroundImage = global::CoffeeApp.Properties.Resources.bg3;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(175, 417);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(168, 419);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(95, 33);
-            this.guna2HtmlLabel1.TabIndex = 5;
+            this.guna2HtmlLabel1.TabIndex = 7;
             this.guna2HtmlLabel1.Text = "Đăng kí";
             // 
             // guna2HtmlLabel2
@@ -167,10 +156,10 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.BackgroundImage = global::CoffeeApp.Properties.Resources.bg3;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(90, 456);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(87, 458);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(287, 27);
-            this.guna2HtmlLabel2.TabIndex = 6;
+            this.guna2HtmlLabel2.TabIndex = 8;
             this.guna2HtmlLabel2.Text = "Hãy điền thông tin của bạn !";
             // 
             // cbViewSignUpPassword
@@ -186,7 +175,7 @@
             this.cbViewSignUpPassword.Location = new System.Drawing.Point(645, 391);
             this.cbViewSignUpPassword.Name = "cbViewSignUpPassword";
             this.cbViewSignUpPassword.Size = new System.Drawing.Size(137, 24);
-            this.cbViewSignUpPassword.TabIndex = 7;
+            this.cbViewSignUpPassword.TabIndex = 9;
             this.cbViewSignUpPassword.Text = "Hiện mật khẩu";
             this.cbViewSignUpPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.cbViewSignUpPassword.UncheckedState.BorderRadius = 0;
@@ -207,10 +196,10 @@
             this.btnSignUp.FillColor = System.Drawing.Color.White;
             this.btnSignUp.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.ForeColor = System.Drawing.Color.Black;
-            this.btnSignUp.Location = new System.Drawing.Point(534, 456);
+            this.btnSignUp.Location = new System.Drawing.Point(526, 421);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(180, 45);
-            this.btnSignUp.TabIndex = 8;
+            this.btnSignUp.TabIndex = 5;
             this.btnSignUp.Text = "Đăng Kí";
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
@@ -288,6 +277,32 @@
             this.lbValidatePassword.Size = new System.Drawing.Size(0, 16);
             this.lbValidatePassword.TabIndex = 10;
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.SpringGreen;
+            this.guna2PictureBox1.Image = global::CoffeeApp.Properties.Resources.bg4;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(2, 1);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(880, 581);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 2;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // linkBackFormLoginToFormSignUp
+            // 
+            this.linkBackFormLoginToFormSignUp.AutoSize = true;
+            this.linkBackFormLoginToFormSignUp.BackColor = System.Drawing.Color.Transparent;
+            this.linkBackFormLoginToFormSignUp.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkBackFormLoginToFormSignUp.LinkColor = System.Drawing.Color.White;
+            this.linkBackFormLoginToFormSignUp.Location = new System.Drawing.Point(531, 498);
+            this.linkBackFormLoginToFormSignUp.Name = "linkBackFormLoginToFormSignUp";
+            this.linkBackFormLoginToFormSignUp.Size = new System.Drawing.Size(181, 22);
+            this.linkBackFormLoginToFormSignUp.TabIndex = 6;
+            this.linkBackFormLoginToFormSignUp.TabStop = true;
+            this.linkBackFormLoginToFormSignUp.Text = "Về trang đăng nhập !";
+            this.linkBackFormLoginToFormSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkBackFormLoginToFormSignUp_LinkClicked);
+            // 
             // FormSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -296,6 +311,7 @@
             this.BackgroundImage = global::CoffeeApp.Properties.Resources.bg2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(882, 583);
+            this.Controls.Add(this.linkBackFormLoginToFormSignUp);
             this.Controls.Add(this.lbValidatePassword);
             this.Controls.Add(this.lbValidateRePassword);
             this.Controls.Add(this.lbValidatePhone);
@@ -322,8 +338,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox txtSignUpUserName;
         private Guna.UI2.WinForms.Guna2TextBox txtSignUpEmail;
         private Guna.UI2.WinForms.Guna2TextBox txtSignUpPhone;
@@ -338,5 +352,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbValidatePhone;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbValidateRePassword;
         private System.Windows.Forms.Label lbValidatePassword;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.LinkLabel linkBackFormLoginToFormSignUp;
     }
 }

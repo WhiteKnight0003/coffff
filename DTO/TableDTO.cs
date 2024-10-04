@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace CoffeeApp.DTO
 {
-    internal class TableDAO
+    internal class TableDTO
     {
         private int id;
         private string tableName;
-        private StringFormat status;
+        private string status;
 
-        public TableDAO(int id, string tableName, StringFormat status)
+        public TableDTO(int id, string tableName, string status)
         {
             this.Id = id;
             this.TableName = tableName;
@@ -23,11 +23,13 @@ namespace CoffeeApp.DTO
 
         public int Id { get => id; set => id = value; }
         public string TableName { get => tableName; set => tableName = value; }
-        public StringFormat Status { get => status; set => status = value; }
+        public string Status { get => status; set => status = value; }
 
-        //public TableDTO(DataRow row)
-        //{
-        //    this.Id = row["ID"]
-        //}
+        public TableDTO(DataRow row)
+        {
+            this.Id = int.Parse(row["ID"].ToString());
+            this.TableName = row["TableName"].ToString();
+            this.status = row["status"].ToString();
+        }
     }
 }

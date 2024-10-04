@@ -109,6 +109,7 @@
             this.btnReSendCodeEmail.Size = new System.Drawing.Size(153, 45);
             this.btnReSendCodeEmail.TabIndex = 0;
             this.btnReSendCodeEmail.Text = "Gửi lại mã";
+            this.btnReSendCodeEmail.Click += new System.EventHandler(this.btnReSendCodeEmail_Click);
             // 
             // lbErrorEqualCodeEmail
             // 
