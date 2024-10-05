@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Collections;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CoffeeApp.DAO
 {
@@ -45,26 +46,47 @@ namespace CoffeeApp.DAO
 
         public bool checkUserName(string username)
         {
-            string query = $"select * from users where UserName=N'{username}'";
-            return DAO.DataProvider.Instance.ExcuteQuery(query).Rows.Count>0;
+            // string query = $"select * from users where UserName=N'{username}'";
+            string query = "USP_UserName @username";
+            return DAO.DataProvider.Instance.ExcuteQuery(query, new object[] {username}).Rows.Count>0;
         }
 
         public bool checkEmail(string email)
         {
-            string query = $"select * from users where Email=N'{email}'";
-            return DAO.DataProvider.Instance.ExcuteQuery(query).Rows.Count > 0;
-        }
-
-        public DataTable UserEmail(string email)
-        {
-            string query = $"select * from users where Email=N'{email}'";
-            return DAO.DataProvider.Instance.ExcuteQuery(query);
+            //string query = $"select * from users where Email=N'{email}'";
+            string query = "USP_Email @email";
+            return DAO.DataProvider.Instance.ExcuteQuery(query, new object[] {email}).Rows.Count > 0;
         }
 
         public bool checkPhone(string phone)
         {
-            string query = $"select * from users where phone=N'{phone}'";
-            return DAO.DataProvider.Instance.ExcuteQuery(query).Rows.Count > 0;
+            // string query = $"select * from users where phone=N'{phone}'";
+            string query = "USP_Phone @phone";
+            return DAO.DataProvider.Instance.ExcuteQuery(query, new object[] {phone}).Rows.Count > 0;
+        }
+
+
+        public DataTable UserEmail(string email)
+        {
+            //string query = $"select * from users where Email=N'{email}'";
+            //return DAO.DataProvider.Instance.ExcuteQuery(query);
+            string query = "USP_Email @email";
+            return DAO.DataProvider.Instance.ExcuteQuery(query, new object[] { email });
+        }
+
+        public DataTable QueryRoleUser(string username)
+        {
+            // string query = $"select * from Users where username = N'{username}'";
+            string query = "USP_UserName @username";        
+            return DAO.DataProvider.Instance.ExcuteQuery(query, new object[] { username });
+        }
+
+        public DataTable FullUsers()
+        {
+            //string query = $"select * from Users ";
+            string query = "USP_Users";
+            DataTable data = DAO.DataProvider.Instance.ExcuteQuery(query, new object[] {});
+            return data;
         }
 
         public bool checkLogin(string usernameOrPhone, string password)
@@ -108,19 +130,7 @@ namespace CoffeeApp.DAO
             return resData.Rows.Count > 0; // số dòng trả ra
         }
 
-        public DataTable QueryRoleUser(string username)
-        {
-            string query = $"select * from Users where username = N'{username}'";
-            DataTable data = DAO.DataProvider.Instance.ExcuteQuery(query);
-             return data;
-        }
-
-        public DataTable FullUsers()
-        {
-            string query = $"select * from Users ";
-            DataTable data = DAO.DataProvider.Instance.ExcuteQuery(query);
-            return data;
-        }
+       
 
         public bool InsertUser(string userName, string passWord,string phone , string email,string codeEmail, string statusEmail, int roleID, string fullName, string address, string gender, string image)
         {

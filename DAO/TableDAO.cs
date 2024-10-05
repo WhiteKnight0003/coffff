@@ -20,8 +20,9 @@ namespace CoffeeApp.DAO
 
         public DataTable FullTable()
         {
-            string query = $"select * from tablee";
-            DataTable data = DAO.DataProvider.Instance.ExcuteQuery(query);
+            // string query = $"select * from tablee";
+            string query = "USP_Tables";
+            DataTable data = DAO.DataProvider.Instance.ExcuteQuery(query, new object[] {});
             return data;
         }
     }

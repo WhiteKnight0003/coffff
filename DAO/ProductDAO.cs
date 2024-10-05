@@ -21,8 +21,9 @@ namespace CoffeeApp.DAO
 
         public DataTable FullFood()
         {
-            string query = $"select * from product";
-            DataTable data = DAO.DataProvider.Instance.ExcuteQuery(query);
+            //string query = $"select * from product";
+            string query = "USP_Product";
+            DataTable data = DAO.DataProvider.Instance.ExcuteQuery(query, new object[] {});
             return data;
         }
     }

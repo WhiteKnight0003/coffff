@@ -54,8 +54,8 @@ GO
 
 CREATE TABLE customer (
     ID INT IDENTITY PRIMARY KEY,
-    name NVARCHAR(50) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NOT NULL,
-    phone NVARCHAR(50) NULL,
+    Name NVARCHAR(50) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NOT NULL,
+    Phone NVARCHAR(50) NULL,
 );
 GO
 
@@ -116,16 +116,16 @@ GO
 
 CREATE TABLE users (
     ID INT IDENTITY PRIMARY KEY,
-    UserName NVARCHAR(50) NOT NULL,
-    phone NVARCHAR(20) not NULL,
-    address NVARCHAR(100) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NULL,
-    DateWork DATE NOT NULL DEFAULT GETDATE(),
-    password NVARCHAR(Max) NOT NULL,
-    FullName NVARCHAR(50)  COLLATE Latin1_General_100_CI_AS_SC_UTF8 Null,
-    RoleID INT NOT NULL,
-    codeEmail NVARCHAR(45) NULL,
+    UserName NVARCHAR(50) NOT NULL UNIQUE,
+	FullName NVARCHAR(50)  COLLATE Latin1_General_100_CI_AS_SC_UTF8 Null,
+	password NVARCHAR(Max) NOT NULL,
+    phone NVARCHAR(20) not NULL ,
+	email NVARCHAR(45) NOT NULL UNIQUE,
+	codeEmail NVARCHAR(45) NULL,
     statusEmail NVARCHAR(20) COLLATE Latin1_General_100_CI_AS_SC_UTF8  NULL,
-    email NVARCHAR(45) NOT NULL,
+    address NVARCHAR(100) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NULL,
+    DateWork DATE NOT NULL DEFAULT GETDATE(), 
+    RoleID INT NOT NULL,
     gender NVARCHAR(50) NULL,
     image Nvarchar(max) NULL
 );
@@ -160,9 +160,10 @@ GO
 -- Insert data into role table
 INSERT INTO role (RoleID, RoleName) 
 VALUES 
-    (0, N'Quản Lý'),
-    (1, N'Nhân Viên');
+    (1, N'Quản Lý'),
+    (2, N'Nhân Viên');
 SET IDENTITY_INSERT dbo.role OFF;
+
 
 USE coffeeApplication;
 GO
@@ -171,28 +172,28 @@ GO
 -- Insert data into users table
 INSERT INTO users (UserName, FullName, Password, Phone, email,codeEmail,statusEmail, Gender, RoleID) 
 VALUES
-    (N'TienChung', N'Lê Tiến Chung', N'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', N'0384905333',N'tienchung2612@gmail.com',N'123456',N'True', N'Female', 1);
-
-
+    (N'Admin', N'', N'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', N'0384905333',N'tienchung2612@gmail.com',N'123456',N'Đã xác thực', N'Female', 1);
 
 -- DROP PROCEDURE IF EXISTS USP_Login
 --go 
 
-Create proc USP_Login
-@UserName nvarchar(100), @Password nvarchar(100), @Phone nvarchar(100)
-As
-Begin
-	SELECT * from Users where ( UserName = @UserName or Phone = @Phone ) and Password = @Password
-end
 
 
-insert into category (CategoryName, Description) values (N'Tôm',N'Loại thức ăn từ biển');
-insert into category (CategoryName, Description) values (N'Cá',N'Loại thức ăn từ biển');
-insert into category (CategoryName, Description) values (N'Bò',N'Loại thức ăn từ biển');
+insert into category (CategoryName, Description) values (N'Cafe',N'Đồ uống được làm ra từ những hạt cafe nguyên chất');
+insert into category (CategoryName, Description) values (N'Trà',N'Sự hòa quyện giữa chà và những nguyên liệu tự nhiên khác');
+insert into category (CategoryName, Description) values (N'Sinh tố',N'Xay nhuyễn các nguyên liệu để tạo ra đồ uống thơm ngon');
+insert into category (CategoryName, Description) values (N'Sữa chua',N'Sự kết hợp giữa Sữa chua và các hương vị mới');
+insert into category (CategoryName, Description) values (N'Kem',N'Đồ uống có hương vị mát lạnh');
 
-insert into product (Price, Name,Description, Image,CategoryID) values (100000, N'Tôm chiên', N'dsadasdas', '',1)
-insert into product (Price, Name,Description, Image,CategoryID) values (100000, N'Cá chiên', N'dsadasdas', '',2)
-insert into product (Price, Name,Description, Image,CategoryID) values (100000, N'Bò chiên', N'dsadasdas', '',3)
+insert into product (Price, Name,Description, Image,CategoryID) values (25000, N'Nâu đá', N'', '',1)
+insert into product (Price, Name,Description, Image,CategoryID) values (25000, N'Đen đá không đường', N'', '',1)
+insert into product (Price, Name,Description, Image,CategoryID) values (45000, N'Đào cam sả', N'', '',2)
+insert into product (Price, Name,Description, Image,CategoryID) values (45000, N'Đào sả quế', N'', '',2)
+insert into product (Price, Name,Description, Image,CategoryID) values (45000, N'Sinh tố bơ', N'', '',3)
+insert into product (Price, Name,Description, Image,CategoryID) values (45000, N'Sinh tố xoài', N'', '',3)
+insert into product (Price, Name,Description, Image,CategoryID) values (35000, N'Sữa chua cà phê', N'', '',4)
+insert into product (Price, Name,Description, Image,CategoryID) values (40000, N'Sữa chua ca cao', N'', '',4)
+insert into product (Price, Name,Description, Image,CategoryID) values (30000, N'Kem socola', N'', '',5)
 
 insert into tablee (TableName, Status) values (N'Bàn', N'Trống')
 insert into tablee (TableName, Status) values (N'Bàn', N'Trống')
@@ -202,3 +203,7 @@ insert into tablee (TableName, Status) values (N'Bàn', N'Trống')
 insert into tablee (TableName, Status) values (N'Bàn', N'Trống')
 insert into tablee (TableName, Status) values (N'Bàn', N'Trống')
 insert into tablee (TableName, Status) values (N'Bàn', N'Trống')
+
+insert into payment (PaymentName) values (N'Tiền mặt')
+insert into payment (PaymentName) values (N'Chuyển khoản')
+insert into payment (PaymentName) values (N'Quẹt thẻ tín dụng')

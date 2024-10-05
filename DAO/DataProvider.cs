@@ -5,7 +5,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Configuration;
 using System.Threading.Tasks;
+
 
 namespace CoffeeApp.DAO
 {
@@ -24,7 +26,7 @@ namespace CoffeeApp.DAO
 
         //string sqlConnect = "Data Source=(local);Initial Catalog=QLChoThueNha_BTL;Persist Security Info=True;User ID=sa;Password=nam123;Trust Server Certificate=True";
         private String connectionStr = "Data Source=TIENCHUNG0003\\SQLEXPRESS;Initial Catalog=coffeeApplication;Persist Security Info=True;User ID=sa;Password=sktt1popo";
-
+       
         public DataTable ExcuteQuery(string query, object[] parameter = null)
         {
             // đổ data ra table

@@ -23,6 +23,7 @@ namespace CoffeeApp.GUI
         private FormLogin formLogin;
         private FormMain formMain;
         private ValidateData validateData;
+        private bool isSignUp = false;
         public FormSignUp(FormLogin formLogin)
         {
             InitializeComponent();
@@ -71,11 +72,11 @@ namespace CoffeeApp.GUI
 
         private async void btnSignUp_Click(object sender, EventArgs e)
         {
-            string username = txtSignUpUserName.Text;
-            string email = txtSignUpEmail.Text;
-            string phone = txtSignUpPhone.Text;
-            string password = txSignUpPassword.Text;
-            string repassword = txSignUpRePassword.Text;
+            string username = txtSignUpUserName.Text.Trim();
+            string email = txtSignUpEmail.Text.Trim();
+            string phone = txtSignUpPhone.Text.Trim();
+            string password = txSignUpPassword.Text.Trim();
+            string repassword = txSignUpRePassword.Text.Trim();
 
             // đúng hết
             if(!DAO.UserDAO.Instance.checkUserName(username) && !DAO.UserDAO.Instance.checkEmail(email) && validateData.validateEmail(email) && !DAO.UserDAO.Instance.checkPhone(phone) && validateData.validatePhone(phone) && password!="" && password == repassword)
@@ -1287,5 +1288,23 @@ namespace CoffeeApp.GUI
             this.Close();
             formLogin.Show();
         }
+
+        //private void FormSignUp_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    if (isSignUp)
+        //    {
+        //        return;
+        //    }
+        //    if (MessageBox.Show("Bạn chắc chắn muốn thoát chương trình ?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+        //    {
+        //        e.Cancel = true;
+        //    }
+        //    else
+        //    {
+        //        isSignUp = true;
+        //        // đóng toàn bộ chương trình
+        //        Application.Exit();
+        //    }
+        //}
     }
 }

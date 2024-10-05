@@ -42,7 +42,7 @@ namespace CoffeeApp.GUI
 
         private void Decentralization(string username, int roleID)
         {
-            if (roleID == 0)
+            if (roleID == 2)
             {
                 quảnLýCửaHàngToolStripMenuItem.Visible = false;
             }

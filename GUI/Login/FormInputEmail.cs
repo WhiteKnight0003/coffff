@@ -41,7 +41,7 @@ namespace CoffeeApp.GUI.Main
 
         private void btnGetCodeEmail_Click(object sender, EventArgs e)
         {
-            if(txbCodeEmail.Text != verificationCode)
+            if(txbCodeEmail.Text.Trim() != verificationCode)
             {
                 lbErrorEqualCodeEmail.Text = "Mã xác minh chưa đúng";
             }
@@ -62,7 +62,7 @@ namespace CoffeeApp.GUI.Main
                 }
                 else
                 {
-                    if(DAO.UserDAO.Instance.InsertUser( username, password, phone, email, txbCodeEmail.Text, "Đã xác thực",1, "", "", "", ""))
+                    if(DAO.UserDAO.Instance.InsertUser( username, password, phone, email, txbCodeEmail.Text, "Đã xác thực",2, "", "", "", ""))
                     {
                         MessageBox.Show("Đăng kí tài khoản thành công - nhấn ok để về trang đăng nhập");
                         this.Close();
@@ -84,9 +84,9 @@ namespace CoffeeApp.GUI.Main
         {
             if (!DAO.UserDAO.Instance.checkUserName(username))
             {
-                if (DAO.UserDAO.Instance.InsertUser(username, password, phone, email, "", "Chưa xác thực", 1, "", "", "", ""))
+                if (DAO.UserDAO.Instance.InsertUser(username, password, phone, email, "", "Chưa xác thực", 2, "", "", "", ""))
                 {
-                    MessageBox.Show("Tài khoản đã được đăng kí chưa được xác minh - nhấn oke để về trang đăng nhập");
+                    MessageBox.Show("Tài khoản đã được đăng kí nhưng chưa được xác minh - nhấn oke để về trang đăng nhập");
                     this.Close();
                     formLogin.Show();
                 }

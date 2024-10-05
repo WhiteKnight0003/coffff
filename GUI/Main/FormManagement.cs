@@ -29,7 +29,8 @@ namespace CoffeeApp.GUI.Main
 
         private void Decentralization(string username, int roleID)
         {
-            if (roleID == 0)
+            // staff
+            if (roleID == 2)
             {
                 tcManagement.TabPages.Remove(TabStatisticsProceeds);
                 tcManagement.TabPages.Remove(TabProduct);

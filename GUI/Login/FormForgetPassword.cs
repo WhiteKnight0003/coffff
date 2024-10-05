@@ -87,7 +87,7 @@ namespace CoffeeApp.GUI.Login
             if (txbForgetPasswordEmail.Text == "")
             {
                 lbForgetPasswordEmail.Text = "Email không được để trống !";
-                if(txbForgetPasswordCodeEmail.Text == "")
+                if(txbForgetPasswordCodeEmail.Text.Trim() == "")
                 {
                     lbForgetPasswordCodeEmail.Text = "Mã xác minh không được để trống !";
                     if (txbForgetPasswordNewPassword.Text == "")
@@ -154,7 +154,7 @@ namespace CoffeeApp.GUI.Login
             else if (!validateData.validateEmail(txbForgetPasswordEmail.Text))
             {
                 lbForgetPasswordEmail.Text = "Email không hợp lệ";
-                if (txbForgetPasswordCodeEmail.Text == "")
+                if (txbForgetPasswordCodeEmail.Text.Trim() == "")
                 {
                     lbForgetPasswordCodeEmail.Text = "Mã xác minh không được để trống !";
                     if (txbForgetPasswordNewPassword.Text == "")
@@ -222,362 +222,186 @@ namespace CoffeeApp.GUI.Login
             else if (!DAO.UserDAO.Instance.checkEmail(txbForgetPasswordEmail.Text))
             {
                 lbForgetPasswordEmail.Text = "Email không tồn tại";
-                if (txbForgetPasswordCodeEmail.Text == "")
+
+                if (txbForgetPasswordCodeEmail.Text.Trim() == "")
                 {
                     lbForgetPasswordCodeEmail.Text = "Mã xác minh không được để trống !";
-                    if (txbForgetPasswordCodeEmail.Text == "")
+                    if (txbForgetPasswordNewPassword.Text == "")
                     {
-                        lbForgetPasswordCodeEmail.Text = "Mã xác minh không được để trống !";
-                        if (txbForgetPasswordNewPassword.Text == "")
+                        lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
+                        if (txbForgetPasswordReNewPassword.Text == "")
                         {
-                            lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
                         }
                         else
                         {
-                            lbForgetPasswordNewpassword.Text = "";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
                         }
                     }
                     else
                     {
-                        lbForgetPasswordCodeEmail.Text = "Mã xác nhận không đúng";
-                        if (txbForgetPasswordNewPassword.Text == "")
+                        lbForgetPasswordNewpassword.Text = "";
+                        if (txbForgetPasswordReNewPassword.Text == "")
                         {
-                            lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
+                        }
+                        else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
+                        {
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
                         }
                         else
                         {
-                            lbForgetPasswordNewpassword.Text = "";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "";
                         }
                     }
                 }
-                else 
+                else
                 {
                     lbForgetPasswordCodeEmail.Text = "Mã xác nhận không đúng";
-                    if (txbForgetPasswordCodeEmail.Text == "")
+                    if (txbForgetPasswordNewPassword.Text == "")
                     {
-                        lbForgetPasswordCodeEmail.Text = "Mã xác minh không được để trống !";
-                        if (txbForgetPasswordNewPassword.Text == "")
+                        lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
+                        if (txbForgetPasswordReNewPassword.Text == "")
                         {
-                            lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
                         }
                         else
                         {
-                            lbForgetPasswordNewpassword.Text = "";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
                         }
                     }
                     else
                     {
-                        lbForgetPasswordCodeEmail.Text = "Mã xác nhận không đúng";
-                        if (txbForgetPasswordNewPassword.Text == "")
+                        lbForgetPasswordNewpassword.Text = "";
+                        if (txbForgetPasswordReNewPassword.Text == "")
                         {
-                            lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
+                        }
+                        else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
+                        {
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
                         }
                         else
                         {
-                            lbForgetPasswordNewpassword.Text = "";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "";
                         }
                     }
                 }
+                
             }
             else 
             {
                 lbForgetPasswordEmail.Text = "";
-                if (txbForgetPasswordCodeEmail.Text == "")
+                if (txbForgetPasswordCodeEmail.Text.Trim() == "")
                 {
                     lbForgetPasswordCodeEmail.Text = "Mã xác minh không được để trống !";
-                    if (txbForgetPasswordCodeEmail.Text == "")
+                    if (txbForgetPasswordNewPassword.Text == "")
                     {
-                        lbForgetPasswordCodeEmail.Text = "Mã xác minh không được để trống !";
-                        if (txbForgetPasswordNewPassword.Text == "")
+                        lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
+                        if (txbForgetPasswordReNewPassword.Text == "")
                         {
-                            lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
                         }
                         else
                         {
-                            lbForgetPasswordNewpassword.Text = "";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
                         }
                     }
                     else
                     {
-                        lbForgetPasswordCodeEmail.Text = "Mã xác nhận không đúng";
-                        if (txbForgetPasswordNewPassword.Text == "")
+                        lbForgetPasswordNewpassword.Text = "";
+                        if (txbForgetPasswordReNewPassword.Text == "")
                         {
-                            lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
+                        }
+                        else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
+                        {
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
                         }
                         else
                         {
-                            lbForgetPasswordNewpassword.Text = "";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "";
                         }
                     }
                 }
-                else if (txbForgetPasswordCodeEmail.Text != verificationCode)
+                else if (txbForgetPasswordCodeEmail.Text.Trim() != verificationCode)
                 {
                     lbForgetPasswordCodeEmail.Text = "Mã xác nhận không đúng";
-                    if (txbForgetPasswordCodeEmail.Text == "")
+                    if (txbForgetPasswordNewPassword.Text == "")
                     {
-                        lbForgetPasswordCodeEmail.Text = "Mã xác minh không được để trống !";
-                        if (txbForgetPasswordNewPassword.Text == "")
+                        lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
+                        if (txbForgetPasswordReNewPassword.Text == "")
                         {
-                            lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
                         }
                         else
                         {
-                            lbForgetPasswordNewpassword.Text = "";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
                         }
                     }
                     else
                     {
-                        lbForgetPasswordCodeEmail.Text = "Mã xác nhận không đúng";
-                        if (txbForgetPasswordNewPassword.Text == "")
+                        lbForgetPasswordNewpassword.Text = "";
+                        if (txbForgetPasswordReNewPassword.Text == "")
                         {
-                            lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
+                        }
+                        else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
+                        {
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
                         }
                         else
                         {
-                            lbForgetPasswordNewpassword.Text = "";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "";
                         }
                     }
                 }
                 else
                 {
                     lbForgetPasswordCodeEmail.Text = "";
-                    if (txbForgetPasswordCodeEmail.Text == "")
+                    if (txbForgetPasswordNewPassword.Text == "")
                     {
-                        lbForgetPasswordCodeEmail.Text = "Mã xác minh không được để trống !";
-                        if (txbForgetPasswordNewPassword.Text == "")
+                        lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
+                        if (txbForgetPasswordReNewPassword.Text == "")
                         {
-                            lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
                         }
                         else
                         {
-                            lbForgetPasswordNewpassword.Text = "";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
                         }
                     }
                     else
                     {
-                        if (txbForgetPasswordNewPassword.Text == "")
+                        lbForgetPasswordNewpassword.Text = "";
+                        if(txbForgetPasswordReNewPassword.Text == "") 
                         {
-                            lbForgetPasswordNewpassword.Text = "Mật khẩu không được để trống !";
-                            if (txbForgetPasswordReNewPassword.Text == "")
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
-                            }
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
+                        }
+                        else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
+                        {
+                            lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
                         }
                         else
                         {
-                            lbForgetPasswordNewpassword.Text = "";
-                            if (txbForgetPasswordReNewPassword.Text == "")
+                            lbForgetPasswordReNewpassword.Text = "";
+
+                            DataTable dataTable = DAO.UserDAO.Instance.UserEmail(txbForgetPasswordEmail.Text);
+                            UserDTO userDTO = new UserDTO(dataTable.Rows[0]);
+
+                            if(DAO.UserDAO.Instance.UpdateUser(userDTO.UserName, DAO.UserDAO.Instance.HashPassword(txbForgetPasswordNewPassword.Text), userDTO.Phone, userDTO.Email, verificationCode,userDTO.StatusEmail, userDTO.RoleID, userDTO.FullName, userDTO.Address, userDTO.Gender, userDTO.Image))
                             {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không được để trống !";
-                            }
-                            else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
-                            {
-                                lbForgetPasswordReNewpassword.Text = "Mật khẩu không trùng khớp !";
+                                MessageBox.Show("Đặt lại mật khẩu thành công -  Nhấn ok để trở về trang đăng nhập");
+                                this.Close();
+                                formLogin.Show();
                             }
                             else
                             {
-                                lbForgetPasswordReNewpassword.Text = "";
-
-                                DataTable dataTable = DAO.UserDAO.Instance.UserEmail(txbForgetPasswordEmail.Text);
-                                UserDTO userDTO = new UserDTO(dataTable.Rows[0]);
-
-                                if(DAO.UserDAO.Instance.UpdateUser(userDTO.UserName, DAO.UserDAO.Instance.HashPassword(txbForgetPasswordNewPassword.Text), userDTO.Phone, userDTO.Email, verificationCode,userDTO.StatusEmail, userDTO.RoleID, userDTO.FullName, userDTO.Address, userDTO.Gender, userDTO.Image))
-                                {
-                                    MessageBox.Show("Đặt lại mật khẩu thành công -  Nhấn ok để trở về trang đăng nhập");
-                                    this.Close();
-                                    formLogin.Show();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Đặt lại mật khẩu thất bại");
-                                }
+                                MessageBox.Show("Đặt lại mật khẩu thất bại");
                             }
                         }
                     }
+                    
                 }
             }
         }

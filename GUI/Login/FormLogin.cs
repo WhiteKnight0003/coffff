@@ -72,8 +72,8 @@ namespace CoffeeApp
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = tbLoginName.Text;
-            string password = tbLoginPassword.Text;
+            string username = tbLoginName.Text.Trim();
+            string password = tbLoginPassword.Text.Trim();
 
             // Console.WriteLine(username+ "   "+ password);
             //Console.WriteLine(DAO.AccountDAO.Instance.HashPassword("123"));
@@ -117,8 +117,15 @@ namespace CoffeeApp
             this.Hide();
             formForgetPassword.ShowDialog();
         }
+
         #endregion
 
-
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn chắc chắn muốn thoát chương trình ?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

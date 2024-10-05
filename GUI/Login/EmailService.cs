@@ -35,7 +35,7 @@ namespace CoffeeApp.GUI.Login
             {
                 From = new MailAddress(smtpMyEmail),
                 Subject = "Mã xác thực",
-                Body = $"Mã xác thực của bạn là : {verificationCode}",
+                Body = $"Mã xác thực Email của bạn là : {verificationCode}",
                 IsBodyHtml = false,
             };
 
@@ -45,7 +45,7 @@ namespace CoffeeApp.GUI.Login
             try
             {
                 await smtpClient.SendMailAsync(mailMessage);
-                MessageBox.Show("Mã xác thực đã được gửi đến bạn ");
+                MessageBox.Show("Mã xác thực Email đã được gửi đến bạn ");
             }
             catch (Exception ex)
             {

@@ -200,14 +200,15 @@
             // 
             // cbForgetPasswordViewPassword
             // 
+            this.cbForgetPasswordViewPassword.AutoSize = true;
             this.cbForgetPasswordViewPassword.BackColor = System.Drawing.Color.Transparent;
             this.cbForgetPasswordViewPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbForgetPasswordViewPassword.CheckedState.BorderRadius = 0;
             this.cbForgetPasswordViewPassword.CheckedState.BorderThickness = 0;
             this.cbForgetPasswordViewPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbForgetPasswordViewPassword.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbForgetPasswordViewPassword.Font = new System.Drawing.Font("Times New Roman", 10.8F);
             this.cbForgetPasswordViewPassword.ForeColor = System.Drawing.Color.White;
-            this.cbForgetPasswordViewPassword.Location = new System.Drawing.Point(658, 378);
+            this.cbForgetPasswordViewPassword.Location = new System.Drawing.Point(659, 379);
             this.cbForgetPasswordViewPassword.Name = "cbForgetPasswordViewPassword";
             this.cbForgetPasswordViewPassword.Size = new System.Drawing.Size(137, 24);
             this.cbForgetPasswordViewPassword.TabIndex = 5;

@@ -27,3 +27,13 @@ E:\C# project\app\CoffeeApp\bin\Debug\DevExpress.Data.v24.1.dll
 E:\C# project\app\CoffeeApp\bin\Debug\DevExpress.Xpo.v24.1.dll
 E:\C# project\app\CoffeeApp\bin\Debug\DevExpress.Data.v24.1.xml
 E:\C# project\app\CoffeeApp\bin\Debug\DevExpress.Xpo.v24.1.xml
+E:\C# project\app\CoffeeApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\C# project\app\CoffeeApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\C# project\app\CoffeeApp\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\C# project\app\CoffeeApp\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\C# project\app\CoffeeApp\bin\Debug\System.Buffers.dll
+E:\C# project\app\CoffeeApp\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\C# project\app\CoffeeApp\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\C# project\app\CoffeeApp\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\C# project\app\CoffeeApp\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\C# project\app\CoffeeApp\bin\Debug\System.ComponentModel.Annotations.dll

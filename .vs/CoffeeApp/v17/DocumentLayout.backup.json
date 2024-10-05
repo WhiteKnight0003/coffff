@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "E:\\C# project\\app\\CoffeeApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\gui\\login\\formforgetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\formforgetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\gui\\login\\formsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\formsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\gui\\login\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\gui\\login\\formforgetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,16 +23,40 @@
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\forminputemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\gui\\login\\formsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\formsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\gui\\login\\formforgetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\formforgetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\gui\\login\\formsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\formsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\gui\\login\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\gui\\login\\forminputemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\forminputemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\gui\\login\\formforgetpassword.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\formforgetpassword.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\c# project\\app\\coffeeapp\\gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 236,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,77 +78,178 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormInputEmail.cs [Design]",
-              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormInputEmail.cs",
-              "RelativeDocumentMoniker": "GUI\\Login\\FormInputEmail.cs",
-              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormInputEmail.cs [Design]",
-              "RelativeToolTip": "GUI\\Login\\FormInputEmail.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T16:57:15.212Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormInputEmail.cs",
-              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormInputEmail.cs",
-              "RelativeDocumentMoniker": "GUI\\Login\\FormInputEmail.cs",
-              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormInputEmail.cs",
-              "RelativeToolTip": "GUI\\Login\\FormInputEmail.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAArwFoAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T16:52:30.197Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormForgetPassword.cs [Design]",
-              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormForgetPassword.cs",
-              "RelativeDocumentMoniker": "GUI\\Login\\FormForgetPassword.cs",
-              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormForgetPassword.cs [Design]",
-              "RelativeToolTip": "GUI\\Login\\FormForgetPassword.cs [Design]",
+              "Title": "DataProvider.cs",
+              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\DAO\\DataProvider.cs",
+              "RelativeDocumentMoniker": "DAO\\DataProvider.cs",
+              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\DAO\\DataProvider.cs",
+              "RelativeToolTip": "DAO\\DataProvider.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAIAywBsAAABvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T16:49:46.49Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-05T10:11:01.501Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormForgetPassword.cs",
-              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormForgetPassword.cs",
-              "RelativeDocumentMoniker": "GUI\\Login\\FormForgetPassword.cs",
-              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormForgetPassword.cs",
-              "RelativeToolTip": "GUI\\Login\\FormForgetPassword.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "FormSignUp.cs",
+              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormSignUp.cs",
+              "RelativeDocumentMoniker": "GUI\\Login\\FormSignUp.cs",
+              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormSignUp.cs",
+              "RelativeToolTip": "GUI\\Login\\FormSignUp.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAYwJ0EAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T16:49:42.875Z",
+              "WhenOpened": "2024-10-05T10:33:27.143Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "FormSignUp.cs [Design]",
               "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormSignUp.cs",
               "RelativeDocumentMoniker": "GUI\\Login\\FormSignUp.cs",
               "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormSignUp.cs [Design]",
               "RelativeToolTip": "GUI\\Login\\FormSignUp.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T16:48:23.999Z",
+              "WhenOpened": "2024-10-05T10:05:11.337Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormSignUp.cs",
-              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormSignUp.cs",
-              "RelativeDocumentMoniker": "GUI\\Login\\FormSignUp.cs",
-              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormSignUp.cs",
-              "RelativeToolTip": "GUI\\Login\\FormSignUp.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAgwFMAAABeAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "FormLogin.cs [Design]",
+              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormLogin.cs",
+              "RelativeDocumentMoniker": "GUI\\Login\\FormLogin.cs",
+              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormLogin.cs [Design]",
+              "RelativeToolTip": "GUI\\Login\\FormLogin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T16:28:29.949Z",
+              "WhenOpened": "2024-10-05T10:05:05.89Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FormInputEmail.cs [Design]",
+              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormInputEmail.cs",
+              "RelativeDocumentMoniker": "GUI\\Login\\FormInputEmail.cs",
+              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormInputEmail.cs [Design]",
+              "RelativeToolTip": "GUI\\Login\\FormInputEmail.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T10:05:00.586Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormLogin.cs",
+              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormLogin.cs",
+              "RelativeDocumentMoniker": "GUI\\Login\\FormLogin.cs",
+              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormLogin.cs",
+              "RelativeToolTip": "GUI\\Login\\FormLogin.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAuwEsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T10:04:16.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormInputEmail.cs",
+              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormInputEmail.cs",
+              "RelativeDocumentMoniker": "GUI\\Login\\FormInputEmail.cs",
+              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormInputEmail.cs",
+              "RelativeToolTip": "GUI\\Login\\FormInputEmail.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAFkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T10:03:51.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FormForgetPassword.Designer.cs",
+              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormForgetPassword.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Login\\FormForgetPassword.Designer.cs",
+              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormForgetPassword.Designer.cs",
+              "RelativeToolTip": "GUI\\Login\\FormForgetPassword.Designer.cs",
+              "ViewState": "AgIAACwBAAAAAAAAAADwv0oBAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T10:03:33.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormForgetPassword.cs",
+              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormForgetPassword.cs",
+              "RelativeDocumentMoniker": "GUI\\Login\\FormForgetPassword.cs",
+              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormForgetPassword.cs",
+              "RelativeToolTip": "GUI\\Login\\FormForgetPassword.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T10:03:12.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormForgetPassword.cs [Design]",
+              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormForgetPassword.cs",
+              "RelativeDocumentMoniker": "GUI\\Login\\FormForgetPassword.cs",
+              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Login\\FormForgetPassword.cs [Design]",
+              "RelativeToolTip": "GUI\\Login\\FormForgetPassword.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T10:03:06.614Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FormMain.cs",
+              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Main\\FormMain.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormMain.cs",
+              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Main\\FormMain.cs",
+              "RelativeToolTip": "GUI\\Main\\FormMain.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwDAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T10:00:34.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FormMain.cs [Design]",
+              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Main\\FormMain.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormMain.cs",
+              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Main\\FormMain.cs [Design]",
+              "RelativeToolTip": "GUI\\Main\\FormMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T10:00:32.419Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FormManagement.cs [Design]",
+              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Main\\FormManagement.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.cs",
+              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Main\\FormManagement.cs [Design]",
+              "RelativeToolTip": "GUI\\Main\\FormManagement.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T10:00:31.739Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FormManagement.cs",
+              "DocumentMoniker": "E:\\C# project\\app\\CoffeeApp\\GUI\\Main\\FormManagement.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.cs",
+              "ToolTip": "E:\\C# project\\app\\CoffeeApp\\GUI\\Main\\FormManagement.cs",
+              "RelativeToolTip": "GUI\\Main\\FormManagement.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwB8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T09:59:17.358Z",
               "EditorCaption": ""
             }
           ]
