@@ -37,3 +37,42 @@ E:\C# project\app\CoffeeApp\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 E:\C# project\app\CoffeeApp\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 E:\C# project\app\CoffeeApp\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\C# project\app\CoffeeApp\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Document\C#-Desktop\coffff\bin\Debug\CoffeeApp.exe.config
+D:\Document\C#-Desktop\coffff\bin\Debug\CoffeeApp.exe
+D:\Document\C#-Desktop\coffff\bin\Debug\CoffeeApp.pdb
+D:\Document\C#-Desktop\coffff\bin\Debug\DevExpress.Data.v24.1.dll
+D:\Document\C#-Desktop\coffff\bin\Debug\DevExpress.Xpo.v24.1.dll
+D:\Document\C#-Desktop\coffff\bin\Debug\Guna.Charts.WinForms.dll
+D:\Document\C#-Desktop\coffff\bin\Debug\Guna.UI2.dll
+D:\Document\C#-Desktop\coffff\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Document\C#-Desktop\coffff\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Document\C#-Desktop\coffff\bin\Debug\System.Buffers.dll
+D:\Document\C#-Desktop\coffff\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Document\C#-Desktop\coffff\bin\Debug\System.Data.SqlClient.dll
+D:\Document\C#-Desktop\coffff\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Document\C#-Desktop\coffff\bin\Debug\System.Security.Cryptography.Cng.dll
+D:\Document\C#-Desktop\coffff\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Document\C#-Desktop\coffff\bin\Debug\DevExpress.Data.v24.1.xml
+D:\Document\C#-Desktop\coffff\bin\Debug\DevExpress.Xpo.v24.1.xml
+D:\Document\C#-Desktop\coffff\bin\Debug\Guna.Charts.WinForms.xml
+D:\Document\C#-Desktop\coffff\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Document\C#-Desktop\coffff\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Document\C#-Desktop\coffff\bin\Debug\System.Data.SqlClient.xml
+D:\Document\C#-Desktop\coffff\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Document\C#-Desktop\coffff\bin\Debug\System.Security.Cryptography.Cng.xml
+D:\Document\C#-Desktop\coffff\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.csproj.AssemblyReference.cache
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.GUI.Login.FormForgetPassword.resources
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.FormLogin.resources
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.GUI.FormSignUp.resources
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.GUI.Main.FormInputEmail.resources
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.GUI.FormMain.resources
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.GUI.Main.FormManagement.resources
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.GUI.Usercontrol.FoodView.resources
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.GUI.Usercontrol.TableView.resources
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.Properties.Resources.resources
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.csproj.GenerateResource.cache
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.csproj.CoreCompileInputs.cache
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.csproj.Up2Date
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.exe
+D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.pdb
