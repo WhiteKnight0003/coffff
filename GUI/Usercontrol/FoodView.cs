@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CoffeeApp.GUI.Usercontrol
 {
-    public partial class FoodView : UserControl
+    public partial class ProductView : UserControl
     {
-        public FoodView()
+        public ProductView()
         {
             InitializeComponent();
         }

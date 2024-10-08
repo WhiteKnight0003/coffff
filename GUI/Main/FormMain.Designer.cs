@@ -1,4 +1,7 @@
-﻿namespace CoffeeApp.GUI
+﻿using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+namespace CoffeeApp.GUI
 {
     partial class FormMain
     {
@@ -28,37 +31,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.msMenu = new System.Windows.Forms.MenuStrip();
-            this.quảnLýCửaHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ManageShopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinCáNhanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fltViewTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txbTotalPrice = new System.Windows.Forms.TextBox();
+            this.lsvBill = new System.Windows.Forms.ListView();
             this.lbTotalCash = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.ProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TotalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2NumericUpDown1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnAddProduct = new Guna.UI2.WinForms.Guna2Button();
+            this.nmProductCount = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.cbProduct = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ComboBox4 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ComboBox3 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.hóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnSwitchTable = new System.Windows.Forms.Button();
+            this.nmDisCount = new System.Windows.Forms.NumericUpDown();
+            this.cbSwitchTable = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnCheckOut = new Guna.UI2.WinForms.Guna2Button();
+            this.cbPayment = new System.Windows.Forms.ComboBox();
             this.msMenu.SuspendLayout();
+            this.flpTable.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmProductCount)).BeginInit();
             this.guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDisCount)).BeginInit();
             this.SuspendLayout();
             // 
             // msMenu
@@ -66,27 +74,36 @@
             this.msMenu.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quảnLýCửaHàngToolStripMenuItem,
-            this.hóaĐơnToolStripMenuItem,
+            this.ManageShopToolStripMenuItem,
+            this.BillToolStripMenuItem,
             this.thôngTinCáNhanToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
-            this.msMenu.Padding = new System.Windows.Forms.Padding(8, 0, 0, 2);
-            this.msMenu.Size = new System.Drawing.Size(926, 39);
+            this.msMenu.Padding = new System.Windows.Forms.Padding(6, 0, 0, 2);
+            this.msMenu.Size = new System.Drawing.Size(687, 35);
             this.msMenu.TabIndex = 0;
             this.msMenu.Text = "menuStrip1";
             // 
-            // quảnLýCửaHàngToolStripMenuItem
+            // ManageShopToolStripMenuItem
             // 
-            this.quảnLýCửaHàngToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.quảnLýCửaHàngToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quảnLýCửaHàngToolStripMenuItem.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.quảnLýCửaHàngToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.quảnLýCửaHàngToolStripMenuItem.Name = "quảnLýCửaHàngToolStripMenuItem";
-            this.quảnLýCửaHàngToolStripMenuItem.ShowShortcutKeys = false;
-            this.quảnLýCửaHàngToolStripMenuItem.Size = new System.Drawing.Size(171, 27);
-            this.quảnLýCửaHàngToolStripMenuItem.Text = "Quản lý cửa hàng";
-            this.quảnLýCửaHàngToolStripMenuItem.Click += new System.EventHandler(this.quảnLýCửaHàngToolStripMenuItem_Click);
+            this.ManageShopToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.ManageShopToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageShopToolStripMenuItem.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.ManageShopToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.ManageShopToolStripMenuItem.Name = "ManageShopToolStripMenuItem";
+            this.ManageShopToolStripMenuItem.ShowShortcutKeys = false;
+            this.ManageShopToolStripMenuItem.Size = new System.Drawing.Size(138, 23);
+            this.ManageShopToolStripMenuItem.Text = "Quản lý cửa hàng";
+            this.ManageShopToolStripMenuItem.Click += new System.EventHandler(this.ManageShopToolStripMenuItem_Click);
+            // 
+            // BillToolStripMenuItem
+            // 
+            this.BillToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.BillToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 10);
+            this.BillToolStripMenuItem.Name = "BillToolStripMenuItem";
+            this.BillToolStripMenuItem.Size = new System.Drawing.Size(78, 23);
+            this.BillToolStripMenuItem.Text = "Hóa đơn";
+            this.BillToolStripMenuItem.Click += new System.EventHandler(this.BillToolStripMenuItem_Click);
             // 
             // thôngTinCáNhanToolStripMenuItem
             // 
@@ -96,286 +113,294 @@
             this.thôngTinCáNhanToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thôngTinCáNhanToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 10);
             this.thôngTinCáNhanToolStripMenuItem.Name = "thôngTinCáNhanToolStripMenuItem";
-            this.thôngTinCáNhanToolStripMenuItem.Size = new System.Drawing.Size(187, 27);
+            this.thôngTinCáNhanToolStripMenuItem.Size = new System.Drawing.Size(150, 23);
             this.thôngTinCáNhanToolStripMenuItem.Text = "Thông tin tài khoản";
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(243, 28);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(243, 28);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             // 
-            // fltViewTable
+            // flpTable
             // 
-            this.fltViewTable.AutoScroll = true;
-            this.fltViewTable.Location = new System.Drawing.Point(0, 42);
-            this.fltViewTable.Name = "fltViewTable";
-            this.fltViewTable.Size = new System.Drawing.Size(449, 530);
-            this.fltViewTable.TabIndex = 1;
+            this.flpTable.AutoScroll = true;
+            this.flpTable.Controls.Add(this.flowLayoutPanel1);
+            this.flpTable.Location = new System.Drawing.Point(0, 34);
+            this.flpTable.Margin = new System.Windows.Forms.Padding(2);
+            this.flpTable.Name = "flpTable";
+            this.flpTable.Size = new System.Drawing.Size(337, 456);
+            this.flpTable.TabIndex = 1;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(8, 8);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.txbTotalPrice);
+            this.guna2Panel1.Controls.Add(this.lsvBill);
             this.guna2Panel1.Controls.Add(this.lbTotalCash);
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
-            this.guna2Panel1.Controls.Add(this.guna2DataGridView1);
-            this.guna2Panel1.Location = new System.Drawing.Point(452, 128);
+            this.guna2Panel1.Location = new System.Drawing.Point(339, 104);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(460, 375);
+            this.guna2Panel1.Size = new System.Drawing.Size(345, 305);
             this.guna2Panel1.TabIndex = 2;
+            // 
+            // txbTotalPrice
+            // 
+            this.txbTotalPrice.Location = new System.Drawing.Point(216, 281);
+            this.txbTotalPrice.Name = "txbTotalPrice";
+            this.txbTotalPrice.Size = new System.Drawing.Size(120, 20);
+            this.txbTotalPrice.TabIndex = 3;
+            // 
+            // lsvBill
+            // 
+            this.lsvBill.Columns.Add("ProductName", -2, HorizontalAlignment.Left);
+            this.lsvBill.Columns.Add("Count", -2, HorizontalAlignment.Left);
+            this.lsvBill.Columns.Add("Price", -2, HorizontalAlignment.Left);
+            this.lsvBill.Columns.Add("TotalPrice", -2, HorizontalAlignment.Left);
+            this.lsvBill.HideSelection = false;
+            this.lsvBill.Location = new System.Drawing.Point(3, 4);
+            this.lsvBill.Name = "lsvBill";
+            this.lsvBill.Size = new System.Drawing.Size(339, 273);
+            this.lsvBill.TabIndex = 2;
+            this.lsvBill.UseCompatibleStateImageBehavior = false;
+            this.lsvBill.View = System.Windows.Forms.View.Details;
             // 
             // lbTotalCash
             // 
             this.lbTotalCash.BackColor = System.Drawing.Color.Transparent;
             this.lbTotalCash.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalCash.Location = new System.Drawing.Point(301, 347);
+            this.lbTotalCash.Location = new System.Drawing.Point(226, 282);
+            this.lbTotalCash.Margin = new System.Windows.Forms.Padding(2);
             this.lbTotalCash.Name = "lbTotalCash";
-            this.lbTotalCash.Size = new System.Drawing.Size(57, 27);
+            this.lbTotalCash.Size = new System.Drawing.Size(3, 2);
             this.lbTotalCash.TabIndex = 1;
-            this.lbTotalCash.Text = "0.000";
+            this.lbTotalCash.Text = null;
             // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(183, 347);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(124, 281);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(112, 27);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(87, 22);
             this.guna2HtmlLabel2.TabIndex = 1;
             this.guna2HtmlLabel2.Text = "Tổng tiền : ";
             // 
-            // guna2DataGridView1
+            // ProductName
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.guna2DataGridView1.ColumnHeadersHeight = 4;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.RowHeadersWidth = 51;
-            this.guna2DataGridView1.RowTemplate.Height = 24;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(454, 338);
-            this.guna2DataGridView1.TabIndex = 0;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 24;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.ProductName.Width = 82;
+            // 
+            // Quantity
+            // 
+            this.Quantity.Width = 82;
+            // 
+            // Price
+            // 
+            this.Price.Width = 81;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.Width = 82;
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.Controls.Add(this.guna2Button1);
-            this.guna2Panel2.Controls.Add(this.guna2NumericUpDown1);
-            this.guna2Panel2.Controls.Add(this.guna2ComboBox1);
-            this.guna2Panel2.Controls.Add(this.guna2ComboBox2);
-            this.guna2Panel2.Location = new System.Drawing.Point(452, 42);
+            this.guna2Panel2.Controls.Add(this.btnAddProduct);
+            this.guna2Panel2.Controls.Add(this.nmProductCount);
+            this.guna2Panel2.Controls.Add(this.cbProduct);
+            this.guna2Panel2.Controls.Add(this.cbCategory);
+            this.guna2Panel2.Location = new System.Drawing.Point(339, 34);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(457, 80);
+            this.guna2Panel2.Size = new System.Drawing.Size(343, 65);
             this.guna2Panel2.TabIndex = 3;
             // 
-            // guna2Button1
+            // btnAddProduct
             // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(338, 21);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(110, 38);
-            this.guna2Button1.TabIndex = 4;
-            this.guna2Button1.Text = "Thêm món";
+            this.btnAddProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddProduct.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddProduct.ForeColor = System.Drawing.Color.White;
+            this.btnAddProduct.Location = new System.Drawing.Point(254, 17);
+            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(82, 31);
+            this.btnAddProduct.TabIndex = 4;
+            this.btnAddProduct.Text = "Thêm";
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
-            // guna2NumericUpDown1
+            // nmProductCount
             // 
-            this.guna2NumericUpDown1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2NumericUpDown1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2NumericUpDown1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2NumericUpDown1.Location = new System.Drawing.Point(257, 21);
-            this.guna2NumericUpDown1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2NumericUpDown1.Name = "guna2NumericUpDown1";
-            this.guna2NumericUpDown1.Size = new System.Drawing.Size(75, 38);
-            this.guna2NumericUpDown1.TabIndex = 3;
+            this.nmProductCount.BackColor = System.Drawing.Color.Transparent;
+            this.nmProductCount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nmProductCount.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nmProductCount.Location = new System.Drawing.Point(193, 17);
+            this.nmProductCount.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nmProductCount.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.nmProductCount.Name = "nmProductCount";
+            this.nmProductCount.Size = new System.Drawing.Size(56, 31);
+            this.nmProductCount.TabIndex = 3;
             // 
-            // guna2ComboBox1
+            // cbProduct
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(3, 41);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(231, 36);
-            this.guna2ComboBox1.TabIndex = 2;
+            this.cbProduct.BackColor = System.Drawing.Color.Transparent;
+            this.cbProduct.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProduct.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbProduct.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbProduct.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbProduct.ItemHeight = 30;
+            this.cbProduct.Location = new System.Drawing.Point(3, 33);
+            this.cbProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.cbProduct.Name = "cbProduct";
+            this.cbProduct.Size = new System.Drawing.Size(173, 36);
+            this.cbProduct.TabIndex = 2;
             // 
-            // guna2ComboBox2
+            // cbCategory
             // 
-            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox2.ItemHeight = 30;
-            this.guna2ComboBox2.Location = new System.Drawing.Point(3, 4);
-            this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.Size = new System.Drawing.Size(231, 36);
-            this.guna2ComboBox2.TabIndex = 2;
+            this.cbCategory.BackColor = System.Drawing.Color.Transparent;
+            this.cbCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbCategory.ItemHeight = 30;
+            this.cbCategory.Location = new System.Drawing.Point(2, 3);
+            this.cbCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(174, 36);
+            this.cbCategory.TabIndex = 2;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // guna2Panel3
             // 
-            this.guna2Panel3.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2Panel3.Controls.Add(this.guna2ComboBox4);
-            this.guna2Panel3.Controls.Add(this.guna2ComboBox3);
-            this.guna2Panel3.Controls.Add(this.label1);
-            this.guna2Panel3.Controls.Add(this.guna2Button2);
-            this.guna2Panel3.Location = new System.Drawing.Point(452, 509);
+            this.guna2Panel3.Controls.Add(this.cbPayment);
+            this.guna2Panel3.Controls.Add(this.button2);
+            this.guna2Panel3.Controls.Add(this.btnSwitchTable);
+            this.guna2Panel3.Controls.Add(this.nmDisCount);
+            this.guna2Panel3.Controls.Add(this.cbSwitchTable);
+            this.guna2Panel3.Controls.Add(this.btnCheckOut);
+            this.guna2Panel3.Location = new System.Drawing.Point(339, 414);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(462, 63);
+            this.guna2Panel3.Size = new System.Drawing.Size(346, 76);
             this.guna2Panel3.TabIndex = 4;
             // 
-            // guna2HtmlLabel1
+            // button2
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(164, 3);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(70, 22);
-            this.guna2HtmlLabel1.TabIndex = 3;
-            this.guna2HtmlLabel1.Text = "Giảm giá";
+            this.button2.Location = new System.Drawing.Point(124, 7);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(69, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Giảm giá";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // guna2ComboBox4
+            // btnSwitchTable
             // 
-            this.guna2ComboBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox4.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox4.ItemHeight = 30;
-            this.guna2ComboBox4.Location = new System.Drawing.Point(148, 24);
-            this.guna2ComboBox4.Name = "guna2ComboBox4";
-            this.guna2ComboBox4.Size = new System.Drawing.Size(109, 36);
-            this.guna2ComboBox4.TabIndex = 2;
+            this.btnSwitchTable.Location = new System.Drawing.Point(15, 10);
+            this.btnSwitchTable.Name = "btnSwitchTable";
+            this.btnSwitchTable.Size = new System.Drawing.Size(86, 23);
+            this.btnSwitchTable.TabIndex = 4;
+            this.btnSwitchTable.Text = "Chuyển bàn";
+            this.btnSwitchTable.UseVisualStyleBackColor = true;
+            this.btnSwitchTable.Click += new System.EventHandler(this.btnSwitchTable_Click);
             // 
-            // guna2ComboBox3
+            // nmDisCount
             // 
-            this.guna2ComboBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox3.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox3.ItemHeight = 30;
-            this.guna2ComboBox3.Location = new System.Drawing.Point(3, 24);
-            this.guna2ComboBox3.Name = "guna2ComboBox3";
-            this.guna2ComboBox3.Size = new System.Drawing.Size(114, 36);
-            this.guna2ComboBox3.TabIndex = 2;
+            this.nmDisCount.Location = new System.Drawing.Point(203, 10);
+            this.nmDisCount.Name = "nmDisCount";
+            this.nmDisCount.Size = new System.Drawing.Size(61, 20);
+            this.nmDisCount.TabIndex = 3;
             // 
-            // label1
+            // cbSwitchTable
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Chọn bàn";
+            this.cbSwitchTable.BackColor = System.Drawing.Color.Transparent;
+            this.cbSwitchTable.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSwitchTable.DropDownHeight = 100;
+            this.cbSwitchTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSwitchTable.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSwitchTable.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSwitchTable.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbSwitchTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbSwitchTable.IntegralHeight = false;
+            this.cbSwitchTable.ItemHeight = 30;
+            this.cbSwitchTable.Location = new System.Drawing.Point(3, 38);
+            this.cbSwitchTable.Margin = new System.Windows.Forms.Padding(2);
+            this.cbSwitchTable.Name = "cbSwitchTable";
+            this.cbSwitchTable.Size = new System.Drawing.Size(113, 36);
+            this.cbSwitchTable.TabIndex = 2;
             // 
-            // guna2Button2
+            // btnCheckOut
             // 
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(338, 3);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(116, 58);
-            this.guna2Button2.TabIndex = 0;
-            this.guna2Button2.Text = "Thanh toán";
+            this.btnCheckOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCheckOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCheckOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCheckOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.Location = new System.Drawing.Point(273, 17);
+            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(69, 47);
+            this.btnCheckOut.TabIndex = 0;
+            this.btnCheckOut.Text = "Thanh toán";
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
-            // hóaĐơnToolStripMenuItem
+            // cbPayment
             // 
-            this.hóaĐơnToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.hóaĐơnToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.hóaĐơnToolStripMenuItem.Name = "hóaĐơnToolStripMenuItem";
-            this.hóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(95, 27);
-            this.hóaĐơnToolStripMenuItem.Text = "Hóa đơn";
-            this.hóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.hóaĐơnToolStripMenuItem_Click);
+            this.cbPayment.FormattingEnabled = true;
+            this.cbPayment.Location = new System.Drawing.Point(147, 42);
+            this.cbPayment.Name = "cbPayment";
+            this.cbPayment.Size = new System.Drawing.Size(102, 21);
+            this.cbPayment.TabIndex = 4;
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 575);
+            this.ClientSize = new System.Drawing.Size(687, 489);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.fltViewTable);
+            this.Controls.Add(this.flpTable);
             this.Controls.Add(this.msMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.msMenu;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMaincs";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
+            this.flpTable.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmProductCount)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDisCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,26 +409,33 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip msMenu;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýCửaHàngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ManageShopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
-        private System.Windows.Forms.FlowLayoutPanel fltViewTable;
+        private System.Windows.Forms.FlowLayoutPanel flpTable;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbCategory;
+        private Guna.UI2.WinForms.Guna2Button btnAddProduct;
+        private Guna.UI2.WinForms.Guna2NumericUpDown nmProductCount;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox3;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox4;
+        private Guna.UI2.WinForms.Guna2Button btnCheckOut;
+        private Guna.UI2.WinForms.Guna2ComboBox cbProduct;
+        private Guna.UI2.WinForms.Guna2ComboBox cbSwitchTable;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbTotalCash;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private System.Windows.Forms.ToolStripMenuItem hóaĐơnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BillToolStripMenuItem;
+        private System.Windows.Forms.ListView lsvBill;
+        private System.Windows.Forms.TextBox txbTotalPrice;
+        private System.Windows.Forms.NumericUpDown nmDisCount;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSwitchTable;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.ColumnHeader ProductName;
+        private System.Windows.Forms.ColumnHeader Quantity;
+        private System.Windows.Forms.ColumnHeader TotalPrice;
+        private System.Windows.Forms.ColumnHeader Price;
+        private System.Windows.Forms.ComboBox cbPayment;
     }
 }

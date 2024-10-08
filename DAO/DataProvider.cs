@@ -28,7 +28,7 @@ namespace CoffeeApp.DAO
         private String connectionStr = "Data Source=DESKTOP-671LI2L\\SQLEXPRESS;Initial Catalog=coffeeApplication;User ID=sa;Password=123456";
 
 
-        public DataTable ExcuteQuery(string query, object[] parameter = null)
+        public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             // đổ data ra table
             DataTable data = new DataTable();
