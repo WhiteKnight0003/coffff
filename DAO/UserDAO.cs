@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Collections;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using CoffeeApp.DTO;
 
 namespace CoffeeApp.DAO
 {
@@ -24,7 +25,7 @@ namespace CoffeeApp.DAO
 
         public UserDAO() { }
 
-           public string HashPassword(string password)
+        public string HashPassword(string password)
             {
             //  SHA256 hoặc SHA512. Những thuật toán này không phải là "mã hóa" mà là "băm", tức là chúng chuyển đổi mật khẩu thành một chuỗi giá trị không thể đảo ngược
 
@@ -48,21 +49,21 @@ namespace CoffeeApp.DAO
         {
             // string query = $"select * from users where UserName=N'{username}'";
             string query = "USP_UserName @username";
-            return DAO.DataProvider.Instance.ExcuteQuery(query, new object[] {username}).Rows.Count>0;
+            return DAO.DataProvider.Instance.ExecuteQuery(query, new object[] {username}).Rows.Count>0;
         }
 
         public bool checkEmail(string email)
         {
             //string query = $"select * from users where Email=N'{email}'";
             string query = "USP_Email @email";
-            return DAO.DataProvider.Instance.ExcuteQuery(query, new object[] {email}).Rows.Count > 0;
+            return DAO.DataProvider.Instance.ExecuteQuery(query, new object[] {email}).Rows.Count > 0;
         }
 
         public bool checkPhone(string phone)
         {
             // string query = $"select * from users where phone=N'{phone}'";
             string query = "USP_Phone @phone";
-            return DAO.DataProvider.Instance.ExcuteQuery(query, new object[] {phone}).Rows.Count > 0;
+            return DAO.DataProvider.Instance.ExecuteQuery(query, new object[] {phone}).Rows.Count > 0;
         }
 
 
@@ -71,21 +72,31 @@ namespace CoffeeApp.DAO
             //string query = $"select * from users where Email=N'{email}'";
             //return DAO.DataProvider.Instance.ExcuteQuery(query);
             string query = "USP_Email @email";
-            return DAO.DataProvider.Instance.ExcuteQuery(query, new object[] { email });
+            return DAO.DataProvider.Instance.ExecuteQuery(query, new object[] { email });
         }
 
         public DataTable QueryRoleUser(string username)
         {
             // string query = $"select * from Users where username = N'{username}'";
             string query = "USP_UserName @username";        
-            return DAO.DataProvider.Instance.ExcuteQuery(query, new object[] { username });
+            return DAO.DataProvider.Instance.ExecuteQuery(query, new object[] { username });
+        }
+
+        public UserDTO GetByUserName(string username)
+        {
+            // string query = $"select * from Users where username = N'{username}'";
+            string query = "USP_UserName @username";
+            DataTable dt =  DAO.DataProvider.Instance.ExecuteQuery(query, new object[] { username });
+            DataRow dr = dt.Rows[0];
+            UserDTO res = new UserDTO(dr);
+            return res;
         }
 
         public DataTable FullUsers()
         {
             //string query = $"select * from Users ";
             string query = "USP_Users";
-            DataTable data = DAO.DataProvider.Instance.ExcuteQuery(query, new object[] {});
+            DataTable data = DAO.DataProvider.Instance.ExecuteQuery(query, new object[] {});
             return data;
         }
 
@@ -124,7 +135,7 @@ namespace CoffeeApp.DAO
                 parameters.Add(phone);
             else
                 parameters.Add(DBNull.Value); // Truyền giá trị null cho @phone nếu phone không có
-            DataTable resData = DataProvider.Instance.ExcuteQuery(query,  parameters.ToArray());
+            DataTable resData = DataProvider.Instance.ExecuteQuery(query,  parameters.ToArray());
 
 
             return resData.Rows.Count > 0; // số dòng trả ra
