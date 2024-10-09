@@ -197,18 +197,6 @@
     <Compile Include="GUI\Main\FormManagement.Designer.cs">
       <DependentUpon>FormManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Usercontrol\FoodView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Usercontrol\FoodView.Designer.cs">
-      <DependentUpon>FoodView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Usercontrol\TableView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Usercontrol\TableView.Designer.cs">
-      <DependentUpon>TableView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\ValidateData.cs" />
@@ -229,12 +217,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Main\FormManagement.resx">
       <DependentUpon>FormManagement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Usercontrol\FoodView.resx">
-      <DependentUpon>FoodView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Usercontrol\TableView.resx">
-      <DependentUpon>TableView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,7 +1,6 @@
 ﻿using CoffeeApp.DAO;
 using CoffeeApp.DTO;
 using CoffeeApp.GUI.Main;
-using CoffeeApp.GUI.Usercontrol;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
