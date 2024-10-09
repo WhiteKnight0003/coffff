@@ -14,6 +14,7 @@ CREATE TABLE bill (
     ID INT IDENTITY PRIMARY KEY,
     DateCheckIn DATE NOT NULL DEFAULT GETDATE(),
     DateCheckOut DATE NULL,
+	TotalBill Float Null,
     status NVARCHAR(50) COLLATE Latin1_General_100_CI_AS_SC_UTF8 NULL,
     CustomerID INT NOT NULL,
     UserID INT NOT NULL,
@@ -21,6 +22,9 @@ CREATE TABLE bill (
     PaymentID INT NOT NULL
 );
 GO
+
+--ALTER TABLE bill
+--ADD TotalBill Float NULL;
 
 -- Table structure for `billdetails`
 IF OBJECT_ID('billdetails', 'U') IS NOT NULL
