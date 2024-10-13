@@ -24,6 +24,7 @@ namespace CoffeeApp.GUI
         private FormMain formMain;
         private ValidateData validateData;
         private bool isSignUp = false;
+        private ConvertImage convertImage;
         public FormSignUp(FormLogin formLogin)
         {
             InitializeComponent();
@@ -83,8 +84,15 @@ namespace CoffeeApp.GUI
             {
                 lbValidateUserName.Text = lbValidatePhone.Text = lbValidateEmail.Text = lbValidatePassword.Text = lbValidateRePassword.Text = "";
                 string verificationCode = await EmailService.SendVerificationCodeAsync(email);
+
+                convertImage = new ConvertImage();
+                Image img = Properties.Resources.Image_Default;
+                Image reimg = convertImage.ResizeImage(img, 200, 200);
+                string Imgbase64String = convertImage.ImageToBase64(reimg, System.Drawing.Imaging.ImageFormat.Png);
+                Console.WriteLine(Imgbase64String);
+
                 this.Hide();
-                FormInputEmail forminputemail = new FormInputEmail(formLogin, this,username, DAO.UserDAO.Instance.HashPassword(password), phone, email,1, verificationCode); // 0 đại diện cho việc insert
+                FormInputEmail forminputemail = new FormInputEmail(formLogin, this,username, DAO.UserDAO.Instance.HashPassword(password), phone, email,1, verificationCode, Imgbase64String); // 0 đại diện cho việc insert
                 forminputemail.ShowDialog();               
             }
             else
@@ -1288,23 +1296,5 @@ namespace CoffeeApp.GUI
             this.Close();
             formLogin.Show();
         }
-
-        //private void FormSignUp_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    if (isSignUp)
-        //    {
-        //        return;
-        //    }
-        //    if (MessageBox.Show("Bạn chắc chắn muốn thoát chương trình ?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-        //    {
-        //        e.Cancel = true;
-        //    }
-        //    else
-        //    {
-        //        isSignUp = true;
-        //        // đóng toàn bộ chương trình
-        //        Application.Exit();
-        //    }
-        //}
     }
 }

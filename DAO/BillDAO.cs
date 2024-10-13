@@ -75,5 +75,11 @@ namespace CoffeeApp.DAO
                 return 1;
             }
         }
+
+        public DataTable GetProceedsByYear(int year)
+        {
+            string query = "USP_Statics_year @year";
+            return DAO.DataProvider.Instance.ExecuteQuery(query, new object[] { year });
+        }
     }
 }
