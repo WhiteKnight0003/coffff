@@ -92,6 +92,22 @@ namespace CoffeeApp.DAO
             return res;
         }
 
+        public DataTable QueryUserEmail(string email)
+        {
+            //string query = $"select * from users where Email=N'{email}'";
+            //return DAO.DataProvider.Instance.ExcuteQuery(query);
+            string query = "USP_Email @email";
+            return DAO.DataProvider.Instance.ExecuteQuery(query, new object[] { email });
+        }
+
+        public DataTable QueryUserName(string username)
+        {
+            // string query = $"select * from Users where username = N'{username}'";
+            string query = "USP_UserName @username";
+            return DAO.DataProvider.Instance.ExecuteQuery(query, new object[] { username });
+        }
+
+
         public DataTable FullUsers()
         {
             //string query = $"select * from Users ";

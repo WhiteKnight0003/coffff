@@ -152,3 +152,4 @@ E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\System.Runtime.CompilerSer
 E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\System.Security.Cryptography.Cng.xml
 E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\obj\Debug\CoffeeApp.csproj.Up2Date
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\obj\Debug\CoffeeApp.GUI.Main.FormUserInfomation.resources

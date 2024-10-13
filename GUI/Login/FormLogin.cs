@@ -3,6 +3,7 @@ using CoffeeApp.DTO;
 using CoffeeApp.GUI;
 using CoffeeApp.GUI.Login;
 using CoffeeApp.GUI.Main;
+using CoffeeApp.Util;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace CoffeeApp
         int countViewPassword = 0;
         private FormSignUp formsignup;
         private FormMain formMain;
-
+        private ConvertImage convertImage;
         public FormLogin()
         {
             InitializeComponent();
@@ -85,13 +86,13 @@ namespace CoffeeApp
                 DataRow row = data.Rows[0];
                 UserDTO user = new UserDTO(row);
 
-                formMain = new FormMain(user.UserName, user.RoleID);
+                formMain = new FormMain(this,user.UserName, user.RoleID);
 
                 if (user.CodeEmail == "")
                 {
                     string verificationCode = await EmailService.SendVerificationCodeAsync(user.Email);
                     this.Hide();
-                    FormInputEmail forminputemail = new FormInputEmail(this, formsignup,user.UserName, user.Password, user.Phone, user.Email,user.RoleID, verificationCode); // 0 đại diện cho việc insert
+                    FormInputEmail forminputemail = new FormInputEmail(this, formsignup,user.UserName, user.Password, user.Phone, user.Email,user.RoleID, verificationCode, user.Image); // 0 đại diện cho việc insert
                     forminputemail.ShowDialog();
                 }
 
@@ -120,12 +121,31 @@ namespace CoffeeApp
 
         #endregion
 
+
         private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Bạn chắc chắn muốn thoát chương trình ?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
             }
+        }
+
+        public string getUsername()
+        {
+            return tbLoginName.Text;
+        }
+
+        public void setUsername(string s)
+        {
+            tbLoginName.Text = s;
+        }
+        public string getPassword()
+        {
+            return tbLoginPassword.Text;
+        }
+        public void setPassword(string s)
+        {
+            tbLoginPassword.Text = s;
         }
     }
 }
