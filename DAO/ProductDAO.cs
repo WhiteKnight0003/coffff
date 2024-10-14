@@ -42,7 +42,8 @@ namespace CoffeeApp.DAO
         {
             List<Product> list = new List<Product>();
 
-            string query = "select * from Product";
+            string query = "select p.[ID], p.[Price], p.[Name], p.[CategoryID], c.[CategoryName] as [Thể loại] from [dbo].[product] p inner join [dbo].[category] c on p.CategoryID = c.ID";
+
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
@@ -98,5 +99,6 @@ namespace CoffeeApp.DAO
 
             return result > 0;
         }
+
     }
 }

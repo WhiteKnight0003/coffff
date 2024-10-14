@@ -75,5 +75,22 @@ namespace CoffeeApp.DAO
                 return 1;
             }
         }
+
+        public List<Bill> GetListBill()
+        {
+            List<Bill> list = new List<Bill>();
+
+            string query = "select * from bill";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                Bill bill = new Bill(item);
+                list.Add(bill);
+            }
+
+            return list;
+        }
     }
 }

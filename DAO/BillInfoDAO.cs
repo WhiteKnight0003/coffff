@@ -43,5 +43,6 @@ namespace CoffeeApp.DAO
         {
             DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfo @idBill , @idProduct , @count", new object[] { idBill, idProduct, count });
         }
+
     }
 }

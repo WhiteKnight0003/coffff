@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Menu = CoffeeApp.DTO.Menu;
@@ -192,6 +193,10 @@ namespace CoffeeApp.GUI
         }
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
+            CultureInfo culture = new CultureInfo("vi-VN");
+
+            Thread.CurrentThread.CurrentCulture = culture;
+
             Table table = lsvBill.Tag as Table;
 
             string paymentName = cbPayment.SelectedItem as string;
