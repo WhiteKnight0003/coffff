@@ -76,6 +76,7 @@ namespace CoffeeApp.DAO
             }
         }
 
+<<<<<<< HEAD
         public List<Bill> GetListBill()
         {
             List<Bill> list = new List<Bill>();
@@ -91,6 +92,12 @@ namespace CoffeeApp.DAO
             }
 
             return list;
+=======
+        public DataTable GetProceedsByYear(int year)
+        {
+            string query = "USP_Statics_year @year";
+            return DAO.DataProvider.Instance.ExecuteQuery(query, new object[] { year });
+>>>>>>> 9826254a420c70104a5979fba684997caa0eb4ba
         }
     }
 }

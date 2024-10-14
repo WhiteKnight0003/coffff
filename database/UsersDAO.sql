@@ -1,4 +1,4 @@
-use coffeeApplication
+﻿use coffeeApplication
 go
 
 
@@ -56,4 +56,32 @@ begin
 	select * from Product
 end
 
+create proc USP_Roleid
+@RoleID int 
+as
+begin
+	select * from role where  RoleID = @RoleID
+end
 
+/*
+create proc USP_Statics_year
+@year int 
+as
+begin select * from bill where YEAR(DateCheckOut) = @year
+end
+*/
+
+/*
+DATEFROMPARTS(@year, 1, 1): Tạo ngày đầu tiên của năm dựa trên giá trị tham số @year.
+DateCheckOut >= ... AND DateCheckOut < ...: So sánh phạm vi từ ngày đầu tiên của năm @year đến trước
+ngày đầu tiên của năm tiếp theo (@year + 1)
+*/
+CREATE PROC USP_Statics_year
+@year INT
+AS
+BEGIN
+    SELECT * 
+    FROM bill 
+    WHERE DateCheckOut >= DATEFROMPARTS(@year, 1, 1)
+    AND DateCheckOut < DATEFROMPARTS(@year + 1, 1, 1);
+END

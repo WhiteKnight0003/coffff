@@ -26,8 +26,12 @@ namespace CoffeeApp.DAO
 
         //string sqlConnect = "Data Source=(local);Initial Catalog=QLChoThueNha_BTL;Persist Security Info=True;User ID=sa;Password=nam123;Trust Server Certificate=True";
         //private String connectionStr = "Data Source=DESKTOP-671LI2L\\SQLEXPRESS;Initial Catalog=coffeeApplication;User ID=sa;Password=123456";
+<<<<<<< HEAD
         private String connectionStr = "Data Source=ASUS\\SQLEXPRESS;Initial Catalog=coffeeApplication;User ID=sa;Password=123456";
 
+=======
+        private String connectionStr = "Data Source=TIENCHUNG0003\\SQLEXPRESS;Initial Catalog=coffeeApplication;Persist Security Info=True;User ID=sa;Password=sktt1popo";
+>>>>>>> 9826254a420c70104a5979fba684997caa0eb4ba
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

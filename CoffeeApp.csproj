@@ -131,6 +131,7 @@
       <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -147,6 +148,7 @@
     <Compile Include="DAO\CategoryDAO.cs" />
     <Compile Include="DAO\MenuDAO.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="DAO\RoleDAO.cs" />
     <Compile Include="DAO\TableDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
@@ -157,10 +159,11 @@
     <Compile Include="DTO\Payment.cs" />
     <Compile Include="DTO\Product.cs" />
     <Compile Include="DTO\ProductDTO.cs" />
+    <Compile Include="DTO\RoleDTO.cs" />
     <Compile Include="DTO\Table.cs" />
     <Compile Include="DTO\TableDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
-    <Compile Include="GUI\Login\EmailService.cs" />
+    <Compile Include="Util\EmailService.cs" />
     <Compile Include="GUI\Login\FormForgetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,20 +200,15 @@
     <Compile Include="GUI\Main\FormManagement.Designer.cs">
       <DependentUpon>FormManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Usercontrol\FoodView.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="GUI\Main\FormUserInfomation.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Usercontrol\FoodView.Designer.cs">
-      <DependentUpon>FoodView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Usercontrol\TableView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Usercontrol\TableView.Designer.cs">
-      <DependentUpon>TableView.cs</DependentUpon>
+    <Compile Include="GUI\Main\FormUserInfomation.Designer.cs">
+      <DependentUpon>FormUserInfomation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\ConvertImage.cs" />
     <Compile Include="Util\ValidateData.cs" />
     <EmbeddedResource Include="GUI\Login\FormForgetPassword.resx">
       <DependentUpon>FormForgetPassword.cs</DependentUpon>
@@ -230,11 +228,8 @@
     <EmbeddedResource Include="GUI\Main\FormManagement.resx">
       <DependentUpon>FormManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Usercontrol\FoodView.resx">
-      <DependentUpon>FoodView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Usercontrol\TableView.resx">
-      <DependentUpon>TableView.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Main\FormUserInfomation.resx">
+      <DependentUpon>FormUserInfomation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -296,6 +291,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="GUI\Image\bg4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GUI\Image\Image_Default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GUI\Icon\undo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

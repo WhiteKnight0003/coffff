@@ -1,7 +1,6 @@
 ﻿using CoffeeApp.DAO;
 using CoffeeApp.DTO;
 using CoffeeApp.GUI.Main;
-using CoffeeApp.GUI.Usercontrol;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,16 +21,20 @@ namespace CoffeeApp.GUI
     {
         private string username;
         private int roleID;
-        public FormMain(string username, int roleID)
+        private FormUserInfomation formUserInfomation;
+        private FormLogin formLogin;
+        public FormMain(FormLogin formLogin, string username, int roleID)
         {
             InitializeComponent();
             this.username = username;
             this.roleID = roleID;
+            this.formLogin = formLogin;
             LoadTable();
             loadPayment();
             LoadCategory();
             LoadComboboxTable(cbSwitchTable);
             Decentralization(username, roleID);
+            
         }
 
         #region Method
@@ -235,6 +238,25 @@ namespace CoffeeApp.GUI
         {
             System.Diagnostics.Process.GetCurrentProcess().Kill();
             Application.Exit();
+        }
+
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formUserInfomation = new FormUserInfomation(this, username);
+            this.Hide();
+            formUserInfomation.ShowDialog();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn chắc chắn muốn đăng xuất", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                this.Hide();
+                formLogin.setUsername("");
+                formLogin.setPassword("");
+                formLogin.Show();
+
+            }
         }
     }
 }
