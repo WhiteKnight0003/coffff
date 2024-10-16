@@ -9,12 +9,14 @@ namespace CoffeeApp.DTO
 {
     internal class Product
     {
-        public Product(int id, string name, int categoryID, float price)
+        public Product(int id, string name, int categoryID, float price, string image, string description)
         {
             this.ID = id;
             this.Name = name;
             this.CategoryID = categoryID;
             this.Price = price;
+            this.Image = image;
+            this.Description = description; 
         }
 
         public Product(DataRow row)
@@ -23,6 +25,8 @@ namespace CoffeeApp.DTO
             this.Name = row["Name"].ToString();
             this.CategoryID = (int)row["CategoryID"];
             this.Price = (float)Convert.ToDouble(row["Price"].ToString());
+            this.Description= row["Description"].ToString();
+            this.Image=row["Image"].ToString();
         }
 
         private float price;
@@ -55,6 +59,21 @@ namespace CoffeeApp.DTO
         {
             get { return iD; }
             set { iD = value; }
+        }
+
+        private string description;
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
+
+        
+        private string image;
+        public string Image
+        {
+            get { return image; }
+            set { image = value; }
         }
     }
 }

@@ -53,5 +53,18 @@ namespace CoffeeApp.DAO
 
             return category;
         }
+
+        public string GetCategoryNameByID(int id)
+        {
+            string query = "select CategoryName from Category where id = " + id;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if(data.Rows.Count > 0)
+            {
+                string result = data.Rows[0]["CategoryName"].ToString();
+                return result;
+            }    
+            else return null;
+        }
     }
 }
