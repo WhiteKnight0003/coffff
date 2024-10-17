@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.btnBackFormManagement = new Guna.UI2.WinForms.Guna2Button();
             this.TabStatisticsProceeds = new System.Windows.Forms.TabPage();
             this.cbChooseYear = new System.Windows.Forms.ComboBox();
@@ -125,28 +125,28 @@
             // 
             // chartStatistic
             // 
-            chartArea1.AxisX.IsLabelAutoFit = false;
-            chartArea1.AxisX.Title = "Tháng";
-            chartArea1.AxisY.Title = "Doanh thu";
-            chartArea1.Name = "ChartArea1";
-            this.chartStatistic.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartStatistic.Legends.Add(legend1);
+            chartArea3.AxisX.IsLabelAutoFit = false;
+            chartArea3.AxisX.Title = "Tháng";
+            chartArea3.AxisY.Title = "Doanh thu";
+            chartArea3.Name = "ChartArea1";
+            this.chartStatistic.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartStatistic.Legends.Add(legend3);
             this.chartStatistic.Location = new System.Drawing.Point(0, 5);
             this.chartStatistic.Margin = new System.Windows.Forms.Padding(2);
             this.chartStatistic.Name = "chartStatistic";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series1.IsValueShownAsLabel = true;
-            series1.Legend = "Legend1";
-            series1.Name = "DataSeries";
-            this.chartStatistic.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series3.IsValueShownAsLabel = true;
+            series3.Legend = "Legend1";
+            series3.Name = "DataSeries";
+            this.chartStatistic.Series.Add(series3);
             this.chartStatistic.Size = new System.Drawing.Size(529, 414);
             this.chartStatistic.TabIndex = 0;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title1";
-            title1.Text = "Biểu đồ thông kê doanh thu theo năm";
-            this.chartStatistic.Titles.Add(title1);
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title3.Name = "Title1";
+            title3.Text = "Biểu đồ thông kê doanh thu theo năm";
+            this.chartStatistic.Titles.Add(title3);
             // 
             // tcManagement
             // 
@@ -400,6 +400,7 @@
             // 
             // dtgvProduct
             // 
+            this.dtgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvProduct.Location = new System.Drawing.Point(7, 52);
             this.dtgvProduct.Name = "dtgvProduct";
