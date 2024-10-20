@@ -153,3 +153,41 @@ E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\System.Security.Cryptograp
 E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\obj\Debug\CoffeeApp.csproj.Up2Date
 E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\obj\Debug\CoffeeApp.GUI.Main.FormUserInfomation.resources
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\CoffeeApp.exe.config
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\CoffeeApp.exe
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\CoffeeApp.pdb
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\DevExpress.Data.v24.1.dll
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\DevExpress.Xpo.v24.1.dll
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\Guna.Charts.WinForms.dll
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\Guna.UI2.dll
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Buffers.dll
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.ComponentModel.Annotations.dll
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Data.SqlClient.dll
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Security.Cryptography.Cng.dll
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\DevExpress.Data.v24.1.xml
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\DevExpress.Xpo.v24.1.xml
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\Guna.Charts.WinForms.xml
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Data.SqlClient.xml
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Security.Cryptography.Cng.xml
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.csproj.AssemblyReference.cache
+D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.GUI.Login.FormForgetPassword.resources
+D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.FormLogin.resources
+D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.GUI.FormSignUp.resources
+D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.GUI.Main.FormInputEmail.resources
+D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.GUI.FormMain.resources
+D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.GUI.Main.FormManagement.resources
+D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.GUI.Main.FormUserInfomation.resources
+D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.Properties.Resources.resources
+D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.csproj.GenerateResource.cache
+D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.csproj.CoreCompileInputs.cache
+D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.csproj.Up2Date
+D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.exe
+D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.pdb
