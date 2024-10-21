@@ -191,6 +191,7 @@ D:\WORKSPACE\C#\CfApplication\coffff\obj\Debug\CoffeeApp.csproj.CoreCompileInput
 D:\WORKSPACE\C#\CfApplication\coffff\obj\Debug\CoffeeApp.csproj.Up2Date
 D:\WORKSPACE\C#\CfApplication\coffff\obj\Debug\CoffeeApp.exe
 D:\WORKSPACE\C#\CfApplication\coffff\obj\Debug\CoffeeApp.pdb
+<<<<<<< HEAD
 D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\CoffeeApp.exe.config
 D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\CoffeeApp.exe
 D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\CoffeeApp.pdb
@@ -229,3 +230,5 @@ D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.csproj.CoreCompil
 D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.csproj.Up2Date
 D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.exe
 D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.pdb
+=======
+>>>>>>> 53a63b6d01f5b83dd393d076f534cc4de21fecbe
