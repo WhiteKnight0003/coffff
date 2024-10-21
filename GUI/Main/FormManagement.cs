@@ -61,8 +61,6 @@ namespace CoffeeApp.GUI.Main
             dgvUsers.Columns["Workingstatus"].Visible = false;
             cbType.Items.Add("Admin");
             cbType.Items.Add("Staff");
-            cbTT.Items.Add("Active");
-            cbTT.Items.Add("InActive");
             UnLoaded(false);
         }
         void Category_Load()
@@ -85,7 +83,6 @@ namespace CoffeeApp.GUI.Main
         }
         private void UnLoaded(bool isEnabled)
         {
-            cbTT.Enabled = isEnabled;
             txtTenHT.Enabled = isEnabled;
             txtPhoneNumber.Enabled = isEnabled;
             txtAddress.Enabled = isEnabled;
@@ -103,7 +100,6 @@ namespace CoffeeApp.GUI.Main
         }
         private void ResetValue()
         {
-            cbTT.Text = "";
             txtTenHT.Text = "";
             txtPhoneNumber.Text = "";
             txtEmail.Text = "";
@@ -553,15 +549,6 @@ namespace CoffeeApp.GUI.Main
             {
                 cbType.Text = "Staff";
             }
-            string status = dgvUsers.CurrentRow.Cells[13].Value.ToString();
-            if (status == "1")
-            {
-                cbTT.Text = "Active";
-            }
-            else if (status == "0")
-            {
-                cbTT.Text = "InActive";
-            }
         }
         private void validateInfor(object sender, EventArgs e)
         {
@@ -691,6 +678,9 @@ namespace CoffeeApp.GUI.Main
                 DataTable data2 = DAO.DataProvider.Instance.ExecuteQuery(querry);
                 MessageBox.Show("Xóa tài khoản thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ManageAccount_Load();
+                ResetValue();
+                btnThem_Acc.Enabled = true;
+                
             }
         }
         private void btnThem_Acc_Click(object sender, EventArgs e)
@@ -700,13 +690,10 @@ namespace CoffeeApp.GUI.Main
             btnXoa_Acc.Enabled = false;
             btnLuu_Acc.Enabled = true;
             ResetValue();
-            cbTT.Enabled = false;
-            cbTT.Text = "Active";
         }
         private void btnSua_Acc_Click(object sender, EventArgs e)
         {
             btnLuu_Category.Enabled = true;
-            cbTT.Enabled = true;
             txtTenHT.Enabled = true;
             txtPhoneNumber.Enabled = true;
             txtAddress.Enabled = true;
@@ -771,11 +758,7 @@ namespace CoffeeApp.GUI.Main
                 {
                     gioitinh = "Nữ";
                 }
-                int tt = 0;
-                if (cbTT.Text == "Active")
-                {
-                    tt = 1;
-                }
+                int tt = 1;
                 querry = "INSERT  INTO users(userName,fullname,password, phone, email,address,DateWork, RoleID,  gender,workingstatus) VALUES(";
                 querry += "N'" + txtTenTK.Text + "',N'" + txtTenHT.Text + "',N'" + mk + "',N'" + txtPhoneNumber.Text + "',N'" + txtEmail.Text + "',N'" + txtAddress.Text + "',N'" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "',N'" + roleidd + "',N'" + gioitinh + "',N'" + tt + "')";
                 validateInfor(sender, e);
@@ -804,12 +787,7 @@ namespace CoffeeApp.GUI.Main
                 {
                     gioitinh = "Nữ";
                 }
-                int tt = 0;
-                if (cbTT.Text == "Active")
-                {
-                    tt = 1;
-                }
-
+                //int tt = 1;
                 UserDAO userDAO = new UserDAO();
                 querry = "UPDATE users SET ";
                 querry += "fullname = N'" + txtTenHT.Text + "', ";
@@ -818,12 +796,12 @@ namespace CoffeeApp.GUI.Main
                 querry += "DateWork = N'" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "', ";
                 querry += "RoleID = N'" + roleidd + "', ";
                 querry += "gender = N'" + gioitinh + "', ";
-                querry += "workingstatus = N'" + tt + "' ";
+                //querry += "workingstatus = N'" + tt + "' ";
                 string curentpassword = dgvUsers.CurrentRow.Cells[3].Value.ToString();
                 if (txtMK.Text != curentpassword)
                 {
                     mk = userDAO.HashPassword(txtMK.Text);
-                    querry += "password = N'" + mk + "', ";
+                    querry += ",password = N'" + mk + "'";
                 }
                 querry += "WHERE UserName = N'" + txtTenTK.Text + "'";
 
@@ -852,7 +830,6 @@ namespace CoffeeApp.GUI.Main
         }
         private void btnAdd_Category_Click(object sender, EventArgs e)
         {
-
             btnSua_Category.Enabled = false;
             btnXoa_Category.Enabled = false;
             btnLuu_Category.Enabled = true;
@@ -953,6 +930,31 @@ namespace CoffeeApp.GUI.Main
                 Category_Load();
                 ResetValue_Category();
 
+            }
+        }
+
+        private void btnTim_Acc_Click(object sender, EventArgs e)
+        {
+            string searchInput = txtTimAcc.Text.Trim();
+            string query = "";
+            if (string.IsNullOrEmpty(searchInput))
+            {
+                query = "SELECT * FROM dbo.users where Workingstatus = 1";
+                DataTable data = DAO.DataProvider.Instance.ExecuteQuery(query);
+                //MessageBox.Show("Vui lòng nhập tên tài khoản để tìm kiếm.");
+                //return;
+            }
+            query = "SELECT * FROM users WHERE fullname LIKE N'%" + searchInput + "%'";
+
+            DataTable result = DAO.DataProvider.Instance.ExecuteQuery(query);
+
+            if (result.Rows.Count > 0)
+            {
+                dgvUsers.DataSource = result;  
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy tài khoản nào.");
             }
         }
     }
