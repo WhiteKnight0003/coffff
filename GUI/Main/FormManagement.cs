@@ -259,11 +259,85 @@ namespace CoffeeApp.GUI.Main
             LoadListProduct();
             AddProductBinding();
         }
-        private void btnViewProduct_Click(object sender, EventArgs e)
+
+       
+
+        List<Product> SearchProductByName(string name)
         {
+            return ProductDAO.Instance.SearchProductByName(name);
         }
 
-        private void btnEditProduct_Click(object sender, EventArgs e)
+        private void tcManagement_Click(object sender, EventArgs e)
+        {
+        }
+        // show image
+        private void ShowProductImage(int id)
+        {
+            convertImage = new ConvertImage();
+            // gọi ảnh lên bằng cách mã hóa chuỗi về ảnh
+            string productBase64 = ProductDAO.Instance.GetProductImageFromDatabase(id);
+            if (productBase64 == null)
+            {
+                MessageBox.Show("Không có hình ảnh để hiển thị");
+            }
+            else
+            {
+                System.Drawing.Image loadImage = convertImage.Base64ToImage(productBase64);
+                // hiển thị ảnh 
+                pbImageProduct.Image = loadImage;
+            }
+        }
+
+        // Phân trang cho chi tiết hóa đơn
+        private int currentPage = 1;
+        private int pageSize = 10;
+        
+        private void btnFirst_Click_1(object sender, EventArgs e)
+        {
+            currentPage = 1;
+            BillInfoDAO.Instance.DisplayPage(currentPage, pageSize, currentPage, dgvBillDetails, lblPageNumber);
+        }
+
+        private void btnPrevious_Click_1(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                BillInfoDAO.Instance.DisplayPage(currentPage, pageSize, currentPage, dgvBillDetails, lblPageNumber);
+            }
+        }
+
+        private void btnNext_Click_1(object sender, EventArgs e)
+        {
+            if (currentPage < BillInfoDAO.Instance.TotalPages(pageSize))
+            {
+                currentPage++;
+                BillInfoDAO.Instance.DisplayPage(currentPage, pageSize, currentPage, dgvBillDetails, lblPageNumber);
+            }
+        }
+
+        private void btnLast_Click_1(object sender, EventArgs e)
+        {
+            currentPage = BillInfoDAO.Instance.TotalPages(pageSize);
+            BillInfoDAO.Instance.DisplayPage(currentPage, pageSize, currentPage, dgvBillDetails, lblPageNumber);
+        }
+
+
+        // Định dạng tiền
+        private void dgvBillDetails_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvBillDetails.Columns[e.ColumnIndex].Name == "TotalBill")
+            {
+                if (e.Value != null)
+                {
+                    CultureInfo vietnam = new CultureInfo("vi-VN");
+                    e.Value = string.Format(vietnam, "{0:C0}", e.Value);
+                    e.FormattingApplied = true;
+                }
+            }
+        }
+
+        private void btnEditProduct_Click_1(object sender, EventArgs e)
         {
             string name = txtProductName.Text;
             int categoryID = (cbbProductCategory.SelectedItem as Category).ID;
@@ -283,10 +357,8 @@ namespace CoffeeApp.GUI.Main
             AddProductBinding();
         }
 
-        private void btnDeleteProduct_Click(object sender, EventArgs e)
+        private void btnDeleteProduct_Click_1(object sender, EventArgs e)
         {
-            
-
             string id = txtProductID.Text;
             int idInt = Convert.ToInt32(txtProductID.Text);
             bool res = BillInfoDAO.Instance.CheckProductBeforeDelete(idInt);
@@ -311,7 +383,7 @@ namespace CoffeeApp.GUI.Main
             AddProductBinding();
         }
 
-        private void btnAddProduct_Click(object sender, EventArgs e)
+        private void btnAddProduct_Click_1(object sender, EventArgs e)
         {
             string name = txtProductName.Text;
             int categoryID = (cbbProductCategory.SelectedItem as Category).ID;
@@ -330,31 +402,12 @@ namespace CoffeeApp.GUI.Main
             AddProductBinding();
         }
 
-        private void btnSearchProduct_Click(object sender, EventArgs e)
+        private void btnSearchProduct_Click_1(object sender, EventArgs e)
         {
             dtgvProduct.DataSource = SearchProductByName(txtSearchProductName.Text);
         }
 
-        List<Product> SearchProductByName(string name)
-        {
-            return ProductDAO.Instance.SearchProductByName(name);
-        }
-
-        private void LoadListBillDetails()
-        {
-            dgvBillDetails.DataSource = BillDAO.Instance.GetListBill();
-            if (dgvBillDetails.Columns.Count > 0)
-            {
-                dgvBillDetails.Columns["CustomerID"].Visible = false;
-            }
-        }
-
-        private void tcManagement_Click(object sender, EventArgs e)
-        {
-        }
-
-        // Chọn ảnh
-        private void btnChooseImageProduct_Click(object sender, EventArgs e)
+        private void btnChooseImageProduct_Click_1(object sender, EventArgs e)
         {
             btnSaveProductImage.Enabled = true;
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -377,30 +430,7 @@ namespace CoffeeApp.GUI.Main
             }
         }
 
-
-        // show image
-        private void ShowProductImage(int id)
-        {
-            convertImage = new ConvertImage();
-            // gọi ảnh lên bằng cách mã hóa chuỗi về ảnh
-            string productBase64 = ProductDAO.Instance.GetProductImageFromDatabase(id);
-            if (productBase64 == null)
-            {
-                MessageBox.Show("Không có hình ảnh để hiển thị");
-            }
-            else
-            {
-                System.Drawing.Image loadImage = convertImage.Base64ToImage(productBase64);
-                // hiển thị ảnh 
-                pbImageProduct.Image = loadImage;
-            }
-        }
-
-        private void dtgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {}
-
-        // Lưu ảnh cho sản phẩm
-        private void btnSaveProductImage_Click(object sender, EventArgs e)
+        private void btnSaveProductImage_Click_1(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn lưu hình ảnh này không?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
@@ -412,7 +442,7 @@ namespace CoffeeApp.GUI.Main
                     int productID = int.Parse(txtProductID.Text);
                     if (pbImageProduct.Image != null)
                     {
-                        
+
                         using (MemoryStream ms = new MemoryStream())
                         {
                             pbImageProduct.Image.Save(ms, pbImageProduct.Image.RawFormat);
@@ -435,8 +465,7 @@ namespace CoffeeApp.GUI.Main
             }
         }
 
-        // Load ảnh cho các sản phẩm
-        private void dtgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgvProduct_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -461,6 +490,7 @@ namespace CoffeeApp.GUI.Main
                 }
             }
         }
+<<<<<<< Updated upstream
 
         // Phân trang cho chi tiết hóa đơn
         private int currentPage = 1;
@@ -562,6 +592,9 @@ namespace CoffeeApp.GUI.Main
             {
                 errorProvider.Clear();
             }
+=======
+    }
+>>>>>>> Stashed changes
 
             if (string.IsNullOrWhiteSpace(txtPhoneNumber.Text))
             {
