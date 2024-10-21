@@ -253,9 +253,7 @@ namespace CoffeeApp.GUI.Main
             txtProductID.DataBindings.Add(new Binding("Text", dtgvProduct.DataSource, "ID", true, DataSourceUpdateMode.Never));
 
             nmProductPrice.DataBindings.Clear();
-            nmProductPrice.DataBindings.Add(new Binding("Value", dtgvProduct.DataSource, "Price", true, DataSourceUpdateMode.Never));
-
-            
+            nmProductPrice.DataBindings.Add(new Binding("Value", dtgvProduct.DataSource, "Price", true, DataSourceUpdateMode.Never));          
         }
 
         private void LoadCategoryIntoCombobox()
