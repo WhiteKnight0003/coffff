@@ -1,0 +1,25 @@
+# Thư mục tạm thời của Visual Studio
+.vs/
+
+# Các file cấu hình người dùng
+*.user
+*.suo
+
+# File database tạm thời
+*.sqlite
+
+# File log
+*.log
+
+# Thư mục bin và obj chứa file build
+bin/
+obj/
+
+# Các file tạm thời khác
+*.tmp
+*.bak
+*.cache
+
+# Tệp tạm của hệ thống
+.DS_Store
+Thumbs.db

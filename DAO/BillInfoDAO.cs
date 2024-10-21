@@ -48,7 +48,7 @@ namespace CoffeeApp.DAO
 
         public void DisplayPage(int pageNumber, int pageSize, int currentPage, DataGridView dataGridView, Label lblPageNumber)
         {
-            using (SqlConnection conn = new SqlConnection("Data Source=ASUS\\SQLEXPRESS;Initial Catalog=coffeeApplication;Integrated Security=True;"))
+            using (SqlConnection conn = new SqlConnection("Data Source=HIDDENLOVE\\SQLEXPRESS;Initial Catalog=coffeeApplication;Persist Security Info=True;User ID=sa;Password=Trongan-13;"))
             {
                 conn.Open();
                 string query = @"
@@ -75,7 +75,7 @@ namespace CoffeeApp.DAO
 
         public int TotalPages(int pageSize)
         {
-            using (SqlConnection conn = new SqlConnection("Data Source=ASUS\\SQLEXPRESS;Initial Catalog=coffeeApplication;Integrated Security=True;"))
+            using (SqlConnection conn = new SqlConnection("Data Source=HIDDENLOVE\\SQLEXPRESS;Initial Catalog=coffeeApplication;Persist Security Info=True;User ID=sa;Password=Trongan-13;"))
             {
                 conn.Open ();
 
