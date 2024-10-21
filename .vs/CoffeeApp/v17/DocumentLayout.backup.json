@@ -11,16 +11,20 @@
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\gui\\main\\formmanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\dao\\billinfodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\billinfodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\dao\\roledao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\roledao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 236,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -45,16 +49,12 @@
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormManagement.Designer.cs",
-              "DocumentMoniker": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\GUI\\Main\\FormManagement.Designer.cs",
-              "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.Designer.cs",
-              "ToolTip": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\GUI\\Main\\FormManagement.Designer.cs",
-              "RelativeToolTip": "GUI\\Main\\FormManagement.Designer.cs",
-              "ViewState": "AgIAAPABAAAAAAAAAAAAAPoBAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T13:27:19.155Z"
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
@@ -64,9 +64,9 @@
               "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.cs",
               "ToolTip": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\GUI\\Main\\FormManagement.cs",
               "RelativeToolTip": "GUI\\Main\\FormManagement.cs",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAIwH0AAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAJ0BAAAAAAAAAAAAwLIBAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T08:53:50.649Z",
+              "WhenOpened": "2024-10-21T00:41:19.338Z",
               "EditorCaption": ""
             },
             {
@@ -78,31 +78,58 @@
               "ToolTip": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\GUI\\Main\\FormManagement.cs [Design]",
               "RelativeToolTip": "GUI\\Main\\FormManagement.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T17:16:08.195Z"
+              "WhenOpened": "2024-10-20T17:23:16.993Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DataProvider.cs",
+              "DocumentMoniker": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\DAO\\DataProvider.cs",
+              "RelativeDocumentMoniker": "DAO\\DataProvider.cs",
+              "ToolTip": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\DAO\\DataProvider.cs",
+              "RelativeToolTip": "DAO\\DataProvider.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAASwB0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T17:01:03.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BillInfoDAO.cs",
+              "DocumentMoniker": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\DAO\\BillInfoDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\BillInfoDAO.cs",
+              "ToolTip": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\DAO\\BillInfoDAO.cs",
+              "RelativeToolTip": "DAO\\BillInfoDAO.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAwGcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T17:00:11.563Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "FormManagement.Designer.cs",
+              "DocumentMoniker": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\GUI\\Main\\FormManagement.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.Designer.cs",
+              "ToolTip": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\GUI\\Main\\FormManagement.Designer.cs",
+              "RelativeToolTip": "GUI\\Main\\FormManagement.Designer.cs",
+              "ViewState": "AgIAAAwCAAAAAAAAAAAQwBYCAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T16:53:55.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "UserDAO.cs",
               "DocumentMoniker": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\DAO\\UserDAO.cs",
               "RelativeDocumentMoniker": "DAO\\UserDAO.cs",
               "ToolTip": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\DAO\\UserDAO.cs",
               "RelativeToolTip": "DAO\\UserDAO.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAiwJ0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T13:18:25.586Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RoleDAO.cs",
-              "DocumentMoniker": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\DAO\\RoleDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\RoleDAO.cs",
-              "ToolTip": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\DAO\\RoleDAO.cs",
-              "RelativeToolTip": "DAO\\RoleDAO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T09:25:23.135Z"
+              "WhenOpened": "2024-10-20T17:01:01.706Z"
             }
           ]
         },

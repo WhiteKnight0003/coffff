@@ -157,6 +157,8 @@ namespace CoffeeApp.DAO
             return resData.Rows.Count > 0; // số dòng trả ra
         }
 
+       
+
         public bool InsertUser(string userName, string passWord,string phone , string email,string codeEmail, string statusEmail, int roleID, string fullName, string address, string gender, string image)
         {
             try
@@ -184,5 +186,7 @@ namespace CoffeeApp.DAO
             }
             return true;
         }
+
+
     }
 }
