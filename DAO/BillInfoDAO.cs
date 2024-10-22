@@ -48,45 +48,47 @@ namespace CoffeeApp.DAO
 
         public void DisplayPage(int pageNumber, int pageSize, int currentPage, DataGridView dataGridView, Label lblPageNumber)
         {
-            using (SqlConnection conn = new SqlConnection("Data Source=HIDDENLOVE\\SQLEXPRESS;Initial Catalog=coffeeApplication;Persist Security Info=True;User ID=sa;Password=Trongan-13;"))
-            {
-                conn.Open();
-                string query = @"
-                    select b.ID, DateCheckIn, DateCheckOut, status, u.UserName as [Tên nhân viên], TableID, TotalBill, discount, payment_name from bill b inner join users u on b.UserID = u.ID order by b.ID
-                    offset @Offset ROWS
-                    fetch next @PageSize rows only";
+            // Tính toán Offset
+            int offset = (pageNumber - 1) * pageSize;
 
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@Offset", (pageNumber - 1) * pageSize); 
-                    cmd.Parameters.AddWithValue("@PageSize", pageSize);
+            // Câu truy vấn SQL có sử dụng OFFSET và FETCH
+            string query = @"
+            select b.ID, DateCheckIn, DateCheckOut, status, u.UserName as [Tên nhân viên], TableID, TotalBill, discount, payment_name 
+            from bill b 
+            inner join users u on b.UserID = u.ID 
+            order by b.ID
+            offset @Offset ROWS
+            fetch next @PageSize rows only";
 
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                    {
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
-                        dataGridView.DataSource = dt;
-                    }
-                }
-                int totalPage = TotalPages(pageSize);
-                lblPageNumber.Text = $"Trang {currentPage}/{totalPage}";
-            }
+            // Tham số truyền vào truy vấn
+            object[] parameters = { offset, pageSize };
+
+            // Gọi phương thức ExecuteQuery từ class DataProvider để lấy dữ liệu
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, parameters);
+
+            // Gán dữ liệu vào DataGridView
+            dataGridView.DataSource = dt;
+
+            // Tính toán và hiển thị số trang
+            int totalPage = TotalPages(pageSize);
+            lblPageNumber.Text = $"Trang {currentPage}/{totalPage}";
         }
 
         public int TotalPages(int pageSize)
         {
-            using (SqlConnection conn = new SqlConnection("Data Source=HIDDENLOVE\\SQLEXPRESS;Initial Catalog=coffeeApplication;Persist Security Info=True;User ID=sa;Password=Trongan-13;"))
-            {
-                conn.Open ();
+            // Câu truy vấn để đếm tổng số bản ghi trong bảng bill
+            string countQuery = "SELECT COUNT(*) FROM bill";
 
-                string countQuery = "SELECT COUNT(*) FROM bill";
-                using (SqlCommand cmd = new SqlCommand (countQuery, conn))
-                {
-                    int totalRecords = (int)cmd.ExecuteScalar();
-                    return (int)Math.Ceiling((double)totalRecords / pageSize);
-                }
-            }
+            // Gọi phương thức ExecuteScalar từ class DataProvider để lấy tổng số bản ghi
+            object result = DataProvider.Instance.ExecuteScalar(countQuery);
+
+            // Chuyển đổi kết quả trả về từ object sang int
+            int totalRecords = Convert.ToInt32(result);
+
+            // Tính toán và trả về tổng số trang
+            return (int)Math.Ceiling((double)totalRecords / pageSize);
         }
+
 
         public bool CheckProductBeforeDelete(int productID)
         {
