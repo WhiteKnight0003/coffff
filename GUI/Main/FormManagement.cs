@@ -161,7 +161,8 @@ namespace CoffeeApp.GUI.Main
         private void LoadListProduct()
         {
             dtgvProduct.DataSource = ProductDAO.Instance.GetListProduct();
-
+            dtgvProduct.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtgvProduct.Columns["Price"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             // Ensure the DataGridView has been populated before accessing columns
             if (dtgvProduct.Columns.Count > 0)
             {
