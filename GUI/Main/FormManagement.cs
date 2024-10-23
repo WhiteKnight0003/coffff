@@ -259,81 +259,6 @@ namespace CoffeeApp.GUI.Main
             LoadListProduct();
             AddProductBinding();
         }
-        private void btnViewProduct_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnEditProduct_Click(object sender, EventArgs e)
-        {
-            string name = txtProductName.Text;
-            int categoryID = (cbbProductCategory.SelectedItem as Category).ID;
-            float price = (float)nmProductPrice.Value;
-            int id = Convert.ToInt32(txtProductID.Text);
-
-            if (ProductDAO.Instance.UpdateProduct(id, name, categoryID, price))
-            {
-                MessageBox.Show("Sửa món thành công");
-                LoadListProduct();
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi khi sửa thức ăn");
-            }
-            LoadListProduct();
-            AddProductBinding();
-        }
-
-        private void btnDeleteProduct_Click(object sender, EventArgs e)
-        {
-            
-
-            string id = txtProductID.Text;
-            int idInt = Convert.ToInt32(txtProductID.Text);
-            bool res = BillInfoDAO.Instance.CheckProductBeforeDelete(idInt);
-            if (res)
-            {
-                MessageBox.Show("Sản phẩm này đã có trong chi tiết hóa đơn khác, bạn không thể xóa, vui lòng chọn sản phẩm khác", "Xóa", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                //int id_2 = Convert.ToInt32((string)txtProductID.Text);
-                //if (ProductDAO.Instance.DeleteProduct(id_2))
-                //{
-                //    MessageBox.Show("Xóa món thành công");
-                //    LoadListProduct();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Có lỗi khi xóa thức ăn");
-                //}
-            }
-            LoadListProduct();
-            AddProductBinding();
-        }
-
-        private void btnAddProduct_Click(object sender, EventArgs e)
-        {
-            string name = txtProductName.Text;
-            int categoryID = (cbbProductCategory.SelectedItem as Category).ID;
-            float price = (float)nmProductPrice.Value;
-
-            if (ProductDAO.Instance.InsertProduct(name, categoryID, price))
-            {
-                MessageBox.Show("Thêm món thành công");
-                LoadListProduct();
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi khi thêm thức ăn");
-            }
-            LoadListProduct();
-            AddProductBinding();
-        }
-
-        private void btnSearchProduct_Click(object sender, EventArgs e)
-        {
-            dtgvProduct.DataSource = SearchProductByName(txtSearchProductName.Text);
-        }
 
         List<Product> SearchProductByName(string name)
         {
@@ -352,32 +277,6 @@ namespace CoffeeApp.GUI.Main
         private void tcManagement_Click(object sender, EventArgs e)
         {
         }
-
-        // Chọn ảnh
-        private void btnChooseImageProduct_Click(object sender, EventArgs e)
-        {
-            btnSaveProductImage.Enabled = true;
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                // Thiết lập bộ lọc cho file hình ảnh
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif|All files (*.*)|*.*";
-                openFileDialog.Title = "Chọn hình ảnh sản phẩm";
-
-                // Hiển thị hộp thoại và kiểm tra nếu người dùng đã chọn file
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    // Lấy đường dẫn file đã chọn
-                    string selectedFilePath = openFileDialog.FileName;
-
-                    // Hiển thị hình ảnh trong PictureBox (giả sử bạn có một PictureBox tên là pictureBoxProduct)
-                    pbImageProduct.Image = System.Drawing.Image.FromFile(selectedFilePath);
-                    pbImageProduct.Size = new System.Drawing.Size(265, 115);
-                    pbImageProduct.SizeMode = PictureBoxSizeMode.Zoom; // Thay đổi kích thước hình ảnh để phù hợp với PictureBox
-                }
-            }
-        }
-
-
         // show image
         private void ShowProductImage(int id)
         {
@@ -396,120 +295,9 @@ namespace CoffeeApp.GUI.Main
             }
         }
 
-        private void dtgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {}
-
-        // Lưu ảnh cho sản phẩm
-        private void btnSaveProductImage_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn lưu hình ảnh này không?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                btnSaveProductImage.Enabled = false;
-
-                try
-                {
-                    int productID = int.Parse(txtProductID.Text);
-                    if (pbImageProduct.Image != null)
-                    {
-                        
-                        using (MemoryStream ms = new MemoryStream())
-                        {
-                            pbImageProduct.Image.Save(ms, pbImageProduct.Image.RawFormat);
-                            byte[] imageBytes = ms.ToArray();
-
-                            string base64String = Convert.ToBase64String(imageBytes);
-
-                            ProductDAO.Instance.SaveImageToDatabase(productID, base64String);
-
-                            MessageBox.Show("Hình ảnh đã được lưu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            }
-        }
-
-        // Load ảnh cho các sản phẩm
-        private void dtgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                // Load categoryName
-                DataGridViewRow row = dtgvProduct.Rows[e.RowIndex];
-                int categoryID = Convert.ToInt32(row.Cells["CategoryID"].Value);
-                string categoryName = CategoryDAO.Instance.GetCategoryNameByID(categoryID);
-                cbbProductCategory.Text = categoryName;
-
-                pbImageProduct.Image = null;
-
-                string productIdString = dtgvProduct.Rows[e.RowIndex].Cells["ID"].Value.ToString();
-
-                // Thử chuyển đổi chuỗi sang int
-                if (int.TryParse(productIdString, out int productIdInt))
-                {
-                    ShowProductImage(productIdInt);
-                }
-                else
-                {
-                    MessageBox.Show("Vui lòng nhập một ID sản phẩm hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         // Phân trang cho chi tiết hóa đơn
         private int currentPage = 1;
         private int pageSize = 10;
-
-        private void btnFirst_Click(object sender, EventArgs e)
-        {
-            currentPage = 1;
-            BillInfoDAO.Instance.DisplayPage(currentPage, pageSize, currentPage, dgvBillDetails, lblPageNumber);
-        }
-
-        private void btnPrevious_Click(object sender, EventArgs e)
-        {
-            if(currentPage > 1)
-            {
-                currentPage--;
-                BillInfoDAO.Instance.DisplayPage(currentPage, pageSize, currentPage, dgvBillDetails, lblPageNumber);
-            }
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            if (currentPage < BillInfoDAO.Instance.TotalPages(pageSize))
-            {
-                currentPage++;
-                BillInfoDAO.Instance.DisplayPage(currentPage, pageSize, currentPage, dgvBillDetails, lblPageNumber);
-            }
-        }
-
-        private void btnLast_Click(object sender, EventArgs e)
-        {
-            currentPage = BillInfoDAO.Instance.TotalPages(pageSize);
-            BillInfoDAO.Instance.DisplayPage(currentPage, pageSize, currentPage, dgvBillDetails, lblPageNumber);
-        }
-
-
-        // Định dạng tiền
-        private void dgvBillDetails_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (dgvBillDetails.Columns[e.ColumnIndex].Name == "TotalBill")
-            {
-                if (e.Value != null)
-                {
-                    CultureInfo vietnam = new CultureInfo("vi-VN");
-                    e.Value = string.Format(vietnam, "{0:C0}", e.Value);
-                    e.FormattingApplied = true;
-                }
-            }
-        }
         private void dgvUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnSua_Acc.Enabled = true; btnXoa_Acc.Enabled = true;
@@ -950,12 +738,217 @@ namespace CoffeeApp.GUI.Main
 
             if (result.Rows.Count > 0)
             {
-                dgvUsers.DataSource = result;  
+                dgvUsers.DataSource = result;
             }
             else
             {
                 MessageBox.Show("Không tìm thấy tài khoản nào.");
             }
+        }
+
+        
+        // Cac chuc nang cua Bill Details
+        private void btnFirst_Click_1(object sender, EventArgs e)
+        {
+            currentPage = 1;
+            BillInfoDAO.Instance.DisplayPage(currentPage, pageSize, currentPage, dgvBillDetails, lblPageNumber);
+        }
+
+        private void btnPrevious_Click_1(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                BillInfoDAO.Instance.DisplayPage(currentPage, pageSize, currentPage, dgvBillDetails, lblPageNumber);
+            }
+        }
+
+        private void btnNext_Click_1(object sender, EventArgs e)
+        {
+            if (currentPage < BillInfoDAO.Instance.TotalPages(pageSize))
+            {
+                currentPage++;
+                BillInfoDAO.Instance.DisplayPage(currentPage, pageSize, currentPage, dgvBillDetails, lblPageNumber);
+            }
+        }
+
+        private void btnLast_Click_1(object sender, EventArgs e)
+        {
+            currentPage = BillInfoDAO.Instance.TotalPages(pageSize);
+            BillInfoDAO.Instance.DisplayPage(currentPage, pageSize, currentPage, dgvBillDetails, lblPageNumber);
+        }
+
+
+        // Dinh dang tien BillDetails
+        private void dgvBillDetails_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvBillDetails.Columns[e.ColumnIndex].Name == "TotalBill")
+            {
+                if (e.Value != null)
+                {
+                    CultureInfo vietnam = new CultureInfo("vi-VN");
+                    e.Value = string.Format(vietnam, "{0:C0}", e.Value);
+                    e.FormattingApplied = true;
+                }
+            }
+        }
+
+        // Cac chuc nang Product
+        private void btnSearchProduct_Click_1(object sender, EventArgs e)
+        {
+            dtgvProduct.DataSource = SearchProductByName(txtSearchProductName.Text);
+        }
+
+        private void btnChooseImageProduct_Click_1(object sender, EventArgs e)
+        {
+            btnSaveProductImage.Enabled = true;
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                // Thiết lập bộ lọc cho file hình ảnh
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif|All files (*.*)|*.*";
+                openFileDialog.Title = "Chọn hình ảnh sản phẩm";
+
+                // Hiển thị hộp thoại và kiểm tra nếu người dùng đã chọn file
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lấy đường dẫn file đã chọn
+                    string selectedFilePath = openFileDialog.FileName;
+
+                    // Hiển thị hình ảnh trong PictureBox (giả sử bạn có một PictureBox tên là pictureBoxProduct)
+                    pbImageProduct.Image = System.Drawing.Image.FromFile(selectedFilePath);
+                    pbImageProduct.Size = new System.Drawing.Size(265, 115);
+                    pbImageProduct.SizeMode = PictureBoxSizeMode.Zoom; // Thay đổi kích thước hình ảnh để phù hợp với PictureBox
+                }
+            }
+        }
+
+        private void btnSaveProductImage_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn lưu hình ảnh này không?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                btnSaveProductImage.Enabled = false;
+
+                try
+                {
+                    int productID = int.Parse(txtProductID.Text);
+                    if (pbImageProduct.Image != null)
+                    {
+
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            pbImageProduct.Image.Save(ms, pbImageProduct.Image.RawFormat);
+                            byte[] imageBytes = ms.ToArray();
+
+                            string base64String = Convert.ToBase64String(imageBytes);
+
+                            ProductDAO.Instance.SaveImageToDatabase(productID, base64String);
+
+                            MessageBox.Show("Hình ảnh đã được lưu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
+        private void dtgvProduct_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Load categoryName
+                DataGridViewRow row = dtgvProduct.Rows[e.RowIndex];
+                int categoryID = Convert.ToInt32(row.Cells["CategoryID"].Value);
+                string categoryName = CategoryDAO.Instance.GetCategoryNameByID(categoryID);
+                cbbProductCategory.Text = categoryName;
+
+                pbImageProduct.Image = null;
+
+                string productIdString = dtgvProduct.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+
+                // Thử chuyển đổi chuỗi sang int
+                if (int.TryParse(productIdString, out int productIdInt))
+                {
+                    ShowProductImage(productIdInt);
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập một ID sản phẩm hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnViewProduct_Click_1(object sender, EventArgs e)
+        {}
+
+        private void btnEditProduct_Click_1(object sender, EventArgs e)
+        {
+            string name = txtProductName.Text;
+            int categoryID = (cbbProductCategory.SelectedItem as Category).ID;
+            float price = (float)nmProductPrice.Value;
+            int id = Convert.ToInt32(txtProductID.Text);
+
+            if (ProductDAO.Instance.UpdateProduct(id, name, categoryID, price))
+            {
+                MessageBox.Show("Sửa món thành công");
+                LoadListProduct();
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi sửa thức ăn");
+            }
+            LoadListProduct();
+            AddProductBinding();
+        }
+
+        private void btnDeleteProduct_Click_1(object sender, EventArgs e)
+        {
+            string id = txtProductID.Text;
+            int idInt = Convert.ToInt32(txtProductID.Text);
+            bool res = BillInfoDAO.Instance.CheckProductBeforeDelete(idInt);
+            if (res)
+            {
+                MessageBox.Show("Sản phẩm này đã có trong chi tiết hóa đơn khác, bạn không thể xóa, vui lòng chọn sản phẩm khác", "Xóa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                //int id_2 = Convert.ToInt32((string)txtProductID.Text);
+                //if (ProductDAO.Instance.DeleteProduct(id_2))
+                //{
+                //    MessageBox.Show("Xóa món thành công");
+                //    LoadListProduct();
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Có lỗi khi xóa thức ăn");
+                //}
+            }
+            LoadListProduct();
+            AddProductBinding();
+        }
+
+        private void btnAddProduct_Click_1(object sender, EventArgs e)
+        {
+            string name = txtProductName.Text;
+            int categoryID = (cbbProductCategory.SelectedItem as Category).ID;
+            float price = (float)nmProductPrice.Value;
+
+            if (ProductDAO.Instance.InsertProduct(name, categoryID, price))
+            {
+                MessageBox.Show("Thêm món thành công");
+                LoadListProduct();
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi thêm thức ăn");
+            }
+            LoadListProduct();
+            AddProductBinding();
         }
     }
 }
