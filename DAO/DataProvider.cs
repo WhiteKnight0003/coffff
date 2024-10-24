@@ -22,11 +22,12 @@ namespace CoffeeApp.DAO
             private set => DataProvider.instance = value;
         }
 
-        public DataProvider(){}
+        public DataProvider() { }
 
         //string sqlConnect = "Data Source=(local);Initial Catalog=QLChoThueNha_BTL;Persist Security Info=True;User ID=sa;Password=nam123;Trust Server Certificate=True";
         private String connectionStr = "Data Source=DESKTOP-671LI2L\\SQLEXPRESS;Initial Catalog=coffeeApplication;User ID=sa;Password=123456";
-
+        //private String connectionStr = "Data Source=TIENCHUNG0003\\SQLEXPRESS;Initial Catalog=coffeeApplication;Persist Security Info=True;User ID=sa;Password=sktt1popo";
+        //private String connectionStr = "Data Source=HIDDENLOVE\\SQLEXPRESS;Initial Catalog=coffeeApplication;Persist Security Info=True;User ID=sa;Password=Trongan-13";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
@@ -44,7 +45,7 @@ namespace CoffeeApp.DAO
                 // command.Parameters.AddWithValue("@userName", id); truyền 1 tham số
 
                 // câu lệnh sql có nhiều trường
-                if(parameter != null)
+                if (parameter != null)
                 {
                     string[] listPara = query.Split(' '); // cắt hết các đối tượng ra theo khoảng trắng
                     int i = 0;

@@ -25,8 +25,9 @@ namespace CoffeeApp.GUI.Main
         private string email;
         private string verificationCode;
         private int roleID;
+        private string Imgbase64String;
 
-        public FormInputEmail(FormLogin formLogin, FormSignUp formsignup, string username, string password, string phone, string email,int roleID, string verificationCode)
+        public FormInputEmail(FormLogin formLogin, FormSignUp formsignup, string username, string password, string phone, string email,int roleID, string verificationCode, string Imgbase64String)
         {
             InitializeComponent();
             this.formLogin = formLogin; 
@@ -37,6 +38,7 @@ namespace CoffeeApp.GUI.Main
             this.email = email;
             this.verificationCode = verificationCode;
             this.roleID = roleID; 
+            this.Imgbase64String = Imgbase64String;
         }
 
         private void btnGetCodeEmail_Click(object sender, EventArgs e)
@@ -49,7 +51,7 @@ namespace CoffeeApp.GUI.Main
             {
                 if (DAO.UserDAO.Instance.checkUserName(username))
                 {
-                    if (DAO.UserDAO.Instance.UpdateUser(username,password,phone, email, txbCodeEmail.Text, "Đã xác thực",roleID,"","","",""))
+                    if (DAO.UserDAO.Instance.UpdateUser(username,password,phone, email, txbCodeEmail.Text, "Đã xác thực",roleID,"","","",Imgbase64String))
                     {
                         MessageBox.Show("Tài khoản đã được xác minh -  Nhấn Ok để quay về trang đăng nhập ");                      
                     }
@@ -62,7 +64,7 @@ namespace CoffeeApp.GUI.Main
                 }
                 else
                 {
-                    if(DAO.UserDAO.Instance.InsertUser( username, password, phone, email, txbCodeEmail.Text, "Đã xác thực",2, "", "", "", ""))
+                    if(DAO.UserDAO.Instance.InsertUser( username, password, phone, email, txbCodeEmail.Text, "Đã xác thực",2, "", "", "", Imgbase64String))
                     {
                         MessageBox.Show("Đăng kí tài khoản thành công - nhấn ok để về trang đăng nhập");
                         this.Close();
@@ -84,7 +86,7 @@ namespace CoffeeApp.GUI.Main
         {
             if (!DAO.UserDAO.Instance.checkUserName(username))
             {
-                if (DAO.UserDAO.Instance.InsertUser(username, password, phone, email, "", "Chưa xác thực", 2, "", "", "", ""))
+                if (DAO.UserDAO.Instance.InsertUser(username, password, phone, email, "", "Chưa xác thực", 2, "", "", "", Imgbase64String))
                 {
                     MessageBox.Show("Tài khoản đã được đăng kí nhưng chưa được xác minh - nhấn oke để về trang đăng nhập");
                     this.Close();
@@ -97,7 +99,11 @@ namespace CoffeeApp.GUI.Main
                     formsignup.Show();
                 }
             }
-            
+            else
+            {
+                this.Hide();
+                formLogin.Show();
+            }
         }
 
         private async void btnReSendCodeEmail_Click(object sender, EventArgs e)

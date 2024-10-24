@@ -10,13 +10,14 @@ namespace CoffeeApp.DTO
 {
     internal class Bill
     {
-        public Bill(int id, DateTime? dateCheckin, DateTime? dateCheckOut, int status, int discount = 0)
+        public Bill(int id, DateTime? dateCheckin, DateTime? dateCheckOut, int status, int discount = 0, float totalBill=0)
         {
             this.ID = id;
             this.DateCheckIn = dateCheckin;
             this.DateCheckOut = dateCheckOut;
             this.Status = status;
             this.Discount = discount;
+            this.TotalBill = totalBill;
         }
 
         public Bill(DataRow row)
@@ -36,6 +37,9 @@ namespace CoffeeApp.DTO
 
             if (row["discount"].ToString() != "")
                 this.Discount = int.Parse(row["discount"].ToString());
+
+            if (row["TotalBill"].ToString() != "")
+                this.TotalBill = float.Parse(row["TotalBill"].ToString());
         }
 
         private int discount;
@@ -77,5 +81,11 @@ namespace CoffeeApp.DTO
             get { return iD; }  
             set { iD = value; }
         }
+
+        private float totalBill;
+        public float TotalBill { get => totalBill; set => totalBill = value; }
+
+ 
+  
     }
 }
