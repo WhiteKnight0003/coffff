@@ -202,7 +202,7 @@ namespace CoffeeApp.GUI
 
             Table table = lsvBill.Tag as Table;
 
-            string paymentName = cbPayment.SelectedItem as string;
+            string paymentName = cbPayment.SelectedItem.ToString();
             int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
             int discount = (int)nmDisCount.Value;
 
