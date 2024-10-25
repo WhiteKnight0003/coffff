@@ -45,11 +45,16 @@ namespace CoffeeApp.GUI.Main
             data = new Dictionary<int, float>();
             loadData();
             LoadListProduct();
+            dtgvProduct.ClearSelection();
             AddProductBinding();
+            dtgvProduct.DataBindingComplete += dtgvProduct_DataBindingComplete;
+            ResetButtonProduct();
+            ResetProductData();
             LoadCategoryIntoCombobox();
             BillInfoDAO.Instance.DisplayPage(1, pageSize, currentPage, dgvBillDetails, lblPageNumber);
             ManageAccount_Load();
             Category_Load();
+            
         }
         void ManageAccount_Load()
         {
@@ -227,19 +232,42 @@ namespace CoffeeApp.GUI.Main
         #endregion
         private void LoadListProduct()
         {
+            
             dtgvProduct.DataSource = ProductDAO.Instance.GetListProduct();
-            dtgvProduct.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtgvProduct.Columns["Price"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            
             // Ensure the DataGridView has been populated before accessing columns
             if (dtgvProduct.Columns.Count > 0)
             {
+                dtgvProduct.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dtgvProduct.Columns["Price"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dtgvProduct.Columns["Description"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
                 dtgvProduct.Columns["Name"].DisplayIndex = 0;
                 dtgvProduct.Columns["Price"].DisplayIndex = 1;
                 dtgvProduct.Columns["ID"].Visible = false;
                 dtgvProduct.Columns["CategoryID"].Visible = false;
                 dtgvProduct.Columns["Image"].Visible = false;
             }
+
+            dtgvProduct.ClearSelection();
+            dtgvProduct.CurrentCell = null;
+
         }
+
+        private void ResetButtonProduct()
+        {
+            btnAddProduct.Enabled = true;
+            btnDeleteProduct.Enabled = false;
+            btnSave.Enabled = false;
+            btnEditProduct.Enabled = false;
+        }
+
+        private void dtgvProduct_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dtgvProduct.ClearSelection();
+            dtgvProduct.CurrentCell = null; 
+        }
+
         private void AddProductBinding()
         {
             txtProductName.DataBindings.Clear();
@@ -263,15 +291,6 @@ namespace CoffeeApp.GUI.Main
         List<Product> SearchProductByName(string name)
         {
             return ProductDAO.Instance.SearchProductByName(name);
-        }
-
-        private void LoadListBillDetails()
-        {
-            dgvBillDetails.DataSource = BillDAO.Instance.GetListBill();
-            if (dgvBillDetails.Columns.Count > 0)
-            {
-                dgvBillDetails.Columns["CustomerID"].Visible = false;
-            }
         }
 
         private void tcManagement_Click(object sender, EventArgs e)
@@ -797,6 +816,11 @@ namespace CoffeeApp.GUI.Main
         private void btnSearchProduct_Click_1(object sender, EventArgs e)
         {
             dtgvProduct.DataSource = SearchProductByName(txtSearchProductName.Text);
+            dtgvProduct.ClearSelection();
+            AddProductBinding();
+            dtgvProduct.DataBindingComplete += dtgvProduct_DataBindingComplete;
+            ResetProductData();
+            ResetButtonProduct();
         }
 
         private void btnChooseImageProduct_Click_1(object sender, EventArgs e)
@@ -857,8 +881,64 @@ namespace CoffeeApp.GUI.Main
             }
         }
 
+        private string GetBase64String()
+        {
+            try
+            {
+                if (pbImageProduct.Image != null)
+                {
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        pbImageProduct.Image.Save(ms, pbImageProduct.Image.RawFormat);
+                        byte[] imageBytes = ms.ToArray();
+
+                        string base64String = Convert.ToBase64String(imageBytes);
+
+                        return base64String;
+                    }
+
+                }
+                else return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return ""; ;
+            }
+        }
+
+        private void SaveProductImageWithoutNotification()
+        {
+            try
+            {
+                int productID = int.Parse(txtProductID.Text);
+                if (pbImageProduct.Image != null)
+                {
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        pbImageProduct.Image.Save(ms, pbImageProduct.Image.RawFormat);
+                        byte[] imageBytes = ms.ToArray();
+
+                        string base64String = Convert.ToBase64String(imageBytes);
+
+                        ProductDAO.Instance.SaveImageToDatabase(productID, base64String);
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void dtgvProduct_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            btnEditProduct.Enabled = true;
+            btnDeleteProduct.Enabled = true;
+            btnSave.Enabled = false;
             if (e.RowIndex >= 0)
             {
                 // Load categoryName
@@ -883,72 +963,172 @@ namespace CoffeeApp.GUI.Main
             }
         }
 
-        private void btnViewProduct_Click_1(object sender, EventArgs e)
-        {}
+        
 
         private void btnEditProduct_Click_1(object sender, EventArgs e)
         {
-            string name = txtProductName.Text;
-            int categoryID = (cbbProductCategory.SelectedItem as Category).ID;
-            float price = (float)nmProductPrice.Value;
-            int id = Convert.ToInt32(txtProductID.Text);
+            btnSave.Enabled = true;
+            btnAddProduct.Enabled = false;
+            btnDeleteProduct.Enabled = false;
 
-            if (ProductDAO.Instance.UpdateProduct(id, name, categoryID, price))
-            {
-                MessageBox.Show("Sửa món thành công");
-                LoadListProduct();
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi khi sửa thức ăn");
-            }
-            LoadListProduct();
-            AddProductBinding();
+            txtProductName.Focus();
         }
 
         private void btnDeleteProduct_Click_1(object sender, EventArgs e)
         {
+            btnAddProduct.Enabled = false;
+            btnEditProduct.Enabled = false;
+            btnSave.Enabled = true;
             string id = txtProductID.Text;
             int idInt = Convert.ToInt32(txtProductID.Text);
-            bool res = BillInfoDAO.Instance.CheckProductBeforeDelete(idInt);
-            if (res)
+
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa món này không?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(result == DialogResult.Yes)
             {
-                MessageBox.Show("Sản phẩm này đã có trong chi tiết hóa đơn khác, bạn không thể xóa, vui lòng chọn sản phẩm khác", "Xóa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ProductDAO.Instance.HideProductWhenDelete(idInt))
+                {
+                    MessageBox.Show("Xóa món thành công");
+                    LoadListProduct();
+                    dtgvProduct.ClearSelection();
+                    AddProductBinding();
+                    dtgvProduct.DataBindingComplete += dtgvProduct_DataBindingComplete;
+                    ResetButtonProduct();
+                    ResetProductData();
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi xóa món ăn");
+                    LoadListProduct();
+                    dtgvProduct.ClearSelection();
+                    AddProductBinding();
+                    dtgvProduct.DataBindingComplete += dtgvProduct_DataBindingComplete;
+                    ResetButtonProduct();
+                    ResetProductData();
+                }
             }
-            else
-            {
-                //int id_2 = Convert.ToInt32((string)txtProductID.Text);
-                //if (ProductDAO.Instance.DeleteProduct(id_2))
-                //{
-                //    MessageBox.Show("Xóa món thành công");
-                //    LoadListProduct();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Có lỗi khi xóa thức ăn");
-                //}
-            }
-            LoadListProduct();
-            AddProductBinding();
+        }
+
+        private void ResetProductData()
+        {
+            txtProductID.Text = "";
+            txtSearchProductName.Text = "";
+            pbImageProduct.Image = null;
+            txtProductName.Text = string.Empty;
+            cbbProductCategory.SelectedIndex = -1;
+            nmProductPrice.Value = 0;
+
         }
 
         private void btnAddProduct_Click_1(object sender, EventArgs e)
         {
-            string name = txtProductName.Text;
-            int categoryID = (cbbProductCategory.SelectedItem as Category).ID;
-            float price = (float)nmProductPrice.Value;
+            dtgvProduct.ClearSelection();
+            dtgvProduct.DataBindingComplete += dtgvProduct_DataBindingComplete;
+            btnSave.Enabled = true;
+            btnEditProduct.Enabled = false;
+            btnDeleteProduct.Enabled = false;
+            ResetProductData();
+            txtProductName.Focus();
+        }
 
-            if (ProductDAO.Instance.InsertProduct(name, categoryID, price))
+        // Thêm đơn vị đ vào giá sản phẩm trong bảng sản phẩm
+        private void dtgvProduct_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dtgvProduct.Columns[e.ColumnIndex].Name == "Price")
             {
-                MessageBox.Show("Thêm món thành công");
-                LoadListProduct();
+                if (e.Value != null)
+                {
+                    CultureInfo vietnam = new CultureInfo("vi-VN");
+                    e.Value = string.Format(vietnam, "{0:C0}", e.Value);
+                    e.FormattingApplied = true;
+                }
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (btnAddProduct.Enabled)
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thêm sản phẩm này?", "Thêm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    string name = txtProductName.Text;
+                    int categoryID = (cbbProductCategory.SelectedItem as Category).ID;
+                    float price = (float)nmProductPrice.Value;
+                    string base64 = GetBase64String();
+
+                    if (ProductDAO.Instance.InsertProduct(name, categoryID, price, base64))
+                    {
+                        MessageBox.Show("Thêm món thành công");
+                        dtgvProduct.ClearSelection();
+                        dtgvProduct.DataBindingComplete += dtgvProduct_DataBindingComplete;
+                        ResetProductData();
+                        LoadListProduct();
+                        btnSave.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi khi thêm thức ăn");
+                        dtgvProduct.ClearSelection();
+                        dtgvProduct.DataBindingComplete += dtgvProduct_DataBindingComplete;
+                        ResetProductData();
+                        btnSave.Enabled = false;
+                    }
+                    LoadListProduct();
+                    AddProductBinding();
+                }
+                else
+                {
+                    btnSave.Enabled = false;
+                }
             }
             else
             {
-                MessageBox.Show("Có lỗi khi thêm thức ăn");
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa sản phẩm này không?", "Sửa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(result == DialogResult.Yes)
+                {
+                    string name = txtProductName.Text;
+                    int categoryID = (cbbProductCategory.SelectedItem as Category).ID;
+                    float price = (float)nmProductPrice.Value;
+                    int id = Convert.ToInt32(txtProductID.Text);
+
+                    if (ProductDAO.Instance.UpdateProduct(id, name, categoryID, price))
+                    {
+                        MessageBox.Show("Sửa món thành công");
+                        LoadListProduct();
+                        dtgvProduct.ClearSelection();
+                        AddProductBinding();
+                        dtgvProduct.DataBindingComplete += dtgvProduct_DataBindingComplete;
+                        ResetButtonProduct();
+                        ResetProductData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi khi sửa thức ăn");
+                        LoadListProduct();
+                        dtgvProduct.ClearSelection();
+                        AddProductBinding();
+                        dtgvProduct.DataBindingComplete += dtgvProduct_DataBindingComplete;
+                        ResetButtonProduct();
+                        ResetProductData();
+                    }
+                }
             }
-            LoadListProduct();
-            AddProductBinding();
+        }
+
+        private void TabProduct_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void tcManagement_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tcManagement.SelectedIndex == 2)
+            {
+                dtgvProduct.ClearSelection();
+                AddProductBinding();
+                dtgvProduct.DataBindingComplete += dtgvProduct_DataBindingComplete;
+                ResetButtonProduct();
+                ResetProductData();
+            }
         }
     }
 }
