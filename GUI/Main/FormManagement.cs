@@ -950,5 +950,7 @@ namespace CoffeeApp.GUI.Main
             LoadListProduct();
             AddProductBinding();
         }
+
+        
     }
 }
