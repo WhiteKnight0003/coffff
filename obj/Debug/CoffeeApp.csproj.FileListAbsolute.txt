@@ -1,80 +1,3 @@
-<<<<<<< HEAD
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\CoffeeApp.exe.config
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\CoffeeApp.exe
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\CoffeeApp.pdb
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\DevExpress.Data.v24.1.dll
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\DevExpress.Xpo.v24.1.dll
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\Guna.Charts.WinForms.dll
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\Guna.UI2.dll
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Buffers.dll
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.ComponentModel.Annotations.dll
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Data.SqlClient.dll
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Security.Cryptography.Cng.dll
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\DevExpress.Data.v24.1.xml
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\DevExpress.Xpo.v24.1.xml
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\Guna.Charts.WinForms.xml
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Data.SqlClient.xml
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Security.Cryptography.Cng.xml
-D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.csproj.AssemblyReference.cache
-D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.GUI.Login.FormForgetPassword.resources
-D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.FormLogin.resources
-D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.GUI.FormSignUp.resources
-D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.GUI.Main.FormInputEmail.resources
-D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.GUI.FormMain.resources
-D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.GUI.Main.FormManagement.resources
-D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.GUI.Main.FormUserInfomation.resources
-D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.Properties.Resources.resources
-D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.csproj.GenerateResource.cache
-D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.csproj.CoreCompileInputs.cache
-D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.csproj.Up2Date
-D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.exe
-D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.pdb
-D:\WORKSPACE\C#\Winform\coffff\obj\Debug\CoffeeApp.csproj.AssemblyReference.cache
-D:\WORKSPACE\C#\Winform\coffff\obj\Debug\CoffeeApp.GUI.Login.FormForgetPassword.resources
-D:\WORKSPACE\C#\Winform\coffff\obj\Debug\CoffeeApp.FormLogin.resources
-D:\WORKSPACE\C#\Winform\coffff\obj\Debug\CoffeeApp.GUI.FormSignUp.resources
-D:\WORKSPACE\C#\Winform\coffff\obj\Debug\CoffeeApp.GUI.Main.FormInputEmail.resources
-D:\WORKSPACE\C#\Winform\coffff\obj\Debug\CoffeeApp.GUI.FormMain.resources
-D:\WORKSPACE\C#\Winform\coffff\obj\Debug\CoffeeApp.GUI.Main.FormManagement.resources
-D:\WORKSPACE\C#\Winform\coffff\obj\Debug\CoffeeApp.GUI.Main.FormUserInfomation.resources
-D:\WORKSPACE\C#\Winform\coffff\obj\Debug\CoffeeApp.Properties.Resources.resources
-D:\WORKSPACE\C#\Winform\coffff\obj\Debug\CoffeeApp.csproj.GenerateResource.cache
-D:\WORKSPACE\C#\Winform\coffff\obj\Debug\CoffeeApp.csproj.CoreCompileInputs.cache
-D:\WORKSPACE\C#\Winform\coffff\obj\Debug\CoffeeApp.exe
-D:\WORKSPACE\C#\Winform\coffff\obj\Debug\CoffeeApp.pdb
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\CoffeeApp.exe.config
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\CoffeeApp.exe
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\CoffeeApp.pdb
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\DevExpress.Data.v24.1.dll
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\DevExpress.Xpo.v24.1.dll
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\Guna.Charts.WinForms.dll
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\Guna.UI2.dll
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\System.Buffers.dll
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\System.ComponentModel.Annotations.dll
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\System.Data.SqlClient.dll
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\System.Security.Cryptography.Cng.dll
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\DevExpress.Data.v24.1.xml
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\DevExpress.Xpo.v24.1.xml
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\Guna.Charts.WinForms.xml
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\System.Data.SqlClient.xml
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\System.Security.Cryptography.Cng.xml
-D:\WORKSPACE\C#\Winform\coffff\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\WORKSPACE\C#\Winform\coffff\obj\Debug\CoffeeApp.csproj.Up2Date
 E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\CoffeeApp.exe.config
 E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\CoffeeApp.exe
 E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\CoffeeApp.pdb
@@ -113,43 +36,55 @@ E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\obj\Debug\CoffeeApp.csproj.CoreCompi
 E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\obj\Debug\CoffeeApp.csproj.Up2Date
 E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\obj\Debug\CoffeeApp.exe
 E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\obj\Debug\CoffeeApp.pdb
-=======
-D:\Document\C#-Desktop\coffff\bin\Debug\CoffeeApp.exe.config
-D:\Document\C#-Desktop\coffff\bin\Debug\CoffeeApp.exe
-D:\Document\C#-Desktop\coffff\bin\Debug\CoffeeApp.pdb
-D:\Document\C#-Desktop\coffff\bin\Debug\DevExpress.Data.v24.1.dll
-D:\Document\C#-Desktop\coffff\bin\Debug\DevExpress.Xpo.v24.1.dll
-D:\Document\C#-Desktop\coffff\bin\Debug\Guna.Charts.WinForms.dll
-D:\Document\C#-Desktop\coffff\bin\Debug\Guna.UI2.dll
-D:\Document\C#-Desktop\coffff\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\Document\C#-Desktop\coffff\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\Document\C#-Desktop\coffff\bin\Debug\System.Buffers.dll
-D:\Document\C#-Desktop\coffff\bin\Debug\System.ComponentModel.Annotations.dll
-D:\Document\C#-Desktop\coffff\bin\Debug\System.Data.SqlClient.dll
-D:\Document\C#-Desktop\coffff\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\Document\C#-Desktop\coffff\bin\Debug\System.Security.Cryptography.Cng.dll
-D:\Document\C#-Desktop\coffff\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\Document\C#-Desktop\coffff\bin\Debug\DevExpress.Data.v24.1.xml
-D:\Document\C#-Desktop\coffff\bin\Debug\DevExpress.Xpo.v24.1.xml
-D:\Document\C#-Desktop\coffff\bin\Debug\Guna.Charts.WinForms.xml
-D:\Document\C#-Desktop\coffff\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\Document\C#-Desktop\coffff\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
-D:\Document\C#-Desktop\coffff\bin\Debug\System.Data.SqlClient.xml
-D:\Document\C#-Desktop\coffff\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\Document\C#-Desktop\coffff\bin\Debug\System.Security.Cryptography.Cng.xml
-D:\Document\C#-Desktop\coffff\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.csproj.AssemblyReference.cache
-D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.GUI.Login.FormForgetPassword.resources
-D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.FormLogin.resources
-D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.GUI.FormSignUp.resources
-D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.GUI.Main.FormInputEmail.resources
-D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.GUI.FormMain.resources
-D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.GUI.Main.FormManagement.resources
-D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.GUI.Main.FormUserInfomation.resources
-D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.Properties.Resources.resources
-D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.csproj.GenerateResource.cache
-D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.csproj.CoreCompileInputs.cache
-D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.csproj.Up2Date
-D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.exe
-D:\Document\C#-Desktop\coffff\obj\Debug\CoffeeApp.pdb
->>>>>>> d545bf293a715c2c02c43561d503621fe2e5ebad
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\Microsoft.ReportViewer.Common.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\Microsoft.ReportViewer.Design.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\Microsoft.SqlServer.Types.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\EnvDTE.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\stdole.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+E:\UTC\TL-GTVL-CUA-TOI\Năm 3 ki 1\LTTQ\BTL\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll

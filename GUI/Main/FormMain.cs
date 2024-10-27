@@ -118,6 +118,7 @@ namespace CoffeeApp.GUI
             if (roleID == 2)
             {
                 ManageShopToolStripMenuItem.Visible = false;
+                ReportToolStripMenuItem.Visible = false;
             }
             else if (roleID == 1)
             {
@@ -257,6 +258,13 @@ namespace CoffeeApp.GUI
                 formLogin.Show();
 
             }
+        }
+
+        private void ReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReport formReport = new FormReport();
+            this.Hide();
+            formReport.ShowDialog();
         }
     }
 }
