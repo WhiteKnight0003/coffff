@@ -628,7 +628,15 @@ namespace CoffeeApp.GUI.Main
                 int roleidd = cbType.Text == "Admin" ? 1 : cbType.Text == "Staff" ? 2 : 0;
                 string gioitinh = rdNam.Checked ? "Nam" : rdNu.Checked ? "Nữ" : "";
                 int tt = 1;
-                querry = "INSERT INTO users (UserName, Fullname, password, phone, email, address, DateWork, RoleID, gender, Workingstatus) VALUES (";
+                string defaultImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GUI", "Image", "Image_Default.png");
+
+                // Đọc ảnh từ đường dẫn và chuyển thành đối tượng Image
+                Image defaultImage = Image.FromFile(defaultImagePath);
+
+                // Chuyển đổi ảnh mặc định thành Base64
+                ConvertImage convertImage = new ConvertImage();
+                string Imgbase64String = convertImage.ImageToBase64(defaultImage, System.Drawing.Imaging.ImageFormat.Png);
+                querry = "INSERT INTO users (UserName, Fullname, password, phone, email, address, DateWork, RoleID, gender, Workingstatus,image) VALUES (";
                 querry += "N'" + txtTenTK.Text + "', ";
                 querry += "N'" + txtTenHT.Text + "', ";
                 querry += "N'" + mk + "', ";
@@ -638,9 +646,17 @@ namespace CoffeeApp.GUI.Main
                 querry += "N'" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "', ";
                 querry += "N'" + roleidd + "', ";
                 querry += "N'" + gioitinh + "', ";
-                querry += "N'" + tt + "')";
+                querry += "N'" + tt + "', ";
+                querry += "N'" + Imgbase64String + "')";
                 validateInfor(sender, e);
-
+                //if (DAO.UserDAO.Instance.InsertUser(username, mk, txtPhoneNumber.Text, txtEmail.Text, "", "Chưa xác thực", roleidd, txtTenHT.Text,txtAddress.Text, gioitinh, "", 1))
+                //{
+                //    MessageBox.Show("Thêm tài khoản thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Thêm tài khoản thất bại");
+                //}
                 DataTable data2 = DAO.DataProvider.Instance.ExecuteQuery(querry);
                 MessageBox.Show("Thêm tài khoản thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

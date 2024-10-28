@@ -89,3 +89,4 @@ D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.csproj.CoreCompil
 D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.csproj.Up2Date
 D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.exe
 D:\C#Project\LTTQ\CoffeeApplication\coffff\obj\Debug\CoffeeApp.pdb
+D:\C#Project\LTTQ\CoffeeApplication\coffff\bin\Debug\GUI\Image\Image_Default.png

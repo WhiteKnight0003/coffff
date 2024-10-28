@@ -161,7 +161,7 @@ namespace CoffeeApp.GUI.Main
                         // chưa có đường dẫn ảnh
                         if (MessageBox.Show("Bạn chắc chắn muốn thay đổi thông tin", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                         {
-                            if (DAO.UserDAO.Instance.UpdateUser(username, user.Password, tbInfoPhone.Text, user.Email, user.CodeEmail, user.StatusEmail, user.RoleID, tbInfoFullName.Text, tbInfoAddress.Text, sex, ImageToBase64))
+                            if (DAO.UserDAO.Instance.UpdateUser(username, user.Password, tbInfoPhone.Text, user.Email, user.CodeEmail, user.StatusEmail, user.RoleID, tbInfoFullName.Text, tbInfoAddress.Text, sex, ImageToBase64,1))
                             {
                                 MessageBox.Show("Cập nhật thông tin thành công !");
                             }
@@ -462,7 +462,7 @@ namespace CoffeeApp.GUI.Main
                         // chưa có đường dẫn ảnh
                         if (MessageBox.Show("Bạn chắc chắn muốn thay đổi thông tin", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                         {
-                            if (DAO.UserDAO.Instance.UpdateUser(username, user.Password, tbInfoPhone.Text, tbInfoEmail.Text, verificationCode, "Đã xác thực", user.RoleID, tbInfoFullName.Text, tbInfoAddress.Text, sex, ImageToBase64))
+                            if (DAO.UserDAO.Instance.UpdateUser(username, user.Password, tbInfoPhone.Text, tbInfoEmail.Text, verificationCode, "Đã xác thực", user.RoleID, tbInfoFullName.Text, tbInfoAddress.Text, sex, ImageToBase64, 1))
                             {
                                 MessageBox.Show("Cập nhật thông tin thành công !");
                             }
