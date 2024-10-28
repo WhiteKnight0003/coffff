@@ -31,10 +31,10 @@ namespace CoffeeApp.GUI.Main
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.btnBackFormManagement = new Guna.UI2.WinForms.Guna2Button();
             this.TabStatisticsProceeds = new System.Windows.Forms.TabPage();
             this.cbChooseYear = new System.Windows.Forms.ComboBox();
@@ -189,28 +189,28 @@ namespace CoffeeApp.GUI.Main
             // 
             // chartStatistic
             // 
-            chartArea2.AxisX.IsLabelAutoFit = false;
-            chartArea2.AxisX.Title = "Tháng";
-            chartArea2.AxisY.Title = "Doanh thu";
-            chartArea2.Name = "ChartArea1";
-            this.chartStatistic.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartStatistic.Legends.Add(legend2);
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.Title = "Tháng";
+            chartArea1.AxisY.Title = "Doanh thu";
+            chartArea1.Name = "ChartArea1";
+            this.chartStatistic.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartStatistic.Legends.Add(legend1);
             this.chartStatistic.Location = new System.Drawing.Point(0, 8);
             this.chartStatistic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.chartStatistic.Name = "chartStatistic";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series2.IsValueShownAsLabel = true;
-            series2.Legend = "Legend1";
-            series2.Name = "DataSeries";
-            this.chartStatistic.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "DataSeries";
+            this.chartStatistic.Series.Add(series1);
             this.chartStatistic.Size = new System.Drawing.Size(794, 635);
             this.chartStatistic.TabIndex = 0;
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title2.Name = "Title1";
-            title2.Text = "Biểu đồ thông kê doanh thu theo năm";
-            this.chartStatistic.Titles.Add(title2);
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Biểu đồ thông kê doanh thu theo năm";
+            this.chartStatistic.Titles.Add(title1);
             // 
             // tcManagement
             // 
@@ -684,7 +684,7 @@ namespace CoffeeApp.GUI.Main
             this.btnLuu_Category.TabIndex = 1;
             this.btnLuu_Category.Text = "Lưu";
             this.btnLuu_Category.UseVisualStyleBackColor = true;
-            this.btnLuu_Category.Click += new System.EventHandler(this.btnSua__Category_Click);
+            this.btnLuu_Category.Click += new System.EventHandler(this.btnSave_Category_Click);
             // 
             // label3
             // 
@@ -759,6 +759,7 @@ namespace CoffeeApp.GUI.Main
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1028, 428);
             this.panel.TabIndex = 2;
+            this.panel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseMove);
             // 
             // rdNu
             // 

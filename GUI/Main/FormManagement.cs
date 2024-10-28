@@ -28,6 +28,8 @@ namespace CoffeeApp.GUI.Main
 {
     public partial class FormManagement : Form
     {
+        private ToolTip toolTip;
+        private bool isToolTipVisible = false;
         private FormMain formmain;
         private string username;
         private int roleID;
@@ -47,10 +49,64 @@ namespace CoffeeApp.GUI.Main
             LoadListProduct();
             AddProductBinding();
             LoadCategoryIntoCombobox();
-            BillInfoDAO.Instance.DisplayPage(1, pageSize, currentPage, dgvBillDetails, lblPageNumber);
+            BillInfoDAO.Instance.DisplayPage(1, pageSize, currentPage, dgvBillDetails, lblPageNumber);  
             ManageAccount_Load();
             Category_Load();
+            toolTip = new ToolTip();
+            panel.MouseMove += Panel_MouseMove;
+            panel2.MouseMove += Panel2_MouseMove;
         }
+        private void Panel_MouseMove(object sender, MouseEventArgs e)
+        {
+            // Kiểm tra nếu chuột đang ở trên btnSua_Acc và btnSua_Acc bị vô hiệu hóa
+            if (!btnSua_Acc.Enabled && btnSua_Acc.Bounds.Contains(e.Location))
+            {
+                if (!isToolTipVisible)
+                {
+                    toolTip.Show("Vui lòng chọn Users.", btnSua_Acc, 0, -20, 3000); // Hiển thị trong 3 giây
+                    isToolTipVisible = true;
+                }
+            }
+            if (!btnXoa_Acc.Enabled && btnXoa_Acc.Bounds.Contains(e.Location))
+            {
+                if (!isToolTipVisible)
+                {
+                    toolTip.Show("Vui lòng chọn Users.", btnXoa_Acc, 0, -20, 3000); // Hiển thị trong 3 giây
+                    isToolTipVisible = true;
+                }
+            }
+            else 
+            {
+                toolTip.Hide(btnSua_Acc);
+                isToolTipVisible = false;
+            }
+        }
+        private void Panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            // Kiểm tra nếu chuột đang ở trên btnSua_Acc và btnSua_Acc bị vô hiệu hóa
+            if (!btnSua_Category.Enabled && btnSua_Category.Bounds.Contains(e.Location))
+            {
+                if (!isToolTipVisible)
+                {
+                    toolTip.Show("Vui lòng chọn Loại.", btnSua_Category, 0, -20, 3000); // Hiển thị trong 3 giây
+                    isToolTipVisible = true;
+                }
+            }
+            if (!btnXoa_Category.Enabled && btnXoa_Category.Bounds.Contains(e.Location))
+            {
+                if (!isToolTipVisible)
+                {
+                    toolTip.Show("Vui lòng chọn Loại.", btnXoa_Category, 0, -20, 3000); // Hiển thị trong 3 giây
+                    isToolTipVisible = true;
+                }
+            }
+            else
+            {
+                toolTip.Hide(btnSua_Acc);
+                isToolTipVisible = false;
+            }
+        }
+
         void ManageAccount_Load()
         {
             string query = "SELECT * FROM dbo.users where Workingstatus = 1";
@@ -62,6 +118,7 @@ namespace CoffeeApp.GUI.Main
             cbType.Items.Add("Admin");
             cbType.Items.Add("Staff");
             UnLoaded(false);
+            dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         void Category_Load()
         {
@@ -71,6 +128,18 @@ namespace CoffeeApp.GUI.Main
             dgvCategory.DataSource = data;
             dgvCategory.Columns["Status"].Visible = false;
             Unloaded_Category(false);
+            // Cài đặt AutoSizeColumnsMode để các cột vừa với bảng
+            dgvCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Cài đặt AutoSizeRowsMode để các dòng vừa với nội dung
+            dgvCategory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+            // Bật chế độ wrap text cho header để không bị cắt nội dung
+            dgvCategory.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+            // Tự động điều chỉnh kích thước của từng cột dựa trên nội dung
+            dgvCategory.AutoResizeColumns();
+
         }
         private void Unloaded_Category(bool ok)
         {
@@ -300,6 +369,7 @@ namespace CoffeeApp.GUI.Main
         private int pageSize = 10;
         private void dgvUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            isToolTipVisible = false;
             btnSua_Acc.Enabled = true; btnXoa_Acc.Enabled = true;
             txtTenTK.Text = dgvUsers.CurrentRow.Cells[1].Value.ToString();
             txtTenHT.Text = dgvUsers.CurrentRow.Cells[2].Value.ToString();
@@ -528,27 +598,20 @@ namespace CoffeeApp.GUI.Main
                 UserDAO userDAO = new UserDAO();
                 string mk = userDAO.HashPassword(txtMK.Text);
 
-                int roleidd = 0;
-                if (cbType.Text == "Admin")
-                {
-                    roleidd = 1;
-                }
-                else if (cbType.Text == "Staff")
-                {
-                    roleidd = 2;
-                }
-                string gioitinh = "";
-                if (rdNam.Checked == true)
-                {
-                    gioitinh = "Nam";
-                }
-                else if (rdNu.Checked == true)
-                {
-                    gioitinh = "Nữ";
-                }
+                int roleidd = cbType.Text == "Admin" ? 1 : cbType.Text == "Staff" ? 2 : 0;
+                string gioitinh = rdNam.Checked ? "Nam" : rdNu.Checked ? "Nữ" : "";
                 int tt = 1;
-                querry = "INSERT  INTO users(userName,fullname,password, phone, email,address,DateWork, RoleID,  gender,workingstatus) VALUES(";
-                querry += "N'" + txtTenTK.Text + "',N'" + txtTenHT.Text + "',N'" + mk + "',N'" + txtPhoneNumber.Text + "',N'" + txtEmail.Text + "',N'" + txtAddress.Text + "',N'" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "',N'" + roleidd + "',N'" + gioitinh + "',N'" + tt + "')";
+                querry = "INSERT INTO users (UserName, Fullname, password, phone, email, address, DateWork, RoleID, gender, Workingstatus) VALUES (";
+                querry += "N'" + txtTenTK.Text + "', ";
+                querry += "N'" + txtTenHT.Text + "', ";
+                querry += "N'" + mk + "', ";
+                querry += "N'" + txtPhoneNumber.Text + "', ";
+                querry += "N'" + txtEmail.Text + "', ";
+                querry += "N'" + txtAddress.Text + "', ";
+                querry += "N'" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "', ";
+                querry += "N'" + roleidd + "', ";
+                querry += "N'" + gioitinh + "', ";
+                querry += "N'" + tt + "')";
                 validateInfor(sender, e);
                 DataTable data2 = DAO.DataProvider.Instance.ExecuteQuery(querry);
                 MessageBox.Show("Thêm tài khoản thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -557,45 +620,30 @@ namespace CoffeeApp.GUI.Main
             {
                 validateInfor(sender, e);
                 string mk = dgvUsers.CurrentRow.Cells[3].Value.ToString();
-                int roleidd = 0;
-                if (cbType.Text == "Admin")
-                {
-                    roleidd = 1;
-                }
-                else if (cbType.Text == "Staff")
-                {
-                    roleidd = 2;
-                }
-                string gioitinh = "";
-                if (rdNam.Checked == true)
-                {
-                    gioitinh = "Nam";
-                }
-                else if (rdNu.Checked == true)
-                {
-                    gioitinh = "Nữ";
-                }
-                //int tt = 1;
-                UserDAO userDAO = new UserDAO();
-                querry = "UPDATE users SET ";
-                querry += "fullname = N'" + txtTenHT.Text + "', ";
-                querry += "phone = N'" + txtPhoneNumber.Text + "', ";
-                querry += "address = N'" + txtAddress.Text + "', ";
-                querry += "DateWork = N'" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "', ";
-                querry += "RoleID = N'" + roleidd + "', ";
-                querry += "gender = N'" + gioitinh + "', ";
-                //querry += "workingstatus = N'" + tt + "' ";
-                string curentpassword = dgvUsers.CurrentRow.Cells[3].Value.ToString();
-                if (txtMK.Text != curentpassword)
-                {
-                    mk = userDAO.HashPassword(txtMK.Text);
-                    querry += ",password = N'" + mk + "'";
-                }
-                querry += "WHERE UserName = N'" + txtTenTK.Text + "'";
+                int roleidd = cbType.Text == "Admin" ? 1 : cbType.Text == "Staff" ? 2 : 0;
+                string gioitinh = rdNam.Checked ? "Nam" : rdNu.Checked ? "Nữ" : "";
 
-                DataTable data2 = DAO.DataProvider.Instance.ExecuteQuery(querry);
+                // Tạo danh sách để chứa các cặp 'column = value'
+                List<string> setStatements = new List<string>
+                    {
+                        "fullname = N'" + txtTenHT.Text + "'",
+                        "phone = N'" + txtPhoneNumber.Text + "'",
+                        "address = N'" + txtAddress.Text + "'",
+                        "DateWork = N'" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "'",
+                        "RoleID = N'" + roleidd + "'",
+                        "gender = N'" + gioitinh + "'"
+                    };
+                if (txtMK.Text != mk)
+                {
+                    UserDAO userDAO = new UserDAO();
+                    mk = userDAO.HashPassword(txtMK.Text);
+                    setStatements.Add("password = N'" + mk + "'");
+                }
+                string query = "UPDATE users SET " + string.Join(", ", setStatements) + " WHERE UserName = N'" + txtTenTK.Text + "'";
+                DataTable data2 = DAO.DataProvider.Instance.ExecuteQuery(query);
                 MessageBox.Show("Cập nhật tài khoản thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
 
             ManageAccount_Load();
             UnLoaded(false);
@@ -639,7 +687,7 @@ namespace CoffeeApp.GUI.Main
             string querry = "";
             if (btnThem_Category.Enabled == true)
             {
-
+                int stt = 1;
                 if (string.IsNullOrWhiteSpace(txtLoai_Category.Text))
                 {
                     errorProvider.SetError(txtLoai_Category, "Tên loại không được để trống");
@@ -658,8 +706,8 @@ namespace CoffeeApp.GUI.Main
                 }
                 errorProvider.Clear();
 
-                querry = "INSERT  INTO category(CategoryName,Description) VALUES(";
-                querry += "N'" + txtLoai_Category.Text + "',N'" + richTextBoxMT.Text + "')";
+                querry = "INSERT  INTO category(CategoryName,Description,Status) VALUES(";
+                querry += "N'" + txtLoai_Category.Text + "',N'" + richTextBoxMT.Text + "',N'" +stt +"')";
                 DataTable data2 = DAO.DataProvider.Instance.ExecuteQuery(querry);
                 MessageBox.Show("Thêm loại thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -951,6 +999,6 @@ namespace CoffeeApp.GUI.Main
             AddProductBinding();
         }
 
-        
+       
     }
 }
