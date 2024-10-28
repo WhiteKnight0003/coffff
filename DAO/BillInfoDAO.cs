@@ -52,7 +52,10 @@ namespace CoffeeApp.DAO
 
             // Câu truy vấn SQL có sử dụng OFFSET và FETCH
             string query = @"
-            select b.ID, DateCheckIn, DateCheckOut, status, u.UserName as [Tên nhân viên], TableID, TotalBill, discount, payment_name 
+            select b.ID, DateCheckIn, DateCheckOut, 
+            CASE WHEN status = 1 THEN N'Đã thanh toán' ELSE N'Chưa thanh toán' END as [Trạng thái], 
+            u.UserName as [Tên nhân viên], TableID, TotalBill, discount as [Giảm giá], 
+            payment_name as [Phương thức thanh toán]
             from bill b 
             inner join users u on b.UserID = u.ID 
             order by b.ID
@@ -67,6 +70,16 @@ namespace CoffeeApp.DAO
 
             // Gán dữ liệu vào DataGridView
             dataGridView.DataSource = dt;
+
+            // Thêm % vào cho cột giảm giá
+            dataGridView.Columns["Giảm giá"].DefaultCellStyle.Format = "0.## '%'";
+
+            dataGridView.Columns["Trạng thái"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["DateCheckIn"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["Tên nhân viên"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["Giảm giá"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["DateCheckOut"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["Phương thức thanh toán"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             // Tính toán và hiển thị số trang
             int totalPage = TotalPages(pageSize);

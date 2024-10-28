@@ -31,10 +31,10 @@ namespace CoffeeApp.GUI.Main
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.btnBackFormManagement = new Guna.UI2.WinForms.Guna2Button();
             this.TabStatisticsProceeds = new System.Windows.Forms.TabPage();
             this.cbChooseYear = new System.Windows.Forms.ComboBox();
@@ -52,7 +52,6 @@ namespace CoffeeApp.GUI.Main
             this.TabProduct = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dtgvProduct = new System.Windows.Forms.DataGridView();
-            this.btnViewProduct = new System.Windows.Forms.Button();
             this.btnEditProduct = new System.Windows.Forms.Button();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
@@ -116,6 +115,7 @@ namespace CoffeeApp.GUI.Main
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnSave = new System.Windows.Forms.Button();
             this.TabStatisticsProceeds.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartStatistic)).BeginInit();
             this.tcManagement.SuspendLayout();
@@ -161,11 +161,11 @@ namespace CoffeeApp.GUI.Main
             // 
             this.TabStatisticsProceeds.Controls.Add(this.cbChooseYear);
             this.TabStatisticsProceeds.Controls.Add(this.chartStatistic);
-            this.TabStatisticsProceeds.Location = new System.Drawing.Point(4, 29);
+            this.TabStatisticsProceeds.Location = new System.Drawing.Point(4, 26);
             this.TabStatisticsProceeds.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TabStatisticsProceeds.Name = "TabStatisticsProceeds";
             this.TabStatisticsProceeds.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TabStatisticsProceeds.Size = new System.Drawing.Size(919, 521);
+            this.TabStatisticsProceeds.Size = new System.Drawing.Size(919, 524);
             this.TabStatisticsProceeds.TabIndex = 5;
             this.TabStatisticsProceeds.Text = "Thống kê doanh thu";
             this.TabStatisticsProceeds.UseVisualStyleBackColor = true;
@@ -182,35 +182,35 @@ namespace CoffeeApp.GUI.Main
             this.cbChooseYear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbChooseYear.MaxDropDownItems = 10;
             this.cbChooseYear.Name = "cbChooseYear";
-            this.cbChooseYear.Size = new System.Drawing.Size(157, 33);
+            this.cbChooseYear.Size = new System.Drawing.Size(157, 28);
             this.cbChooseYear.TabIndex = 1;
             this.cbChooseYear.Text = "Chọn Năm";
             this.cbChooseYear.SelectedIndexChanged += new System.EventHandler(this.cbChooseYear_SelectedIndexChanged);
             // 
             // chartStatistic
             // 
-            chartArea1.AxisX.IsLabelAutoFit = false;
-            chartArea1.AxisX.Title = "Tháng";
-            chartArea1.AxisY.Title = "Doanh thu";
-            chartArea1.Name = "ChartArea1";
-            this.chartStatistic.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartStatistic.Legends.Add(legend1);
+            chartArea4.AxisX.IsLabelAutoFit = false;
+            chartArea4.AxisX.Title = "Tháng";
+            chartArea4.AxisY.Title = "Doanh thu";
+            chartArea4.Name = "ChartArea1";
+            this.chartStatistic.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartStatistic.Legends.Add(legend4);
             this.chartStatistic.Location = new System.Drawing.Point(0, 6);
             this.chartStatistic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chartStatistic.Name = "chartStatistic";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series1.IsValueShownAsLabel = true;
-            series1.Legend = "Legend1";
-            series1.Name = "DataSeries";
-            this.chartStatistic.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series4.IsValueShownAsLabel = true;
+            series4.Legend = "Legend1";
+            series4.Name = "DataSeries";
+            this.chartStatistic.Series.Add(series4);
             this.chartStatistic.Size = new System.Drawing.Size(705, 508);
             this.chartStatistic.TabIndex = 0;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title1";
-            title1.Text = "Biểu đồ thông kê doanh thu theo năm";
-            this.chartStatistic.Titles.Add(title1);
+            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title4.Name = "Title1";
+            title4.Text = "Biểu đồ thông kê doanh thu theo năm";
+            this.chartStatistic.Titles.Add(title4);
             // 
             // tcManagement
             // 
@@ -226,17 +226,18 @@ namespace CoffeeApp.GUI.Main
             this.tcManagement.SelectedIndex = 0;
             this.tcManagement.Size = new System.Drawing.Size(927, 554);
             this.tcManagement.TabIndex = 0;
+            this.tcManagement.SelectedIndexChanged += new System.EventHandler(this.tcManagement_SelectedIndexChanged);
             this.tcManagement.Click += new System.EventHandler(this.tcManagement_Click);
             // 
             // TabBillDetail
             // 
             this.TabBillDetail.Controls.Add(this.panelBillDetailsCenter);
             this.TabBillDetail.Controls.Add(this.panelBillDetailsFooter);
-            this.TabBillDetail.Location = new System.Drawing.Point(4, 29);
+            this.TabBillDetail.Location = new System.Drawing.Point(4, 26);
             this.TabBillDetail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TabBillDetail.Name = "TabBillDetail";
             this.TabBillDetail.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TabBillDetail.Size = new System.Drawing.Size(919, 521);
+            this.TabBillDetail.Size = new System.Drawing.Size(919, 524);
             this.TabBillDetail.TabIndex = 6;
             this.TabBillDetail.Text = "Chi tiết hóa đơn";
             this.TabBillDetail.UseVisualStyleBackColor = true;
@@ -245,7 +246,7 @@ namespace CoffeeApp.GUI.Main
             // 
             this.panelBillDetailsCenter.Controls.Add(this.dgvBillDetails);
             this.panelBillDetailsCenter.Location = new System.Drawing.Point(3, 2);
-            this.panelBillDetailsCenter.Margin = new System.Windows.Forms.Padding(4);
+            this.panelBillDetailsCenter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelBillDetailsCenter.Name = "panelBillDetailsCenter";
             this.panelBillDetailsCenter.Size = new System.Drawing.Size(905, 449);
             this.panelBillDetailsCenter.TabIndex = 3;
@@ -269,7 +270,7 @@ namespace CoffeeApp.GUI.Main
             this.panelBillDetailsFooter.Controls.Add(this.btnPrevious);
             this.panelBillDetailsFooter.Controls.Add(this.btnFirst);
             this.panelBillDetailsFooter.Location = new System.Drawing.Point(5, 452);
-            this.panelBillDetailsFooter.Margin = new System.Windows.Forms.Padding(4);
+            this.panelBillDetailsFooter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelBillDetailsFooter.Name = "panelBillDetailsFooter";
             this.panelBillDetailsFooter.Size = new System.Drawing.Size(904, 64);
             this.panelBillDetailsFooter.TabIndex = 2;
@@ -279,7 +280,7 @@ namespace CoffeeApp.GUI.Main
             this.lblPageNumber.AutoSize = true;
             this.lblPageNumber.Location = new System.Drawing.Point(752, 23);
             this.lblPageNumber.Name = "lblPageNumber";
-            this.lblPageNumber.Size = new System.Drawing.Size(55, 20);
+            this.lblPageNumber.Size = new System.Drawing.Size(47, 17);
             this.lblPageNumber.TabIndex = 11;
             this.lblPageNumber.Text = "label1";
             // 
@@ -331,19 +332,245 @@ namespace CoffeeApp.GUI.Main
             // 
             this.TabProduct.Controls.Add(this.panel4);
             this.TabProduct.Controls.Add(this.panelProductLeft);
-            this.TabProduct.Location = new System.Drawing.Point(4, 29);
+            this.TabProduct.Location = new System.Drawing.Point(4, 26);
             this.TabProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TabProduct.Name = "TabProduct";
             this.TabProduct.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TabProduct.Size = new System.Drawing.Size(919, 521);
+            this.TabProduct.Size = new System.Drawing.Size(919, 524);
             this.TabProduct.TabIndex = 7;
             this.TabProduct.Text = "Sản phẩm";
             this.TabProduct.UseVisualStyleBackColor = true;
+            this.TabProduct.Click += new System.EventHandler(this.TabProduct_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnSave);
+            this.panel4.Controls.Add(this.dtgvProduct);
+            this.panel4.Controls.Add(this.btnEditProduct);
+            this.panel4.Controls.Add(this.btnDeleteProduct);
+            this.panel4.Controls.Add(this.btnAddProduct);
+            this.panel4.Location = new System.Drawing.Point(3, 9);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(467, 507);
+            this.panel4.TabIndex = 7;
+            // 
+            // dtgvProduct
+            // 
+            this.dtgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvProduct.Location = new System.Drawing.Point(4, 58);
+            this.dtgvProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgvProduct.Name = "dtgvProduct";
+            this.dtgvProduct.RowHeadersWidth = 62;
+            this.dtgvProduct.Size = new System.Drawing.Size(460, 449);
+            this.dtgvProduct.TabIndex = 10;
+            this.dtgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvProduct_CellClick_1);
+            this.dtgvProduct.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgvProduct_CellFormatting);
+            // 
+            // btnEditProduct
+            // 
+            this.btnEditProduct.Location = new System.Drawing.Point(237, 1);
+            this.btnEditProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditProduct.Name = "btnEditProduct";
+            this.btnEditProduct.Size = new System.Drawing.Size(111, 52);
+            this.btnEditProduct.TabIndex = 8;
+            this.btnEditProduct.Text = "Sửa";
+            this.btnEditProduct.UseVisualStyleBackColor = true;
+            this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click_1);
+            // 
+            // btnDeleteProduct
+            // 
+            this.btnDeleteProduct.Location = new System.Drawing.Point(121, 0);
+            this.btnDeleteProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(111, 52);
+            this.btnDeleteProduct.TabIndex = 7;
+            this.btnDeleteProduct.Text = "Xóa";
+            this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click_1);
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Location = new System.Drawing.Point(7, 0);
+            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(111, 52);
+            this.btnAddProduct.TabIndex = 6;
+            this.btnAddProduct.Text = "Thêm";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click_1);
+            // 
+            // panelProductLeft
+            // 
+            this.panelProductLeft.Controls.Add(this.btnSaveProductImage);
+            this.panelProductLeft.Controls.Add(this.txtProductID);
+            this.panelProductLeft.Controls.Add(this.lblProductID);
+            this.panelProductLeft.Controls.Add(this.pbImageProduct);
+            this.panelProductLeft.Controls.Add(this.btnChooseImageProduct);
+            this.panelProductLeft.Controls.Add(this.cbbProductCategory);
+            this.panelProductLeft.Controls.Add(this.nmProductPrice);
+            this.panelProductLeft.Controls.Add(this.txtProductName);
+            this.panelProductLeft.Controls.Add(this.lblProductPrice);
+            this.panelProductLeft.Controls.Add(this.lblProductCategory);
+            this.panelProductLeft.Controls.Add(this.lblProductName);
+            this.panelProductLeft.Controls.Add(this.txtSearchProductName);
+            this.panelProductLeft.Controls.Add(this.btnSearchProduct);
+            this.panelProductLeft.Location = new System.Drawing.Point(469, 9);
+            this.panelProductLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelProductLeft.Name = "panelProductLeft";
+            this.panelProductLeft.Size = new System.Drawing.Size(445, 501);
+            this.panelProductLeft.TabIndex = 6;
+            // 
+            // btnSaveProductImage
+            // 
+            this.btnSaveProductImage.BackColor = System.Drawing.Color.LightCyan;
+            this.btnSaveProductImage.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSaveProductImage.BorderThickness = 2;
+            this.btnSaveProductImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaveProductImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaveProductImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSaveProductImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSaveProductImage.Enabled = false;
+            this.btnSaveProductImage.FillColor = System.Drawing.Color.Transparent;
+            this.btnSaveProductImage.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSaveProductImage.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveProductImage.Location = new System.Drawing.Point(41, 236);
+            this.btnSaveProductImage.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSaveProductImage.Name = "btnSaveProductImage";
+            this.btnSaveProductImage.Size = new System.Drawing.Size(169, 57);
+            this.btnSaveProductImage.TabIndex = 48;
+            this.btnSaveProductImage.Text = "Lưu ảnh";
+            this.btnSaveProductImage.Click += new System.EventHandler(this.btnSaveProductImage_Click_1);
+            // 
+            // txtProductID
+            // 
+            this.txtProductID.Location = new System.Drawing.Point(145, 324);
+            this.txtProductID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtProductID.Name = "txtProductID";
+            this.txtProductID.ReadOnly = true;
+            this.txtProductID.Size = new System.Drawing.Size(271, 24);
+            this.txtProductID.TabIndex = 47;
+            // 
+            // lblProductID
+            // 
+            this.lblProductID.AutoSize = true;
+            this.lblProductID.Location = new System.Drawing.Point(37, 324);
+            this.lblProductID.Name = "lblProductID";
+            this.lblProductID.Size = new System.Drawing.Size(30, 17);
+            this.lblProductID.TabIndex = 46;
+            this.lblProductID.Text = "ID:";
+            // 
+            // pbImageProduct
+            // 
+            this.pbImageProduct.ImageRotate = 0F;
+            this.pbImageProduct.Location = new System.Drawing.Point(41, 63);
+            this.pbImageProduct.Margin = new System.Windows.Forms.Padding(1);
+            this.pbImageProduct.Name = "pbImageProduct";
+            this.pbImageProduct.Size = new System.Drawing.Size(384, 171);
+            this.pbImageProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbImageProduct.TabIndex = 45;
+            this.pbImageProduct.TabStop = false;
+            // 
+            // btnChooseImageProduct
+            // 
+            this.btnChooseImageProduct.BackColor = System.Drawing.Color.LightCyan;
+            this.btnChooseImageProduct.BorderColor = System.Drawing.Color.Transparent;
+            this.btnChooseImageProduct.BorderThickness = 2;
+            this.btnChooseImageProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChooseImageProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChooseImageProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChooseImageProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChooseImageProduct.FillColor = System.Drawing.Color.Transparent;
+            this.btnChooseImageProduct.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnChooseImageProduct.ForeColor = System.Drawing.Color.Black;
+            this.btnChooseImageProduct.Location = new System.Drawing.Point(257, 236);
+            this.btnChooseImageProduct.Margin = new System.Windows.Forms.Padding(1);
+            this.btnChooseImageProduct.Name = "btnChooseImageProduct";
+            this.btnChooseImageProduct.Size = new System.Drawing.Size(169, 57);
+            this.btnChooseImageProduct.TabIndex = 44;
+            this.btnChooseImageProduct.Text = "Thay đổi ảnh";
+            this.btnChooseImageProduct.Click += new System.EventHandler(this.btnChooseImageProduct_Click_1);
+            // 
+            // cbbProductCategory
+            // 
+            this.cbbProductCategory.FormattingEnabled = true;
+            this.cbbProductCategory.Location = new System.Drawing.Point(145, 417);
+            this.cbbProductCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbProductCategory.Name = "cbbProductCategory";
+            this.cbbProductCategory.Size = new System.Drawing.Size(271, 25);
+            this.cbbProductCategory.TabIndex = 43;
+            // 
+            // nmProductPrice
+            // 
+            this.nmProductPrice.Location = new System.Drawing.Point(145, 462);
+            this.nmProductPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmProductPrice.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nmProductPrice.Name = "nmProductPrice";
+            this.nmProductPrice.Size = new System.Drawing.Size(272, 24);
+            this.nmProductPrice.TabIndex = 42;
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(145, 370);
+            this.txtProductName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(271, 24);
+            this.txtProductName.TabIndex = 41;
+            // 
+            // lblProductPrice
+            // 
+            this.lblProductPrice.AutoSize = true;
+            this.lblProductPrice.Location = new System.Drawing.Point(37, 464);
+            this.lblProductPrice.Name = "lblProductPrice";
+            this.lblProductPrice.Size = new System.Drawing.Size(35, 17);
+            this.lblProductPrice.TabIndex = 40;
+            this.lblProductPrice.Text = "Giá:";
+            // 
+            // lblProductCategory
+            // 
+            this.lblProductCategory.AutoSize = true;
+            this.lblProductCategory.Location = new System.Drawing.Point(37, 417);
+            this.lblProductCategory.Name = "lblProductCategory";
+            this.lblProductCategory.Size = new System.Drawing.Size(78, 17);
+            this.lblProductCategory.TabIndex = 39;
+            this.lblProductCategory.Text = "Danh mục:";
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Location = new System.Drawing.Point(37, 370);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(71, 17);
+            this.lblProductName.TabIndex = 38;
+            this.lblProductName.Text = "Tên món:";
+            // 
+            // txtSearchProductName
+            // 
+            this.txtSearchProductName.Location = new System.Drawing.Point(41, 18);
+            this.txtSearchProductName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearchProductName.Name = "txtSearchProductName";
+            this.txtSearchProductName.Size = new System.Drawing.Size(267, 24);
+            this.txtSearchProductName.TabIndex = 37;
+            // 
+            // btnSearchProduct
+            // 
+            this.btnSearchProduct.Location = new System.Drawing.Point(315, 6);
+            this.btnSearchProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchProduct.Name = "btnSearchProduct";
+            this.btnSearchProduct.Size = new System.Drawing.Size(111, 52);
+            this.btnSearchProduct.TabIndex = 36;
+            this.btnSearchProduct.Text = "Tìm";
+            this.btnSearchProduct.UseVisualStyleBackColor = true;
+            this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click_1);
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.dtgvProduct);
-            this.panel4.Controls.Add(this.btnViewProduct);
             this.panel4.Controls.Add(this.btnEditProduct);
             this.panel4.Controls.Add(this.btnDeleteProduct);
             this.panel4.Controls.Add(this.btnAddProduct);
@@ -364,17 +591,6 @@ namespace CoffeeApp.GUI.Main
             this.dtgvProduct.Size = new System.Drawing.Size(460, 449);
             this.dtgvProduct.TabIndex = 10;
             this.dtgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvProduct_CellClick_1);
-            // 
-            // btnViewProduct
-            // 
-            this.btnViewProduct.Location = new System.Drawing.Point(353, 1);
-            this.btnViewProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnViewProduct.Name = "btnViewProduct";
-            this.btnViewProduct.Size = new System.Drawing.Size(111, 52);
-            this.btnViewProduct.TabIndex = 9;
-            this.btnViewProduct.Text = "Xem";
-            this.btnViewProduct.UseVisualStyleBackColor = true;
-            this.btnViewProduct.Click += new System.EventHandler(this.btnViewProduct_Click_1);
             // 
             // btnEditProduct
             // 
@@ -580,11 +796,11 @@ namespace CoffeeApp.GUI.Main
             // 
             this.TabCategory.Controls.Add(this.panel3);
             this.TabCategory.Controls.Add(this.panel2);
-            this.TabCategory.Location = new System.Drawing.Point(4, 29);
+            this.TabCategory.Location = new System.Drawing.Point(4, 26);
             this.TabCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TabCategory.Name = "TabCategory";
             this.TabCategory.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TabCategory.Size = new System.Drawing.Size(919, 521);
+            this.TabCategory.Size = new System.Drawing.Size(919, 524);
             this.TabCategory.TabIndex = 8;
             this.TabCategory.Text = "Loại sản phẩm";
             this.TabCategory.UseVisualStyleBackColor = true;
@@ -596,7 +812,7 @@ namespace CoffeeApp.GUI.Main
             this.panel3.Location = new System.Drawing.Point(508, 4);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(408, 513);
+            this.panel3.Size = new System.Drawing.Size(408, 516);
             this.panel3.TabIndex = 1;
             // 
             // dgvCategory
@@ -628,7 +844,7 @@ namespace CoffeeApp.GUI.Main
             this.panel2.Location = new System.Drawing.Point(3, 4);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(500, 513);
+            this.panel2.Size = new System.Drawing.Size(500, 516);
             this.panel2.TabIndex = 0;
             // 
             // txtLoai_Category
@@ -636,7 +852,7 @@ namespace CoffeeApp.GUI.Main
             this.txtLoai_Category.Location = new System.Drawing.Point(152, 105);
             this.txtLoai_Category.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLoai_Category.Name = "txtLoai_Category";
-            this.txtLoai_Category.Size = new System.Drawing.Size(259, 28);
+            this.txtLoai_Category.Size = new System.Drawing.Size(259, 24);
             this.txtLoai_Category.TabIndex = 3;
             // 
             // txtID_Category
@@ -644,7 +860,7 @@ namespace CoffeeApp.GUI.Main
             this.txtID_Category.Location = new System.Drawing.Point(152, 47);
             this.txtID_Category.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtID_Category.Name = "txtID_Category";
-            this.txtID_Category.Size = new System.Drawing.Size(259, 28);
+            this.txtID_Category.Size = new System.Drawing.Size(259, 24);
             this.txtID_Category.TabIndex = 3;
             // 
             // richTextBoxMT
@@ -742,11 +958,11 @@ namespace CoffeeApp.GUI.Main
             // 
             this.TabManagementUser.Controls.Add(this.panel);
             this.TabManagementUser.Controls.Add(this.panel1);
-            this.TabManagementUser.Location = new System.Drawing.Point(4, 29);
+            this.TabManagementUser.Location = new System.Drawing.Point(4, 26);
             this.TabManagementUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TabManagementUser.Name = "TabManagementUser";
             this.TabManagementUser.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TabManagementUser.Size = new System.Drawing.Size(919, 521);
+            this.TabManagementUser.Size = new System.Drawing.Size(919, 524);
             this.TabManagementUser.TabIndex = 9;
             this.TabManagementUser.Text = "Quản lý tài khoản";
             this.TabManagementUser.UseVisualStyleBackColor = true;
@@ -817,7 +1033,7 @@ namespace CoffeeApp.GUI.Main
             this.dtpStartDate.Location = new System.Drawing.Point(645, 182);
             this.dtpStartDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(141, 28);
+            this.dtpStartDate.Size = new System.Drawing.Size(141, 24);
             this.dtpStartDate.TabIndex = 4;
             // 
             // cbType
@@ -826,7 +1042,7 @@ namespace CoffeeApp.GUI.Main
             this.cbType.Location = new System.Drawing.Point(645, 130);
             this.cbType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(141, 28);
+            this.cbType.Size = new System.Drawing.Size(141, 25);
             this.cbType.TabIndex = 3;
             // 
             // btnXoa_Acc
@@ -981,7 +1197,7 @@ namespace CoffeeApp.GUI.Main
             this.txtTimAcc.Location = new System.Drawing.Point(719, 292);
             this.txtTimAcc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTimAcc.Name = "txtTimAcc";
-            this.txtTimAcc.Size = new System.Drawing.Size(168, 28);
+            this.txtTimAcc.Size = new System.Drawing.Size(168, 24);
             this.txtTimAcc.TabIndex = 0;
             // 
             // txtEmail
@@ -989,7 +1205,7 @@ namespace CoffeeApp.GUI.Main
             this.txtEmail.Location = new System.Drawing.Point(159, 228);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(195, 28);
+            this.txtEmail.Size = new System.Drawing.Size(195, 24);
             this.txtEmail.TabIndex = 0;
             // 
             // txtPhoneNumber
@@ -997,7 +1213,7 @@ namespace CoffeeApp.GUI.Main
             this.txtPhoneNumber.Location = new System.Drawing.Point(160, 81);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(195, 28);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(195, 24);
             this.txtPhoneNumber.TabIndex = 0;
             // 
             // txtTenHT
@@ -1005,7 +1221,7 @@ namespace CoffeeApp.GUI.Main
             this.txtTenHT.Location = new System.Drawing.Point(159, 25);
             this.txtTenHT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenHT.Name = "txtTenHT";
-            this.txtTenHT.Size = new System.Drawing.Size(195, 28);
+            this.txtTenHT.Size = new System.Drawing.Size(195, 24);
             this.txtTenHT.TabIndex = 0;
             // 
             // txtAddress
@@ -1013,7 +1229,7 @@ namespace CoffeeApp.GUI.Main
             this.txtAddress.Location = new System.Drawing.Point(159, 133);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(195, 28);
+            this.txtAddress.Size = new System.Drawing.Size(195, 24);
             this.txtAddress.TabIndex = 0;
             // 
             // txtMK
@@ -1021,7 +1237,7 @@ namespace CoffeeApp.GUI.Main
             this.txtMK.Location = new System.Drawing.Point(645, 71);
             this.txtMK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMK.Name = "txtMK";
-            this.txtMK.Size = new System.Drawing.Size(195, 28);
+            this.txtMK.Size = new System.Drawing.Size(195, 24);
             this.txtMK.TabIndex = 0;
             // 
             // txtTenTK
@@ -1029,14 +1245,14 @@ namespace CoffeeApp.GUI.Main
             this.txtTenTK.Location = new System.Drawing.Point(645, 25);
             this.txtTenTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenTK.Name = "txtTenTK";
-            this.txtTenTK.Size = new System.Drawing.Size(195, 28);
+            this.txtTenTK.Size = new System.Drawing.Size(195, 24);
             this.txtTenTK.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvUsers);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(3, 347);
+            this.panel1.Location = new System.Drawing.Point(3, 350);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(913, 170);
@@ -1051,7 +1267,6 @@ namespace CoffeeApp.GUI.Main
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 62;
             this.dgvUsers.RowTemplate.Height = 28;
-            this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsers.Size = new System.Drawing.Size(913, 156);
             this.dgvUsers.TabIndex = 0;
             this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
@@ -1059,6 +1274,17 @@ namespace CoffeeApp.GUI.Main
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(353, 1);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(111, 52);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FormManagement
             // 
@@ -1180,9 +1406,9 @@ namespace CoffeeApp.GUI.Main
         private Button btnSearchProduct;
         private Panel panel4;
         private DataGridView dtgvProduct;
-        private Button btnViewProduct;
         private Button btnEditProduct;
         private Button btnDeleteProduct;
         private Button btnAddProduct;
+        private Button btnSave;
     }
 }
