@@ -23,6 +23,8 @@ using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Microsoft.Reporting.Map.WebForms.BingMaps;
+using Image = System.Drawing.Image;
 
 namespace CoffeeApp.GUI.Main
 {
@@ -638,6 +640,7 @@ namespace CoffeeApp.GUI.Main
                 querry += "N'" + gioitinh + "', ";
                 querry += "N'" + tt + "')";
                 validateInfor(sender, e);
+
                 DataTable data2 = DAO.DataProvider.Instance.ExecuteQuery(querry);
                 MessageBox.Show("Thêm tài khoản thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
