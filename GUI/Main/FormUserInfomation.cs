@@ -67,11 +67,11 @@ namespace CoffeeApp.GUI.Main
 
             if (userDTO.Gender.ToLower() == "nam")
             {
-                rbSexMale.Checked = true;
+                rbSexFeMale.Checked = true;
             }
             else if (userDTO.Gender.ToLower() == "nữ")
             {
-                rbSexFeMale.Checked = true;
+                rbSexMale.Checked = true;
             }
         }
 
@@ -88,11 +88,12 @@ namespace CoffeeApp.GUI.Main
             tbInfoEmail.Text = userDTO.Email;
             tbInfoCodeNewEmail.Text = "";
             tbInfoAddress.Text = userDTO.Address;
+
             if(userDTO.Gender.ToLower() == "nam") 
-                rbSexMale.Checked = true;
+                rbSexFeMale.Checked = true;
             else if (userDTO.Gender.ToLower() == "nữ")
             {
-                rbSexFeMale.Checked = true;
+                rbSexMale.Checked = true;
             }
 
             lbValidateAddress.Text = lbValidateEmail.Text = lbValidateFullName.Text = lbValidateGender.Text = lbValidateNewCodeEmail.Text = lbValidatePhone.Text = ""; 
@@ -1715,5 +1716,6 @@ namespace CoffeeApp.GUI.Main
                 System.Diagnostics.Process.GetCurrentProcess().Kill();
                 Application.Exit();
         }
+
     }
 }
