@@ -22,8 +22,8 @@ namespace CoffeeApp.DTO
         private string statusEmail;
         private string gender;
         private string image;
-
-        public UserDTO(int id, string userName, string fullName, string password, string phone, string address, DateTime dateWork, int roleID, string email, string codeEmail, string statusEmail, string gender, string image)
+        private string workingstatus;
+        public UserDTO(int id, string userName, string fullName, string password, string phone, string address, DateTime dateWork, int roleID, string email, string codeEmail, string statusEmail, string gender, string image, string workingstatus)
         {
             this.Id = id;
             this.UserName = userName;
@@ -38,6 +38,7 @@ namespace CoffeeApp.DTO
             this.StatusEmail = statusEmail;
             this.Gender = gender;
             this.Image = image;
+            this.workingstatus = workingstatus;
         }
 
         public int Id { get => id; set => id = value; }
@@ -54,7 +55,7 @@ namespace CoffeeApp.DTO
         public string Gender { get => gender; set => gender = value; }
         public string Image { get => image; set => image = value; }
 
-
+        public string Workingstatus { get => workingstatus; set => workingstatus = value; }
         public UserDTO(DataRow row)
         {
             this.Id = int.Parse(row["ID"].ToString());
@@ -70,6 +71,7 @@ namespace CoffeeApp.DTO
             this.StatusEmail = row["statusEmail"].ToString();
             this.Gender = row["gender"].ToString();
             this.Image = row["image"].ToString();
+            this.Workingstatus = row["Workingstatus"].ToString();
         }
     }
 }
