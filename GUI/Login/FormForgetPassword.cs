@@ -389,16 +389,24 @@ namespace CoffeeApp.GUI.Login
                             DataTable dataTable = DAO.UserDAO.Instance.UserEmail(txbForgetPasswordEmail.Text);
                             UserDTO userDTO = new UserDTO(dataTable.Rows[0]);
 
-                            if(DAO.UserDAO.Instance.UpdateUser(userDTO.UserName, DAO.UserDAO.Instance.HashPassword(txbForgetPasswordNewPassword.Text), userDTO.Phone, userDTO.Email, verificationCode,userDTO.StatusEmail, userDTO.RoleID, userDTO.FullName, userDTO.Address, userDTO.Gender, userDTO.Image))
+                            if(userDTO.Workingstatus == "0")
                             {
-                                MessageBox.Show("Đặt lại mật khẩu thành công -  Nhấn ok để trở về trang đăng nhập");
-                                this.Close();
-                                formLogin.Show();
+                                MessageBox.Show("Tài khoản không hợp lệ ");
                             }
                             else
                             {
-                                MessageBox.Show("Đặt lại mật khẩu thất bại");
+                                if (DAO.UserDAO.Instance.UpdateUser(userDTO.UserName, DAO.UserDAO.Instance.HashPassword(txbForgetPasswordNewPassword.Text), userDTO.Phone, userDTO.Email, verificationCode, userDTO.StatusEmail, userDTO.RoleID, userDTO.FullName, userDTO.Address, userDTO.Gender, userDTO.Image, 1))
+                                {
+                                    MessageBox.Show("Đặt lại mật khẩu thành công -  Nhấn ok để trở về trang đăng nhập");
+                                    this.Close();
+                                    formLogin.Show();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Đặt lại mật khẩu thất bại");
+                                }
                             }
+                            
                         }
                     }
                     

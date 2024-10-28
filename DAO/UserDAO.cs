@@ -159,12 +159,12 @@ namespace CoffeeApp.DAO
 
        
 
-        public bool InsertUser(string userName, string passWord,string phone , string email,string codeEmail, string statusEmail, int roleID, string fullName, string address, string gender, string image)
+        public bool InsertUser(string userName, string passWord,string phone , string email,string codeEmail, string statusEmail, int roleID, string fullName, string address, string gender, string image, int workingStatus)
         {
             try
             {
-                DAO.DataProvider.Instance.ExecuteNonQuery($"INSERT INTO users(UserName, Password, Phone, email, codeEmail, statusEmail, RoleID , fullName , address , gender , image) " +
-                    $"VALUES (N'{userName}', N'{passWord}', N'{phone}', N'{email}', N'{codeEmail}', N'{statusEmail}', {roleID} , N'{fullName}', N'{address}', N'{gender}', N'{image}' )");
+                DAO.DataProvider.Instance.ExecuteNonQuery($"INSERT INTO users(UserName, Password, Phone, email, codeEmail, statusEmail, RoleID , fullName , address , gender , image , workingStatus) " +
+                    $"VALUES (N'{userName}', N'{passWord}', N'{phone}', N'{email}', N'{codeEmail}', N'{statusEmail}', {roleID} , N'{fullName}', N'{address}', N'{gender}', N'{image}' ,{workingStatus})");
             }
             catch
             {
@@ -173,11 +173,11 @@ namespace CoffeeApp.DAO
             return true;
         }
 
-        public bool UpdateUser(string userName, string passWord, string phone, string email, string codeEmail, string statusEmail, int roleID, string fullName, string address, string gender, string image)
+        public bool UpdateUser(string userName, string passWord, string phone, string email, string codeEmail, string statusEmail, int roleID, string fullName, string address, string gender, string image, int workingStatus)
         {
             try
             {
-                DAO.DataProvider.Instance.ExecuteNonQuery($"UPDATE users SET userName = N'{userName}', password = N'{passWord}',phone= N'{phone}', Email = N'{email}', codeEmail = N'{codeEmail}',statusEmail=N'{statusEmail}', roleID = {roleID}, fullname = N'{fullName}', address = N'{address}' , gender=N'{gender}', image = N'{image}' WHERE username = N'{userName}'");
+                DAO.DataProvider.Instance.ExecuteNonQuery($"UPDATE users SET userName = N'{userName}', password = N'{passWord}',phone= N'{phone}', Email = N'{email}', codeEmail = N'{codeEmail}',statusEmail=N'{statusEmail}', roleID = {roleID}, fullname = N'{fullName}', address = N'{address}' , gender=N'{gender}', image = N'{image}', workingStatus = {workingStatus} WHERE username = N'{userName}'");
 
             }
             catch
