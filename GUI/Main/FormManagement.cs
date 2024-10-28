@@ -31,7 +31,7 @@ namespace CoffeeApp.GUI.Main
         private FormMain formmain;
         private string username;
         private int roleID;
-        private Dictionary<int, float> data;
+        private Dictionary<int, float> dataDic;
         private System.Drawing.Image showImageUser;
         private ConvertImage convertImage;
         private ValidateData validateData;
@@ -42,7 +42,7 @@ namespace CoffeeApp.GUI.Main
             this.username = username;
             this.roleID = roleID;
             Decentralization(username, roleID);
-            data = new Dictionary<int, float>();
+            dataDic = new Dictionary<int, float>();
             loadData();
             LoadListProduct();
             dtgvProduct.ClearSelection();
@@ -123,6 +123,8 @@ namespace CoffeeApp.GUI.Main
             richTextBoxMT.Text = "";
             btnThem_Category.Enabled = true;
         }
+
+        // phân quyền
         private void Decentralization(string username, int roleID)
         {
             // staff
@@ -146,22 +148,32 @@ namespace CoffeeApp.GUI.Main
         private void loadData()
         {
             this.chartStatistic.Series["DataSeries"].Points.Clear();
+            this.chartStatistic.Series["DataSeries"].IsVisibleInLegend = false;
 
             for (int i = 1; i <= 12; i++)
             {
-                data.Add(i, 0);
+                dataDic.Add(i, 0);
             }
 
             // năm theo thời gian thực
-            for (int i = 2000; i <= DateTime.Now.Year; i++)
+            for (int i = DateTime.Now.Year; i >= 2018; i--)
             {
                 cbChooseYear.Items.Add(i);
             }
         }
+        #endregion
+
+        #region Events
 
         private void cbChooseYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Lấy mục được chọn
+            this.chartStatistic.Series["DataSeries"].Points.Clear();
+            // đặt lại dữ liệu
+            foreach (var key in dataDic.Keys.ToList())
+            {
+                dataDic[key] = 0;
+            }
+                // Lấy mục được chọn
             string selectedItem = cbChooseYear.SelectedItem.ToString();
 
             int year = int.Parse(selectedItem);
@@ -188,26 +200,26 @@ namespace CoffeeApp.GUI.Main
                     if (dateCheckOut.HasValue)
                     {
                         int month = dateCheckOut.Value.Month;
-                        data[month] += bill.TotalBill;
+                        dataDic[month] += bill.TotalBill;
                     }
                 }
                 int i = 0;
                 // duyệt dữ liệu  Dictionary và thêm dữ liệu vào biểu đồ
-                foreach (KeyValuePair<int, float> kvp in data)
+                foreach (KeyValuePair<int, float> kvp in dataDic)
                 {
                     // Thêm điểm dữ liệu vào biểu đồ và lưu chỉ số của điểm vừa thêm
                     int index = this.chartStatistic.Series["DataSeries"].Points.AddXY(kvp.Key, kvp.Value);
 
                     // Lấy đối tượng DataPoint từ chỉ số
                     DataPoint point = this.chartStatistic.Series["DataSeries"].Points[index];
-
                     point.Color = colors[i % colors.Length];
                     point.LegendText = $"Tháng {kvp.Key}"; // Hiển thị nhãn tháng cho từng cột
 
                     point.Label = ""; // Đảm bảo không có nhãn hiển thị trên cột
                     ++i;
                 }
-
+                // Ẩn Series khỏi đồ thị
+                this.chartStatistic.Series["DataSeries"].IsVisibleInLegend = false;
                 // Cập nhật lại giao diện biểu đồ
                 this.chartStatistic.Invalidate(); // Vẽ lại biểu đồ nếu cần
 
@@ -217,17 +229,12 @@ namespace CoffeeApp.GUI.Main
             {
                 MessageBox.Show($"Không có dữ liệu hóa đơn cho năm {year}");
                 this.chartStatistic.Series["DataSeries"].Points.Clear();
-                foreach (KeyValuePair<int, float> kvp in data)
+                foreach (KeyValuePair<int, float> kvp in dataDic)
                 {
                     this.chartStatistic.Series["DataSeries"].Points.AddXY(kvp.Key, 0);
                 }
             }
         }
-
-
-
-
-
 
         #endregion
         private void LoadListProduct()
