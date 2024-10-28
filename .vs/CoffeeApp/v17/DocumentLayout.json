@@ -3,24 +3,40 @@
   "WorkspaceRootPath": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\utc\\tl-gtvl-cua-toi\\n\u0103m 3 ki 1\\lttq\\btl\\report.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:report.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\utc\\tl-gtvl-cua-toi\\n\u0103m 3 ki 1\\lttq\\btl\\gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formmanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\report.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\report.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\utc\\tl-gtvl-cua-toi\\n\u0103m 3 ki 1\\lttq\\btl\\dao\\billdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\billdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\utc\\tl-gtvl-cua-toi\\n\u0103m 3 ki 1\\lttq\\btl\\gui\\main\\formreport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formreport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\utc\\tl-gtvl-cua-toi\\n\u0103m 3 ki 1\\lttq\\btl\\dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formmanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formuserinfomation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -34,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 237,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,54 +62,108 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Report.rdlc [Design]",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\Report.rdlc",
-              "RelativeDocumentMoniker": "Report.rdlc",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\Report.rdlc [Design]",
-              "RelativeToolTip": "Report.rdlc [Design]",
+              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\Report.rdlc",
+              "RelativeDocumentMoniker": "GUI\\Main\\Report.rdlc",
+              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\Report.rdlc [Design]",
+              "RelativeToolTip": "GUI\\Main\\Report.rdlc [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
-              "WhenOpened": "2024-10-27T04:55:32.612Z",
+              "WhenOpened": "2024-10-27T07:27:15.262Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormMain.cs",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormMain.cs",
-              "RelativeDocumentMoniker": "GUI\\Main\\FormMain.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormMain.cs",
-              "RelativeToolTip": "GUI\\Main\\FormMain.cs",
-              "ViewState": "AgIAAPcAAAAAAAAAAAAmwP8AAAAqAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "FormReport.cs",
+              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormReport.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormReport.cs",
+              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormReport.cs",
+              "RelativeToolTip": "GUI\\Main\\FormReport.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAewEwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T01:01:06.59Z",
+              "WhenOpened": "2024-10-27T06:57:47.802Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "FormReport.cs [Design]",
               "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormReport.cs",
               "RelativeDocumentMoniker": "GUI\\Main\\FormReport.cs",
               "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormReport.cs [Design]",
               "RelativeToolTip": "GUI\\Main\\FormReport.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T01:00:46.055Z"
+              "WhenOpened": "2024-10-27T06:57:28.636Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "FormMain.cs [Design]",
               "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormMain.cs",
               "RelativeDocumentMoniker": "GUI\\Main\\FormMain.cs",
               "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormMain.cs [Design]",
               "RelativeToolTip": "GUI\\Main\\FormMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T00:57:29.294Z"
+              "WhenOpened": "2024-10-26T00:57:29.294Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "FormMain.cs",
+              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormMain.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormMain.cs",
+              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormMain.cs",
+              "RelativeToolTip": "GUI\\Main\\FormMain.cs",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAowPAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T06:03:08.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BillDAO.cs",
+              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\BillDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\BillDAO.cs",
+              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\BillDAO.cs",
+              "RelativeToolTip": "DAO\\BillDAO.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAE8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T07:11:17.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormReport.Designer.cs",
+              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormReport.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormReport.Designer.cs",
+              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormReport.Designer.cs",
+              "RelativeToolTip": "GUI\\Main\\FormReport.Designer.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAnwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T07:04:23.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DataProvider.cs",
+              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\DataProvider.cs",
+              "RelativeDocumentMoniker": "DAO\\DataProvider.cs",
+              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\DataProvider.cs",
+              "RelativeToolTip": "DAO\\DataProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T01:22:26.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "FormManagement.Designer.cs",
               "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormManagement.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.Designer.cs",
@@ -101,11 +171,12 @@
               "RelativeToolTip": "GUI\\Main\\FormManagement.Designer.cs",
               "ViewState": "AgIAACAEAAAAAAAAAAAnwCAEAAB2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T00:30:50.573Z"
+              "WhenOpened": "2024-10-26T00:30:50.573Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "FormUserInfomation.cs [Design]",
               "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormUserInfomation.cs",
               "RelativeDocumentMoniker": "GUI\\Main\\FormUserInfomation.cs",

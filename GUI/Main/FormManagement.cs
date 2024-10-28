@@ -156,16 +156,20 @@ namespace CoffeeApp.GUI.Main
                 cbChooseYear.Items.Add(i);
             }
         }
+        #endregion
+
+        #region Events
 
         private void cbChooseYear_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.chartStatistic.Series["DataSeries"].Points.Clear();
             // đặt lại dữ liệu
             foreach (var key in dataDic.Keys.ToList())
             {
                 dataDic[key] = 0;
             }
                 // Lấy mục được chọn
-             string selectedItem = cbChooseYear.SelectedItem.ToString();
+            string selectedItem = cbChooseYear.SelectedItem.ToString();
 
             int year = int.Parse(selectedItem);
 
@@ -226,11 +230,6 @@ namespace CoffeeApp.GUI.Main
                 }
             }
         }
-
-
-
-
-
 
         #endregion
         private void LoadListProduct()

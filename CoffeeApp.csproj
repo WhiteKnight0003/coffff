@@ -161,6 +161,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="coffeeApplicationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>coffeeApplicationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="coffeeApplicationDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>coffeeApplicationDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Main\coffeeApplicationDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>coffeeApplicationDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\BillInfoDAO.cs" />
     <Compile Include="DAO\CategoryDAO.cs" />
@@ -253,16 +268,52 @@
     <EmbeddedResource Include="GUI\Main\FormManagement.resx">
       <DependentUpon>FormManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Main\FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Main\FormUserInfomation.resx">
       <DependentUpon>FormUserInfomation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Main\Report.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report.rdlc" />
     <None Include="app.manifest" />
+    <None Include="coffeeApplicationDataSet.xsc">
+      <DependentUpon>coffeeApplicationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="coffeeApplicationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>coffeeApplicationDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="coffeeApplicationDataSet.xss">
+      <DependentUpon>coffeeApplicationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="coffeeApplicationDataSet1.xsc">
+      <DependentUpon>coffeeApplicationDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="coffeeApplicationDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>coffeeApplicationDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="coffeeApplicationDataSet1.xss">
+      <DependentUpon>coffeeApplicationDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GUI\Main\coffeeApplicationDataSet2.xsc">
+      <DependentUpon>coffeeApplicationDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="GUI\Main\coffeeApplicationDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>coffeeApplicationDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GUI\Main\coffeeApplicationDataSet2.xss">
+      <DependentUpon>coffeeApplicationDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

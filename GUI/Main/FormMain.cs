@@ -262,7 +262,7 @@ namespace CoffeeApp.GUI
 
         private void ReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormReport formReport = new FormReport();
+            FormReport formReport = new FormReport(this);
             this.Hide();
             formReport.ShowDialog();
         }
