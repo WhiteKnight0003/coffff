@@ -53,7 +53,7 @@ namespace CoffeeApp.GUI.Main
             ResetButtonProduct();
             ResetProductData();
             LoadCategoryIntoCombobox();
-            BillInfoDAO.Instance.DisplayPage(1, pageSize, currentPage, dgvBillDetails, lblPageNumber);  
+            BillInfoDAO.Instance.DisplayPage(1, pageSize, currentPage, dgvBillDetails, lblPageNumber);
             ManageAccount_Load();
             Category_Load();
             toolTip = new ToolTip();
@@ -731,8 +731,10 @@ namespace CoffeeApp.GUI.Main
                 }
                 errorProvider.Clear();
 
-                querry = "INSERT  INTO category(CategoryName,Description,Status) VALUES(";
-                querry += "N'" + txtLoai_Category.Text + "',N'" + richTextBoxMT.Text + "',N'" +stt +"')";
+                //querry = "INSERT  INTO category(CategoryName,Description,Status) VALUES(";
+                //querry += "N'" + txtLoai_Category.Text + "',N'" + richTextBoxMT.Text + "',N'" + stt + "')";
+                querry = "INSERT  INTO category(CategoryName,Description) VALUES(";
+                querry += "N'" + txtLoai_Category.Text + "',N'" + richTextBoxMT.Text  + "')";
                 DataTable data2 = DAO.DataProvider.Instance.ExecuteQuery(querry);
                 MessageBox.Show("Thêm loại thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
