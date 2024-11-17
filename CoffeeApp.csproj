@@ -370,7 +370,9 @@
     <None Include="GUI\Image\bg4.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GUI\Image\Image_Default.png" />
+    <Content Include="GUI\Image\Image_Default.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="GUI\Icon\undo.png" />

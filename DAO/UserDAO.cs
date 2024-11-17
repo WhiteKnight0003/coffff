@@ -163,6 +163,7 @@ namespace CoffeeApp.DAO
         {
             try
             {
+
                 DAO.DataProvider.Instance.ExecuteNonQuery($"INSERT INTO users(UserName, Password, Phone, email, codeEmail, statusEmail, RoleID , fullName , address , gender , image , workingStatus) " +
                     $"VALUES (N'{userName}', N'{passWord}', N'{phone}', N'{email}', N'{codeEmail}', N'{statusEmail}', {roleID} , N'{fullName}', N'{address}', N'{gender}', N'{image}' ,{workingStatus})");
             }
