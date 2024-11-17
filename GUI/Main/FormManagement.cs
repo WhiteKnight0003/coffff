@@ -230,7 +230,7 @@ namespace CoffeeApp.GUI.Main
 
 
         #endregion
-        private void LoadListProduct() // Lấy ra danh sách các sản phẩm và hiện nó lên dtgv
+        private void LoadListProduct() // Lấy ra danh sách các sản phẩm và hiện nó lên dtgvm 
         {
             
             dtgvProduct.DataSource = ProductDAO.Instance.GetListProduct();
