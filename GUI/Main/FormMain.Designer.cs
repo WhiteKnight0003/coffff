@@ -177,21 +177,33 @@ namespace CoffeeApp.GUI
             this.txbTotalPrice.Name = "txbTotalPrice";
             this.txbTotalPrice.Size = new System.Drawing.Size(159, 22);
             this.txbTotalPrice.TabIndex = 3;
-            // 
-            // lsvBill
-            // 
-            this.lsvBill.HideSelection = false;
-            this.lsvBill.Location = new System.Drawing.Point(4, 5);
-            this.lsvBill.Margin = new System.Windows.Forms.Padding(4);
-            this.lsvBill.Name = "lsvBill";
-            this.lsvBill.Size = new System.Drawing.Size(451, 333);
-            this.lsvBill.TabIndex = 2;
-            this.lsvBill.UseCompatibleStateImageBehavior = false;
-            this.lsvBill.View = System.Windows.Forms.View.Details;
-            // 
-            // lbTotalCash
-            // 
-            this.lbTotalCash.BackColor = System.Drawing.Color.Transparent;
+
+			// txbTotalPrice
+			// 
+			this.txbTotalPrice.Location = new System.Drawing.Point(216, 281);
+			this.txbTotalPrice.Name = "txbTotalPrice";
+			this.txbTotalPrice.Size = new System.Drawing.Size(120, 20);
+			this.txbTotalPrice.TabIndex = 3;
+			// 
+			// lsvBill
+			// 
+			this.lsvBill.Columns.Add("ProductName", -2, HorizontalAlignment.Left);
+			this.lsvBill.Columns.Add("Count", -2, HorizontalAlignment.Left);
+			this.lsvBill.Columns.Add("Price", -2, HorizontalAlignment.Left);
+			this.lsvBill.Columns.Add("TotalPrice", -2, HorizontalAlignment.Left);
+			this.lsvBill.HideSelection = false;
+			this.lsvBill.Location = new System.Drawing.Point(3, 4);
+			this.lsvBill.Name = "lsvBill";
+			this.lsvBill.Size = new System.Drawing.Size(339, 273);
+			this.lsvBill.TabIndex = 2;
+			this.lsvBill.UseCompatibleStateImageBehavior = false;
+			this.lsvBill.View = System.Windows.Forms.View.Details;
+			// 
+
+			// 
+			// lbTotalCash
+			// 
+			this.lbTotalCash.BackColor = System.Drawing.Color.Transparent;
             this.lbTotalCash.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalCash.Location = new System.Drawing.Point(301, 347);
             this.lbTotalCash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
