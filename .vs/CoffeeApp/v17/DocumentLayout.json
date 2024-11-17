@@ -1,8 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\",
+  "WorkspaceRootPath": "D:\\WORKSPACE\\C#\\Lastest_Project_Version_Backup\\coffff\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -32,21 +33,17 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+=======
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|d:\\workspace\\c#\\lastest_project_version_backup\\coffff\\gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+>>>>>>> 5ad63216797c2b7d66f595d4794421f0f2ac7f5a
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\dao\\billinfodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\WORKSPACE\\C#\\Lastest_Project_Version_Backup\\coffff\\dao\\billinfodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\billinfodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\report.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\report.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
     },
@@ -57,6 +54,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formreport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formreport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\WORKSPACE\\C#\\Lastest_Project_Version_Backup\\coffff\\dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\WORKSPACE\\C#\\Lastest_Project_Version_Backup\\coffff\\gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 5ad63216797c2b7d66f595d4794421f0f2ac7f5a
     }
   ],
   "DocumentGroupContainers": [
@@ -65,18 +70,28 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
+<<<<<<< HEAD
           "DockedHeight": 237,
           "SelectedChildIndex": 6,
+=======
+          "DockedHeight": 236,
+          "SelectedChildIndex": 4,
+>>>>>>> 5ad63216797c2b7d66f595d4794421f0f2ac7f5a
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
+<<<<<<< HEAD
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "FormMain.Designer.cs",
@@ -123,10 +138,15 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-27T06:03:08.797Z",
               "EditorCaption": ""
+=======
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+>>>>>>> 5ad63216797c2b7d66f595d4794421f0f2ac7f5a
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "FormMain.cs [Design]",
               "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormMain.cs",
               "RelativeDocumentMoniker": "GUI\\Main\\FormMain.cs",
@@ -134,10 +154,20 @@
               "RelativeToolTip": "GUI\\Main\\FormMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-26T00:57:29.294Z",
+=======
+              "Title": "FormManagement.cs [Design]",
+              "DocumentMoniker": "D:\\WORKSPACE\\C#\\Lastest_Project_Version_Backup\\coffff\\GUI\\Main\\FormManagement.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.cs",
+              "ToolTip": "D:\\WORKSPACE\\C#\\Lastest_Project_Version_Backup\\coffff\\GUI\\Main\\FormManagement.cs [Design]",
+              "RelativeToolTip": "GUI\\Main\\FormManagement.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T13:47:45.994Z",
+>>>>>>> 5ad63216797c2b7d66f595d4794421f0f2ac7f5a
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 3,
               "Title": "FormUserInfomation.cs [Design]",
               "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormUserInfomation.cs",
@@ -186,17 +216,21 @@
             {
               "$type": "Document",
               "DocumentIndex": 10,
+=======
+              "DocumentIndex": 1,
+>>>>>>> 5ad63216797c2b7d66f595d4794421f0f2ac7f5a
               "Title": "BillInfoDAO.cs",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\BillInfoDAO.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\C#\\Lastest_Project_Version_Backup\\coffff\\DAO\\BillInfoDAO.cs",
               "RelativeDocumentMoniker": "DAO\\BillInfoDAO.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\BillInfoDAO.cs",
+              "ToolTip": "D:\\WORKSPACE\\C#\\Lastest_Project_Version_Backup\\coffff\\DAO\\BillInfoDAO.cs",
               "RelativeToolTip": "DAO\\BillInfoDAO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T07:26:23.789Z"
+              "WhenOpened": "2024-10-08T16:12:23.371Z"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 9,
               "Title": "DataProvider.cs",
               "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\DataProvider.cs",
@@ -241,11 +275,34 @@
               "ViewState": "AgIAACcAAAAAAAAAAAAnwDsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-28T07:04:23.178Z"
+=======
+              "DocumentIndex": 2,
+              "Title": "ProductDAO.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\C#\\Lastest_Project_Version_Backup\\coffff\\DAO\\ProductDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\ProductDAO.cs",
+              "ToolTip": "D:\\WORKSPACE\\C#\\Lastest_Project_Version_Backup\\coffff\\DAO\\ProductDAO.cs",
+              "RelativeToolTip": "DAO\\ProductDAO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T15:22:44.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormManagement.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\C#\\Lastest_Project_Version_Backup\\coffff\\GUI\\Main\\FormManagement.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.cs",
+              "ToolTip": "D:\\WORKSPACE\\C#\\Lastest_Project_Version_Backup\\coffff\\GUI\\Main\\FormManagement.cs",
+              "RelativeToolTip": "GUI\\Main\\FormManagement.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAgwLQDAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T13:51:29.346Z"
+>>>>>>> 5ad63216797c2b7d66f595d4794421f0f2ac7f5a
             }
           ]
         },
         {
-          "DockedHeight": 59,
+          "DockedHeight": 60,
           "SelectedChildIndex": -1,
           "Children": [
             {

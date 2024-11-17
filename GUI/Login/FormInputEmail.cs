@@ -52,6 +52,7 @@ namespace CoffeeApp.GUI.Main
                 if (DAO.UserDAO.Instance.checkUserName(username))
                 {
                     UserDTO userDTO = DAO.UserDAO.Instance.GetByUserName(username);
+
                     if (DAO.UserDAO.Instance.UpdateUser(username,password,phone, email, txbCodeEmail.Text, "Đã xác thực",roleID,userDTO.FullName, userDTO.Address, userDTO.Gender,Imgbase64String,int.Parse(userDTO.Workingstatus)))
                     {
                         MessageBox.Show("Tài khoản đã được xác minh -  Nhấn Ok để quay về trang đăng nhập ");                      
