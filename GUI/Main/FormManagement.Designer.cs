@@ -568,6 +568,230 @@ namespace CoffeeApp.GUI.Main
             this.btnSearchProduct.UseVisualStyleBackColor = true;
             this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click_1);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dtgvProduct);
+            this.panel4.Controls.Add(this.btnEditProduct);
+            this.panel4.Controls.Add(this.btnDeleteProduct);
+            this.panel4.Controls.Add(this.btnAddProduct);
+            this.panel4.Location = new System.Drawing.Point(3, 9);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(467, 507);
+            this.panel4.TabIndex = 7;
+            // 
+            // dtgvProduct
+            // 
+            this.dtgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvProduct.Location = new System.Drawing.Point(4, 58);
+            this.dtgvProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgvProduct.Name = "dtgvProduct";
+            this.dtgvProduct.RowHeadersWidth = 62;
+            this.dtgvProduct.Size = new System.Drawing.Size(460, 449);
+            this.dtgvProduct.TabIndex = 10;
+            this.dtgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvProduct_CellClick_1);
+            // 
+            // btnEditProduct
+            // 
+            this.btnEditProduct.Location = new System.Drawing.Point(237, 1);
+            this.btnEditProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditProduct.Name = "btnEditProduct";
+            this.btnEditProduct.Size = new System.Drawing.Size(111, 52);
+            this.btnEditProduct.TabIndex = 8;
+            this.btnEditProduct.Text = "Sửa";
+            this.btnEditProduct.UseVisualStyleBackColor = true;
+            this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click_1);
+            // 
+            // btnDeleteProduct
+            // 
+            this.btnDeleteProduct.Location = new System.Drawing.Point(121, 0);
+            this.btnDeleteProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(111, 52);
+            this.btnDeleteProduct.TabIndex = 7;
+            this.btnDeleteProduct.Text = "Xóa";
+            this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click_1);
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Location = new System.Drawing.Point(7, 0);
+            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(111, 52);
+            this.btnAddProduct.TabIndex = 6;
+            this.btnAddProduct.Text = "Thêm";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click_1);
+            // 
+            // panelProductLeft
+            // 
+            this.panelProductLeft.Controls.Add(this.btnSaveProductImage);
+            this.panelProductLeft.Controls.Add(this.txtProductID);
+            this.panelProductLeft.Controls.Add(this.lblProductID);
+            this.panelProductLeft.Controls.Add(this.pbImageProduct);
+            this.panelProductLeft.Controls.Add(this.btnChooseImageProduct);
+            this.panelProductLeft.Controls.Add(this.cbbProductCategory);
+            this.panelProductLeft.Controls.Add(this.nmProductPrice);
+            this.panelProductLeft.Controls.Add(this.txtProductName);
+            this.panelProductLeft.Controls.Add(this.lblProductPrice);
+            this.panelProductLeft.Controls.Add(this.lblProductCategory);
+            this.panelProductLeft.Controls.Add(this.lblProductName);
+            this.panelProductLeft.Controls.Add(this.txtSearchProductName);
+            this.panelProductLeft.Controls.Add(this.btnSearchProduct);
+            this.panelProductLeft.Location = new System.Drawing.Point(469, 9);
+            this.panelProductLeft.Margin = new System.Windows.Forms.Padding(4);
+            this.panelProductLeft.Name = "panelProductLeft";
+            this.panelProductLeft.Size = new System.Drawing.Size(445, 501);
+            this.panelProductLeft.TabIndex = 6;
+            // 
+            // btnSaveProductImage
+            // 
+            this.btnSaveProductImage.BackColor = System.Drawing.Color.LightCyan;
+            this.btnSaveProductImage.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSaveProductImage.BorderThickness = 2;
+            this.btnSaveProductImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaveProductImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaveProductImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSaveProductImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSaveProductImage.Enabled = false;
+            this.btnSaveProductImage.FillColor = System.Drawing.Color.Transparent;
+            this.btnSaveProductImage.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSaveProductImage.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveProductImage.Location = new System.Drawing.Point(41, 236);
+            this.btnSaveProductImage.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSaveProductImage.Name = "btnSaveProductImage";
+            this.btnSaveProductImage.Size = new System.Drawing.Size(169, 57);
+            this.btnSaveProductImage.TabIndex = 48;
+            this.btnSaveProductImage.Text = "Lưu ảnh";
+            this.btnSaveProductImage.Click += new System.EventHandler(this.btnSaveProductImage_Click_1);
+            // 
+            // txtProductID
+            // 
+            this.txtProductID.Location = new System.Drawing.Point(145, 324);
+            this.txtProductID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtProductID.Name = "txtProductID";
+            this.txtProductID.ReadOnly = true;
+            this.txtProductID.Size = new System.Drawing.Size(271, 28);
+            this.txtProductID.TabIndex = 47;
+            // 
+            // lblProductID
+            // 
+            this.lblProductID.AutoSize = true;
+            this.lblProductID.Location = new System.Drawing.Point(37, 324);
+            this.lblProductID.Name = "lblProductID";
+            this.lblProductID.Size = new System.Drawing.Size(34, 20);
+            this.lblProductID.TabIndex = 46;
+            this.lblProductID.Text = "ID:";
+            // 
+            // pbImageProduct
+            // 
+            this.pbImageProduct.ImageRotate = 0F;
+            this.pbImageProduct.Location = new System.Drawing.Point(41, 63);
+            this.pbImageProduct.Margin = new System.Windows.Forms.Padding(1);
+            this.pbImageProduct.Name = "pbImageProduct";
+            this.pbImageProduct.Size = new System.Drawing.Size(384, 171);
+            this.pbImageProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbImageProduct.TabIndex = 45;
+            this.pbImageProduct.TabStop = false;
+            // 
+            // btnChooseImageProduct
+            // 
+            this.btnChooseImageProduct.BackColor = System.Drawing.Color.LightCyan;
+            this.btnChooseImageProduct.BorderColor = System.Drawing.Color.Transparent;
+            this.btnChooseImageProduct.BorderThickness = 2;
+            this.btnChooseImageProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChooseImageProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChooseImageProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChooseImageProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChooseImageProduct.FillColor = System.Drawing.Color.Transparent;
+            this.btnChooseImageProduct.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnChooseImageProduct.ForeColor = System.Drawing.Color.Black;
+            this.btnChooseImageProduct.Location = new System.Drawing.Point(257, 236);
+            this.btnChooseImageProduct.Margin = new System.Windows.Forms.Padding(1);
+            this.btnChooseImageProduct.Name = "btnChooseImageProduct";
+            this.btnChooseImageProduct.Size = new System.Drawing.Size(169, 57);
+            this.btnChooseImageProduct.TabIndex = 44;
+            this.btnChooseImageProduct.Text = "Thay đổi ảnh";
+            this.btnChooseImageProduct.Click += new System.EventHandler(this.btnChooseImageProduct_Click_1);
+            // 
+            // cbbProductCategory
+            // 
+            this.cbbProductCategory.FormattingEnabled = true;
+            this.cbbProductCategory.Location = new System.Drawing.Point(145, 417);
+            this.cbbProductCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbProductCategory.Name = "cbbProductCategory";
+            this.cbbProductCategory.Size = new System.Drawing.Size(271, 28);
+            this.cbbProductCategory.TabIndex = 43;
+            // 
+            // nmProductPrice
+            // 
+            this.nmProductPrice.Location = new System.Drawing.Point(145, 462);
+            this.nmProductPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmProductPrice.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nmProductPrice.Name = "nmProductPrice";
+            this.nmProductPrice.Size = new System.Drawing.Size(272, 28);
+            this.nmProductPrice.TabIndex = 42;
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(145, 370);
+            this.txtProductName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(271, 28);
+            this.txtProductName.TabIndex = 41;
+            // 
+            // lblProductPrice
+            // 
+            this.lblProductPrice.AutoSize = true;
+            this.lblProductPrice.Location = new System.Drawing.Point(37, 464);
+            this.lblProductPrice.Name = "lblProductPrice";
+            this.lblProductPrice.Size = new System.Drawing.Size(42, 20);
+            this.lblProductPrice.TabIndex = 40;
+            this.lblProductPrice.Text = "Giá:";
+            // 
+            // lblProductCategory
+            // 
+            this.lblProductCategory.AutoSize = true;
+            this.lblProductCategory.Location = new System.Drawing.Point(37, 417);
+            this.lblProductCategory.Name = "lblProductCategory";
+            this.lblProductCategory.Size = new System.Drawing.Size(94, 20);
+            this.lblProductCategory.TabIndex = 39;
+            this.lblProductCategory.Text = "Danh mục:";
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Location = new System.Drawing.Point(37, 370);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(82, 20);
+            this.lblProductName.TabIndex = 38;
+            this.lblProductName.Text = "Tên món:";
+            // 
+            // txtSearchProductName
+            // 
+            this.txtSearchProductName.Location = new System.Drawing.Point(41, 18);
+            this.txtSearchProductName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearchProductName.Name = "txtSearchProductName";
+            this.txtSearchProductName.Size = new System.Drawing.Size(267, 28);
+            this.txtSearchProductName.TabIndex = 37;
+            // 
+            // btnSearchProduct
+            // 
+            this.btnSearchProduct.Location = new System.Drawing.Point(315, 6);
+            this.btnSearchProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchProduct.Name = "btnSearchProduct";
+            this.btnSearchProduct.Size = new System.Drawing.Size(111, 52);
+            this.btnSearchProduct.TabIndex = 36;
+            this.btnSearchProduct.Text = "Tìm";
+            this.btnSearchProduct.UseVisualStyleBackColor = true;
+            this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click_1);
+            // 
             // TabCategory
             // 
             this.TabCategory.Controls.Add(this.panel3);
@@ -708,7 +932,7 @@ namespace CoffeeApp.GUI.Main
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(63, 161);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 17);
+            this.label3.Size = new System.Drawing.Size(55, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "Mô tả";
             // 
@@ -717,7 +941,7 @@ namespace CoffeeApp.GUI.Main
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(63, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 17);
+            this.label2.Size = new System.Drawing.Size(45, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Loại";
             // 
@@ -726,7 +950,7 @@ namespace CoffeeApp.GUI.Main
             this.lblID.AutoSize = true;
             this.lblID.Location = new System.Drawing.Point(63, 49);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(25, 17);
+            this.lblID.Size = new System.Drawing.Size(29, 20);
             this.lblID.TabIndex = 0;
             this.lblID.Text = "ID";
             // 
@@ -784,7 +1008,7 @@ namespace CoffeeApp.GUI.Main
             this.rdNu.Location = new System.Drawing.Point(257, 178);
             this.rdNu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdNu.Name = "rdNu";
-            this.rdNu.Size = new System.Drawing.Size(46, 21);
+            this.rdNu.Size = new System.Drawing.Size(54, 24);
             this.rdNu.TabIndex = 5;
             this.rdNu.TabStop = true;
             this.rdNu.Text = "Nữ";
@@ -796,7 +1020,7 @@ namespace CoffeeApp.GUI.Main
             this.rdNam.Location = new System.Drawing.Point(159, 180);
             this.rdNam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdNam.Name = "rdNam";
-            this.rdNam.Size = new System.Drawing.Size(56, 21);
+            this.rdNam.Size = new System.Drawing.Size(67, 24);
             this.rdNam.TabIndex = 5;
             this.rdNam.TabStop = true;
             this.rdNam.Text = "Nam";
@@ -892,7 +1116,7 @@ namespace CoffeeApp.GUI.Main
             this.lblRole.AutoSize = true;
             this.lblRole.Location = new System.Drawing.Point(447, 130);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(109, 17);
+            this.lblRole.Size = new System.Drawing.Size(133, 20);
             this.lblRole.TabIndex = 1;
             this.lblRole.Text = "Loại Tài Khoản";
             // 
@@ -901,7 +1125,7 @@ namespace CoffeeApp.GUI.Main
             this.lblPhoneNumber.AutoSize = true;
             this.lblPhoneNumber.Location = new System.Drawing.Point(25, 81);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(100, 17);
+            this.lblPhoneNumber.Size = new System.Drawing.Size(120, 20);
             this.lblPhoneNumber.TabIndex = 1;
             this.lblPhoneNumber.Text = "Số Điện Thoại";
             // 
@@ -910,7 +1134,7 @@ namespace CoffeeApp.GUI.Main
             this.lblFullName.AutoSize = true;
             this.lblFullName.Location = new System.Drawing.Point(25, 26);
             this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(96, 17);
+            this.lblFullName.Size = new System.Drawing.Size(111, 20);
             this.lblFullName.TabIndex = 1;
             this.lblFullName.Text = "Tên Hiển Thị";
             // 
@@ -919,7 +1143,7 @@ namespace CoffeeApp.GUI.Main
             this.lblGender.AutoSize = true;
             this.lblGender.Location = new System.Drawing.Point(25, 182);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(69, 17);
+            this.lblGender.Size = new System.Drawing.Size(84, 20);
             this.lblGender.TabIndex = 1;
             this.lblGender.Text = "Giới Tính";
             // 
@@ -928,7 +1152,7 @@ namespace CoffeeApp.GUI.Main
             this.lblEmail.AutoSize = true;
             this.lblEmail.Location = new System.Drawing.Point(25, 230);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(45, 17);
+            this.lblEmail.Size = new System.Drawing.Size(54, 20);
             this.lblEmail.TabIndex = 1;
             this.lblEmail.Text = "Email";
             // 
@@ -937,7 +1161,7 @@ namespace CoffeeApp.GUI.Main
             this.lblStartDate.AutoSize = true;
             this.lblStartDate.Location = new System.Drawing.Point(447, 182);
             this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(131, 17);
+            this.lblStartDate.Size = new System.Drawing.Size(159, 20);
             this.lblStartDate.TabIndex = 1;
             this.lblStartDate.Text = "Ngày Bắt Đầu Làm";
             // 
@@ -946,7 +1170,7 @@ namespace CoffeeApp.GUI.Main
             this.lblAddress.AutoSize = true;
             this.lblAddress.Location = new System.Drawing.Point(25, 133);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(57, 17);
+            this.lblAddress.Size = new System.Drawing.Size(69, 20);
             this.lblAddress.TabIndex = 1;
             this.lblAddress.Text = "Địa Chỉ";
             // 
@@ -955,7 +1179,7 @@ namespace CoffeeApp.GUI.Main
             this.lblMK.AutoSize = true;
             this.lblMK.Location = new System.Drawing.Point(447, 74);
             this.lblMK.Name = "lblMK";
-            this.lblMK.Size = new System.Drawing.Size(74, 17);
+            this.lblMK.Size = new System.Drawing.Size(89, 20);
             this.lblMK.TabIndex = 1;
             this.lblMK.Text = "Mật Khẩu";
             // 
@@ -964,7 +1188,7 @@ namespace CoffeeApp.GUI.Main
             this.lblAccountName.AutoSize = true;
             this.lblAccountName.Location = new System.Drawing.Point(447, 25);
             this.lblAccountName.Name = "lblAccountName";
-            this.lblAccountName.Size = new System.Drawing.Size(106, 17);
+            this.lblAccountName.Size = new System.Drawing.Size(126, 20);
             this.lblAccountName.TabIndex = 1;
             this.lblAccountName.Text = "Tên Tài Khoản";
             // 

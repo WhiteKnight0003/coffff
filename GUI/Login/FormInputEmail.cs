@@ -51,7 +51,9 @@ namespace CoffeeApp.GUI.Main
             {
                 if (DAO.UserDAO.Instance.checkUserName(username))
                 {
-                    if (DAO.UserDAO.Instance.UpdateUser(username,password,phone, email, txbCodeEmail.Text, "Đã xác thực",roleID,"","","",Imgbase64String))
+                    UserDTO userDTO = DAO.UserDAO.Instance.GetByUserName(username);
+
+                    if (DAO.UserDAO.Instance.UpdateUser(username,password,phone, email, txbCodeEmail.Text, "Đã xác thực",roleID,userDTO.FullName, userDTO.Address, userDTO.Gender,Imgbase64String,int.Parse(userDTO.Workingstatus)))
                     {
                         MessageBox.Show("Tài khoản đã được xác minh -  Nhấn Ok để quay về trang đăng nhập ");                      
                     }
@@ -64,7 +66,7 @@ namespace CoffeeApp.GUI.Main
                 }
                 else
                 {
-                    if(DAO.UserDAO.Instance.InsertUser( username, password, phone, email, txbCodeEmail.Text, "Đã xác thực",2, "", "", "", Imgbase64String))
+                    if(DAO.UserDAO.Instance.InsertUser( username, password, phone, email, txbCodeEmail.Text, "Đã xác thực",2, "", "", "", Imgbase64String,1))
                     {
                         MessageBox.Show("Đăng kí tài khoản thành công - nhấn ok để về trang đăng nhập");
                         this.Close();
@@ -86,7 +88,7 @@ namespace CoffeeApp.GUI.Main
         {
             if (!DAO.UserDAO.Instance.checkUserName(username))
             {
-                if (DAO.UserDAO.Instance.InsertUser(username, password, phone, email, "", "Chưa xác thực", 2, "", "", "", Imgbase64String))
+                if (DAO.UserDAO.Instance.InsertUser(username, password, phone, email, "", "Chưa xác thực", 2, "", "", "", Imgbase64String,1))
                 {
                     MessageBox.Show("Tài khoản đã được đăng kí nhưng chưa được xác minh - nhấn oke để về trang đăng nhập");
                     this.Close();

@@ -34,7 +34,6 @@ namespace CoffeeApp.DAO
 
         public void DisplayPage(int pageNumber, int pageSize, int currentPage, DataGridView dataGridView, Label lblPageNumber)
         {
-            // Tính toán Offset
             int offset = (pageNumber - 1) * pageSize;
 
             // Câu truy vấn SQL có sử dụng OFFSET và FETCH

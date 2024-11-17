@@ -85,3 +85,35 @@ BEGIN
     WHERE DateCheckOut >= DATEFROMPARTS(@year, 1, 1)
     AND DateCheckOut < DATEFROMPARTS(@year + 1, 1, 1);
 END
+
+
+
+CREATE PROCEDURE USP_GetTotalSoldMonthByProduct
+AS
+BEGIN
+    SELECT p.ID, p.Name, SUM(bd.count) AS TotalSold
+    FROM Product p
+    INNER JOIN BillDetails bd ON p.ID = bd.ProductID
+	inner join Bill b on b.ID = bd.BillID
+	where MONTH(b.DateCheckIn) = MONTH(GETDATE())
+    GROUP BY p.ID, p.Name
+    ORDER BY TotalSold DESC;
+END;
+
+exec USP_GetTotalSoldMonthByProduct
+
+
+
+CREATE PROCEDURE USP_GetTotalSoldMonthAndYearByProduct
+AS
+BEGIN
+    SELECT p.ID, p.Name, SUM(bd.count) AS TotalSold
+    FROM Product p
+    INNER JOIN BillDetails bd ON p.ID = bd.ProductID
+	inner join Bill b on b.ID = bd.BillID
+	where MONTH(b.DateCheckIn) = MONTH(GETDATE()) and YEar(b.DateCheckIn) = YEar(GETDATE())
+    GROUP BY p.ID, p.Name
+    ORDER BY TotalSold DESC;
+END;
+
+exec USP_GetTotalSoldMonthAndYearByProduct
