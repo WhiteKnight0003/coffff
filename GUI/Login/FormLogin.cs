@@ -86,21 +86,28 @@ namespace CoffeeApp
                 DataRow row = data.Rows[0];
                 UserDTO user = new UserDTO(row);
 
-                formMain = new FormMain(this,user.UserName, user.RoleID);
-
-                if (user.CodeEmail == "")
+                if(user.Workingstatus == "1")
                 {
-                    string verificationCode = await EmailService.SendVerificationCodeAsync(user.Email);
-                    this.Hide();
-                    FormInputEmail forminputemail = new FormInputEmail(this, formsignup,user.UserName, user.Password, user.Phone, user.Email,user.RoleID, verificationCode, user.Image); // 0 đại diện cho việc insert
-                    forminputemail.ShowDialog();
+                    formMain = new FormMain(this, user.UserName, user.RoleID);
+
+                    if (user.CodeEmail == "")
+                    {
+                        string verificationCode = await EmailService.SendVerificationCodeAsync(user.Email);
+                        this.Hide();
+                        FormInputEmail forminputemail = new FormInputEmail(this, formsignup, user.UserName, user.Password, user.Phone, user.Email, user.RoleID, verificationCode, user.Image); // 0 đại diện cho việc insert
+                        forminputemail.ShowDialog();
+                    }
+
+                    if (user.CodeEmail != "")
+                    {
+                        this.Hide();
+                        MessageBox.Show("Đăng nhập thành công");
+                        formMain.ShowDialog();
+                    }
                 }
-
-                if(user.CodeEmail != "")
+                else
                 {
-                    this.Hide();
-                    MessageBox.Show("Đăng nhập thành công");
-                    formMain.ShowDialog();
+                    MessageBox.Show("Tài khoản không tồn tại , vui lòng thử lại với tài khoản khác");
                 }
 
             }

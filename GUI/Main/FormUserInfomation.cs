@@ -67,11 +67,11 @@ namespace CoffeeApp.GUI.Main
 
             if (userDTO.Gender.ToLower() == "nam")
             {
-                rbSexMale.Checked = true;
+                rbSexFeMale.Checked = true;
             }
             else if (userDTO.Gender.ToLower() == "nữ")
             {
-                rbSexFeMale.Checked = true;
+                rbSexMale.Checked = true;
             }
         }
 
@@ -88,11 +88,12 @@ namespace CoffeeApp.GUI.Main
             tbInfoEmail.Text = userDTO.Email;
             tbInfoCodeNewEmail.Text = "";
             tbInfoAddress.Text = userDTO.Address;
+
             if(userDTO.Gender.ToLower() == "nam") 
-                rbSexMale.Checked = true;
+                rbSexFeMale.Checked = true;
             else if (userDTO.Gender.ToLower() == "nữ")
             {
-                rbSexFeMale.Checked = true;
+                rbSexMale.Checked = true;
             }
 
             lbValidateAddress.Text = lbValidateEmail.Text = lbValidateFullName.Text = lbValidateGender.Text = lbValidateNewCodeEmail.Text = lbValidatePhone.Text = ""; 
@@ -160,7 +161,7 @@ namespace CoffeeApp.GUI.Main
                         // chưa có đường dẫn ảnh
                         if (MessageBox.Show("Bạn chắc chắn muốn thay đổi thông tin", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                         {
-                            if (DAO.UserDAO.Instance.UpdateUser(username, user.Password, tbInfoPhone.Text, user.Email, user.CodeEmail, user.StatusEmail, user.RoleID, tbInfoFullName.Text, tbInfoAddress.Text, sex, ImageToBase64))
+                            if (DAO.UserDAO.Instance.UpdateUser(username, user.Password, tbInfoPhone.Text, user.Email, user.CodeEmail, user.StatusEmail, user.RoleID, tbInfoFullName.Text, tbInfoAddress.Text, sex, ImageToBase64,1))
                             {
                                 MessageBox.Show("Cập nhật thông tin thành công !");
                             }
@@ -461,7 +462,7 @@ namespace CoffeeApp.GUI.Main
                         // chưa có đường dẫn ảnh
                         if (MessageBox.Show("Bạn chắc chắn muốn thay đổi thông tin", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                         {
-                            if (DAO.UserDAO.Instance.UpdateUser(username, user.Password, tbInfoPhone.Text, tbInfoEmail.Text, verificationCode, "Đã xác thực", user.RoleID, tbInfoFullName.Text, tbInfoAddress.Text, sex, ImageToBase64))
+                            if (DAO.UserDAO.Instance.UpdateUser(username, user.Password, tbInfoPhone.Text, tbInfoEmail.Text, verificationCode, "Đã xác thực", user.RoleID, tbInfoFullName.Text, tbInfoAddress.Text, sex, ImageToBase64, 1))
                             {
                                 MessageBox.Show("Cập nhật thông tin thành công !");
                             }
@@ -1715,5 +1716,6 @@ namespace CoffeeApp.GUI.Main
                 System.Diagnostics.Process.GetCurrentProcess().Kill();
                 Application.Exit();
         }
+
     }
 }

@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace CoffeeApp.DAO
@@ -26,7 +28,7 @@ namespace CoffeeApp.DAO
         {
             List<Product> list = new List<Product>();
 
-            string query = "select * from Product where CategoryID = " + id;
+            string query = "select * from Product where Status = 1 and CategoryID = " + id;
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
@@ -43,7 +45,7 @@ namespace CoffeeApp.DAO
         {
             List<Product> list = new List<Product>();
 
-            string query = "select * from Product";
+            string query = "select * from Product where Status = 1";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
@@ -74,9 +76,9 @@ namespace CoffeeApp.DAO
             return list;
         }
 
-        public bool InsertProduct(string name, int id, float price)
+        public bool InsertProduct(string name, int id, float price, string base64 = "", int status = 1)
         {
-            string query = string.Format("INSERT dbo.Product ( Name, CategoryID, Price )VALUES  ( N'{0}', {1}, {2})", name, id, price);
+            string query = string.Format("INSERT dbo.Product ( Name, CategoryID, Price, Image, Status )VALUES  ( N'{0}', {1}, {2}, N'{3}', {4})", name, id, price, base64, status);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
@@ -90,13 +92,10 @@ namespace CoffeeApp.DAO
             return result > 0;
         }
 
-        public bool DeleteProduct(int idProduct)
+        public bool HideProductWhenDelete(int idProduct)
         {
-            BillInfoDAO.Instance.DeleteBillInfoByProductID(idProduct);
-
-            string query = string.Format("Delete Product where id = {0}", idProduct);
+            string query = string.Format("UPDATE dbo.Product SET Status = 0 WHERE id = {0}", idProduct);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
-
             return result > 0;
         }
 

@@ -26,20 +26,6 @@ namespace CoffeeApp.DAO
         {
             DataProvider.Instance.ExecuteQuery("delete dbo.BillDetails WHERE productID = " + id);
         }
-        public List<BillInfo> GetListBillInfo(int id)
-        {
-            List<BillInfo> listBillInfo = new List<BillInfo>();
-
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.BillDetails WHERE billID = " + id);
-
-            foreach (DataRow item in data.Rows)
-            {
-                BillInfo info = new BillInfo(item);
-                listBillInfo.Add(info);
-            }
-
-            return listBillInfo;
-        }
 
         public void InsertBillInfo(int idBill, int idProduct, int count)
         {
@@ -48,12 +34,14 @@ namespace CoffeeApp.DAO
 
         public void DisplayPage(int pageNumber, int pageSize, int currentPage, DataGridView dataGridView, Label lblPageNumber)
         {
-            // Tính toán Offset
             int offset = (pageNumber - 1) * pageSize;
 
             // Câu truy vấn SQL có sử dụng OFFSET và FETCH
             string query = @"
-            select b.ID, DateCheckIn, DateCheckOut, status, u.UserName as [Tên nhân viên], TableID, TotalBill, discount, payment_name 
+            select b.ID, DateCheckIn, DateCheckOut, 
+            CASE WHEN status = 1 THEN N'Đã thanh toán' ELSE N'Chưa thanh toán' END as [Trạng thái], 
+            u.UserName as [Tên nhân viên], TableID, TotalBill, discount as [Giảm giá], 
+            payment_name as [Phương thức thanh toán]
             from bill b 
             inner join users u on b.UserID = u.ID 
             order by b.ID
@@ -68,6 +56,16 @@ namespace CoffeeApp.DAO
 
             // Gán dữ liệu vào DataGridView
             dataGridView.DataSource = dt;
+
+            // Thêm % vào cho cột giảm giá
+            dataGridView.Columns["Giảm giá"].DefaultCellStyle.Format = "0.## '%'";
+
+            dataGridView.Columns["Trạng thái"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["DateCheckIn"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["Tên nhân viên"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["Giảm giá"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["DateCheckOut"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["Phương thức thanh toán"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             // Tính toán và hiển thị số trang
             int totalPage = TotalPages(pageSize);
@@ -89,17 +87,5 @@ namespace CoffeeApp.DAO
             return (int)Math.Ceiling((double)totalRecords / pageSize);
         }
 
-
-        public bool CheckProductBeforeDelete(int productID)
-        {
-            string query = "select * from billdetails where ProductID = " + productID;
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            if (data.Rows.Count > 0)
-            {
-                return true;
-            }
-            else return false;
-
-        }
     }
 }
