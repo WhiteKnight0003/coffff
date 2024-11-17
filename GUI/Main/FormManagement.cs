@@ -230,7 +230,7 @@ namespace CoffeeApp.GUI.Main
 
 
         #endregion
-        private void LoadListProduct()
+        private void LoadListProduct() // Lấy ra danh sách các sản phẩm và hiện nó lên dtgv
         {
             
             dtgvProduct.DataSource = ProductDAO.Instance.GetListProduct();
@@ -254,7 +254,7 @@ namespace CoffeeApp.GUI.Main
 
         }
 
-        private void ResetButtonProduct()
+        private void ResetButtonProduct() // Đặt lại các phím bấm
         {
             btnAddProduct.Enabled = true;
             btnDeleteProduct.Enabled = false;
@@ -819,7 +819,11 @@ namespace CoffeeApp.GUI.Main
             dtgvProduct.ClearSelection();
             AddProductBinding();
             dtgvProduct.DataBindingComplete += dtgvProduct_DataBindingComplete;
-            ResetProductData();
+            txtProductID.Text = "";
+            pbImageProduct.Image = null;
+            txtProductName.Text = string.Empty;
+            cbbProductCategory.SelectedIndex = -1;
+            nmProductPrice.Value = 0;
             ResetButtonProduct();
         }
 
@@ -838,7 +842,7 @@ namespace CoffeeApp.GUI.Main
                     // Lấy đường dẫn file đã chọn
                     string selectedFilePath = openFileDialog.FileName;
 
-                    // Hiển thị hình ảnh trong PictureBox (giả sử bạn có một PictureBox tên là pictureBoxProduct)
+                    // Hiển thị hình ảnh trong PictureBox
                     pbImageProduct.Image = System.Drawing.Image.FromFile(selectedFilePath);
                     pbImageProduct.Size = new System.Drawing.Size(265, 115);
                     pbImageProduct.SizeMode = PictureBoxSizeMode.Zoom; // Thay đổi kích thước hình ảnh để phù hợp với PictureBox
@@ -875,7 +879,7 @@ namespace CoffeeApp.GUI.Main
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -904,33 +908,6 @@ namespace CoffeeApp.GUI.Main
             catch (Exception ex)
             {
                 return ""; ;
-            }
-        }
-
-        private void SaveProductImageWithoutNotification()
-        {
-            try
-            {
-                int productID = int.Parse(txtProductID.Text);
-                if (pbImageProduct.Image != null)
-                {
-
-                    using (MemoryStream ms = new MemoryStream())
-                    {
-                        pbImageProduct.Image.Save(ms, pbImageProduct.Image.RawFormat);
-                        byte[] imageBytes = ms.ToArray();
-
-                        string base64String = Convert.ToBase64String(imageBytes);
-
-                        ProductDAO.Instance.SaveImageToDatabase(productID, base64String);
-
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -970,7 +947,6 @@ namespace CoffeeApp.GUI.Main
             btnSave.Enabled = true;
             btnAddProduct.Enabled = false;
             btnDeleteProduct.Enabled = false;
-
             txtProductName.Focus();
         }
 
@@ -1075,6 +1051,7 @@ namespace CoffeeApp.GUI.Main
                     }
                     LoadListProduct();
                     AddProductBinding();
+                    ResetProductData();
                 }
                 else
                 {

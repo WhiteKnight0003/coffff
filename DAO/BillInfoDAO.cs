@@ -26,20 +26,6 @@ namespace CoffeeApp.DAO
         {
             DataProvider.Instance.ExecuteQuery("delete dbo.BillDetails WHERE productID = " + id);
         }
-        public List<BillInfo> GetListBillInfo(int id)
-        {
-            List<BillInfo> listBillInfo = new List<BillInfo>();
-
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.BillDetails WHERE billID = " + id);
-
-            foreach (DataRow item in data.Rows)
-            {
-                BillInfo info = new BillInfo(item);
-                listBillInfo.Add(info);
-            }
-
-            return listBillInfo;
-        }
 
         public void InsertBillInfo(int idBill, int idProduct, int count)
         {
@@ -102,17 +88,5 @@ namespace CoffeeApp.DAO
             return (int)Math.Ceiling((double)totalRecords / pageSize);
         }
 
-
-        public bool CheckProductBeforeDelete(int productID)
-        {
-            string query = "select * from billdetails where ProductID = " + productID;
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            if (data.Rows.Count > 0)
-            {
-                return true;
-            }
-            else return false;
-
-        }
     }
 }
