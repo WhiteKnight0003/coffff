@@ -99,36 +99,122 @@ namespace CoffeeApp.GUI.Main
             lbValidateAddress.Text = lbValidateEmail.Text = lbValidateFullName.Text = lbValidateGender.Text = lbValidateNewCodeEmail.Text = lbValidatePhone.Text = ""; 
         }
 
-        
 
+		private void validateEmail(object sender, EventArgs e)
+		{
+			validateData = new ValidateData();
 
-        private async void btnInfoSendCodeNewEmail_Click(object sender, EventArgs e)
-        {
-            validateData = new ValidateData();
-            if (tbInfoEmail.Text == "")
-            {
-                lbValidateEmail.Text = "Email không được để trống !";
-            }
-            else if (!validateData.validateEmail(tbInfoEmail.Text))
-            {
-                lbValidateEmail.Text = "Email không hợp lệ !"; 
-            }
-            else
-            {
-                // chưa có thì gửi
-                if (!DAO.UserDAO.Instance.checkEmail(tbInfoEmail.Text))
-                    verificationCode = await EmailService.SendVerificationCodeAsync(tbInfoEmail.Text);
-                else
+            UserDTO userDTO = DAO.UserDAO.Instance.GetByUserName(username);
+			if (string.IsNullOrWhiteSpace(tbInfoEmail.Text))
+			{
+				errorProvider.SetError(tbInfoEmail, "Email không được để trống !");
+				return;
+			}
+			else if (!validateData.validateEmail(tbInfoEmail.Text))
+			{
+				errorProvider.SetError(tbInfoEmail, "Email không đúng định dạng !");
+				return;
+			}
+			else
+			{
+                if(tbInfoEmail.Text == userDTO.Email)
                 {
-                    lbValidateEmail.Text = "Email đã được xác minh !";
-					lbValidateNewCodeEmail.Text = "";
+					errorProvider.SetError(tbInfoEmail, "Email của bạn đã được xác thực !");
+					return;
 				}
-            }
+                else if (!DAO.UserDAO.Instance.checkEmail(tbInfoEmail.Text))
+                {
+					errorProvider.Clear();
+				}
+				else
+				{
+					errorProvider.SetError(tbInfoEmail, "Email đã được dùng cho tài khoản khác !");
+					return;
+				}
+			}
+		}
+
+
+		private async void btnInfoSendCodeNewEmail_Click(object sender, EventArgs e)
+        {
+            validateEmail(sender,e);
+            if (!DAO.UserDAO.Instance.checkEmail(tbInfoEmail.Text))
+                verificationCode = await EmailService.SendVerificationCodeAsync(tbInfoEmail.Text);
         }
 
-        private void btnUpdateInfoUser_Click(object sender, EventArgs e)
+        private void validateInfo (object sender, EventArgs e)
         {
-            DataTable data = DAO.UserDAO.Instance.QueryUserName(tbInfoUserName.Text);
+			DataTable data = DAO.UserDAO.Instance.QueryUserName(tbInfoUserName.Text);
+			UserDTO user = new UserDTO(data.Rows[0]);
+			if (string.IsNullOrWhiteSpace(tbInfoFullName.Text))
+			{
+				errorProvider.SetError(tbInfoFullName, "Tên đầy đủ không được để trống !");
+				return;
+			}
+			else
+			{
+                errorProvider.Clear();
+			}
+
+			if (string.IsNullOrWhiteSpace(tbInfoPhone.Text))
+			{
+				errorProvider.SetError(tbInfoPhone, "Số điện thoại không được để trống !");
+				return;
+			}
+			else if (!validateData.validatePhone(tbInfoPhone.Text))
+			{
+				errorProvider.SetError(tbInfoPhone, "Số điện thoại không hợp lệ !");
+				return;
+			}
+			else
+			{
+                errorProvider.Clear();
+			}
+
+			if (DAO.UserDAO.Instance.checkEmail(tbInfoEmail.Text) && tbInfoEmail.Text.ToLower() != user.Email.ToLower())
+			{
+				errorProvider.SetError(tbInfoEmail, "Email đã tồn tại !");
+				return;
+			}
+			else if (string.IsNullOrWhiteSpace(tbInfoEmail.Text))
+			{
+				errorProvider.SetError(tbInfoEmail, "Email không được để trống !");
+				return;
+			}
+			else if (!validateData.validateEmail(tbInfoEmail.Text))
+			{
+				errorProvider.SetError(tbInfoEmail, "Email chưa đúng định dạng !");
+				return;
+			}
+			else
+			{
+				errorProvider.Clear();
+			}
+
+			if (tbInfoAddress.Text == "")
+			{
+				errorProvider.SetError(tbInfoAddress, "Địa chỉ không được để trống !");
+				return;				
+			}
+			else
+			{
+                errorProvider.Clear();
+			}
+
+			if (!rbSexMale.Checked && !rbSexFeMale.Checked)
+			{
+				errorProvider.SetError(gbSex, "Giới tính không được để trống !");
+				return;
+			}
+			else
+			{
+				errorProvider.Clear();
+			}
+		}
+
+		private void btnUpdateInfoUser_Click(object sender, EventArgs e)
+        {
+			DataTable data = DAO.UserDAO.Instance.QueryUserName(tbInfoUserName.Text);
             UserDTO user = new UserDTO(data.Rows[0]);
             string sex = "";
             validateData = new ValidateData();
@@ -137,1730 +223,70 @@ namespace CoffeeApp.GUI.Main
             string ImageToBase64 = convertImage.ImageToBase64(showImageUser, System.Drawing.Imaging.ImageFormat.Png);
             // cập nhật khi mọi thông tin đều oke
             // cần gọi thêm ảnh
-            if (tbInfoEmail.Text != "")
+
+            validateInfo(sender, e);
+
+            if(tbInfoEmail.Text.ToLower() == user.Email.ToLower())
             {
-                if(tbInfoEmail.Text.ToLower() == user.Email.ToLower())
-                {
-                    lbValidateEmail.Text = "";
-                    lbValidateNewCodeEmail.Text = "";
-                    if (tbInfoFullName.Text != "" && tbInfoPhone.Text != "" && validateData.validatePhone(tbInfoPhone.Text) && tbInfoAddress.Text != "" && (rbSexMale.Checked || rbSexFeMale.Checked))
-                    {
-                        lbValidateFullName.Text = "";
-                        lbValidatePhone.Text = "";
-                        lbValidateEmail.Text = "";
-                        lbValidateGender.Text = "";
+				if (tbInfoFullName.Text != "" && tbInfoPhone.Text != "" && validateData.validatePhone(tbInfoPhone.Text) && tbInfoAddress.Text != "" && (rbSexMale.Checked || rbSexFeMale.Checked))
+				{
 
-                        if (rbSexMale.Checked)
-                        {
-                            sex = "Nữ";
-                        }
-                        else if (rbSexFeMale.Checked)
-                        {
-                            sex = "Nam";
-                        }
+					if (rbSexMale.Checked)
+					{
+						sex = "Nữ";
+					}
+					else if (rbSexFeMale.Checked)
+					{
+						sex = "Nam";
+					}
 
-                        // chưa có đường dẫn ảnh
-                        if (MessageBox.Show("Bạn chắc chắn muốn thay đổi thông tin", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
-                        {
-                            if (DAO.UserDAO.Instance.UpdateUser(username, user.Password, tbInfoPhone.Text, user.Email, user.CodeEmail, user.StatusEmail, user.RoleID, tbInfoFullName.Text, tbInfoAddress.Text, sex, ImageToBase64,1))
-                            {
-                                MessageBox.Show("Cập nhật thông tin thành công !");
-                            }
-                            else MessageBox.Show("Cập nhật thông tin thất bại !");
-                        }
-                    }
-                    // trường hợp email cũ  nhưng những cái khác sai
-                    else
-                    {
-                        if (tbInfoFullName.Text == "")
-                        {
-                            lbValidateFullName.Text = "Tên đầy đủ không được để trống !";
-                            if (tbInfoPhone.Text == "")
-                            {                              
-                                lbValidatePhone.Text = "Số điện thoại không được để trống !";
-                                if (tbInfoAddress.Text == "")
-                                {
-                                    lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                    if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                    {
-                                        lbValidateGender.Text = "Giới tính không được để trống !";
-                                    }
-                                    else
-                                    {
-                                        lbValidateGender.Text = "";
-                                    }
-                                }
-                                else
-                                {
-                                    lbValidateAddress.Text = "";
-                                    if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                    {
-                                        lbValidateGender.Text = "Giới tính không được để trống !";
-                                    }
-                                    else
-                                    {
-                                        lbValidateGender.Text = "";
-                                    }
-                                }
-                            }
-                            else if (!validateData.validatePhone(tbInfoPhone.Text))
-                            {
-                                lbValidatePhone.Text = "Số điện thoại không hợp lệ !";
-                                if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }                              
-                            }
-                            else
-                            {
-                                lbValidatePhone.Text = "";
-                                if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                            }
-                        }
-                        else
-                        {
-                            lbValidateFullName.Text = "";
-                            if (tbInfoPhone.Text == "")
-                            {
-                                lbValidatePhone.Text = "Số điện thoại không được để trống !";
-                                if (tbInfoCodeNewEmail.Text == "")
-                                {
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                            }
-                            else if (!validateData.validatePhone(tbInfoPhone.Text))
-                            {
-                                lbValidatePhone.Text = "Số điện thoại không hợp lệ !";
-                                if (tbInfoCodeNewEmail.Text == "")
-                                {
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                lbValidatePhone.Text = "";
-                                if (tbInfoCodeNewEmail.Text == "")
-                                {
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                else if (validateData.validateEmail(tbInfoEmail.Text) && !DAO.UserDAO.Instance.checkEmail(tbInfoEmail.Text))
-                {
-                    lbValidateEmail.Text = "";
-                    if (tbInfoFullName.Text != "" && tbInfoPhone.Text != "" && validateData.validatePhone(tbInfoPhone.Text) && tbInfoAddress.Text != "" && (rbSexMale.Checked || rbSexFeMale.Checked) && tbInfoCodeNewEmail.Text!="" && tbInfoCodeNewEmail.Text == verificationCode)
-                    {
-                        lbValidateFullName.Text = "";
-                        lbValidatePhone.Text = "";
-                        lbValidateEmail.Text = "";
-                        lbValidateNewCodeEmail.Text = "";
-                        lbValidateGender.Text = "";
-
-                        if (rbSexMale.Checked)
-                        {
-                            sex = "Nữ";
-                        }
-                        else if (rbSexFeMale.Checked)
-                        {
-                            sex = "Nam";
-                        }
-
-                        // chưa có đường dẫn ảnh
-                        if (MessageBox.Show("Bạn chắc chắn muốn thay đổi thông tin", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
-                        {
-                            if (DAO.UserDAO.Instance.UpdateUser(username, user.Password, tbInfoPhone.Text, tbInfoEmail.Text, verificationCode, "Đã xác thực", user.RoleID, tbInfoFullName.Text, tbInfoAddress.Text, sex, ImageToBase64, 1))
-                            {
-                                MessageBox.Show("Cập nhật thông tin thành công !");
-                            }
-                            else MessageBox.Show("Cập nhật thông tin thất bại !");
-                        }
-                    }
-
-                    // trường hợp email mới  nhưng những cái khác sai
-                    else
-                    {
-                        if (tbInfoFullName.Text == "")
-                        {
-                            lbValidateFullName.Text = "Tên đầy đủ không được để trống !";
-                            if (tbInfoPhone.Text == "")
-                            {
-                                lbValidatePhone.Text = "Số điện thoại không được để trống !";
-                                if (tbInfoCodeNewEmail.Text == "")
-                                {
-                                    lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                                else if(tbInfoCodeNewEmail.Text == verificationCode)
-                                {
-                                    lbValidateNewCodeEmail.Text = "";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    lbValidateNewCodeEmail.Text = "Mã code không đúng !";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                            }
-                            else if (!validateData.validatePhone(tbInfoPhone.Text))
-                            {
-                                lbValidatePhone.Text = "Số điện thoại không hợp lệ !";
-                                if (tbInfoCodeNewEmail.Text == "")
-                                {
-                                    lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                                else if (tbInfoCodeNewEmail.Text == verificationCode)
-                                {
-                                    lbValidateNewCodeEmail.Text = "";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    lbValidateNewCodeEmail.Text = "Mã code không đúng !";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                lbValidatePhone.Text = "";
-                                if (tbInfoCodeNewEmail.Text == "")
-                                {
-                                    lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                                else if (tbInfoCodeNewEmail.Text == verificationCode)
-                                {
-                                    lbValidateNewCodeEmail.Text = "";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    lbValidateNewCodeEmail.Text = "Mã code không đúng !";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        else
-                        {
-                            lbValidateFullName.Text = "";
-                            if (tbInfoPhone.Text == "")
-                            {
-                                lbValidatePhone.Text = "Số điện thoại không được để trống !";
-                                if (tbInfoCodeNewEmail.Text == "")
-                                {
-                                    lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                            }
-                            else if (!validateData.validatePhone(tbInfoPhone.Text))
-                            {
-                                lbValidatePhone.Text = "Số điện thoại không hợp lệ !";
-                                if (tbInfoCodeNewEmail.Text == "")
-                                {
-                                    lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                lbValidatePhone.Text = "";
-                                if (tbInfoCodeNewEmail.Text == "")
-                                {
-                                    lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-                                    if (tbInfoAddress.Text == "")
-                                    {
-                                        lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lbValidateAddress.Text = "";
-                                        if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                        {
-                                            lbValidateGender.Text = "Giới tính không được để trống !";
-                                        }
-                                        else
-                                        {
-                                            lbValidateGender.Text = "";
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                
-                //  email khoong hợp lệ
-                else
-                {
-                    if (!validateData.validateEmail(tbInfoEmail.Text))
-                    {
-						lbValidateEmail.Text = "Email không hợp lệ !";
-						if (tbInfoFullName.Text == "")
+					// chưa có đường dẫn ảnh
+					if (MessageBox.Show("Bạn chắc chắn muốn thay đổi thông tin", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+					{
+						if (DAO.UserDAO.Instance.UpdateUser(username, user.Password, tbInfoPhone.Text, user.Email, user.CodeEmail, user.StatusEmail, user.RoleID, tbInfoFullName.Text, tbInfoAddress.Text, sex, ImageToBase64, 1))
 						{
-							lbValidateFullName.Text = "Tên đầy đủ không được để trống !";
-							if (tbInfoPhone.Text == "")
-							{
-								lbValidatePhone.Text = "Số điện thoại không được để trống !";
-								if (tbInfoCodeNewEmail.Text == "")
-								{
-									lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-									if (tbInfoAddress.Text == "")
-									{
-										lbValidateAddress.Text = "Địa chỉ không được để trống !";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-									else
-									{
-										lbValidateAddress.Text = "";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-								}
-								else
-								{
-									lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-									if (tbInfoAddress.Text == "")
-									{
-										lbValidateAddress.Text = "Địa chỉ không được để trống !";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-									else
-									{
-										lbValidateAddress.Text = "";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-								}
-							}
-							else if (!validateData.validatePhone(tbInfoPhone.Text))
-							{
-								lbValidatePhone.Text = "Số điện thoại không hợp lệ !";
-								if (tbInfoCodeNewEmail.Text == "")
-								{
-									lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-									if (tbInfoAddress.Text == "")
-									{
-										lbValidateAddress.Text = "Địa chỉ không được để trống !";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-									else
-									{
-										lbValidateAddress.Text = "";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-								}
-								else
-								{
-									lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-									if (tbInfoAddress.Text == "")
-									{
-										lbValidateAddress.Text = "Địa chỉ không được để trống !";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-									else
-									{
-										lbValidateAddress.Text = "";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-								}
-							}
-							else
-							{
-								lbValidatePhone.Text = "";
-								if (tbInfoCodeNewEmail.Text == "")
-								{
-									lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-									if (tbInfoAddress.Text == "")
-									{
-										lbValidateAddress.Text = "Địa chỉ không được để trống !";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-									else
-									{
-										lbValidateAddress.Text = "";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-								}
-								else
-								{
-									lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-									if (tbInfoAddress.Text == "")
-									{
-										lbValidateAddress.Text = "Địa chỉ không được để trống !";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-									else
-									{
-										lbValidateAddress.Text = "";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-								}
-							}
+							MessageBox.Show("Cập nhật thông tin thành công !");
 						}
-						else
+						else MessageBox.Show("Cập nhật thông tin thất bại !");
+					}
+				}
+			}
+            else
+            {
+				if (string.IsNullOrWhiteSpace(tbInfoCodeNewEmail.Text))
+				{
+					errorProvider.SetError(tbInfoCodeNewEmail, "Mã xác thực thay đổi email không được để trống !");
+					return;
+				}
+				else
+				{
+					errorProvider.Clear();
+					if (validateData.validateEmail(tbInfoEmail.Text) && !DAO.UserDAO.Instance.checkEmail(tbInfoEmail.Text) && tbInfoFullName.Text != "" && tbInfoPhone.Text != "" && validateData.validatePhone(tbInfoPhone.Text) && tbInfoAddress.Text != "" && (rbSexMale.Checked || rbSexFeMale.Checked))
+					{
+
+						if (rbSexMale.Checked)
 						{
-							lbValidateFullName.Text = "";
-							if (tbInfoPhone.Text == "")
+							sex = "Nữ";
+						}
+						else if (rbSexFeMale.Checked)
+						{
+							sex = "Nam";
+						}
+
+						// chưa có đường dẫn ảnh
+						// chưa có đường dẫn ảnh
+						if (MessageBox.Show("Bạn chắc chắn muốn thay đổi thông tin", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+						{
+							if (DAO.UserDAO.Instance.UpdateUser(username, user.Password, tbInfoPhone.Text, tbInfoEmail.Text, verificationCode, "Đã xác thực", user.RoleID, tbInfoFullName.Text, tbInfoAddress.Text, sex, ImageToBase64, 1))
 							{
-								lbValidatePhone.Text = "Số điện thoại không được để trống !";
-								if (tbInfoCodeNewEmail.Text == "")
-								{
-									lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-									if (tbInfoAddress.Text == "")
-									{
-										lbValidateAddress.Text = "Địa chỉ không được để trống !";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-									else
-									{
-										lbValidateAddress.Text = "";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-								}
-								else
-								{
-									lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-									if (tbInfoAddress.Text == "")
-									{
-										lbValidateAddress.Text = "Địa chỉ không được để trống !";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-									else
-									{
-										lbValidateAddress.Text = "";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-								}
+								MessageBox.Show("Cập nhật thông tin thành công !");
 							}
-							else if (!validateData.validatePhone(tbInfoPhone.Text))
-							{
-								lbValidatePhone.Text = "Số điện thoại không hợp lệ !";
-								if (tbInfoCodeNewEmail.Text == "")
-								{
-									lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-									if (tbInfoAddress.Text == "")
-									{
-										lbValidateAddress.Text = "Địa chỉ không được để trống !";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-									else
-									{
-										lbValidateAddress.Text = "";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-								}
-								else
-								{
-									lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-									if (tbInfoAddress.Text == "")
-									{
-										lbValidateAddress.Text = "Địa chỉ không được để trống !";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-									else
-									{
-										lbValidateAddress.Text = "";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-								}
-							}
-							else
-							{
-								lbValidatePhone.Text = "";
-								if (tbInfoCodeNewEmail.Text == "")
-								{
-									lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-									if (tbInfoAddress.Text == "")
-									{
-										lbValidateAddress.Text = "Địa chỉ không được để trống !";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-									else
-									{
-										lbValidateAddress.Text = "";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-								}
-								else
-								{
-									lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-									if (tbInfoAddress.Text == "")
-									{
-										lbValidateAddress.Text = "Địa chỉ không được để trống !";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-									else
-									{
-										lbValidateAddress.Text = "";
-										if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-										{
-											lbValidateGender.Text = "Giới tính không được để trống !";
-										}
-										else
-										{
-											lbValidateGender.Text = "";
-										}
-									}
-								}
-							}
+							else MessageBox.Show("Cập nhật thông tin thất bại !");
 						}
 					}
-                    else if (DAO.UserDAO.Instance.checkEmail(tbInfoEmail.Text))
-                    {
-						lbValidateEmail.Text = "Email đã được sử dụng bởi người dùng khác !";
-                        lbValidateNewCodeEmail.Text = "";
-						if (tbInfoFullName.Text == "")
-						{
-							lbValidateFullName.Text = "Tên đầy đủ không được để trống !";
-							if (tbInfoPhone.Text == "")
-							{
-								lbValidatePhone.Text = "Số điện thoại không được để trống !";
-								if (tbInfoAddress.Text == "")
-								{
-									lbValidateAddress.Text = "Địa chỉ không được để trống !";
-									if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-									{
-										lbValidateGender.Text = "Giới tính không được để trống !";
-									}
-									else
-									{
-										lbValidateGender.Text = "";
-									}
-								}
-								else
-								{
-									lbValidateAddress.Text = "";
-									if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-									{
-										lbValidateGender.Text = "Giới tính không được để trống !";
-									}
-									else
-									{
-										lbValidateGender.Text = "";
-									}
-								}
-							}
-							else if (!validateData.validatePhone(tbInfoPhone.Text))
-							{
-								lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-								if (tbInfoAddress.Text == "")
-								{
-									lbValidateAddress.Text = "Địa chỉ không được để trống !";
-									if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-									{
-										lbValidateGender.Text = "Giới tính không được để trống !";
-									}
-									else
-									{
-										lbValidateGender.Text = "";
-									}
-								}
-								else
-								{
-									lbValidateAddress.Text = "";
-									if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-									{
-										lbValidateGender.Text = "Giới tính không được để trống !";
-									}
-									else
-									{
-										lbValidateGender.Text = "";
-									}
-								}
-							}
-							else
-							{
-								lbValidatePhone.Text = "";
-								if (tbInfoAddress.Text == "")
-								{
-									lbValidateAddress.Text = "Địa chỉ không được để trống !";
-									if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-									{
-										lbValidateGender.Text = "Giới tính không được để trống !";
-									}
-									else
-									{
-										lbValidateGender.Text = "";
-									}
-								}
-								else
-								{
-									lbValidateAddress.Text = "";
-									if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-									{
-										lbValidateGender.Text = "Giới tính không được để trống !";
-									}
-									else
-									{
-										lbValidateGender.Text = "";
-									}
-								}
-							}
-						}
-						else
-						{
-							lbValidateFullName.Text = "";
-							if (tbInfoPhone.Text == "")
-							{
-								lbValidatePhone.Text = "Số điện thoại không được để trống !";
-								if (tbInfoAddress.Text == "")
-								{
-									lbValidateAddress.Text = "Địa chỉ không được để trống !";
-									if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-									{
-										lbValidateGender.Text = "Giới tính không được để trống !";
-									}
-									else
-									{
-										lbValidateGender.Text = "";
-									}
-								}
-								else
-								{
-									lbValidateAddress.Text = "";
-									if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-									{
-										lbValidateGender.Text = "Giới tính không được để trống !";
-									}
-									else
-									{
-										lbValidateGender.Text = "";
-									}
-								}
-							}
-							else if (!validateData.validatePhone(tbInfoPhone.Text))
-							{
-								lbValidatePhone.Text = "Số điện thoại không hợp lệ !";
-								if (tbInfoAddress.Text == "")
-								{
-									lbValidateAddress.Text = "Địa chỉ không được để trống !";
-									if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-									{
-										lbValidateGender.Text = "Giới tính không được để trống !";
-									}
-									else
-									{
-										lbValidateGender.Text = "";
-									}
-								}
-								else
-								{
-									lbValidateAddress.Text = "";
-									if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-									{
-										lbValidateGender.Text = "Giới tính không được để trống !";
-									}
-									else
-									{
-										lbValidateGender.Text = "";
-									}
-								}
-							}
-							else
-							{
-								lbValidatePhone.Text = "";
-								if (tbInfoAddress.Text == "")
-								{
-									lbValidateAddress.Text = "Địa chỉ không được để trống !";
-									if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-									{
-										lbValidateGender.Text = "Giới tính không được để trống !";
-									}
-									else
-									{
-										lbValidateGender.Text = "";
-									}
-								}
-								else
-								{
-									lbValidateAddress.Text = "";
-									if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-									{
-										lbValidateGender.Text = "Giới tính không được để trống !";
-									}
-									else
-									{
-										lbValidateGender.Text = "";
-									}
-								}
-							}
-						}
-					}                 
-                }
-            }
-            else 
-            {
-                lbValidateEmail.Text = "Email không được để trống !";
-                if (tbInfoFullName.Text == "")
-                {
-                    lbValidateFullName.Text = "Tên đầy đủ không được để trống !";
-                    if (tbInfoPhone.Text == "")
-                    {
-                        lbValidatePhone.Text = "Số điện thoại không được để trống !";
-                        if (tbInfoCodeNewEmail.Text == "")
-                        {
-                            lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-                            if (tbInfoAddress.Text == "")
-                            {
-                                lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                            else
-                            {
-                                lbValidateAddress.Text = "";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                        }
-                        else
-                        {
-                            lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-                            if (tbInfoAddress.Text == "")
-                            {
-                                lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                            else
-                            {
-                                lbValidateAddress.Text = "";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                        }
-                    }
-                    else if (!validateData.validatePhone(tbInfoPhone.Text))
-                    {
-                        lbValidatePhone.Text = "Số điện thoại không hợp lệ !";
-                        if (tbInfoCodeNewEmail.Text == "")
-                        {
-                            lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-                            if (tbInfoAddress.Text == "")
-                            {
-                                lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                            else
-                            {
-                                lbValidateAddress.Text = "";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                        }
-                        else
-                        {
-                            lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-                            if (tbInfoAddress.Text == "")
-                            {
-                                lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                            else
-                            {
-                                lbValidateAddress.Text = "";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        lbValidatePhone.Text = "";
-                        if (tbInfoCodeNewEmail.Text == "")
-                        {
-                            lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-                            if (tbInfoAddress.Text == "")
-                            {
-                                lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                            else
-                            {
-                                lbValidateAddress.Text = "";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                        }
-                        else
-                        {
-                            lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-                            if (tbInfoAddress.Text == "")
-                            {
-                                lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                            else
-                            {
-                                lbValidateAddress.Text = "";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    lbValidateFullName.Text = "";
-                    if (tbInfoPhone.Text == "")
-                    {
-                        lbValidatePhone.Text = "Số điện thoại không được để trống !";
-                        if (tbInfoCodeNewEmail.Text == "")
-                        {
-                            lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-                            if (tbInfoAddress.Text == "")
-                            {
-                                lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                            else
-                            {
-                                lbValidateAddress.Text = "";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                        }
-                        else
-                        {
-                            lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-                            if (tbInfoAddress.Text == "")
-                            {
-                                lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                            else
-                            {
-                                lbValidateAddress.Text = "";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                        }
-                    }
-                    else if (!validateData.validatePhone(tbInfoPhone.Text))
-                    {
-                        lbValidatePhone.Text = "Số điện thoại không hợp lệ !";
-                        if (tbInfoCodeNewEmail.Text == "")
-                        {
-                            lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-                            if (tbInfoAddress.Text == "")
-                            {
-                                lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                            else
-                            {
-                                lbValidateAddress.Text = "";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                        }
-                        else
-                        {
-                            lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-                            if (tbInfoAddress.Text == "")
-                            {
-                                lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                            else
-                            {
-                                lbValidateAddress.Text = "";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        lbValidatePhone.Text = "";
-                        if (tbInfoCodeNewEmail.Text == "")
-                        {
-                            lbValidateNewCodeEmail.Text = "Mã code không được để trống !";
-                            if (tbInfoAddress.Text == "")
-                            {
-                                lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                            else
-                            {
-                                lbValidateAddress.Text = "";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                        }
-                        else
-                        {
-                            lbValidateNewCodeEmail.Text = "Mã code không hợp lệ !";
-                            if (tbInfoAddress.Text == "")
-                            {
-                                lbValidateAddress.Text = "Địa chỉ không được để trống !";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                            else
-                            {
-                                lbValidateAddress.Text = "";
-                                if (!rbSexMale.Checked && !rbSexFeMale.Checked)
-                                {
-                                    lbValidateGender.Text = "Giới tính không được để trống !";
-                                }
-                                else
-                                {
-                                    lbValidateGender.Text = "";
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
+				}			
+			}
+		}
         #endregion
 
         private void btnChooseImageUser_Click(object sender, EventArgs e)
