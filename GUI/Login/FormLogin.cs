@@ -25,6 +25,7 @@ namespace CoffeeApp
         private FormSignUp formsignup;
         private FormMain formMain;
         private ConvertImage convertImage;
+
         public FormLogin()
         {
             InitializeComponent();
@@ -154,5 +155,59 @@ namespace CoffeeApp
         {
             tbLoginPassword.Text = s;
         }
-    }
+
+		private async void btnLogin_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar == (char)Keys.Enter)
+			{
+				e.Handled = true; // Ngăn chặn tiếng "beep"
+				string username = tbLoginName.Text.Trim();
+				string password = tbLoginPassword.Text.Trim();
+
+				// Console.WriteLine(username+ "   "+ password);
+				//Console.WriteLine(DAO.AccountDAO.Instance.HashPassword("123"));
+
+				if (DAO.UserDAO.Instance.checkLogin(username, password))
+				{
+
+					DataTable data = DAO.UserDAO.Instance.QueryRoleUser(username);
+					DataRow row = data.Rows[0];
+					UserDTO user = new UserDTO(row);
+
+					if (user.Workingstatus == "1")
+					{
+						formMain = new FormMain(this, user.UserName, user.RoleID);
+
+						if (user.CodeEmail == "")
+						{
+							string verificationCode = await EmailService.SendVerificationCodeAsync(user.Email);
+							this.Hide();
+							FormInputEmail forminputemail = new FormInputEmail(this, formsignup, user.UserName, user.Password, user.Phone, user.Email, user.RoleID, verificationCode, user.Image); // 0 đại diện cho việc insert
+							forminputemail.ShowDialog();
+						}
+
+						if (user.CodeEmail != "")
+						{
+							this.Hide();
+							MessageBox.Show("Đăng nhập thành công");
+							formMain.ShowDialog();
+						}
+					}
+					else
+					{
+						MessageBox.Show("Tài khoản không tồn tại , vui lòng thử lại với tài khoản khác");
+					}
+
+				}
+				else
+				{
+					MessageBox.Show("Tên đăng nhập hoặc số điện thoại hoặc mật khẩu sai !");
+				}
+
+			}
+
+
+
+		}
+	}
 }
