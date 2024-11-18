@@ -76,9 +76,9 @@ namespace CoffeeApp.DAO
             return list;
         }
 
-        public bool InsertProduct(string name, int id, float price, string base64 = "")
+        public bool InsertProduct(string name, int id, float price, string base64 = "", int status = 1)
         {
-            string query = string.Format("INSERT dbo.Product ( Name, CategoryID, Price, Image )VALUES  ( N'{0}', {1}, {2}, N'{3}')", name, id, price, base64);
+            string query = string.Format("INSERT dbo.Product ( Name, CategoryID, Price, Image, Status )VALUES  ( N'{0}', {1}, {2}, N'{3}', {4})", name, id, price, base64, status);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
@@ -96,16 +96,6 @@ namespace CoffeeApp.DAO
         {
             string query = string.Format("UPDATE dbo.Product SET Status = 0 WHERE id = {0}", idProduct);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
-            return result > 0;
-        }
-
-        public bool DeleteProduct(int idProduct)
-        {
-            BillInfoDAO.Instance.DeleteBillInfoByProductID(idProduct);
-
-            string query = string.Format("Delete Product where id = {0}", idProduct);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
-
             return result > 0;
         }
 
