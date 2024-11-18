@@ -57,7 +57,7 @@ BEGIN
 	AND t.id = b.TableID
 END
 
-Create PROC [dbo].[USP_InsertBillInfo]
+alter PROC [dbo].[USP_InsertBillInfo]
 @idBill INT, @idFood INT, @count INT
 AS
 BEGIN
@@ -73,7 +73,7 @@ BEGIN
 	BEGIN
 		DECLARE @newCount INT = @foodCount + @count
 		IF (@newCount > 0)
-			UPDATE dbo.billdetails	SET count = @foodCount + @count WHERE ProductID = @idFood
+			UPDATE dbo.billdetails	SET count = @foodCount + @count WHERE ProductID = @idFood and BillID = @idBill
 		ELSE
 			DELETE dbo.billdetails WHERE BillID = @idBill AND ProductID = @idFood
 	END
@@ -106,6 +106,7 @@ AS BEGIN
 	PRINT @idSeconrdBill
 	PRINT '-----------'
 	
+	-- bàn 1 trống, bàn 2 đã có người(thêm hóa đơn của bàn 1)
 	IF (@idFirstBill IS NULL)
 	BEGIN
 		PRINT '0000001'
@@ -122,17 +123,20 @@ AS BEGIN
 		          0,  -- status - int
 				  @userID
 		        )
-		        
+		
+		-- lấy ra ID mới của hóa đơn sau khi thêm hóa đơn của bàn 1
 		SELECT @idFirstBill = MAX(id) FROM dbo.Bill WHERE TableID = @idTable1 AND status = 0
 		
 	END
 	
+	-- check xem ở bảng billdetails đã có các thành phần món ăn sau khi chuyển từ bàn trống qua bàn có người chưa
 	SELECT @isFirstTablEmty = COUNT(*) FROM dbo.billdetails WHERE BillID = @idFirstBill
 	
 	PRINT @idFirstBill
 	PRINT @idSeconrdBill
 	PRINT '-----------'
 	
+	-- bàn 1 có người, bàn 2 trống(thêm hóa đơn của bàn 2)
 	IF (@idSeconrdBill IS NULL)
 	BEGIN
 		PRINT '0000002'
@@ -149,16 +153,25 @@ AS BEGIN
 		          0,  -- status - int
 				  @userID
 		        )
+
+		-- lấy ra hóa đơn mới sau khi thêm hóa đơn của bàn 2
 		SELECT @idSeconrdBill = MAX(id) FROM dbo.Bill WHERE TableID = @idTable2 AND status = 0
 		
 	END
 	
+	-- check xem ở bảng billdetails đã có các thành phần món ăn sau khi chuyển từ bàn có người qua bàn trống chưa
 	SELECT @isSecondTablEmty = COUNT(*) FROM dbo.billdetails WHERE BillID = @idSeconrdBill
 	
 	PRINT @idFirstBill
 	PRINT @idSeconrdBill
 	PRINT '-----------'
 
+	-- Chuyển đổi hóa đơn chi tiết của từng bàn với nhau:
+	-- 4 trường hợp: 
+	-- + b1 b2 có người
+	-- + b1 trống b2 có người
+	-- + b1 có người b2 trống
+	-- + b1 b2 trống
 	SELECT id INTO IDBillInfoTable FROM dbo.billdetails WHERE BillID = @idSeconrdBill
 	
 	UPDATE dbo.billdetails SET BillID = @idSeconrdBill WHERE BillID = @idFirstBill
@@ -167,15 +180,21 @@ AS BEGIN
 	
 	DROP TABLE IDBillInfoTable
 	
+	-- bàn 1 ở trong bảng billdetails đã có các thành phần món ăn sau khi chuyển từ bàn trống qua bàn có người chưa
 	IF (@isFirstTablEmty = 0)
 	Begin
+		-- chuyển bàn 1 thành có người, bàn 2 trống
 		UPDATE dbo.tablee SET status = N'Trống' WHERE id = @idTable2
+		-- xóa đi hóa đơn cũ của bàn có người ban đầu
 		delete from bill where TableID = @idTable2 and status = 0 and id = @idSeconrdBill
 	End
 		
+	-- bàn 2 ở trong bảng billdetails đã có các thành phần món ăn sau khi chuyển từ bàn có người qua bàn trống chưa
 	IF (@isSecondTablEmty= 0)
 	Begin
+		-- chuyển bàn 1 thành trống, bàn 2 thành có người
 		UPDATE dbo.tablee SET status = N'Trống' WHERE id = @idTable1
+		-- xóa đi hóa đơn cũ của bàn có người ban đầu
 		delete from bill where TableID = @idTable1 and status = 0 and id = @idFirstBill
 	End
 END
@@ -220,6 +239,7 @@ begin
 	declare @count int
 	select @count = COUNT(*) from billdetails where BillID = @idBill
 
+	-- cập nhật lại trạng thái bàn 
 	if(@count > 0)
 	begin
 		print @idTable

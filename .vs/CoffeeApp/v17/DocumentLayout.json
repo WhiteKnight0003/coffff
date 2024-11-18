@@ -1,62 +1,102 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\",
+  "WorkspaceRootPath": "D:\\Document\\C#-Desktop\\coffff\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|e:\\utc\\tl-gtvl-cua-toi\\n\u0103m 3 ki 1\\lttq\\btl\\gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|d:\\document\\c#-desktop\\coffff\\gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\dao\\billdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\billdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\gui\\main\\formmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formuserinfomation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formuserinfomation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\gui\\login\\formforgetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\formforgetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\login\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\gui\\login\\formforgetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\formforgetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\gui\\login\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\login\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\gui\\login\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formmanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\gui\\login\\formsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\formsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\gui\\login\\formsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\login\\formsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\dao\\billinfodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\util\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:util\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\gui\\main\\formreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\dto\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dto\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\dao\\billdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\billdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\dao\\billinfodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\billinfodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\report.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\report.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\dto\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dto\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\gui\\main\\formreport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formreport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\dao\\categorydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dao\\categorydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\dto\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dto\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\dto\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dto\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\dto\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dto\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\Document\\C#-Desktop\\coffff\\dto\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:dto\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -65,187 +105,316 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 237,
-          "SelectedChildIndex": 7,
+          "DockedHeight": 236,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormMain.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Main\\FormMain.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormMain.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Main\\FormMain.cs",
+              "RelativeToolTip": "GUI\\Main\\FormMain.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAwwHMAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T15:47:40.455Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FormManagement.cs [Design]",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormManagement.cs",
-              "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormManagement.cs [Design]",
-              "RelativeToolTip": "GUI\\Main\\FormManagement.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T07:27:42.938Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormMain.cs",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormMain.cs",
-              "RelativeDocumentMoniker": "GUI\\Main\\FormMain.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormMain.cs",
-              "RelativeToolTip": "GUI\\Main\\FormMain.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAA7wEMAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T06:03:08.797Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormMain.cs [Design]",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormMain.cs",
-              "RelativeDocumentMoniker": "GUI\\Main\\FormMain.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormMain.cs [Design]",
-              "RelativeToolTip": "GUI\\Main\\FormMain.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T00:57:29.294Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BillDAO.cs",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\BillDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\BillDAO.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\BillDAO.cs",
-              "RelativeToolTip": "DAO\\BillDAO.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAuwE8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T07:11:17.389Z"
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "DataProvider.cs",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\DataProvider.cs",
-              "RelativeDocumentMoniker": "DAO\\DataProvider.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\DataProvider.cs",
-              "RelativeToolTip": "DAO\\DataProvider.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAwwBwAAAAIAAAAAAAAAA==",
+              "Title": "FormForgetPassword.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Login\\FormForgetPassword.cs",
+              "RelativeDocumentMoniker": "GUI\\Login\\FormForgetPassword.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Login\\FormForgetPassword.cs",
+              "RelativeToolTip": "GUI\\Login\\FormForgetPassword.cs",
+              "ViewState": "AgIAAAkBAAAAAAAAAAAiwB0BAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T01:22:26.604Z"
+              "WhenOpened": "2024-11-18T06:24:40.517Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "FormForgetPassword.cs [Design]",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Login\\FormForgetPassword.cs",
+              "RelativeDocumentMoniker": "GUI\\Login\\FormForgetPassword.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Login\\FormForgetPassword.cs [Design]",
+              "RelativeToolTip": "GUI\\Login\\FormForgetPassword.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-18T06:24:24.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "FormMain.Designer.cs",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormMain.Designer.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Main\\FormMain.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\Main\\FormMain.Designer.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormMain.Designer.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Main\\FormMain.Designer.cs",
               "RelativeToolTip": "GUI\\Main\\FormMain.Designer.cs",
-              "ViewState": "AgIAALQAAAAAAAAAAAAwwMwAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAADwvxkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T12:58:16.596Z",
+              "WhenOpened": "2024-11-18T06:18:19.767Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T06:09:57.726Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "FormLogin.cs [Design]",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Login\\FormLogin.cs",
-              "RelativeDocumentMoniker": "GUI\\Login\\FormLogin.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Login\\FormLogin.cs [Design]",
-              "RelativeToolTip": "GUI\\Login\\FormLogin.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T11:29:13.783Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormUserInfomation.cs [Design]",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormUserInfomation.cs",
-              "RelativeDocumentMoniker": "GUI\\Main\\FormUserInfomation.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormUserInfomation.cs [Design]",
-              "RelativeToolTip": "GUI\\Main\\FormUserInfomation.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T03:54:53.592Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FormLogin.cs",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Login\\FormLogin.cs",
-              "RelativeDocumentMoniker": "GUI\\Login\\FormLogin.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Login\\FormLogin.cs",
-              "RelativeToolTip": "GUI\\Login\\FormLogin.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAcwHIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T11:29:18.543Z"
+              "Title": "FormSignUp.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Login\\FormSignUp.cs",
+              "RelativeDocumentMoniker": "GUI\\Login\\FormSignUp.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Login\\FormSignUp.cs",
+              "RelativeToolTip": "GUI\\Login\\FormSignUp.cs",
+              "ViewState": "AgIAAJ0BAAAAAAAAAAAswF0AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-18T06:00:27.202Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "FormManagement.Designer.cs",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormManagement.Designer.cs",
-              "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.Designer.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormManagement.Designer.cs",
-              "RelativeToolTip": "GUI\\Main\\FormManagement.Designer.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAAD8AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T00:30:50.573Z"
+              "Title": "FormSignUp.cs [Design]",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Login\\FormSignUp.cs",
+              "RelativeDocumentMoniker": "GUI\\Login\\FormSignUp.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Login\\FormSignUp.cs [Design]",
+              "RelativeToolTip": "GUI\\Login\\FormSignUp.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-18T06:00:15.664Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ProductDAO.cs",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\ProductDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\ProductDAO.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\ProductDAO.cs",
-              "RelativeToolTip": "DAO\\ProductDAO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T07:26:31.836Z"
+              "DocumentIndex": 5,
+              "Title": "FormLogin.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Login\\FormLogin.cs",
+              "RelativeDocumentMoniker": "GUI\\Login\\FormLogin.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Login\\FormLogin.cs",
+              "RelativeToolTip": "GUI\\Login\\FormLogin.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAswHsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-18T05:59:04.525Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "BillInfoDAO.cs",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\BillInfoDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\BillInfoDAO.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\DAO\\BillInfoDAO.cs",
-              "RelativeToolTip": "DAO\\BillInfoDAO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T07:26:23.789Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Report.rdlc [Design]",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\Report.rdlc",
-              "RelativeDocumentMoniker": "GUI\\Main\\Report.rdlc",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\Report.rdlc [Design]",
-              "RelativeToolTip": "GUI\\Main\\Report.rdlc [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
-              "WhenOpened": "2024-10-27T07:27:15.262Z"
+              "DocumentIndex": 6,
+              "Title": "FormLogin.cs [Design]",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Login\\FormLogin.cs",
+              "RelativeDocumentMoniker": "GUI\\Login\\FormLogin.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Login\\FormLogin.cs [Design]",
+              "RelativeToolTip": "GUI\\Login\\FormLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-18T05:59:00.897Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "FormReport.Designer.cs",
-              "DocumentMoniker": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormReport.Designer.cs",
-              "RelativeDocumentMoniker": "GUI\\Main\\FormReport.Designer.cs",
-              "ToolTip": "E:\\UTC\\TL-GTVL-CUA-TOI\\N\u0103m 3 ki 1\\LTTQ\\BTL\\GUI\\Main\\FormReport.Designer.cs",
-              "RelativeToolTip": "GUI\\Main\\FormReport.Designer.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAnwDsAAAAAAAAAAAAAAA==",
+              "Title": "FormReport.cs [Design]",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Main\\FormReport.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormReport.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Main\\FormReport.cs [Design]",
+              "RelativeToolTip": "GUI\\Main\\FormReport.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-18T05:47:57.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\DTO\\Menu.cs",
+              "RelativeDocumentMoniker": "DTO\\Menu.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\DTO\\Menu.cs",
+              "RelativeToolTip": "DTO\\Menu.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T07:04:23.178Z"
+              "WhenOpened": "2024-11-18T02:18:21.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\DTO\\Payment.cs",
+              "RelativeDocumentMoniker": "DTO\\Payment.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\DTO\\Payment.cs",
+              "RelativeToolTip": "DTO\\Payment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T06:03:18.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CategoryDAO.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\DAO\\CategoryDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\CategoryDAO.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\DAO\\CategoryDAO.cs",
+              "RelativeToolTip": "DAO\\CategoryDAO.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAmwCQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T01:21:00.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ProductDAO.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\DAO\\ProductDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\ProductDAO.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\DAO\\ProductDAO.cs",
+              "RelativeToolTip": "DAO\\ProductDAO.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAmwCUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T15:22:44.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FormMain.cs [Design]",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Main\\FormMain.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormMain.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\GUI\\Main\\FormMain.cs [Design]",
+              "RelativeToolTip": "GUI\\Main\\FormMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T13:56:39.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Table.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\DTO\\Table.cs",
+              "RelativeDocumentMoniker": "DTO\\Table.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\DTO\\Table.cs",
+              "RelativeToolTip": "DTO\\Table.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAArwCMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T02:12:07.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataProvider.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\DAO\\DataProvider.cs",
+              "RelativeDocumentMoniker": "DAO\\DataProvider.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\DAO\\DataProvider.cs",
+              "RelativeToolTip": "DAO\\DataProvider.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAADgvxgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T15:19:19.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\DTO\\Category.cs",
+              "RelativeDocumentMoniker": "DTO\\Category.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\DTO\\Category.cs",
+              "RelativeToolTip": "DTO\\Category.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T01:22:34.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BillInfoDAO.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\DAO\\BillInfoDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\BillInfoDAO.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\DAO\\BillInfoDAO.cs",
+              "RelativeToolTip": "DAO\\BillInfoDAO.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAIA9wB8AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T16:12:23.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\Util\\EmailService.cs",
+              "RelativeDocumentMoniker": "Util\\EmailService.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\Util\\EmailService.cs",
+              "RelativeToolTip": "Util\\EmailService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwDAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T13:36:36.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Bill.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\DTO\\Bill.cs",
+              "RelativeDocumentMoniker": "DTO\\Bill.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\DTO\\Bill.cs",
+              "RelativeToolTip": "DTO\\Bill.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAYwCIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T02:20:36.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BillDAO.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\DAO\\BillDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\BillDAO.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\DAO\\BillDAO.cs",
+              "RelativeToolTip": "DAO\\BillDAO.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAApwCkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T02:03:22.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserDAO.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\DAO\\UserDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\UserDAO.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\DAO\\UserDAO.cs",
+              "RelativeToolTip": "DAO\\UserDAO.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAIAwwFcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T01:52:23.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\Document\\C#-Desktop\\coffff\\DTO\\Product.cs",
+              "RelativeDocumentMoniker": "DTO\\Product.cs",
+              "ToolTip": "D:\\Document\\C#-Desktop\\coffff\\DTO\\Product.cs",
+              "RelativeToolTip": "DTO\\Product.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBgAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T15:49:24.044Z"
             }
           ]
         },
         {
-          "DockedHeight": 59,
+          "DockedHeight": 60,
           "SelectedChildIndex": -1,
           "Children": [
             {
