@@ -324,13 +324,9 @@ namespace CoffeeApp.GUI.Main
             if (tabManagementUser != null)
             {
                 dtgvProduct.DataSource = ProductDAO.Instance.GetListProduct();
-
-                // Ensure the DataGridView has been populated before accessing columns
+                dtgvProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 if (dtgvProduct.Columns.Count > 0)
                 {
-                    dtgvProduct.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dtgvProduct.Columns["Price"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
                     dtgvProduct.Columns["Name"].DisplayIndex = 0;
                     dtgvProduct.Columns["Price"].DisplayIndex = 1;
                     dtgvProduct.Columns["ID"].Visible = false;
