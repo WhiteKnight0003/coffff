@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			this.components = new System.ComponentModel.Container();
 			this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
 			this.btnBackMain = new Guna.UI2.WinForms.Guna2ImageButton();
 			this.pbImageUser = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -47,7 +48,7 @@
 			this.btnRefreshInfo = new Guna.UI2.WinForms.Guna2Button();
 			this.btnUpdateInfoUser = new Guna.UI2.WinForms.Guna2Button();
 			this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.gbSex = new System.Windows.Forms.GroupBox();
 			this.rbSexFeMale = new System.Windows.Forms.RadioButton();
 			this.rbSexMale = new System.Windows.Forms.RadioButton();
 			this.tbInfoCodeNewEmail = new Guna.UI2.WinForms.Guna2TextBox();
@@ -60,10 +61,12 @@
 			this.lbValidateEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.lbValidatePhone = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.lbValidateFullName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.pbImageUser)).BeginInit();
-			this.groupBox1.SuspendLayout();
+			this.gbSex.SuspendLayout();
 			this.guna2Panel4.SuspendLayout();
 			this.guna2Panel2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// guna2Panel3
@@ -368,20 +371,20 @@
 			this.guna2HtmlLabel6.TabIndex = 6;
 			this.guna2HtmlLabel6.Text = "Địa chỉ";
 			// 
-			// groupBox1
+			// gbSex
 			// 
-			this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.groupBox1.Controls.Add(this.rbSexFeMale);
-			this.groupBox1.Controls.Add(this.rbSexMale);
-			this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-			this.groupBox1.Location = new System.Drawing.Point(30, 393);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.groupBox1.Size = new System.Drawing.Size(325, 57);
-			this.groupBox1.TabIndex = 5;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Giới tính";
+			this.gbSex.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.gbSex.Controls.Add(this.rbSexFeMale);
+			this.gbSex.Controls.Add(this.rbSexMale);
+			this.gbSex.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+			this.gbSex.Location = new System.Drawing.Point(30, 393);
+			this.gbSex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.gbSex.Name = "gbSex";
+			this.gbSex.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.gbSex.Size = new System.Drawing.Size(325, 57);
+			this.gbSex.TabIndex = 5;
+			this.gbSex.TabStop = false;
+			this.gbSex.Text = "Giới tính";
 			// 
 			// rbSexFeMale
 			// 
@@ -486,7 +489,7 @@
 			this.guna2Panel2.Controls.Add(this.guna2HtmlLabel5);
 			this.guna2Panel2.Controls.Add(this.guna2HtmlLabel7);
 			this.guna2Panel2.Controls.Add(this.guna2HtmlLabel6);
-			this.guna2Panel2.Controls.Add(this.groupBox1);
+			this.guna2Panel2.Controls.Add(this.gbSex);
 			this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.guna2Panel2.Location = new System.Drawing.Point(374, 0);
 			this.guna2Panel2.Name = "guna2Panel2";
@@ -553,6 +556,10 @@
 			this.lbValidateFullName.TabIndex = 22;
 			this.lbValidateFullName.Text = null;
 			// 
+			// errorProvider
+			// 
+			this.errorProvider.ContainerControl = this;
+			// 
 			// FormUserInfomation
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -567,12 +574,13 @@
 			this.Text = "FormUserInfomation";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormUserInfomation_FormClosed);
 			((System.ComponentModel.ISupportInitialize)(this.pbImageUser)).EndInit();
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
+			this.gbSex.ResumeLayout(false);
+			this.gbSex.PerformLayout();
 			this.guna2Panel4.ResumeLayout(false);
 			this.guna2Panel4.PerformLayout();
 			this.guna2Panel2.ResumeLayout(false);
 			this.guna2Panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
 			this.ResumeLayout(false);
 
         }
@@ -589,7 +597,7 @@
         private Guna.UI2.WinForms.Guna2Button btnRefreshInfo;
         private Guna.UI2.WinForms.Guna2Button btnUpdateInfoUser;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbSex;
         private System.Windows.Forms.RadioButton rbSexFeMale;
         private System.Windows.Forms.RadioButton rbSexMale;
         private Guna.UI2.WinForms.Guna2TextBox tbInfoCodeNewEmail;
@@ -610,5 +618,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbValidatePhone;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbValidateFullName;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbValidateGender;
-    }
+		private System.Windows.Forms.ErrorProvider errorProvider;
+	}
 }
