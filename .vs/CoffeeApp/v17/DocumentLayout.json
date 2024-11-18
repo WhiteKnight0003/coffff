@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\",
+  "WorkspaceRootPath": "D:\\WORKSPACE\\C#\\Lastest_Project_Version\\coffff\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|d:\\c#project\\lttq\\coffeeapplication\\coffff\\gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\WORKSPACE\\C#\\Lastest_Project_Version\\coffff\\gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\WORKSPACE\\C#\\Lastest_Project_Version\\coffff\\gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|d:\\workspace\\c#\\lastest_project_version\\coffff\\gui\\main\\formmanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C285E06-1EAB-4907-96C2-789A089A56C4}|CoffeeApp.csproj|solutionrelative:gui\\main\\formmanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,39 +21,9 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 236,
-          "SelectedChildIndex": 0,
+          "DockedHeight": 237,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormManagement.cs",
-              "DocumentMoniker": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\GUI\\Main\\FormManagement.cs",
-              "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.cs",
-              "ToolTip": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\GUI\\Main\\FormManagement.cs",
-              "RelativeToolTip": "GUI\\Main\\FormManagement.cs",
-              "ViewState": "AgIAAMkAAAAAAAAAAAAuwHsAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T04:17:59.96Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormManagement.cs [Design]",
-              "DocumentMoniker": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\GUI\\Main\\FormManagement.cs",
-              "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.cs",
-              "ToolTip": "D:\\C#Project\\LTTQ\\CoffeeApplication\\coffff\\GUI\\Main\\FormManagement.cs [Design]",
-              "RelativeToolTip": "GUI\\Main\\FormManagement.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T07:29:29.542Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -60,12 +34,54 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormManagement.Designer.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\C#\\Lastest_Project_Version\\coffff\\GUI\\Main\\FormManagement.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.Designer.cs",
+              "ToolTip": "D:\\WORKSPACE\\C#\\Lastest_Project_Version\\coffff\\GUI\\Main\\FormManagement.Designer.cs",
+              "RelativeToolTip": "GUI\\Main\\FormManagement.Designer.cs",
+              "ViewState": "AgIAAIUEAAAAAAAAAAAkwLQEAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T09:04:13.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormManagement.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\C#\\Lastest_Project_Version\\coffff\\GUI\\Main\\FormManagement.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.cs",
+              "ToolTip": "D:\\WORKSPACE\\C#\\Lastest_Project_Version\\coffff\\GUI\\Main\\FormManagement.cs",
+              "RelativeToolTip": "GUI\\Main\\FormManagement.cs",
+              "ViewState": "AgIAAHMBAAAAAAAAAAAQwEQBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T08:33:44.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormManagement.cs [Design]",
+              "DocumentMoniker": "D:\\WORKSPACE\\C#\\Lastest_Project_Version\\coffff\\GUI\\Main\\FormManagement.cs",
+              "RelativeDocumentMoniker": "GUI\\Main\\FormManagement.cs",
+              "ToolTip": "D:\\WORKSPACE\\C#\\Lastest_Project_Version\\coffff\\GUI\\Main\\FormManagement.cs [Design]",
+              "RelativeToolTip": "GUI\\Main\\FormManagement.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T08:33:40.646Z",
+              "EditorCaption": " [Design]"
             }
           ]
         },
         {
-          "DockedHeight": 60,
+          "DockedHeight": 59,
           "SelectedChildIndex": -1,
           "Children": [
             {
