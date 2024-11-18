@@ -39,6 +39,10 @@ namespace CoffeeApp.GUI.Main
         private System.Drawing.Image showImageUser;
         private ConvertImage convertImage;
         private ValidateData validateData;
+
+        
+
+         
         public FormManagement(FormMain formmain, string username, int roleID)
         {
             InitializeComponent();
@@ -112,40 +116,47 @@ namespace CoffeeApp.GUI.Main
                 isToolTipVisible = false;
             }
         }
+        private void Save_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+               btnLuu_Acc.PerformClick(); 
+                e.Handled = true;
+            }
+        }
+
 
         void ManageAccount_Load()
         {
-            string query = "SELECT * FROM dbo.users where Workingstatus = 1";
-            DataTable data = DAO.DataProvider.Instance.ExecuteQuery(query);
-            dgvUsers.DataSource = data;
-            dgvUsers.Columns["password"].Visible = false;
-            dgvUsers.Columns["image"].Visible = false;
-            dgvUsers.Columns["Workingstatus"].Visible = false;
-            cbType.Items.Add("Admin");
-            cbType.Items.Add("Staff");
-            UnLoaded(false);
-            dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            TabPage TbManagementUser = tcManagement.TabPages.Cast<TabPage>().FirstOrDefault(tab => tab.Name == "TabManagementUser");
+            if (TbManagementUser != null) // Nếu TabManagementUser tồn tại
+            {
+                string query = "SELECT * FROM dbo.users WHERE Workingstatus = 1 AND Username != N'" + username + "'";
+                DataTable data = DAO.DataProvider.Instance.ExecuteQuery(query);
+                dgvUsers.DataSource = data;
+                dgvUsers.Columns["password"].Visible = false;
+                dgvUsers.Columns["image"].Visible = false;
+                dgvUsers.Columns["Workingstatus"].Visible = false;
+                cbType.Items.Add("Admin");
+                cbType.Items.Add("Staff");
+                UnLoaded(false);
+                dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
         }
         void Category_Load()
         {
-            string query = "SELECT * FROM dbo.category where Status =1";
-            DataTable data = DAO.DataProvider.Instance.ExecuteQuery(query);
+            TabPage TbCategory = tcManagement.TabPages.Cast<TabPage>().FirstOrDefault(tab => tab.Name == "TabCategory");
+            if (TbCategory != null) // Nếu TabManagementUser tồn tại
+            {
+                string query = "SELECT * FROM dbo.category where Status =1";
+                DataTable data = DAO.DataProvider.Instance.ExecuteQuery(query);
 
-            dgvCategory.DataSource = data;
-            dgvCategory.Columns["Status"].Visible = false;
-            Unloaded_Category(false);
-            // Cài đặt AutoSizeColumnsMode để các cột vừa với bảng
-            dgvCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            // Cài đặt AutoSizeRowsMode để các dòng vừa với nội dung
-            dgvCategory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-
-            // Bật chế độ wrap text cho header để không bị cắt nội dung
-            dgvCategory.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.True;
-
-            // Tự động điều chỉnh kích thước của từng cột dựa trên nội dung
-            dgvCategory.AutoResizeColumns();
-
+                dgvCategory.DataSource = data;
+                dgvCategory.Columns["Status"].Visible = false;
+                Unloaded_Category(false);
+                dgvCategory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                dgvCategory.AutoResizeColumns();
+            }
         }
         private void Unloaded_Category(bool ok)
         {
@@ -649,14 +660,6 @@ namespace CoffeeApp.GUI.Main
                 querry += "N'" + tt + "', ";
                 querry += "N'" + Imgbase64String + "')";
                 validateInfor(sender, e);
-                //if (DAO.UserDAO.Instance.InsertUser(username, mk, txtPhoneNumber.Text, txtEmail.Text, "", "Chưa xác thực", roleidd, txtTenHT.Text,txtAddress.Text, gioitinh, "", 1))
-                //{
-                //    MessageBox.Show("Thêm tài khoản thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Thêm tài khoản thất bại");
-                //}
                 DataTable data2 = DAO.DataProvider.Instance.ExecuteQuery(querry);
                 MessageBox.Show("Thêm tài khoản thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -750,10 +753,10 @@ namespace CoffeeApp.GUI.Main
                 }
                 errorProvider.Clear();
 
-                //querry = "INSERT  INTO category(CategoryName,Description,Status) VALUES(";
-                //querry += "N'" + txtLoai_Category.Text + "',N'" + richTextBoxMT.Text + "',N'" + stt + "')";
-                querry = "INSERT  INTO category(CategoryName,Description) VALUES(";
-                querry += "N'" + txtLoai_Category.Text + "',N'" + richTextBoxMT.Text  + "')";
+                querry = "INSERT  INTO category(CategoryName,Description,Status) VALUES(";
+                querry += "N'" + txtLoai_Category.Text + "',N'" + richTextBoxMT.Text + "',N'" + stt + "')";
+                //querry = "INSERT  INTO category(CategoryName,Description) VALUES(";
+                //querry += "N'" + txtLoai_Category.Text + "',N'" + richTextBoxMT.Text  + "')";
                 DataTable data2 = DAO.DataProvider.Instance.ExecuteQuery(querry);
                 MessageBox.Show("Thêm loại thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -777,7 +780,6 @@ namespace CoffeeApp.GUI.Main
                 DataTable data2 = DAO.DataProvider.Instance.ExecuteQuery(querry);
                 MessageBox.Show("Cập nhật loại thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
             Category_Load();
             Unloaded_Category(false);
             btnSua_Category.Enabled = false;
