@@ -309,26 +309,29 @@ namespace CoffeeApp.GUI.Main
         #endregion
         private void LoadListProduct() // Lấy ra danh sách các sản phẩm và hiện nó lên dtgvm 
         {
-            
-            dtgvProduct.DataSource = ProductDAO.Instance.GetListProduct();
-            
-            // Ensure the DataGridView has been populated before accessing columns
-            if (dtgvProduct.Columns.Count > 0)
+            TabPage tabManagementUser = tcManagement.TabPages.Cast<TabPage>().FirstOrDefault(tab => tab.Name == "TabManagementUser");
+            if (tabManagementUser != null)
             {
-                dtgvProduct.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dtgvProduct.Columns["Price"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dtgvProduct.Columns["Description"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dtgvProduct.DataSource = ProductDAO.Instance.GetListProduct();
 
-                dtgvProduct.Columns["Name"].DisplayIndex = 0;
-                dtgvProduct.Columns["Price"].DisplayIndex = 1;
-                dtgvProduct.Columns["ID"].Visible = false;
-                dtgvProduct.Columns["CategoryID"].Visible = false;
-                dtgvProduct.Columns["Image"].Visible = false;
-            }
+                // Ensure the DataGridView has been populated before accessing columns
+                if (dtgvProduct.Columns.Count > 0)
+                {
+                    dtgvProduct.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dtgvProduct.Columns["Price"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
-            dtgvProduct.ClearSelection();
-            dtgvProduct.CurrentCell = null;
+                    dtgvProduct.Columns["Name"].DisplayIndex = 0;
+                    dtgvProduct.Columns["Price"].DisplayIndex = 1;
+                    dtgvProduct.Columns["ID"].Visible = false;
+                    dtgvProduct.Columns["CategoryID"].Visible = false;
+                    dtgvProduct.Columns["Image"].Visible = false;
+                    dtgvProduct.Columns["Description"].Visible = false;
 
+                }
+
+                dtgvProduct.ClearSelection();
+                dtgvProduct.CurrentCell = null;
+            }    
         }
 
         private void ResetButtonProduct() // Đặt lại các phím bấm
@@ -359,10 +362,14 @@ namespace CoffeeApp.GUI.Main
 
         private void LoadCategoryIntoCombobox()
         {
-            cbbProductCategory.DataSource = CategoryDAO.Instance.GetListCategory();
-            cbbProductCategory.DisplayMember = "Name";
-            LoadListProduct();
-            AddProductBinding();
+            TabPage tabManagementUser = tcManagement.TabPages.Cast<TabPage>().FirstOrDefault(tab => tab.Name == "TabManagementUser");
+            if (tabManagementUser != null)
+            {
+                cbbProductCategory.DataSource = CategoryDAO.Instance.GetListCategory();
+                cbbProductCategory.DisplayMember = "Name";
+                LoadListProduct();
+                AddProductBinding();
+            }
         }
 
         List<Product> SearchProductByName(string name)
@@ -954,7 +961,7 @@ namespace CoffeeApp.GUI.Main
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
