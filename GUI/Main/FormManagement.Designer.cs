@@ -31,10 +31,10 @@ namespace CoffeeApp.GUI.Main
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.btnBackFormManagement = new Guna.UI2.WinForms.Guna2Button();
             this.TabStatisticsProceeds = new System.Windows.Forms.TabPage();
             this.cbChooseYear = new System.Windows.Forms.ComboBox();
@@ -189,28 +189,28 @@ namespace CoffeeApp.GUI.Main
             // 
             // chartStatistic
             // 
-            chartArea3.AxisX.IsLabelAutoFit = false;
-            chartArea3.AxisX.Title = "Tháng";
-            chartArea3.AxisY.Title = "Doanh thu";
-            chartArea3.Name = "ChartArea1";
-            this.chartStatistic.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartStatistic.Legends.Add(legend3);
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.Title = "Tháng";
+            chartArea1.AxisY.Title = "Doanh thu";
+            chartArea1.Name = "ChartArea1";
+            this.chartStatistic.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartStatistic.Legends.Add(legend1);
             this.chartStatistic.Location = new System.Drawing.Point(0, 5);
             this.chartStatistic.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.chartStatistic.Name = "chartStatistic";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series3.IsValueShownAsLabel = true;
-            series3.Legend = "Legend1";
-            series3.Name = "DataSeries";
-            this.chartStatistic.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "DataSeries";
+            this.chartStatistic.Series.Add(series1);
             this.chartStatistic.Size = new System.Drawing.Size(529, 413);
             this.chartStatistic.TabIndex = 0;
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title3.Name = "Title1";
-            title3.Text = "Biểu đồ thông kê doanh thu theo năm";
-            this.chartStatistic.Titles.Add(title3);
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Biểu đồ thông kê doanh thu theo năm";
+            this.chartStatistic.Titles.Add(title1);
             // 
             // tcManagement
             // 
@@ -228,6 +228,7 @@ namespace CoffeeApp.GUI.Main
             this.tcManagement.TabIndex = 0;
             this.tcManagement.SelectedIndexChanged += new System.EventHandler(this.tcManagement_SelectedIndexChanged);
             this.tcManagement.Click += new System.EventHandler(this.tcManagement_Click);
+            this.tcManagement.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Save_KeyDown);
             // 
             // TabBillDetail
             // 
@@ -245,7 +246,7 @@ namespace CoffeeApp.GUI.Main
             // panelBillDetailsCenter
             // 
             this.panelBillDetailsCenter.Controls.Add(this.dgvBillDetails);
-            this.panelBillDetailsCenter.Location = new System.Drawing.Point(2, 2);
+            this.panelBillDetailsCenter.Location = new System.Drawing.Point(2, 1);
             this.panelBillDetailsCenter.Name = "panelBillDetailsCenter";
             this.panelBillDetailsCenter.Size = new System.Drawing.Size(679, 365);
             this.panelBillDetailsCenter.TabIndex = 3;
@@ -254,7 +255,7 @@ namespace CoffeeApp.GUI.Main
             // 
             this.dgvBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBillDetails.Location = new System.Drawing.Point(-1, 25);
-            this.dgvBillDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvBillDetails.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dgvBillDetails.Name = "dgvBillDetails";
             this.dgvBillDetails.RowHeadersWidth = 62;
             this.dgvBillDetails.Size = new System.Drawing.Size(681, 337);
@@ -286,44 +287,44 @@ namespace CoffeeApp.GUI.Main
             // btnLast
             // 
             this.btnLast.Location = new System.Drawing.Point(443, 5);
-            this.btnLast.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLast.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(84, 45);
             this.btnLast.TabIndex = 10;
-            this.btnLast.Text = "&Cuối";
+            this.btnLast.Text = "&Last";
             this.btnLast.UseVisualStyleBackColor = true;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click_1);
             // 
             // btnNext
             // 
             this.btnNext.Location = new System.Drawing.Point(296, 5);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(84, 45);
             this.btnNext.TabIndex = 9;
-            this.btnNext.Text = "&Tiếp";
+            this.btnNext.Text = "&Next";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click_1);
             // 
             // btnPrevious
             // 
             this.btnPrevious.Location = new System.Drawing.Point(149, 5);
-            this.btnPrevious.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(84, 45);
             this.btnPrevious.TabIndex = 8;
-            this.btnPrevious.Text = "&Trước";
+            this.btnPrevious.Text = "&Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click_1);
             // 
             // btnFirst
             // 
             this.btnFirst.Location = new System.Drawing.Point(2, 5);
-            this.btnFirst.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFirst.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(84, 45);
             this.btnFirst.TabIndex = 7;
-            this.btnFirst.Text = "&Đầu ";
+            this.btnFirst.Text = "&First";
             this.btnFirst.UseVisualStyleBackColor = true;
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click_1);
             // 
@@ -356,7 +357,7 @@ namespace CoffeeApp.GUI.Main
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(265, 1);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(83, 42);
             this.btnSave.TabIndex = 11;
@@ -369,7 +370,7 @@ namespace CoffeeApp.GUI.Main
             this.dtgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvProduct.Location = new System.Drawing.Point(3, 47);
-            this.dtgvProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgvProduct.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dtgvProduct.Name = "dtgvProduct";
             this.dtgvProduct.RowHeadersWidth = 62;
             this.dtgvProduct.Size = new System.Drawing.Size(345, 365);
@@ -380,7 +381,7 @@ namespace CoffeeApp.GUI.Main
             // btnEditProduct
             // 
             this.btnEditProduct.Location = new System.Drawing.Point(178, 1);
-            this.btnEditProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditProduct.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(83, 42);
             this.btnEditProduct.TabIndex = 8;
@@ -391,7 +392,7 @@ namespace CoffeeApp.GUI.Main
             // btnDeleteProduct
             // 
             this.btnDeleteProduct.Location = new System.Drawing.Point(91, 0);
-            this.btnDeleteProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteProduct.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(83, 42);
             this.btnDeleteProduct.TabIndex = 7;
@@ -402,7 +403,7 @@ namespace CoffeeApp.GUI.Main
             // btnAddProduct
             // 
             this.btnAddProduct.Location = new System.Drawing.Point(5, 0);
-            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(83, 42);
             this.btnAddProduct.TabIndex = 6;
@@ -454,7 +455,7 @@ namespace CoffeeApp.GUI.Main
             // txtProductID
             // 
             this.txtProductID.Location = new System.Drawing.Point(109, 263);
-            this.txtProductID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProductID.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.ReadOnly = true;
             this.txtProductID.Size = new System.Drawing.Size(204, 24);
@@ -505,15 +506,15 @@ namespace CoffeeApp.GUI.Main
             // 
             this.cbbProductCategory.FormattingEnabled = true;
             this.cbbProductCategory.Location = new System.Drawing.Point(109, 339);
-            this.cbbProductCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbProductCategory.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.cbbProductCategory.Name = "cbbProductCategory";
             this.cbbProductCategory.Size = new System.Drawing.Size(204, 25);
             this.cbbProductCategory.TabIndex = 43;
             // 
             // nmProductPrice
             // 
-            this.nmProductPrice.Location = new System.Drawing.Point(109, 375);
-            this.nmProductPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nmProductPrice.Location = new System.Drawing.Point(109, 376);
+            this.nmProductPrice.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.nmProductPrice.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -525,8 +526,8 @@ namespace CoffeeApp.GUI.Main
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(109, 301);
-            this.txtProductName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProductName.Location = new System.Drawing.Point(109, 300);
+            this.txtProductName.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(204, 24);
             this.txtProductName.TabIndex = 41;
@@ -554,7 +555,7 @@ namespace CoffeeApp.GUI.Main
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(28, 301);
+            this.lblProductName.Location = new System.Drawing.Point(28, 300);
             this.lblProductName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(71, 17);
@@ -563,8 +564,8 @@ namespace CoffeeApp.GUI.Main
             // 
             // txtSearchProductName
             // 
-            this.txtSearchProductName.Location = new System.Drawing.Point(31, 15);
-            this.txtSearchProductName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearchProductName.Location = new System.Drawing.Point(31, 14);
+            this.txtSearchProductName.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtSearchProductName.Name = "txtSearchProductName";
             this.txtSearchProductName.Size = new System.Drawing.Size(201, 24);
             this.txtSearchProductName.TabIndex = 37;
@@ -572,7 +573,7 @@ namespace CoffeeApp.GUI.Main
             // btnSearchProduct
             // 
             this.btnSearchProduct.Location = new System.Drawing.Point(236, 5);
-            this.btnSearchProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchProduct.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnSearchProduct.Name = "btnSearchProduct";
             this.btnSearchProduct.Size = new System.Drawing.Size(83, 42);
             this.btnSearchProduct.TabIndex = 36;
@@ -598,7 +599,7 @@ namespace CoffeeApp.GUI.Main
             this.panel3.Controls.Add(this.dgvCategory);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(379, 3);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(306, 414);
             this.panel3.TabIndex = 1;
@@ -607,7 +608,7 @@ namespace CoffeeApp.GUI.Main
             // 
             this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategory.Location = new System.Drawing.Point(4, 38);
-            this.dgvCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvCategory.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dgvCategory.Name = "dgvCategory";
             this.dgvCategory.RowHeadersWidth = 62;
             this.dgvCategory.RowTemplate.Height = 28;
@@ -630,7 +631,7 @@ namespace CoffeeApp.GUI.Main
             this.panel2.Controls.Add(this.lblID);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(2, 3);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(375, 414);
             this.panel2.TabIndex = 0;
@@ -638,7 +639,7 @@ namespace CoffeeApp.GUI.Main
             // txtLoai_Category
             // 
             this.txtLoai_Category.Location = new System.Drawing.Point(114, 85);
-            this.txtLoai_Category.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLoai_Category.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtLoai_Category.Name = "txtLoai_Category";
             this.txtLoai_Category.Size = new System.Drawing.Size(195, 24);
             this.txtLoai_Category.TabIndex = 3;
@@ -646,7 +647,7 @@ namespace CoffeeApp.GUI.Main
             // txtID_Category
             // 
             this.txtID_Category.Location = new System.Drawing.Point(114, 38);
-            this.txtID_Category.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtID_Category.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtID_Category.Name = "txtID_Category";
             this.txtID_Category.Size = new System.Drawing.Size(195, 24);
             this.txtID_Category.TabIndex = 3;
@@ -654,7 +655,7 @@ namespace CoffeeApp.GUI.Main
             // richTextBoxMT
             // 
             this.richTextBoxMT.Location = new System.Drawing.Point(114, 131);
-            this.richTextBoxMT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBoxMT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.richTextBoxMT.Name = "richTextBoxMT";
             this.richTextBoxMT.Size = new System.Drawing.Size(195, 112);
             this.richTextBoxMT.TabIndex = 2;
@@ -663,7 +664,7 @@ namespace CoffeeApp.GUI.Main
             // btnHuy_Category
             // 
             this.btnHuy_Category.Location = new System.Drawing.Point(151, 354);
-            this.btnHuy_Category.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuy_Category.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnHuy_Category.Name = "btnHuy_Category";
             this.btnHuy_Category.Size = new System.Drawing.Size(67, 35);
             this.btnHuy_Category.TabIndex = 1;
@@ -674,7 +675,7 @@ namespace CoffeeApp.GUI.Main
             // btnXoa_Category
             // 
             this.btnXoa_Category.Location = new System.Drawing.Point(285, 295);
-            this.btnXoa_Category.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoa_Category.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnXoa_Category.Name = "btnXoa_Category";
             this.btnXoa_Category.Size = new System.Drawing.Size(67, 35);
             this.btnXoa_Category.TabIndex = 1;
@@ -685,7 +686,7 @@ namespace CoffeeApp.GUI.Main
             // btnSua_Category
             // 
             this.btnSua_Category.Location = new System.Drawing.Point(194, 295);
-            this.btnSua_Category.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSua_Category.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnSua_Category.Name = "btnSua_Category";
             this.btnSua_Category.Size = new System.Drawing.Size(67, 35);
             this.btnSua_Category.TabIndex = 1;
@@ -696,7 +697,7 @@ namespace CoffeeApp.GUI.Main
             // btnThem_Category
             // 
             this.btnThem_Category.Location = new System.Drawing.Point(106, 295);
-            this.btnThem_Category.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem_Category.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThem_Category.Name = "btnThem_Category";
             this.btnThem_Category.Size = new System.Drawing.Size(67, 35);
             this.btnThem_Category.TabIndex = 1;
@@ -707,13 +708,13 @@ namespace CoffeeApp.GUI.Main
             // btnLuu_Category
             // 
             this.btnLuu_Category.Location = new System.Drawing.Point(17, 295);
-            this.btnLuu_Category.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLuu_Category.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLuu_Category.Name = "btnLuu_Category";
             this.btnLuu_Category.Size = new System.Drawing.Size(67, 35);
             this.btnLuu_Category.TabIndex = 1;
             this.btnLuu_Category.Text = "Lưu";
             this.btnLuu_Category.UseVisualStyleBackColor = true;
-            this.btnLuu_Category.Click += new System.EventHandler(this.btnSua__Category_Click);
+            this.btnLuu_Category.Click += new System.EventHandler(this.btnSave_Category_Click);
             // 
             // label3
             // 
@@ -788,7 +789,7 @@ namespace CoffeeApp.GUI.Main
             this.panel.Controls.Add(this.txtTenTK);
             this.panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel.Location = new System.Drawing.Point(2, 3);
-            this.panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(683, 278);
             this.panel.TabIndex = 2;
@@ -796,8 +797,8 @@ namespace CoffeeApp.GUI.Main
             // rdNu
             // 
             this.rdNu.AutoSize = true;
-            this.rdNu.Location = new System.Drawing.Point(193, 145);
-            this.rdNu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdNu.Location = new System.Drawing.Point(193, 144);
+            this.rdNu.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.rdNu.Name = "rdNu";
             this.rdNu.Size = new System.Drawing.Size(46, 21);
             this.rdNu.TabIndex = 5;
@@ -809,7 +810,7 @@ namespace CoffeeApp.GUI.Main
             // 
             this.rdNam.AutoSize = true;
             this.rdNam.Location = new System.Drawing.Point(119, 146);
-            this.rdNam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdNam.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.rdNam.Name = "rdNam";
             this.rdNam.Size = new System.Drawing.Size(56, 21);
             this.rdNam.TabIndex = 5;
@@ -822,7 +823,7 @@ namespace CoffeeApp.GUI.Main
             this.dtpStartDate.CustomFormat = "dd/MM/yyyy";
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStartDate.Location = new System.Drawing.Point(484, 148);
-            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(107, 24);
             this.dtpStartDate.TabIndex = 4;
@@ -830,8 +831,8 @@ namespace CoffeeApp.GUI.Main
             // cbType
             // 
             this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(484, 106);
-            this.cbType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbType.Location = new System.Drawing.Point(484, 105);
+            this.cbType.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(107, 25);
             this.cbType.TabIndex = 3;
@@ -839,7 +840,7 @@ namespace CoffeeApp.GUI.Main
             // btnXoa_Acc
             // 
             this.btnXoa_Acc.Location = new System.Drawing.Point(285, 231);
-            this.btnXoa_Acc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoa_Acc.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnXoa_Acc.Name = "btnXoa_Acc";
             this.btnXoa_Acc.Size = new System.Drawing.Size(69, 32);
             this.btnXoa_Acc.TabIndex = 2;
@@ -850,7 +851,7 @@ namespace CoffeeApp.GUI.Main
             // btnSua_Acc
             // 
             this.btnSua_Acc.Location = new System.Drawing.Point(111, 231);
-            this.btnSua_Acc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSua_Acc.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnSua_Acc.Name = "btnSua_Acc";
             this.btnSua_Acc.Size = new System.Drawing.Size(69, 32);
             this.btnSua_Acc.TabIndex = 2;
@@ -861,7 +862,7 @@ namespace CoffeeApp.GUI.Main
             // btnTim_Acc
             // 
             this.btnTim_Acc.Location = new System.Drawing.Point(464, 231);
-            this.btnTim_Acc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTim_Acc.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnTim_Acc.Name = "btnTim_Acc";
             this.btnTim_Acc.Size = new System.Drawing.Size(69, 32);
             this.btnTim_Acc.TabIndex = 2;
@@ -872,7 +873,7 @@ namespace CoffeeApp.GUI.Main
             // btnHuy_Acc
             // 
             this.btnHuy_Acc.Location = new System.Drawing.Point(375, 231);
-            this.btnHuy_Acc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuy_Acc.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnHuy_Acc.Name = "btnHuy_Acc";
             this.btnHuy_Acc.Size = new System.Drawing.Size(69, 32);
             this.btnHuy_Acc.TabIndex = 2;
@@ -883,7 +884,7 @@ namespace CoffeeApp.GUI.Main
             // btnLuu_Acc
             // 
             this.btnLuu_Acc.Location = new System.Drawing.Point(197, 231);
-            this.btnLuu_Acc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLuu_Acc.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLuu_Acc.Name = "btnLuu_Acc";
             this.btnLuu_Acc.Size = new System.Drawing.Size(69, 32);
             this.btnLuu_Acc.TabIndex = 2;
@@ -894,7 +895,7 @@ namespace CoffeeApp.GUI.Main
             // btnThem_Acc
             // 
             this.btnThem_Acc.Location = new System.Drawing.Point(22, 231);
-            this.btnThem_Acc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem_Acc.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThem_Acc.Name = "btnThem_Acc";
             this.btnThem_Acc.Size = new System.Drawing.Size(69, 32);
             this.btnThem_Acc.TabIndex = 2;
@@ -905,7 +906,7 @@ namespace CoffeeApp.GUI.Main
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(335, 106);
+            this.lblRole.Location = new System.Drawing.Point(335, 105);
             this.lblRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(109, 17);
@@ -995,7 +996,7 @@ namespace CoffeeApp.GUI.Main
             // txtTimAcc
             // 
             this.txtTimAcc.Location = new System.Drawing.Point(539, 237);
-            this.txtTimAcc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTimAcc.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtTimAcc.Name = "txtTimAcc";
             this.txtTimAcc.Size = new System.Drawing.Size(127, 24);
             this.txtTimAcc.TabIndex = 0;
@@ -1003,7 +1004,7 @@ namespace CoffeeApp.GUI.Main
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(119, 185);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(147, 24);
             this.txtEmail.TabIndex = 0;
@@ -1011,7 +1012,7 @@ namespace CoffeeApp.GUI.Main
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Location = new System.Drawing.Point(120, 66);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(147, 24);
             this.txtPhoneNumber.TabIndex = 0;
@@ -1019,7 +1020,7 @@ namespace CoffeeApp.GUI.Main
             // txtTenHT
             // 
             this.txtTenHT.Location = new System.Drawing.Point(119, 20);
-            this.txtTenHT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenHT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtTenHT.Name = "txtTenHT";
             this.txtTenHT.Size = new System.Drawing.Size(147, 24);
             this.txtTenHT.TabIndex = 0;
@@ -1027,7 +1028,7 @@ namespace CoffeeApp.GUI.Main
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(119, 108);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(147, 24);
             this.txtAddress.TabIndex = 0;
@@ -1035,7 +1036,7 @@ namespace CoffeeApp.GUI.Main
             // txtMK
             // 
             this.txtMK.Location = new System.Drawing.Point(484, 58);
-            this.txtMK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMK.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtMK.Name = "txtMK";
             this.txtMK.Size = new System.Drawing.Size(147, 24);
             this.txtMK.TabIndex = 0;
@@ -1043,7 +1044,7 @@ namespace CoffeeApp.GUI.Main
             // txtTenTK
             // 
             this.txtTenTK.Location = new System.Drawing.Point(484, 20);
-            this.txtTenTK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenTK.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtTenTK.Name = "txtTenTK";
             this.txtTenTK.Size = new System.Drawing.Size(147, 24);
             this.txtTenTK.TabIndex = 0;
@@ -1053,7 +1054,7 @@ namespace CoffeeApp.GUI.Main
             this.panel1.Controls.Add(this.dgvUsers);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(2, 279);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(683, 138);
             this.panel1.TabIndex = 1;
@@ -1063,7 +1064,7 @@ namespace CoffeeApp.GUI.Main
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvUsers.Location = new System.Drawing.Point(0, 0);
-            this.dgvUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvUsers.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 62;
             this.dgvUsers.RowTemplate.Height = 28;
@@ -1086,6 +1087,7 @@ namespace CoffeeApp.GUI.Main
             this.Name = "FormManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormManagement";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Save_KeyDown);
             this.TabStatisticsProceeds.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartStatistic)).EndInit();
             this.tcManagement.ResumeLayout(false);
