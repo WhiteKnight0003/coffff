@@ -107,8 +107,8 @@ namespace CoffeeApp.DAO
             return data;
         }
 
-        public object ExecuteScalar(string query, object[] parameter = null) // phù hợp cho việc select count * - giống như kiểu trâ về  số lượng bản ghi hoặc một giá trị cụ thể từ một cột
-        {
+        public object ExecuteScalar(string query, object[] parameter = null) //  trả về một giá trị đơn - chẳng hạn như số lượng bản ghi, giá trị tối đa, tổng số, - Sử dụng khi truy vấn SQL chỉ trả về một giá trị duy nhất SELECT COUNT(*), SELECT MAX(column_name) 
+		{
             object data = 0;
 
             using (SqlConnection connection = new SqlConnection(connectionStr))

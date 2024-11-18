@@ -155,7 +155,8 @@ namespace CoffeeApp.GUI.Main
                 dgvCategory.Columns["Status"].Visible = false;
                 Unloaded_Category(false);
                 dgvCategory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-                dgvCategory.AutoResizeColumns();
+				dgvCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+				dgvCategory.AutoResizeColumns();
             }
         }
         private void Unloaded_Category(bool ok)
@@ -303,7 +304,6 @@ namespace CoffeeApp.GUI.Main
                 this.chartStatistic.Series["DataSeries"].IsVisibleInLegend = false;
                 // Cập nhật lại giao diện biểu đồ
                 this.chartStatistic.Invalidate(); // Vẽ lại biểu đồ nếu cần
-
             }
 
             else
@@ -448,113 +448,155 @@ namespace CoffeeApp.GUI.Main
             {
                 cbType.Text = "Staff";
             }
-        }
+
+			txtTenHT.Enabled = false;
+			txtPhoneNumber.Enabled = false;
+			txtAddress.Enabled = false;
+			rdNam.Enabled = false;
+			rdNu.Enabled = false;
+			txtTenTK.Enabled = false;
+			txtMK.Enabled = false;
+			cbType.Enabled = false;
+			txtEmail.Enabled = false;
+			dtpStartDate.Enabled = false;
+			btnLuu_Acc.Enabled = false;
+		}
         private void validateInfor(object sender, EventArgs e)
         {
-            validateData = new ValidateData();
-            if (string.IsNullOrWhiteSpace(txtTenHT.Text))
-            {
-                errorProvider.SetError(txtTenHT, "Tên hiển thị không được để trống");
-                return;
-            }
-            else
-            {
-                errorProvider.Clear();
-            }
+			validateData = new ValidateData();
+			if (string.IsNullOrWhiteSpace(txtTenHT.Text))
+			{
+				errorProvider.SetError(txtTenHT, "Tên hiển thị không được để trống");
+				return;
+			}
+			else
+			{
+				errorProvider.Clear();
+			}
 
-            if (string.IsNullOrWhiteSpace(txtPhoneNumber.Text))
-            {
-                errorProvider.SetError(txtPhoneNumber, "Số điện thoại không được để trống");
-                return;
-            }
-            else if (!validateData.validatePhone(txtPhoneNumber.Text))
-            {
-                errorProvider.SetError(txtPhoneNumber, "Số điện thoai không hợp lệ");
-                return;
-            }
-            else
-            {
-                errorProvider.Clear();
-            }
+			if (string.IsNullOrWhiteSpace(txtPhoneNumber.Text))
+			{
+				errorProvider.SetError(txtPhoneNumber, "Số điện thoại không được để trống");
+				return;
+			}
+			else if (!validateData.validatePhone(txtPhoneNumber.Text))
+			{
+				errorProvider.SetError(txtPhoneNumber, "Số điện thoai không hợp lệ");
+				return;
+			}
+			else
+			{
+				string sql = "SELECT * FROM Users WHERE phone = '" + txtPhoneNumber.Text + "'";
+				DataTable data = DAO.DataProvider.Instance.ExecuteQuery(sql);
+				if (data.Rows.Count > 0)
+				{
+					errorProvider.SetError(txtPhoneNumber, "Số đã tồn tại trong hệ thống");
+					return;
+				}
+				else
+				{
+					errorProvider.Clear();
+				}
+			}
 
-            errorProvider.SetError(txtPhoneNumber, "");
+			errorProvider.SetError(txtPhoneNumber, "");
 
-            if (string.IsNullOrWhiteSpace(cbType.Text))
-            {
-                errorProvider.SetError(cbType, "Chức vụ không được để trống");
-                return;
-            }
-            else
-            {
-                errorProvider.Clear();
-            }
+			if (string.IsNullOrWhiteSpace(txtAddress.Text))
+			{
+				errorProvider.SetError(txtAddress, "Địa chỉ không được để trống");
+				return;
+			}
+			else
+			{
+				errorProvider.Clear();
+			}
 
-            if (string.IsNullOrWhiteSpace(txtAddress.Text))
-            {
-                errorProvider.SetError(txtAddress, "Địa chỉ không được để trống");
-                return;
-            }
-            else
-            {
-                errorProvider.Clear();
-            }
+			if (!rdNam.Checked && !rdNu.Checked)
+			{
+				errorProvider.SetError(rdNam, "Bạn phải chọn giới tính!");
+				return;
+			}
+			else
+			{
+				errorProvider.Clear();
+			}
 
-            if (string.IsNullOrWhiteSpace(txtEmail.Text))
-            {
-                errorProvider.SetError(txtEmail, "Email không được để trống");
-                return;
-            }
-            else if (!validateData.validateEmail(txtEmail.Text))
-            {
-                errorProvider.SetError(txtEmail, "Email không hợp lệ");
-                return;
-            }
-            else
-            {
-                errorProvider.Clear();
-            }
+			if (string.IsNullOrWhiteSpace(txtEmail.Text))
+			{
+				errorProvider.SetError(txtEmail, "Email không được để trống");
+				return;
+			}
+			else if (!validateData.validateEmail(txtEmail.Text))
+			{
+				errorProvider.SetError(txtEmail, "Email không hợp lệ");
+				return;
+			}
+			else
+			{
+				string sql = "SELECT * FROM Users WHERE Email = '" + txtEmail.Text + "'";
+				DataTable data = DAO.DataProvider.Instance.ExecuteQuery(sql);
+				if (data.Rows.Count > 0)
+				{
+					errorProvider.SetError(txtEmail, "Email đã tồn tại trong hệ thống");
+					return;
+				}
+				else
+				{
+					errorProvider.Clear();
+				}
+			}
 
-            if (string.IsNullOrWhiteSpace(txtTenTK.Text))
-            {
-                errorProvider.SetError(txtTenTK, "Tên tài khoản không được để trống");
-                return;
-            }
-            else
-            {
-                errorProvider.Clear();
-            }
+			if (string.IsNullOrWhiteSpace(txtTenTK.Text))
+			{
+				errorProvider.SetError(txtTenTK, "Tên tài khoản không được để trống");
+				return;
+			}
+			else
+			{
+				string sql = "SELECT * FROM Users WHERE UserName = '" + txtTenTK.Text + "'";
+				DataTable data = DAO.DataProvider.Instance.ExecuteQuery(sql);
+				if (data.Rows.Count > 0)
+				{
+					errorProvider.SetError(txtTenTK, "Tên tài khoản đã tồn tại trong hệ thống");
+					return;
+				}
+				else
+				{
+					errorProvider.Clear();
+				}
+			}
 
-            if (string.IsNullOrWhiteSpace(txtMK.Text))
-            {
-                errorProvider.SetError(txtTenTK, "Mật khẩu không được để trống");
-                return;
-            }
-            else
-            {
-                errorProvider.Clear();
-            }
+			if (string.IsNullOrWhiteSpace(txtMK.Text))
+			{
+				errorProvider.SetError(txtMK, "Mật khẩu không được để trống");
+				return;
+			}
+			else
+			{
+				errorProvider.Clear();
+			}
 
-            if (!rdNam.Checked && !rdNu.Checked)
-            {
-                errorProvider.SetError(rdNam, "Bạn phải chọn giới tính!");
-                return;
-            }
-            else
-            {
-                errorProvider.Clear();
-            }
+			if (string.IsNullOrWhiteSpace(cbType.Text))
+			{
+				errorProvider.SetError(cbType, "Chức vụ không được để trống");
+				return;
+			}
+			else
+			{
+				errorProvider.Clear();
+			}
 
 
-            if (dtpStartDate.Value > DateTime.Now)
-            {
-                errorProvider.SetError(dtpStartDate, "Ngày bắt đầu không hợp lệ!");
-                return;
-            }
-            else
-            {
-                errorProvider.Clear();
-            }
-        }
+			if (dtpStartDate.Value > DateTime.Now)
+			{
+				errorProvider.SetError(dtpStartDate, "Ngày bắt đầu không hợp lệ!");
+				return;
+			}
+			else
+			{
+				errorProvider.Clear();
+			}
+		}
         private void btnHuy_Acc_Click(object sender, EventArgs e)
         {
             btnXoa_Acc.Enabled = false;
@@ -607,7 +649,6 @@ namespace CoffeeApp.GUI.Main
             btnXoa_Acc.Enabled = false;
             btnLuu_Acc.Enabled = true;
             btnThem_Acc.Enabled = false;
-            dtpStartDate.Value = DateTime.Today;
         }
         private async void btnLuu_Acc_Click(object sender, EventArgs e)
         {
@@ -713,7 +754,10 @@ namespace CoffeeApp.GUI.Main
             btnXoa_Category.Enabled = true;
             btnSua_Category.Enabled = true;
 
-        }
+			btnLuu_Category.Enabled = false;
+			txtLoai_Category.Enabled = false;
+			richTextBoxMT.Enabled = false;
+		}
         private void btnAdd_Category_Click(object sender, EventArgs e)
         {
             btnSua_Category.Enabled = false;
@@ -1182,7 +1226,8 @@ namespace CoffeeApp.GUI.Main
             {
                 dtgvProduct.ClearSelection();
                 AddProductBinding();
-                dtgvProduct.DataBindingComplete += dtgvProduct_DataBindingComplete;
+                LoadCategoryIntoCombobox();
+				dtgvProduct.DataBindingComplete += dtgvProduct_DataBindingComplete;
                 ResetButtonProduct();
                 ResetProductData();
             }

@@ -24,7 +24,7 @@ namespace CoffeeApp.DAO
         {
             List<Category> list = new List<Category>();
 
-            string query = "select * from Category";
+            string query = "select * from Category where status =1";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
