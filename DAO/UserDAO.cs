@@ -159,13 +159,13 @@ namespace CoffeeApp.DAO
 
        
 
-        public bool InsertUser(string userName, string passWord,string phone , string email,string codeEmail, string statusEmail, int roleID, string fullName, string address, string gender, string image, int workingStatus)
+        public bool InsertUser(UserDTO user, string codeEmail)
         {
             try
             {
 
                 DAO.DataProvider.Instance.ExecuteNonQuery($"INSERT INTO users(UserName, Password, Phone, email, codeEmail, statusEmail, RoleID , fullName , address , gender , image , workingStatus) " +
-                    $"VALUES (N'{userName}', N'{passWord}', N'{phone}', N'{email}', N'{codeEmail}', N'{statusEmail}', {roleID} , N'{fullName}', N'{address}', N'{gender}', N'{image}' ,{workingStatus})");
+                    $"VALUES (N'{user.UserName}', N'{user.Password}', N'{user.Phone}', N'{user.Email}', N'{codeEmail}', N'{user.StatusEmail}', {user.RoleID} , N'{user.FullName}', N'{user.Address}', N'{user.Gender}', N'{user.Image}' ,{user.Workingstatus})");
             }
             catch
             {
@@ -174,11 +174,11 @@ namespace CoffeeApp.DAO
             return true;
         }
 
-        public bool UpdateUser(string userName, string passWord, string phone, string email, string codeEmail, string statusEmail, int roleID, string fullName, string address, string gender, string image, int workingStatus)
+        public bool UpdateUser(UserDTO user)
         {
             try
             {
-                DAO.DataProvider.Instance.ExecuteNonQuery($"UPDATE users SET userName = N'{userName}', password = N'{passWord}',phone= N'{phone}', Email = N'{email}', codeEmail = N'{codeEmail}',statusEmail=N'{statusEmail}', roleID = {roleID}, fullname = N'{fullName}', address = N'{address}' , gender=N'{gender}', image = N'{image}', workingStatus = {workingStatus} WHERE username = N'{userName}'");
+                DAO.DataProvider.Instance.ExecuteNonQuery($"UPDATE users SET userName = N'{user.UserName}', password = N'{user.Password}',phone= N'{user.Phone}', Email = N'{user.Email}', codeEmail = N'{user.CodeEmail}',statusEmail=N'{user.StatusEmail}', roleID = {user.RoleID}, fullname = N'{user.FullName}', address = N'{user.Address}' , gender=N'{user.Gender}', image = N'{user.Image}', workingStatus = {user.Workingstatus} WHERE username = N'{user.UserName}'");
 
             }
             catch

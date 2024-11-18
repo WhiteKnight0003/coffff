@@ -62,7 +62,7 @@ namespace CoffeeApp.GUI.Login
 			}
 		}
 
-		private void validateEmail(object sender, EventArgs e)
+		private void validateEmail()
 		{
 			if (string.IsNullOrWhiteSpace(txbForgetPasswordEmail.Text))
 			{
@@ -90,27 +90,27 @@ namespace CoffeeApp.GUI.Login
 		}
 		private async void btnSentCodeEmailForgetPassword_Click(object sender, EventArgs e)
 		{
-			validateEmail(sender, e);
+			validateEmail();
 			if(DAO.UserDAO.Instance.checkEmail(txbForgetPasswordEmail.Text))
 				verificationCode = await EmailService.SendVerificationCodeAsync(txbForgetPasswordEmail.Text);
 		}
 		#endregion
 
-		private void validateInfo(object sender, EventArgs e)
+		private Boolean validateInfo()
 		{
 
-			validateEmail(sender, e);
+			validateEmail();
 
 
 			if (string.IsNullOrWhiteSpace(txbForgetPasswordCodeEmail.Text.Trim()))
 			{
 				errorProvider.SetError(txbForgetPasswordCodeEmail, "Mã xác minh không được để trống !");
-				return;
+				return false;
 			}
 			else if (txbForgetPasswordCodeEmail.Text.Trim() != verificationCode)
 			{
 				errorProvider.SetError(txbForgetPasswordCodeEmail, "Mã xác nhận không đúng !");
-				return;
+				return false;
 			}
 			else
 			{
@@ -121,7 +121,7 @@ namespace CoffeeApp.GUI.Login
 			if (string.IsNullOrWhiteSpace(txbForgetPasswordNewPassword.Text))
 			{
 				errorProvider.SetError(txbForgetPasswordNewPassword, "Mật khẩu mới không được để trống !");
-				return;
+				return false;
 			}
 			else
 			{
@@ -131,46 +131,54 @@ namespace CoffeeApp.GUI.Login
 			if (string.IsNullOrWhiteSpace(txbForgetPasswordReNewPassword.Text))
 			{
 				errorProvider.SetError(txbForgetPasswordReNewPassword, "Mật khẩu xác nhận không được để trống !");
-				return;
+				return false;
 			}
 			else if (txbForgetPasswordNewPassword.Text != txbForgetPasswordReNewPassword.Text)
 			{
 				errorProvider.SetError(txbForgetPasswordReNewPassword, "Mật khẩu không trùng khớp !");
-				return;
+				return false;
 			}
 			else
 			{
 				errorProvider.Clear();
 			}
+
+			return true;
 		}
 		private void btnConfirmForgetPassword_Click(object sender, EventArgs e)
 		{
-			validateInfo(sender, e);
-			if (DAO.UserDAO.Instance.checkEmail(txbForgetPasswordEmail.Text) && txbForgetPasswordCodeEmail.Text.Trim() == verificationCode && txbForgetPasswordNewPassword.Text == txbForgetPasswordReNewPassword.Text)
+
+			if (validateInfo())
 			{
-				errorProvider.Clear();
-
-				DataTable dataTable = DAO.UserDAO.Instance.UserEmail(txbForgetPasswordEmail.Text);
-				UserDTO userDTO = new UserDTO(dataTable.Rows[0]);
-
-				if (userDTO.Workingstatus == "0")
+				if (DAO.UserDAO.Instance.checkEmail(txbForgetPasswordEmail.Text) && txbForgetPasswordCodeEmail.Text.Trim() == verificationCode && txbForgetPasswordNewPassword.Text == txbForgetPasswordReNewPassword.Text)
 				{
-					MessageBox.Show("Tài khoản không hợp lệ ");
-				}
-				else
-				{
-					if (DAO.UserDAO.Instance.UpdateUser(userDTO.UserName, DAO.UserDAO.Instance.HashPassword(txbForgetPasswordNewPassword.Text), userDTO.Phone, userDTO.Email, verificationCode, userDTO.StatusEmail, userDTO.RoleID, userDTO.FullName, userDTO.Address, userDTO.Gender, userDTO.Image, 1))
+					errorProvider.Clear();
+
+					DataTable dataTable = DAO.UserDAO.Instance.UserEmail(txbForgetPasswordEmail.Text);
+					UserDTO userDTO = new UserDTO(dataTable.Rows[0]);
+					userDTO.Password = DAO.UserDAO.Instance.HashPassword(txbForgetPasswordNewPassword.Text);
+					userDTO.CodeEmail = verificationCode;
+
+					if (userDTO.Workingstatus == "0")
 					{
-						MessageBox.Show("Đặt lại mật khẩu thành công -  Nhấn ok để trở về trang đăng nhập");
-						this.Close();
-						formLogin.Show();
+						MessageBox.Show("Tài khoản không hợp lệ ");
 					}
 					else
 					{
-						MessageBox.Show("Đặt lại mật khẩu thất bại");
+						if (DAO.UserDAO.Instance.UpdateUser(userDTO))
+						{
+							MessageBox.Show("Đặt lại mật khẩu thành công -  Nhấn ok để trở về trang đăng nhập");
+							this.Close();
+							formLogin.Show();
+						}
+						else
+						{
+							MessageBox.Show("Đặt lại mật khẩu thất bại");
+						}
 					}
 				}
 			}
+			
 		} 
 	}
 }

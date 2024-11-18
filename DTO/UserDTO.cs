@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoffeeApp.DTO
 {
-    internal class UserDTO
+    public class UserDTO
     {
         private int id;
         private string userName;
@@ -23,6 +23,11 @@ namespace CoffeeApp.DTO
         private string gender;
         private string image;
         private string workingstatus;
+
+        public UserDTO()
+        {
+
+        }
         public UserDTO(int id, string userName, string fullName, string password, string phone, string address, DateTime dateWork, int roleID, string email, string codeEmail, string statusEmail, string gender, string image, string workingstatus)
         {
             this.Id = id;

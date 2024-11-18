@@ -1,4 +1,5 @@
-﻿using CoffeeApp.GUI.Login;
+﻿using CoffeeApp.DTO;
+using CoffeeApp.GUI.Login;
 using CoffeeApp.GUI.Main;
 using CoffeeApp.Util;
 using Guna.UI2.WinForms;
@@ -191,7 +192,18 @@ namespace CoffeeApp.GUI
                 Console.WriteLine(Imgbase64String);
 
                 this.Hide();
-                FormInputEmail forminputemail = new FormInputEmail(formLogin, this,username, DAO.UserDAO.Instance.HashPassword(password), phone, email,1, verificationCode, Imgbase64String); // 0 đại diện cho việc insert
+
+				UserDTO newUser = new UserDTO();
+				newUser.UserName =username;
+				newUser.Email = email;
+				newUser.Phone = phone;
+				newUser.RoleID = 2;
+				newUser.Workingstatus = "1";
+				newUser.Password = DAO.UserDAO.Instance.HashPassword(password);
+				newUser.Image = Imgbase64String;
+
+				
+				FormInputEmail forminputemail = new FormInputEmail(formLogin, this,newUser, verificationCode); // 0 đại diện cho việc insert
                 forminputemail.ShowDialog();               
             }
            
